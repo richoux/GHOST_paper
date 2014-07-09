@@ -9,7 +9,6 @@
 #include "/home/flo/ghost/include/domains/wallinDomain.hpp"
 #include "/home/flo/ghost/include/constraints/wallinConstraint.hpp"
 #include "/home/flo/ghost/include/objectives/wallinObjective.hpp"
-#include "/home/flo/ghost/include/misc/tools.hpp"
 #include "/home/flo/ghost/include/misc/wallinTerran.hpp"
 #include "/home/flo/ghost/include/solver.hpp"
 
