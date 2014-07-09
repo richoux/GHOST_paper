@@ -6,8 +6,8 @@ if [ "$#" -ne 3 ]; then
 fi
 
 for i in `seq 1 100`; do
-    echo \*\*\*\*\*\*\*\*\*\*\*\* | cat >> $3/gap_2ccfeadfc317a41d01f7fc979201af8d1bc399f4_100_runs_$1_$2
-    echo \*\*\*\* $i \*\*\*\* | cat >> $3/gap_2ccfeadfc317a41d01f7fc979201af8d1bc399f4_100_runs_$1_$2
-    echo \*\*\*\*\*\*\*\*\*\*\*\* | cat >> $3/gap_2ccfeadfc317a41d01f7fc979201af8d1bc399f4_100_runs_$1_$2
-    ./run-experiments_ghost.sh $1 $2 >> $3/gap_2ccfeadfc317a41d01f7fc979201af8d1bc399f4_100_runs_$1_$2
+    echo \*\*\*\*\*\*\*\*\*\*\*\* | cat >> $3/gap_d92126c5853f529c92bebbaf2bd268bcb13e07a1_100_runs_$1_$2
+    echo \*\*\*\* $i \*\*\*\* | cat >> $3/gap_d92126c5853f529c92bebbaf2bd268bcb13e07a1_100_runs_$1_$2
+    echo \*\*\*\*\*\*\*\*\*\*\*\* | cat >> $3/gap_d92126c5853f529c92bebbaf2bd268bcb13e07a1_100_runs_$1_$2
+    ./run-experiments_ghost.sh $1 $2 >> $3/gap_d92126c5853f529c92bebbaf2bd268bcb13e07a1_100_runs_$1_$2
 done
