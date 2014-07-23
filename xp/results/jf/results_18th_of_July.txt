@@ -9,30 +9,30 @@ Average optimization cost (over successful runs): 2.588962284253143
 Number of perfect walls (no gaps, over successful runs): 0
 
 -------./analyse_opti_runs.rb xp_18th_of_July/gap_100_runs_globaltime150_20_1 
-Number of successes: 4680
-Number of runs: 4800
-Success rate: 97.5
-Average global cost: 0.03333333333333333
-Average number of iterations: 566.385625
-Average optimization cost (over successful runs): 0.03632478632478633
+Number of successes: 4680                                                                                                                                                                                                                                                 
+Number of runs: 4800                                                                                                                                                                                                                                                      
+Success rate: 97.5                                                                                                                                                                                                                                                        
+Average global cost: 0.03333333333333333                                                                                                                                                                                                                                  
+Average number of iterations: 566.385625                                                                                                                                                                                                                                  
+Average optimization cost (over successful runs): 0.03632478632478633                                                                                                                                                                                                     
 Number of perfect walls (no gaps, over successful runs): 4510
 
 -------./analyse_opti_runs.rb xp_18th_of_July/techtree_100_runs_globaltime150_20_1
-Number of successes: 4678
-Number of runs: 4800
-Success rate: 97.45833333333333
-Average global cost: 0.034166666666666665
-Average number of iterations: 472.5314583333333
-Average optimization cost (over successful runs): 1.3882000855066268
+Number of successes: 4678                                                                                                                                                                                                                                                 
+Number of runs: 4800                                                                                                                                                                                                                                                      
+Success rate: 97.45833333333333                                                                                                                                                                                                                                           
+Average global cost: 0.034166666666666665                                                                                                                                                                                                                                 
+Average number of iterations: 472.5314583333333                                                                                                                                                                                                                           
+Average optimization cost (over successful runs): 1.3882000855066268                                                                                                                                                                                                      
 Number of perfect walls (no gaps, over successful runs): 221
 
 -------./analyse_opti_runs.rb xp_18th_of_July/null_100_runs_globaltime150_20_1 
-Number of successes: 4669
-Number of runs: 4800
-Success rate: 97.27083333333333
-Average global cost: 0.03375
-Average number of iterations: 500.98875
-Average optimization cost (over successful runs): 2.5975583636753052
+Number of successes: 4669                                                                                                                                                                                                                                                 
+Number of runs: 4800                                                                                                                                                                                                                                                      
+Success rate: 97.27083333333333                                                                                                                                                                                                                                           
+Average global cost: 0.03375                                                                                                                                                                                                                                              
+Average number of iterations: 500.98875                                                                                                                                                                                                                                   
+Average optimization cost (over successful runs): 2.5975583636753052                                                                                                                                                                                                      
 Number of perfect walls (no gaps, over successful runs): 0
 
 ----------------------------------------------------------------------------------
@@ -40,12 +40,12 @@ Number of perfect walls (no gaps, over successful runs): 0
 ----------------------------------------------------------------------------------
 
 -------./analyse_opti_runs.rb xp_18th_of_July/gap_100_runs_globaltime25_20_1                                                                                                                        
-Number of successes: 3653
-Number of runs: 4800
-Success rate: 76.10416666666667
-Average global cost: 0.4658333333333333
-Average number of iterations: 90.18541666666667
-Average optimization cost (over successful runs): 0.09143169997262524
+Number of successes: 3653                                                                                                                                                                                                                                                 
+Number of runs: 4800                                                                                                                                                                                                                                                      
+Success rate: 76.10416666666667                                                                                                                                                                                                                                           
+Average global cost: 0.4658333333333333                                                                                                                                                                                                                                   
+Average number of iterations: 90.18541666666667                                                                                                                                                                                                                           
+Average optimization cost (over successful runs): 0.09143169997262524                                                                                                                                                                                                     
 Number of perfect walls (no gaps, over successful runs): 3330
 
 -------./analyse_opti_runs.rb xp_18th_of_July/gap_100_runs_globaltime50_20_1 
