@@ -1,0 +1,115 @@
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.25
+Global cost: 0
+Number of tours: 34
+Number of iterations: 3395
+Optimization cost: 577
+Opt Cost BEFORE post-processing: 577
+Post-processing time: 2.38483
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.18
+Global cost: 5
+Number of tours: 34
+Number of iterations: 3669
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.19
+Global cost: 5
+Number of tours: 34
+Number of iterations: 3782
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.25
+Global cost: 0
+Number of tours: 35
+Number of iterations: 3506
+Optimization cost: 571
+Opt Cost BEFORE post-processing: 571
+Post-processing time: 2.36876
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.28
+Global cost: 0
+Number of tours: 34
+Number of iterations: 3921
+Optimization cost: 590
+Opt Cost BEFORE post-processing: 590
+Post-processing time: 2.52757
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.03
+Global cost: 5
+Number of tours: 34
+Number of iterations: 3505
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.08
+Global cost: 5
+Number of tours: 34
+Number of iterations: 4013
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.24
+Global cost: 0
+Number of tours: 34
+Number of iterations: 3289
+Optimization cost: 696
+Opt Cost BEFORE post-processing: 696
+Post-processing time: 2.50132
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.16
+Global cost: 0
+Number of tours: 35
+Number of iterations: 3841
+Optimization cost: 632
+Opt Cost BEFORE post-processing: 632
+Post-processing time: 2.2874
+
+Time reference: 464
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.25
+Global cost: 5
+Number of tours: 34
+Number of iterations: 3205
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 464
+

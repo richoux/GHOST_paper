@@ -87,6 +87,6 @@ int main(int argc, char **argv)
 
   Solver<Action, BuildOrderDomain, BuildOrderConstraint> solver(&vec, &domain, vecConstraints, objective );
 
-  solver.solve( 40, 1000 );
+  solver.solve( 30, 1000 );
   cout << "Time reference: " << time/24 << endl;
 }
