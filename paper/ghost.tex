@@ -1,0 +1,216 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{cite,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+\usepackage{graphicx}
+\usepackage[cmex10]{amsmath}
+\usepackage{algorithmic}
+\usepackage{array}
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+%\usepackage{eqparbox}
+%\usepackage[tight,footnotesize]{subfigure}
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+%\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{fixltx2e}
+\usepackage{stfloats}
+\usepackage{url}
+
+\newcommand{\csp}{\textsc{CSP}} %\xspace
+\newcommand{\cop}{\textsc{COP}} %\xspace
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{GHOST: A Combinatorial Optimization Solver for RTS-related Problems}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+% \author{FirstName~LastName,~\IEEEmembership{Member,~IEEE,}
+%         Jim~Raynor,~\IEEEmembership{Fellow,~RR,}
+%         and~Sarah~Kerrigan,~\IEEEmembership{Life~Fellow,~ZS}% <-this % stops a space
+% \thanks{FirstName~LastName is with the Department of Names
+% GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
+% \thanks{J. Raynor and S. Kerrigane are with the Romeo\&Juliet Inc.}% <-this % stops a space
+% \thanks{Manuscript received April 19, 2499; revised January 11, 2500.}}
+
+\author{Florian~Richoux\thanks{Florian~Richoux is with the LINA of the Universit{\'e} de Nantes, France, and the JFLI of the University of Tokyo, Japan.},
+        Jean-Fran{\c c}ois~Baffier\thanks{Jean-Fran{\c c}ois~Baffier is with the Department of Computing Science of the University of Tokyo, Japan.},
+        Alberto~Uriarte\thanks{Alberto Uriarte is with the Computer Science Department at Drexel University, Philadelphia, PA, USA.}}
+
+
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+% The paper headers
+\markboth{TCIAIG ~Vol.~X, No.~Y, Month~Year}%
+{??? \MakeLowercase{\textit{et al.}}: GHOST: A Combinatorial Optimization Solver for RTS-related Problems}
+
+\maketitle
+
+\begin{abstract}
+This paper presents ...
+\end{abstract}
+
+\begin{IEEEkeywords}
+Game AI, Real-Time Strategy, StarCraft, CSP, COP
+
+\end{IEEEkeywords}
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}\label{sec:intro}
+\IEEEPARstart{T}{he} field of real-time strategy (RTS) game AI...
+
+\subsection{RTS problem families}
+Refer to \cite{OntanonSURCM13}
+
+
+\section{GHOST: A General meta-Heuristic Optimization Solving Tool}\label{sec:ghost}
+\subsection{A brief introduction to \csp / \cop}
+\subsection{GHOST architecture}
+
+\section{Strategy problem: The build order}\label{sec:bo}
+Refer to \cite{ChurchillB11, KuchemPR13, WeberM09, ChoKC13, Blackford14} 
+\subsection{Problem statement}
+\subsection{GHOST results}
+
+\section{Tactic problem: Wall-in}\label{sec:bo}
+Refer to \cite{Certicky13, RichouxUO14}
+\subsection{Problem statement}
+\subsection{GHOST results}
+
+\section{Reactive control problem: The target selection}\label{sec:bo}
+Refer to ???
+\subsection{Problem statement}
+\subsection{GHOST results}
+
+
+\section{Conclusion}\label{sec:conclusion}
+
+
+
+
+
+%\section*{Acknowledgments} {\color{blue} This research is partially funded by projects ... and ... . }
+
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+%\begin{thebibliography}{1}
+%\end{thebibliography}
+\bibliographystyle{IEEEtran}                                                    
+\bibliography{ghost}
+
+%\begin{IEEEbiographynophoto}{FirstName LastName}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+%\begin{IEEEbiography}[{\includegraphics[width=2cm, keepaspectratio]{jim.jpg}}]{Jim Raynor}
+%Jim Raynor was a Confederate marshal on Mar Sara at the time of the first zerg incursions on that world. He is now with Raynor's Raiders Inc.
+%\end{IEEEbiography}
+
+
+%\begin{IEEEbiography}[{\includegraphics[width=2cm, keepaspectratio]{figures/santi.jpg}}]{Santiago Onta\~{n}\'{o}n}
+
+% \begin{IEEEbiographynophoto}{Santiago Onta\~{n}\'{o}n}
+% is an assistant professor in the Computer Science Department at Drexel University. His main research interests are game AI, case-based reasoning and machine learning, fields in which he has published more than 90 peer-reviewed papers. He obtained his PhD form the Autonomous University of Barcelona (UAB), Spain. Before joining Drexel University, he held postdoctoral research positions at the Artificial Intelligence Research Institute (IIIA) in Barcelona, Spain, at the Georgia Institute of Technology (GeorgiaTech) in Atlanta, USA, and at the University of Barcelona, Spain.  
+% \end{IEEEbiographynophoto}
+
+% \begin{IEEEbiographynophoto}{Gabriel Synnaeve}
+% is a post-doc in the Laboratory of Cognitive Science and Psycholinguistics
+% (LSCP) at Ecole Normale Sup\'{e}rieure in Paris, France. Previously, he
+% worked on Bayesian modeling in game AI research at INRIA (Grenoble) and
+% Coll`{e}ge de France (Paris). He obtained his PhD in 2012 from Grenoble
+% University, France.
+% \end{IEEEbiographynophoto}
+
+% \begin{IEEEbiographynophoto}{Alberto Uriarte}
+% received the B.S. degree in Computer Science from Autonomous University of Barcelona (UAB), Spain, in 2006 and the M.S. degree in Computer Vision and Artificial Intelligence from Autonomous University of Barcelona (UAB), Spain, in 2011. He is currently pursuing the Ph.D. degree in computer science at Drexel University. His research interest includes game AI, RTS games, multiagents systems, procedural content generation, computational geometry, machine learning and drama management.  
+% \end{IEEEbiographynophoto}
+
+% \begin{IEEEbiographynophoto}{Florian Richoux}
+%   is an associate  professor at the Laboratory of  Computer Science of
+%   the University of Nantes,  France.  His main research field concerns
+%   parallel  algorithms for solving  constraint-based problems  and has
+%   strong  interests   in  AI,  in  particular  game   AI  and  machine
+%   learning. He  obtained his Ph.D. in Theoretical  Computer Science at
+%   the {\'E}cole Polytechnique  in 2009 and has been  for three years a
+%   CNRS   research  fellow  at   the  Japanese-French   Laboratory  for
+%   Informatics of the University of Tokyo, Japan.
+% \end{IEEEbiographynophoto}
+
+\end{document}
+
+
+In his AIIDE 2010 keynote, Chris Jurnet described the technique XXX, implemented by [COMPANY] in the game YYY \cite{gameurl}
