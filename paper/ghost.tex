@@ -1,6 +1,6 @@
 \documentclass[journal]{IEEEtran}
 
-\usepackage{cite,graphicx}
+\usepackage{cite, graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 
 % *** GRAPHICS RELATED PACKAGES ***
@@ -24,13 +24,15 @@
   % \DeclareGraphicsExtensions{.eps}
 \fi
 
-\usepackage{graphicx}
 \usepackage[cmex10]{amsmath}
 \usepackage{algorithmic}
 \usepackage{array}
-%\usepackage{mdwmath}
-%\usepackage{mdwtab}
-%\usepackage{eqparbox}
+\usepackage{xspace}
+\usepackage{amssymb, stmaryrd, algorithm}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage{lipsum}
 %\usepackage[tight,footnotesize]{subfigure}
 %\usepackage[caption=false]{caption}
 %\usepackage[font=footnotesize]{subfig}
@@ -39,8 +41,31 @@
 \usepackage{stfloats}
 \usepackage{url}
 
-\newcommand{\csp}{\textsc{CSP}} %\xspace
-\newcommand{\cop}{\textsc{COP}} %\xspace
+\newcommand{\csp}{\textsc{CSP}\xspace}
+\newcommand{\cop}{\textsc{COP}\xspace}
+\newcommand{\ghost}{\textsc{GHOST}\xspace}
+\newcommand{\ie}{\textit{i.e.}}
+
+\newcommand{\modelcsp}[4]%
+{ \begin{trivlist}
+  \item[]%
+    \textbf{CSP model for #1}:\\
+    \textit{Variables:} #2\\
+    \textit{Domain:} #3\\
+    \textit{Constraints:} #4
+  \end{trivlist}%
+}
+
+\newcommand{\modelcop}[5]%
+{ \begin{trivlist}
+  \item[]%
+    \textbf{COP model for #1}:\\
+    \textit{Variables:} #2\\
+    \textit{Domain:} #3\\
+    \textit{Constraints:} #4
+    \textit{Objectives:} #5
+  \end{trivlist}%
+}
 
 % *** Do not adjust lengths that control margins, column widths, etc. ***
 % *** Do not use packages that alter fonts (such as pslatex).         ***
@@ -55,7 +80,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{GHOST: A Combinatorial Optimization Solver for RTS-related Problems}
+\title{\ghost: A Combinatorial Optimization Solver for RTS-related Problems}
 %
 %
 % author names and IEEE memberships
@@ -101,7 +126,7 @@
 
 % The paper headers
 \markboth{TCIAIG ~Vol.~X, No.~Y, Month~Year}%
-{??? \MakeLowercase{\textit{et al.}}: GHOST: A Combinatorial Optimization Solver for RTS-related Problems}
+{??? \MakeLowercase{\textit{et al.}}: \ghost: A Combinatorial Optimization Solver for RTS-related Problems}
 
 \maketitle
 
@@ -131,24 +156,82 @@ Game AI, Real-Time Strategy, StarCraft, CSP, COP
 Refer to \cite{OntanonSURCM13}
 
 
-\section{GHOST: A General meta-Heuristic Optimization Solving Tool}\label{sec:ghost}
+\section{\ghost: A General meta-Heuristic Optimization Solving Tool}\label{sec:ghost}
 \subsection{A brief introduction to \csp / \cop}
-\subsection{GHOST architecture}
+\subsection{\ghost architecture}
 
 \section{Strategy problem: The build order}\label{sec:bo}
 Refer to \cite{ChurchillB11, KuchemPR13, WeberM09, ChoKC13, Blackford14} 
 \subsection{Problem statement}
-\subsection{GHOST results}
+A build  order planning is  a series  of actions following  a specific
+timing, in order  to achieve a goal.  Such a goal is  a combination of
+buildings,  units,  upgrades  and researches  produced.  Usually,  the
+objective for a  player is to reach a fixed  goal the fastest possible
+way. However, alternatives  can also be considered,  like reaching the
+goal without sacrificing  the economy, or focussing first  on units in
+order to have an army quickly available.
 
-\section{Tactic problem: Wall-in}\label{sec:bo}
+A  build order  planning can  be intuitively  modeled by  a \csp  as a
+permutation problem,  where a bijection  maps the set of  variables to
+the  domain. Changing  the  value  of one  variable  is then  actually
+swapping its value with another variable.
+
+All  actions have  a (potentially  empty) dependencies  list, \ie,  an
+action  $\alpha$  has a  list  of  actions  that are  required  before
+starting  $\alpha$.  For  instance, to  start the  \textit{Air Weapons
+  Upgrade level  2}, it is  required to have finished  the \textit{Air
+  Weapons Upgrade level  1}. Notice that we can  dive recursively into
+these  dependencies  list. Thus  if  someone  aims to  do  \textit{Air
+  Weapons  Upgrade  level  2}  for Protoss,  it  required  \textit{Air
+  Weapons    Upgrade   level    1},    which    requires   itself    a
+\textit{Cybernetics Core}, which requires a \textit{Gateway}.
+
+The \csp model we propose for  the build order planning problem is the
+following one:
+
+\modelcsp{the Build Order Planning problem}%
+{All actions we need to reach our goal.}%
+{Order of actions.}%
+{Each dependency of an action $\alpha$ must occurs before $\alpha$.}
+
+\subsection{\ghost results}
+
+See Table~\ref{tbl:bo}. Fix rounding error. The following paragraph is
+just to fulfill a bit the section, otherwise the table doesn't show up
+(!?).
+
+\begin{table*}[tba]
+  \label{tbl:bo}
+  \centering
+  \caption{Average makespan in seconds of Human and \ghost build orders over 5269
+    games. \ghost has been run 10 times on each game.}
+  \begin{tabular}{|l|c|c|c||c|c|} 
+    \cline{3-6}
+    \multicolumn{2}{c|}{ } &\multicolumn{4}{c|}{\ghost} \\ 
+    \hline
+    {\em Match-up} & Humans & Timings in \cite{ChurchillB11} &
+    Gain (Human - \ghost) & Strict
+    timings & Gain (Human - \ghost)\\ 
+    \hline
+    {\em All} & 461.77 & 464.49 & -3.15 & 469.57 & -8.19\\
+    {\em PvP} & 463.09 & 465.51 & -2.86 & 470.40 & -7.71\\
+    {\em PvT} & 471.24 & 482.21 & -11.36 & 486.55 & -15.65\\
+    {\em PvZ} & 449.97 & 443.02 & 6.49 & 449.04 & 0.49\\ 
+    \hline
+  \end{tabular}  
+\end{table*}
+
+\lipsum[1]
+
+\section{Tactic problem: Wall-in}\label{sec:wall}
 Refer to \cite{Certicky13, RichouxUO14}
 \subsection{Problem statement}
-\subsection{GHOST results}
+\subsection{\ghost results}
 
-\section{Reactive control problem: The target selection}\label{sec:bo}
+\section{Reactive control problem: The target selection}\label{sec:target}
 Refer to ???
 \subsection{Problem statement}
-\subsection{GHOST results}
+\subsection{\ghost results}
 
 
 \section{Conclusion}\label{sec:conclusion}
