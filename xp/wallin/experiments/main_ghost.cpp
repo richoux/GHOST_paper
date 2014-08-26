@@ -17,15 +17,16 @@ using namespace ghost;
 int main(int argc, char **argv)
 {
   if (argc!=4) {
-    printf("Usage %s <datafile> <time limit> <attempts>\n", argv[0]);
+    printf("Usage %s <datafile> <time limit> <tabu>\n", argv[0]);
     printf("The datafile is the result of analyzing a .scx map using Alberto's offline BWTA\n");
     return 1;
   }
 
   int time_limit = 20;
-  int attempts = 3;
+  int attempts = 1;
+  int tabu = 5;
   sscanf(argv[2],"%i",&time_limit);
-  sscanf(argv[3],"%i",&attempts);
+  sscanf(argv[3],"%i",&tabu);
 
   // yes, yes, I know this is old school C, but I code in "old fashioned" C++ ;)
   FILE *fp = fopen(argv[1],"r+");
@@ -96,7 +97,7 @@ int main(int argc, char **argv)
 	  Solver<Building, WallinDomain, WallinConstraint> solver(&vec, &domain, vecConstraints, objective );
 
 	  std::cout << "File name: " << argv[1] << std::endl; 
-	  solver.solve( time_limit );    
+	  solver.solve( time_limit, tabu, 160 );    
 	}
 
         printf("\n\n");        

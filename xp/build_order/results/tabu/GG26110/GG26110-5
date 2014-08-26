@@ -1,0 +1,575 @@
+Swap Protoss_Robotics_Facility:3 with Protoss_Nexus:4
+Swap Protoss_Dark_Templar:8 with Protoss_Observatory:9
+Swap Protoss_Dark_Templar:9 with Protoss_Dragoon:10
+Swap Protoss_Dark_Templar:10 with Protoss_Robotics_Support_Bay:11
+Swap Protoss_Dragoon:12 with Protoss_Observer:13
+Swap Protoss_Dragoon:13 with Protoss_Shuttle:14
+Swap Protoss_Dark_Templar:15 with Protoss_Gateway:16
+Swap Protoss_Observer:19 with Protoss_Dragoon:20
+Swap Protoss_Observer:6 with Protoss_Robotics_Support_Bay:7
+Swap Protoss_Observer:7 with Protoss_Nexus:8
+Swap Protoss_Shuttle:10 with Protoss_Gateway:11
+Swap Protoss_Shuttle:11 with Protoss_Dragoon:12
+Swap Protoss_Dragoon:13 with Protoss_Citadel_of_Adun:14
+Swap Protoss_Dark_Templar:16 with Protoss_Dragoon:17
+Swap Protoss_Dark_Templar:17 with Protoss_Shuttle:18
+Swap Protoss_Dark_Templar:18 with Protoss_Dragoon:19
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Templar_Archives:5 with Protoss_Dragoon:6
+Swap Protoss_Dragoon:7 with Protoss_Nexus:8
+Swap Protoss_Dragoon:8 with Protoss_Observatory:9
+Swap Protoss_Dark_Templar:10 with Protoss_Observer:11
+Swap Protoss_Dragoon:12 with Protoss_Observer:13
+Swap Protoss_Zealot:14 with Protoss_Shuttle:15
+Swap Protoss_Zealot:15 with Protoss_Gateway:16
+Swap Protoss_Shuttle:17 with Protoss_Robotics_Support_Bay:18
+Swap Protoss_Shuttle:8 with Protoss_Gateway:9
+Swap Protoss_Shuttle:9 with Protoss_Dragoon:10
+Swap Protoss_Dragoon:11 with Protoss_Templar_Archives:12
+Swap Protoss_Dark_Templar:13 with Protoss_Dragoon:14
+Swap Protoss_Dark_Templar:14 with Protoss_Dragoon:15
+Swap Protoss_Dark_Templar:15 with Protoss_Observatory:16
+Swap Protoss_Observer:18 with Protoss_Dark_Templar:19
+Swap Protoss_Observer:19 with Protoss_Robotics_Support_Bay:20
+Domains:
+Protoss_Gateway(0) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Gateway(21) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Robotics_Facility(10) at 4
+Protoss_Citadel_of_Adun(9) at 5
+Protoss_Dragoon(8) at 6
+Protoss_Templar_Archives(11) at 7
+Protoss_Nexus(17) at 8
+Protoss_Observatory(16) at 9
+Protoss_Dragoon(6) at 10
+Protoss_Observer(18) at 11
+Protoss_Dark_Templar(15) at 12
+Protoss_Observer(19) at 13
+Protoss_Dragoon(5) at 14
+Protoss_Shuttle(12) at 15
+Protoss_Gateway(1) at 16
+Protoss_Zealot(4) at 17
+Protoss_Robotics_Support_Bay(20) at 18
+Protoss_Shuttle(13) at 19
+Protoss_Dragoon(7) at 20
+Protoss_Dark_Templar(14) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.05
+Global cost: 0
+Number of tours: 37
+Number of iterations: 6147
+Optimization cost: 546
+Opt Cost BEFORE post-processing: 560
+Post-processing time: 5.22073
+
+Time reference: 472
+
+Swap Protoss_Dragoon:4 with Protoss_Citadel_of_Adun:5
+Swap Protoss_Templar_Archives:6 with Protoss_Dragoon:7
+Swap Protoss_Zealot:11 with Protoss_Robotics_Facility:12
+Swap Protoss_Shuttle:17 with Protoss_Dark_Templar:18
+Swap Protoss_Observatory:4 with Protoss_Gateway:5
+Swap Protoss_Observatory:5 with Protoss_Citadel_of_Adun:6
+Swap Protoss_Observatory:6 with Protoss_Dragoon:7
+Swap Protoss_Shuttle:10 with Protoss_Dragoon:11
+Swap Protoss_Shuttle:11 with Protoss_Robotics_Support_Bay:12
+Swap Protoss_Shuttle:12 with Protoss_Dragoon:13
+Swap Protoss_Shuttle:13 with Protoss_Templar_Archives:14
+Swap Protoss_Dark_Templar:15 with Protoss_Nexus:16
+Swap Protoss_Zealot:18 with Protoss_Observer:19
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Dragoon:3 with Protoss_Zealot:4
+Swap Protoss_Observer:7 with Protoss_Shuttle:8
+Swap Protoss_Observer:8 with Protoss_Dragoon:9
+Swap Protoss_Observer:9 with Protoss_Citadel_of_Adun:10
+Swap Protoss_Observer:10 with Protoss_Dragoon:11
+Swap Protoss_Dark_Templar:13 with Protoss_Dragoon:14
+Swap Protoss_Dark_Templar:14 with Protoss_Robotics_Support_Bay:15
+Swap Protoss_Dark_Templar:15 with Protoss_Nexus:16
+Swap Protoss_Dark_Templar:16 with Protoss_Shuttle:17
+Swap Protoss_Dark_Templar:17 with Protoss_Gateway:18
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Gateway(21) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Zealot(4) at 4
+Protoss_Dragoon(5) at 5
+Protoss_Robotics_Facility(10) at 6
+Protoss_Observatory(16) at 7
+Protoss_Shuttle(12) at 8
+Protoss_Dragoon(6) at 9
+Protoss_Citadel_of_Adun(9) at 10
+Protoss_Dragoon(8) at 11
+Protoss_Observer(19) at 12
+Protoss_Templar_Archives(11) at 13
+Protoss_Dragoon(7) at 14
+Protoss_Robotics_Support_Bay(20) at 15
+Protoss_Nexus(17) at 16
+Protoss_Shuttle(13) at 17
+Protoss_Gateway(0) at 18
+Protoss_Dark_Templar(15) at 19
+Protoss_Observer(18) at 20
+Protoss_Dark_Templar(14) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.13
+Global cost: 0
+Number of tours: 36
+Number of iterations: 5821
+Optimization cost: 499
+Opt Cost BEFORE post-processing: 519
+Post-processing time: 7.34305
+
+Time reference: 472
+
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Templar_Archives:4 with Protoss_Nexus:5
+Swap Protoss_Templar_Archives:5 with Protoss_Dragoon:6
+Swap Protoss_Dark_Templar:11 with Protoss_Observatory:12
+Swap Protoss_Shuttle:16 with Protoss_Gateway:17
+Swap Protoss_Dark_Templar:18 with Protoss_Robotics_Support_Bay:19
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Gateway(21) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Citadel_of_Adun(9) at 4
+Protoss_Nexus(17) at 5
+Protoss_Dragoon(6) at 6
+Protoss_Templar_Archives(11) at 7
+Protoss_Robotics_Facility(10) at 8
+Protoss_Dragoon(7) at 9
+Protoss_Dragoon(5) at 10
+Protoss_Shuttle(12) at 11
+Protoss_Observatory(16) at 12
+Protoss_Dark_Templar(15) at 13
+Protoss_Observer(18) at 14
+Protoss_Dragoon(8) at 15
+Protoss_Observer(19) at 16
+Protoss_Gateway(0) at 17
+Protoss_Shuttle(13) at 18
+Protoss_Robotics_Support_Bay(20) at 19
+Protoss_Dark_Templar(14) at 20
+Protoss_Zealot(4) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.08
+Global cost: 0
+Number of tours: 35
+Number of iterations: 6414
+Optimization cost: 551
+Opt Cost BEFORE post-processing: 571
+Post-processing time: 5.38527
+
+Time reference: 472
+
+Swap Protoss_Observer:6 with Protoss_Nexus:7
+Swap Protoss_Observer:7 with Protoss_Dragoon:8
+Swap Protoss_Observer:9 with Protoss_Robotics_Support_Bay:10
+Swap Protoss_Observer:10 with Protoss_Dragoon:11
+Swap Protoss_Dragoon:12 with Protoss_Citadel_of_Adun:13
+Swap Protoss_Dark_Templar:16 with Protoss_Shuttle:17
+Swap Protoss_Dragoon:18 with Protoss_Gateway:19
+Swap Protoss_Dragoon:19 with Protoss_Shuttle:20
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Dragoon:5 with Protoss_Nexus:6
+Swap Protoss_Shuttle:7 with Protoss_Dragoon:8
+Swap Protoss_Shuttle:8 with Protoss_Templar_Archives:9
+Swap Protoss_Dark_Templar:13 with Protoss_Gateway:14
+Swap Protoss_Dark_Templar:16 with Protoss_Observatory:17
+Swap Protoss_Observer:19 with Protoss_Dragoon:20
+Swap Protoss_Robotics_Facility:3 with Protoss_Gateway:4
+Swap Protoss_Shuttle:9 with Protoss_Nexus:10
+Swap Protoss_Shuttle:10 with Protoss_Dragoon:11
+Swap Protoss_Shuttle:11 with Protoss_Observatory:12
+Swap Protoss_Observer:13 with Protoss_Dark_Templar:14
+Swap Protoss_Observer:14 with Protoss_Dragoon:15
+Swap Protoss_Observer:15 with Protoss_Dragoon:16
+Swap Protoss_Observer:17 with Protoss_Dragoon:18
+Swap Protoss_Observer:18 with Protoss_Dark_Templar:19
+Swap Protoss_Shuttle:6 with Protoss_Gateway:7
+Swap Protoss_Shuttle:7 with Protoss_Dragoon:8
+Swap Protoss_Shuttle:8 with Protoss_Dragoon:9
+Swap Protoss_Dragoon:12 with Protoss_Citadel_of_Adun:13
+Swap Protoss_Dragoon:13 with Protoss_Observatory:14
+Swap Protoss_Shuttle:17 with Protoss_Templar_Archives:18
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(1) at 1
+Protoss_Gateway(22) at 2
+Protoss_Gateway(21) at 3
+Protoss_Cybernetics_Core(3) at 4
+Protoss_Gateway(0) at 5
+Protoss_Robotics_Facility(10) at 6
+Protoss_Citadel_of_Adun(9) at 7
+Protoss_Templar_Archives(11) at 8
+Protoss_Robotics_Support_Bay(20) at 9
+Protoss_Shuttle(12) at 10
+Protoss_Nexus(17) at 11
+Protoss_Dragoon(5) at 12
+Protoss_Observatory(16) at 13
+Protoss_Shuttle(13) at 14
+Protoss_Dark_Templar(14) at 15
+Protoss_Dragoon(8) at 16
+Protoss_Dragoon(6) at 17
+Protoss_Observer(18) at 18
+Protoss_Dragoon(7) at 19
+Protoss_Dark_Templar(15) at 20
+Protoss_Observer(19) at 21
+Protoss_Zealot(4) at 22
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000
+Global cost: 0
+Number of tours: 37
+Number of iterations: 6267
+Optimization cost: 534
+Opt Cost BEFORE post-processing: 540
+Post-processing time: 5.57069
+
+Time reference: 472
+
+Swap Protoss_Observatory:4 with Protoss_Nexus:5
+Swap Protoss_Observatory:5 with Protoss_Zealot:6
+Swap Protoss_Observatory:6 with Protoss_Citadel_of_Adun:7
+Swap Protoss_Observer:8 with Protoss_Templar_Archives:9
+Swap Protoss_Dark_Templar:10 with Protoss_Gateway:11
+Swap Protoss_Dragoon:14 with Protoss_Shuttle:15
+Swap Protoss_Observer:16 with Protoss_Dragoon:17
+Swap Protoss_Shuttle:19 with Protoss_Robotics_Support_Bay:20
+Swap Protoss_Observer:5 with Protoss_Citadel_of_Adun:6
+Swap Protoss_Observer:6 with Protoss_Shuttle:7
+Swap Protoss_Dark_Templar:9 with Protoss_Robotics_Support_Bay:10
+Swap Protoss_Dark_Templar:10 with Protoss_Shuttle:11
+Swap Protoss_Observer:12 with Protoss_Nexus:13
+Swap Protoss_Dragoon:14 with Protoss_Gateway:15
+Swap Protoss_Shuttle:6 with Protoss_Citadel_of_Adun:7
+Swap Protoss_Observer:9 with Protoss_Dragoon:10
+Swap Protoss_Zealot:11 with Protoss_Nexus:12
+Swap Protoss_Observer:13 with Protoss_Robotics_Support_Bay:14
+Swap Protoss_Shuttle:16 with Protoss_Templar_Archives:17
+Swap Protoss_Dark_Templar:19 with Protoss_Gateway:20
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Shuttle:5 with Protoss_Dragoon:6
+Swap Protoss_Shuttle:6 with Protoss_Gateway:7
+Swap Protoss_Shuttle:7 with Protoss_Zealot:8
+Swap Protoss_Shuttle:10 with Protoss_Observatory:11
+Swap Protoss_Shuttle:11 with Protoss_Robotics_Support_Bay:12
+Swap Protoss_Shuttle:12 with Protoss_Citadel_of_Adun:13
+Swap Protoss_Shuttle:13 with Protoss_Dragoon:14
+Swap Protoss_Dragoon:18 with Protoss_Observer:19
+Swap Protoss_Dragoon:19 with Protoss_Observer:20
+Domains:
+Protoss_Gateway(0) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Gateway(21) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Nexus(17) at 4
+Protoss_Robotics_Facility(10) at 5
+Protoss_Dragoon(8) at 6
+Protoss_Gateway(1) at 7
+Protoss_Zealot(4) at 8
+Protoss_Shuttle(12) at 9
+Protoss_Dragoon(6) at 10
+Protoss_Observatory(16) at 11
+Protoss_Robotics_Support_Bay(20) at 12
+Protoss_Citadel_of_Adun(9) at 13
+Protoss_Dragoon(5) at 14
+Protoss_Shuttle(13) at 15
+Protoss_Templar_Archives(11) at 16
+Protoss_Dark_Templar(14) at 17
+Protoss_Dark_Templar(15) at 18
+Protoss_Observer(18) at 19
+Protoss_Observer(19) at 20
+Protoss_Dragoon(7) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.08
+Global cost: 0
+Number of tours: 37
+Number of iterations: 6299
+Optimization cost: 528
+Opt Cost BEFORE post-processing: 550
+Post-processing time: 5.25412
+
+Time reference: 472
+
+Swap Protoss_Dragoon:6 with Protoss_Citadel_of_Adun:7
+Swap Protoss_Dragoon:9 with Protoss_Gateway:10
+Swap Protoss_Dragoon:10 with Protoss_Observatory:11
+Swap Protoss_Shuttle:16 with Protoss_Dark_Templar:17
+Swap Protoss_Robotics_Facility:3 with Protoss_Nexus:4
+Swap Protoss_Shuttle:6 with Protoss_Zealot:7
+Swap Protoss_Shuttle:9 with Protoss_Gateway:10
+Swap Protoss_Shuttle:10 with Protoss_Robotics_Support_Bay:11
+Swap Protoss_Shuttle:11 with Protoss_Dragoon:12
+Swap Protoss_Shuttle:12 with Protoss_Citadel_of_Adun:13
+Swap Protoss_Observer:15 with Protoss_Dragoon:16
+Swap Protoss_Observer:16 with Protoss_Templar_Archives:17
+Swap Protoss_Dark_Templar:18 with Protoss_Observer:19
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(1) at 1
+Protoss_Gateway(22) at 2
+Protoss_Gateway(21) at 3
+Protoss_Cybernetics_Core(3) at 4
+Protoss_Nexus(17) at 5
+Protoss_Robotics_Facility(10) at 6
+Protoss_Dragoon(8) at 7
+Protoss_Zealot(4) at 8
+Protoss_Shuttle(13) at 9
+Protoss_Observatory(16) at 10
+Protoss_Gateway(0) at 11
+Protoss_Robotics_Support_Bay(20) at 12
+Protoss_Dragoon(5) at 13
+Protoss_Citadel_of_Adun(9) at 14
+Protoss_Shuttle(12) at 15
+Protoss_Dragoon(7) at 16
+Protoss_Dragoon(6) at 17
+Protoss_Templar_Archives(11) at 18
+Protoss_Observer(19) at 19
+Protoss_Observer(18) at 20
+Protoss_Dark_Templar(14) at 21
+Protoss_Dark_Templar(15) at 22
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.14
+Global cost: 0
+Number of tours: 35
+Number of iterations: 6014
+Optimization cost: 544
+Opt Cost BEFORE post-processing: 522
+Post-processing time: 5.14524
+
+Time reference: 472
+
+Swap Protoss_Zealot:1 with Protoss_Gateway:2
+Swap Protoss_Templar_Archives:7 with Protoss_Dragoon:8
+Swap Protoss_Observer:13 with Protoss_Dark_Templar:14
+Swap Protoss_Observer:14 with Protoss_Nexus:15
+Swap Protoss_Shuttle:16 with Protoss_Dark_Templar:17
+Swap Protoss_Shuttle:18 with Protoss_Dragoon:19
+Swap Protoss_Shuttle:19 with Protoss_Dragoon:20
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Dark_Templar:7 with Protoss_Robotics_Support_Bay:8
+Swap Protoss_Dark_Templar:8 with Protoss_Dragoon:9
+Swap Protoss_Dark_Templar:9 with Protoss_Shuttle:10
+Swap Protoss_Dark_Templar:10 with Protoss_Nexus:11
+Swap Protoss_Dragoon:13 with Protoss_Shuttle:14
+Swap Protoss_Dragoon:14 with Protoss_Gateway:15
+Swap Protoss_Zealot:16 with Protoss_Observatory:17
+Swap Protoss_Observer:19 with Protoss_Dark_Templar:20
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Robotics_Support_Bay:7 with Protoss_Gateway:8
+Swap Protoss_Dragoon:10 with Protoss_Shuttle:11
+Swap Protoss_Shuttle:12 with Protoss_Observatory:13
+Swap Protoss_Shuttle:13 with Protoss_Nexus:14
+Swap Protoss_Shuttle:14 with Protoss_Dark_Templar:15
+Swap Protoss_Observer:17 with Protoss_Zealot:18
+Swap Protoss_Observer:18 with Protoss_Dragoon:19
+Swap Protoss_Citadel_of_Adun:3 with Protoss_Gateway:4
+Swap Protoss_Dark_Templar:9 with Protoss_Observer:10
+Swap Protoss_Dark_Templar:10 with Protoss_Dragoon:11
+Swap Protoss_Dark_Templar:11 with Protoss_Dragoon:12
+Swap Protoss_Shuttle:16 with Protoss_Zealot:17
+Swap Protoss_Shuttle:17 with Protoss_Nexus:18
+Swap Protoss_Robotics_Support_Bay:5 with Protoss_Gateway:6
+Swap Protoss_Observer:13 with Protoss_Dragoon:14
+Swap Protoss_Shuttle:15 with Protoss_Citadel_of_Adun:16
+Swap Protoss_Dark_Templar:18 with Protoss_Dragoon:19
+Swap Protoss_Shuttle:4 with Protoss_Nexus:5
+Swap Protoss_Dragoon:8 with Protoss_Citadel_of_Adun:9
+Swap Protoss_Dragoon:9 with Protoss_Templar_Archives:10
+Swap Protoss_Dark_Templar:13 with Protoss_Gateway:14
+Swap Protoss_Zealot:15 with Protoss_Observatory:16
+Swap Protoss_Observer:18 with Protoss_Dragoon:19
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Gateway(21) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Robotics_Facility(10) at 4
+Protoss_Citadel_of_Adun(9) at 5
+Protoss_Dragoon(5) at 6
+Protoss_Templar_Archives(11) at 7
+Protoss_Gateway(0) at 8
+Protoss_Robotics_Support_Bay(20) at 9
+Protoss_Dragoon(6) at 10
+Protoss_Shuttle(13) at 11
+Protoss_Dragoon(7) at 12
+Protoss_Observatory(16) at 13
+Protoss_Nexus(17) at 14
+Protoss_Dark_Templar(15) at 15
+Protoss_Shuttle(12) at 16
+Protoss_Observer(18) at 17
+Protoss_Zealot(4) at 18
+Protoss_Dragoon(8) at 19
+Protoss_Observer(19) at 20
+Protoss_Dark_Templar(14) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.12
+Global cost: 0
+Number of tours: 39
+Number of iterations: 6127
+Optimization cost: 499
+Opt Cost BEFORE post-processing: 511
+Post-processing time: 7.86897
+
+Time reference: 472
+
+Swap Protoss_Observer:8 with Protoss_Dragoon:9
+Swap Protoss_Observer:9 with Protoss_Zealot:10
+Swap Protoss_Observer:11 with Protoss_Dragoon:12
+Swap Protoss_Observer:12 with Protoss_Robotics_Support_Bay:13
+Swap Protoss_Observer:13 with Protoss_Templar_Archives:14
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Shuttle:6 with Protoss_Observatory:7
+Swap Protoss_Shuttle:7 with Protoss_Robotics_Support_Bay:8
+Swap Protoss_Shuttle:8 with Protoss_Dragoon:9
+Swap Protoss_Shuttle:9 with Protoss_Dragoon:10
+Swap Protoss_Observer:12 with Protoss_Gateway:13
+Swap Protoss_Observer:13 with Protoss_Citadel_of_Adun:14
+Swap Protoss_Observer:14 with Protoss_Dragoon:15
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Cybernetics_Core(3) at 1
+Protoss_Nexus(17) at 2
+Protoss_Gateway(0) at 3
+Protoss_Assimilator(2) at 4
+Protoss_Robotics_Facility(10) at 5
+Protoss_Citadel_of_Adun(9) at 6
+Protoss_Observatory(16) at 7
+Protoss_Dragoon(7) at 8
+Protoss_Zealot(4) at 9
+Protoss_Observer(18) at 10
+Protoss_Dragoon(6) at 11
+Protoss_Robotics_Support_Bay(20) at 12
+Protoss_Templar_Archives(11) at 13
+Protoss_Observer(19) at 14
+Protoss_Shuttle(13) at 15
+Protoss_Dark_Templar(15) at 16
+Protoss_Dark_Templar(14) at 17
+Protoss_Shuttle(12) at 18
+Protoss_Dragoon(5) at 19
+Protoss_Dragoon(8) at 20
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.09
+Global cost: 0
+Number of tours: 36
+Number of iterations: 5827
+Optimization cost: 572
+Opt Cost BEFORE post-processing: 572
+Post-processing time: 5.62743
+
+Time reference: 472
+
+Swap Protoss_Cybernetics_Core:1 with Protoss_Assimilator:2
+Swap Protoss_Templar_Archives:5 with Protoss_Robotics_Facility:6
+Swap Protoss_Shuttle:7 with Protoss_Gateway:8
+Swap Protoss_Observer:10 with Protoss_Dark_Templar:11
+Swap Protoss_Observer:11 with Protoss_Dragoon:12
+Swap Protoss_Observer:13 with Protoss_Dragoon:14
+Swap Protoss_Observer:14 with Protoss_Dragoon:15
+Swap Protoss_Shuttle:11 with Protoss_Robotics_Support_Bay:12
+Swap Protoss_Shuttle:12 with Protoss_Citadel_of_Adun:13
+Domains:
+Protoss_Gateway(0) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Gateway(21) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Nexus(17) at 4
+Protoss_Citadel_of_Adun(9) at 5
+Protoss_Robotics_Facility(10) at 6
+Protoss_Templar_Archives(11) at 7
+Protoss_Gateway(1) at 8
+Protoss_Shuttle(13) at 9
+Protoss_Observatory(16) at 10
+Protoss_Dark_Templar(15) at 11
+Protoss_Dragoon(6) at 12
+Protoss_Observer(19) at 13
+Protoss_Dragoon(5) at 14
+Protoss_Dragoon(8) at 15
+Protoss_Observer(18) at 16
+Protoss_Zealot(4) at 17
+Protoss_Dark_Templar(14) at 18
+Protoss_Robotics_Support_Bay(20) at 19
+Protoss_Shuttle(12) at 20
+Protoss_Dragoon(7) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.1
+Global cost: 0
+Number of tours: 35
+Number of iterations: 6866
+Optimization cost: 517
+Opt Cost BEFORE post-processing: 541
+Post-processing time: 6.92418
+
+Time reference: 472
+
+Swap Protoss_Citadel_of_Adun:3 with Protoss_Nexus:4
+Swap Protoss_Templar_Archives:5 with Protoss_Robotics_Facility:6
+Swap Protoss_Templar_Archives:6 with Protoss_Dragoon:7
+Swap Protoss_Dark_Templar:8 with Protoss_Dragoon:9
+Swap Protoss_Dark_Templar:9 with Protoss_Robotics_Support_Bay:10
+Swap Protoss_Observer:13 with Protoss_Dark_Templar:14
+Swap Protoss_Observer:15 with Protoss_Dragoon:16
+Swap Protoss_Zealot:19 with Protoss_Shuttle:20
+Swap Protoss_Dark_Templar:10 with Protoss_Dragoon:11
+Swap Protoss_Dark_Templar:11 with Protoss_Robotics_Support_Bay:12
+Swap Protoss_Dark_Templar:12 with Protoss_Dragoon:13
+Swap Protoss_Dark_Templar:15 with Protoss_Observer:16
+Swap Protoss_Dark_Templar:16 with Protoss_Observer:17
+Swap Protoss_Shuttle:18 with Protoss_Gateway:19
+Swap Protoss_Shuttle:19 with Protoss_Nexus:20
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(1) at 1
+Protoss_Gateway(22) at 2
+Protoss_Gateway(21) at 3
+Protoss_Cybernetics_Core(3) at 4
+Protoss_Nexus(17) at 5
+Protoss_Citadel_of_Adun(9) at 6
+Protoss_Robotics_Facility(10) at 7
+Protoss_Dragoon(6) at 8
+Protoss_Templar_Archives(11) at 9
+Protoss_Dragoon(5) at 10
+Protoss_Robotics_Support_Bay(20) at 11
+Protoss_Dark_Templar(14) at 12
+Protoss_Shuttle(13) at 13
+Protoss_Observatory(16) at 14
+Protoss_Dark_Templar(15) at 15
+Protoss_Observer(19) at 16
+Protoss_Dragoon(8) at 17
+Protoss_Observer(18) at 18
+Protoss_Gateway(0) at 19
+Protoss_Dragoon(7) at 20
+Protoss_Shuttle(12) at 21
+Protoss_Zealot(4) at 22
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 1000.13
+Global cost: 0
+Number of tours: 35
+Number of iterations: 6310
+Optimization cost: 577
+Opt Cost BEFORE post-processing: 579
+Post-processing time: 5.65784
+
+Time reference: 472
+
