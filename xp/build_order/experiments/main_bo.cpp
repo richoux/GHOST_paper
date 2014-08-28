@@ -35,6 +35,10 @@ int main(int argc, char **argv)
 
   string action;
   int time;
+
+  int opt = 1000;
+  if( argc > 1 )
+    opt = stoi(argv[2]);
   
   inputFile.open( argv[1], std::ifstream::in );
   if( inputFile.is_open() && inputFile.peek() != std::ifstream::traits_type::eof() )
@@ -87,6 +91,6 @@ int main(int argc, char **argv)
 
   Solver<Action, BuildOrderDomain, BuildOrderConstraint> solver(&vec, &domain, vecConstraints, objective );
 
-  solver.solve( 30, 1000 );
-  cout << "Time reference: " << time/24 << endl;
+  solver.solve( 30, opt );
+  cout << "Time reference: " << static_cast<double>(time)/15.1 << endl;
 }
