@@ -1,0 +1,416 @@
+Domains:
+Protoss_Forge(16) at 0
+Protoss_Assimilator(3) at 1
+Protoss_Templar_Archives(12) at 2
+Protoss_Gateway(0) at 3
+Protoss_Cybernetics_Core(4) at 4
+Protoss_Dragoon(10) at 5
+Protoss_Photon_Cannon(19) at 6
+Protoss_High_Templar(17) at 7
+Protoss_Stargate(7) at 8
+Protoss_Archon(21) at 9
+Protoss_Nexus(13) at 10
+Protoss_Zealot(6) at 11
+Protoss_Zealot(5) at 12
+Protoss_Dragoon(9) at 13
+Protoss_Corsair(11) at 14
+Protoss_Gateway(1) at 15
+Protoss_Dark_Templar(15) at 16
+Protoss_Dark_Templar(14) at 17
+Protoss_High_Templar(23) at 18
+Protoss_High_Templar(18) at 19
+Protoss_Photon_Cannon(20) at 20
+Protoss_Assimilator(2) at 21
+Protoss_Citadel_of_Adun(8) at 22
+Protoss_High_Templar(22) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.0229
+Global cost: 5
+Number of tours: 2
+Number of iterations: 225
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 678.212
+Domains:
+Protoss_Forge(16) at 0
+Protoss_Assimilator(3) at 1
+Protoss_High_Templar(22) at 2
+Protoss_Archon(21) at 3
+Protoss_Gateway(1) at 4
+Protoss_Zealot(5) at 5
+Protoss_Cybernetics_Core(4) at 6
+Protoss_Nexus(13) at 7
+Protoss_Assimilator(2) at 8
+Protoss_Stargate(7) at 9
+Protoss_Citadel_of_Adun(8) at 10
+Protoss_Templar_Archives(12) at 11
+Protoss_Dark_Templar(15) at 12
+Protoss_High_Templar(23) at 13
+Protoss_Dragoon(9) at 14
+Protoss_Corsair(11) at 15
+Protoss_High_Templar(18) at 16
+Protoss_Zealot(6) at 17
+Protoss_Gateway(0) at 18
+Protoss_Photon_Cannon(19) at 19
+Protoss_Photon_Cannon(20) at 20
+Protoss_High_Templar(17) at 21
+Protoss_Dragoon(10) at 22
+Protoss_Dark_Templar(14) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.1
+Global cost: 5
+Number of tours: 2
+Number of iterations: 217
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 678.212
+Domains:
+Protoss_Gateway(0) at 0
+Protoss_Assimilator(3) at 1
+Protoss_Templar_Archives(12) at 2
+Protoss_Cybernetics_Core(4) at 3
+Protoss_Forge(16) at 4
+Protoss_Zealot(6) at 5
+Protoss_High_Templar(17) at 6
+Protoss_Archon(21) at 7
+Protoss_Dark_Templar(14) at 8
+Protoss_Assimilator(2) at 9
+Protoss_Dark_Templar(15) at 10
+Protoss_Gateway(1) at 11
+Protoss_Zealot(5) at 12
+Protoss_High_Templar(18) at 13
+Protoss_Nexus(13) at 14
+Protoss_High_Templar(23) at 15
+Protoss_Dragoon(10) at 16
+Protoss_High_Templar(22) at 17
+Protoss_Photon_Cannon(19) at 18
+Protoss_Photon_Cannon(20) at 19
+Protoss_Stargate(7) at 20
+Protoss_Corsair(11) at 21
+Protoss_Citadel_of_Adun(8) at 22
+Protoss_Dragoon(9) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.0327
+Global cost: 5
+Number of tours: 2
+Number of iterations: 293
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 678.212
+Domains:
+Protoss_Forge(16) at 0
+Protoss_Assimilator(3) at 1
+Protoss_Gateway(0) at 2
+Protoss_Cybernetics_Core(4) at 3
+Protoss_High_Templar(23) at 4
+Protoss_Stargate(7) at 5
+Protoss_Dragoon(10) at 6
+Protoss_Dragoon(9) at 7
+Protoss_Photon_Cannon(19) at 8
+Protoss_Corsair(11) at 9
+Protoss_Citadel_of_Adun(8) at 10
+Protoss_Gateway(1) at 11
+Protoss_Zealot(6) at 12
+Protoss_Zealot(5) at 13
+Protoss_Nexus(13) at 14
+Protoss_Archon(21) at 15
+Protoss_Photon_Cannon(20) at 16
+Protoss_Assimilator(2) at 17
+Protoss_Templar_Archives(12) at 18
+Protoss_Dark_Templar(15) at 19
+Protoss_High_Templar(22) at 20
+Protoss_High_Templar(17) at 21
+Protoss_Dark_Templar(14) at 22
+Protoss_High_Templar(18) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.1724
+Global cost: 5
+Number of tours: 2
+Number of iterations: 191
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 678.212
+Domains:
+Protoss_Forge(16) at 0
+Protoss_Assimilator(2) at 1
+Protoss_High_Templar(17) at 2
+Protoss_Archon(21) at 3
+Protoss_Gateway(1) at 4
+Protoss_Cybernetics_Core(4) at 5
+Protoss_Zealot(6) at 6
+Protoss_Nexus(13) at 7
+Protoss_Zealot(5) at 8
+Protoss_Assimilator(3) at 9
+Protoss_Citadel_of_Adun(8) at 10
+Protoss_Stargate(7) at 11
+Protoss_Templar_Archives(12) at 12
+Protoss_High_Templar(23) at 13
+Protoss_Dark_Templar(15) at 14
+Protoss_Dark_Templar(14) at 15
+Protoss_High_Templar(22) at 16
+Protoss_High_Templar(18) at 17
+Protoss_Photon_Cannon(19) at 18
+Protoss_Corsair(11) at 19
+Protoss_Photon_Cannon(20) at 20
+Protoss_Gateway(0) at 21
+Protoss_Dragoon(9) at 22
+Protoss_Dragoon(10) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.1189
+Global cost: 5
+Number of tours: 2
+Number of iterations: 177
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 678.212
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Templar_Archives(12) at 1
+Protoss_Gateway(0) at 2
+Protoss_Cybernetics_Core(4) at 3
+Protoss_Zealot(6) at 4
+Protoss_Dragoon(9) at 5
+Protoss_High_Templar(22) at 6
+Protoss_Archon(21) at 7
+Protoss_Zealot(5) at 8
+Protoss_Dragoon(10) at 9
+Protoss_High_Templar(18) at 10
+Protoss_Gateway(1) at 11
+Protoss_Stargate(7) at 12
+Protoss_Corsair(11) at 13
+Protoss_Assimilator(3) at 14
+Protoss_Citadel_of_Adun(8) at 15
+Protoss_Nexus(13) at 16
+Protoss_Forge(16) at 17
+Protoss_Photon_Cannon(20) at 18
+Protoss_Photon_Cannon(19) at 19
+Protoss_High_Templar(17) at 20
+Protoss_High_Templar(23) at 21
+Protoss_Dark_Templar(14) at 22
+Protoss_Dark_Templar(15) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.0006
+Global cost: 5
+Number of tours: 2
+Number of iterations: 196
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 678.212
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Forge(16) at 1
+Protoss_Assimilator(2) at 2
+Protoss_Templar_Archives(12) at 3
+Protoss_High_Templar(17) at 4
+Protoss_High_Templar(22) at 5
+Protoss_Cybernetics_Core(4) at 6
+Protoss_Photon_Cannon(19) at 7
+Protoss_Dragoon(9) at 8
+Protoss_Stargate(7) at 9
+Protoss_Gateway(0) at 10
+Protoss_Photon_Cannon(20) at 11
+Protoss_Nexus(13) at 12
+Protoss_Citadel_of_Adun(8) at 13
+Protoss_Dragoon(10) at 14
+Protoss_Dark_Templar(14) at 15
+Protoss_Zealot(6) at 16
+Protoss_Assimilator(3) at 17
+Protoss_Dark_Templar(15) at 18
+Protoss_High_Templar(18) at 19
+Protoss_Archon(21) at 20
+Protoss_Zealot(5) at 21
+Protoss_Corsair(11) at 22
+Protoss_High_Templar(23) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.1676
+Global cost: 5
+Number of tours: 2
+Number of iterations: 227
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 678.212
+
+
+Protoss_Forge: start at 73, finish at 113
+Protoss_Assimilator: start at 93, finish at 133
+Protoss_Gateway: start at 115, finish at 175
+Protoss_Cybernetics_Core: start at 175, finish at 235
+Protoss_Zealot: start at 175, finish at 215
+Protoss_Photon_Cannon: start at 199, finish at 249
+Protoss_Zealot: start at 215, finish at 255
+Protoss_Citadel_of_Adun: start at 235, finish at 295
+Protoss_Dragoon: start at 255, finish at 305
+Protoss_Templar_Archives: start at 295, finish at 355
+Protoss_High_Templar: start at 355, finish at 405
+Protoss_Dark_Templar: start at 405, finish at 455
+Protoss_High_Templar: start at 455, finish at 505
+Protoss_Archon: start at 456, finish at 476
+Protoss_Gateway: start at 461, finish at 521
+Protoss_Dark_Templar: start at 505, finish at 555
+Protoss_Assimilator: start at 510, finish at 550
+Protoss_Photon_Cannon: start at 511, finish at 561
+Protoss_High_Templar: start at 521, finish at 571
+Protoss_Dragoon: start at 555, finish at 605
+Protoss_Stargate: start at 560, finish at 630
+Protoss_Nexus: start at 561, finish at 681
+Protoss_High_Templar: start at 571, finish at 621
+Protoss_Corsair: start at 630, finish at 670
+
+Domains:
+Protoss_Forge(16) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Gateway(1) at 2
+Protoss_Cybernetics_Core(4) at 3
+Protoss_Citadel_of_Adun(8) at 4
+Protoss_Zealot(6) at 5
+Protoss_Photon_Cannon(20) at 6
+Protoss_Dragoon(10) at 7
+Protoss_Templar_Archives(12) at 8
+Protoss_High_Templar(22) at 9
+Protoss_Dark_Templar(15) at 10
+Protoss_High_Templar(23) at 11
+Protoss_Dark_Templar(14) at 12
+Protoss_Archon(21) at 13
+Protoss_Gateway(0) at 14
+Protoss_High_Templar(17) at 15
+Protoss_Assimilator(3) at 16
+Protoss_Photon_Cannon(19) at 17
+Protoss_Dragoon(9) at 18
+Protoss_High_Templar(18) at 19
+Protoss_Stargate(7) at 20
+Protoss_Zealot(5) at 21
+Protoss_Nexus(13) at 22
+Protoss_Corsair(11) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.0554
+Global cost: 0
+Number of tours: 3
+Number of iterations: 233
+Optimization cost: 681
+Opt Cost BEFORE post-processing: 746
+Post-processing time: 3.61158
+
+Time reference: 678.212
+
+
+Protoss_Gateway: start at 73, finish at 133
+Protoss_Forge: start at 98, finish at 138
+Protoss_Cybernetics_Core: start at 133, finish at 193
+Protoss_Zealot: start at 138, finish at 178
+Protoss_Photon_Cannon: start at 161, finish at 211
+Protoss_Photon_Cannon: start at 175, finish at 225
+Protoss_Zealot: start at 182, finish at 222
+Protoss_Nexus: start at 211, finish at 331
+Protoss_Assimilator: start at 217, finish at 257
+Protoss_Dragoon: start at 267, finish at 317
+Protoss_Citadel_of_Adun: start at 287, finish at 347
+Protoss_Dragoon: start at 331, finish at 381
+Protoss_Templar_Archives: start at 347, finish at 407
+Protoss_Dark_Templar: start at 407, finish at 457
+Protoss_High_Templar: start at 457, finish at 507
+Protoss_High_Templar: start at 507, finish at 557
+Protoss_Archon: start at 510, finish at 530
+Protoss_Assimilator: start at 512, finish at 552
+Protoss_Gateway: start at 513, finish at 573
+Protoss_High_Templar: start at 557, finish at 607
+Protoss_Stargate: start at 562, finish at 632
+Protoss_Dark_Templar: start at 573, finish at 623
+Protoss_High_Templar: start at 607, finish at 657
+Protoss_Corsair: start at 632, finish at 672
+
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Forge(16) at 1
+Protoss_Cybernetics_Core(4) at 2
+Protoss_Zealot(5) at 3
+Protoss_Photon_Cannon(20) at 4
+Protoss_Photon_Cannon(19) at 5
+Protoss_Zealot(6) at 6
+Protoss_Nexus(13) at 7
+Protoss_Assimilator(2) at 8
+Protoss_Dragoon(10) at 9
+Protoss_Citadel_of_Adun(8) at 10
+Protoss_Dragoon(9) at 11
+Protoss_Templar_Archives(12) at 12
+Protoss_Dark_Templar(15) at 13
+Protoss_High_Templar(23) at 14
+Protoss_High_Templar(18) at 15
+Protoss_High_Templar(22) at 16
+Protoss_Assimilator(3) at 17
+Protoss_Gateway(0) at 18
+Protoss_Archon(21) at 19
+Protoss_Dark_Templar(14) at 20
+Protoss_Stargate(7) at 21
+Protoss_High_Templar(17) at 22
+Protoss_Corsair(11) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.0322
+Global cost: 0
+Number of tours: 2
+Number of iterations: 228
+Optimization cost: 672
+Opt Cost BEFORE post-processing: 730
+Post-processing time: 3.78337
+
+Time reference: 678.212
+Domains:
+Protoss_Forge(16) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Templar_Archives(12) at 2
+Protoss_Gateway(0) at 3
+Protoss_Zealot(5) at 4
+Protoss_Zealot(6) at 5
+Protoss_Gateway(1) at 6
+Protoss_Cybernetics_Core(4) at 7
+Protoss_Dragoon(9) at 8
+Protoss_Stargate(7) at 9
+Protoss_Assimilator(3) at 10
+Protoss_High_Templar(23) at 11
+Protoss_Dragoon(10) at 12
+Protoss_Corsair(11) at 13
+Protoss_Archon(21) at 14
+Protoss_High_Templar(22) at 15
+Protoss_Dark_Templar(14) at 16
+Protoss_Photon_Cannon(20) at 17
+Protoss_Citadel_of_Adun(8) at 18
+Protoss_Nexus(13) at 19
+Protoss_High_Templar(17) at 20
+Protoss_Dark_Templar(15) at 21
+Protoss_High_Templar(18) at 22
+Protoss_Photon_Cannon(19) at 23
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 40.1691
+Global cost: 5
+Number of tours: 2
+Number of iterations: 234
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 678.212

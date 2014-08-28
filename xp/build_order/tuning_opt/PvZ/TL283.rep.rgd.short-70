@@ -1,0 +1,604 @@
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Cybernetics_Core: start at 153, finish at 213
+Protoss_Zealot: start at 153, finish at 193
+Protoss_Stargate: start at 213, finish at 283
+Protoss_Robotics_Facility: start at 214, finish at 294
+Protoss_Corsair: start at 283, finish at 323
+Protoss_Gateway: start at 288, finish at 348
+Protoss_Nexus: start at 289, finish at 409
+Protoss_Corsair: start at 323, finish at 363
+Protoss_Corsair: start at 389, finish at 429
+Protoss_Shuttle: start at 390, finish at 450
+Protoss_Dragoon: start at 399, finish at 449
+Protoss_Dragoon: start at 409, finish at 459
+Protoss_Robotics_Support_Bay: start at 429, finish at 459
+Protoss_Forge: start at 430, finish at 470
+Protoss_Reaver: start at 459, finish at 529
+Protoss_Dragoon: start at 460, finish at 510
+Protoss_Observatory: start at 479, finish at 509
+Protoss_Observer: start at 529, finish at 569
+Protoss_Observer: start at 569, finish at 609
+Protoss_Corsair: start at 578, finish at 618
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(1) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Zealot(8) at 3
+Protoss_Stargate(13) at 4
+Protoss_Robotics_Facility(4) at 5
+Protoss_Corsair(14) at 6
+Protoss_Gateway(0) at 7
+Protoss_Nexus(20) at 8
+Protoss_Corsair(15) at 9
+Protoss_Corsair(16) at 10
+Protoss_Shuttle(9) at 11
+Protoss_Dragoon(6) at 12
+Protoss_Dragoon(7) at 13
+Protoss_Robotics_Support_Bay(18) at 14
+Protoss_Forge(19) at 15
+Protoss_Reaver(21) at 16
+Protoss_Dragoon(5) at 17
+Protoss_Observatory(10) at 18
+Protoss_Observer(12) at 19
+Protoss_Observer(11) at 20
+Protoss_Corsair(17) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.2062
+Global cost: 0
+Number of tours: 6
+Number of iterations: 362
+Optimization cost: 618
+Opt Cost BEFORE post-processing: 618
+Post-processing time: 6.44866
+
+Time reference: 762.053
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Cybernetics_Core: start at 153, finish at 213
+Protoss_Zealot: start at 153, finish at 193
+Protoss_Robotics_Facility: start at 213, finish at 293
+Protoss_Nexus: start at 249, finish at 369
+Protoss_Forge: start at 262, finish at 302
+Protoss_Stargate: start at 274, finish at 344
+Protoss_Observatory: start at 293, finish at 323
+Protoss_Shuttle: start at 293, finish at 353
+Protoss_Corsair: start at 344, finish at 384
+Protoss_Corsair: start at 384, finish at 424
+Protoss_Gateway: start at 389, finish at 449
+Protoss_Corsair: start at 424, finish at 464
+Protoss_Observer: start at 425, finish at 465
+Protoss_Dragoon: start at 434, finish at 484
+Protoss_Dragoon: start at 449, finish at 499
+Protoss_Robotics_Support_Bay: start at 464, finish at 494
+Protoss_Dragoon: start at 493, finish at 543
+Protoss_Reaver: start at 494, finish at 564
+Protoss_Corsair: start at 563, finish at 603
+Protoss_Observer: start at 578, finish at 618
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(1) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Zealot(8) at 3
+Protoss_Robotics_Facility(4) at 4
+Protoss_Nexus(20) at 5
+Protoss_Forge(19) at 6
+Protoss_Stargate(13) at 7
+Protoss_Observatory(10) at 8
+Protoss_Shuttle(9) at 9
+Protoss_Corsair(16) at 10
+Protoss_Corsair(14) at 11
+Protoss_Gateway(0) at 12
+Protoss_Corsair(17) at 13
+Protoss_Observer(12) at 14
+Protoss_Dragoon(5) at 15
+Protoss_Dragoon(6) at 16
+Protoss_Robotics_Support_Bay(18) at 17
+Protoss_Dragoon(7) at 18
+Protoss_Reaver(21) at 19
+Protoss_Corsair(15) at 20
+Protoss_Observer(11) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.3229
+Global cost: 0
+Number of tours: 8
+Number of iterations: 282
+Optimization cost: 618
+Opt Cost BEFORE post-processing: 618
+Post-processing time: 4.29119
+
+Time reference: 762.053
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Cybernetics_Core: start at 153, finish at 213
+Protoss_Zealot: start at 168, finish at 208
+Protoss_Robotics_Facility: start at 213, finish at 293
+Protoss_Dragoon: start at 213, finish at 263
+Protoss_Stargate: start at 240, finish at 310
+Protoss_Shuttle: start at 293, finish at 353
+Protoss_Observatory: start at 298, finish at 328
+Protoss_Corsair: start at 310, finish at 350
+Protoss_Nexus: start at 315, finish at 435
+Protoss_Observer: start at 353, finish at 393
+Protoss_Corsair: start at 364, finish at 404
+Protoss_Dragoon: start at 374, finish at 424
+Protoss_Robotics_Support_Bay: start at 394, finish at 424
+Protoss_Observer: start at 409, finish at 449
+Protoss_Forge: start at 414, finish at 454
+Protoss_Gateway: start at 415, finish at 475
+Protoss_Dragoon: start at 424, finish at 474
+Protoss_Corsair: start at 488, finish at 528
+Protoss_Reaver: start at 508, finish at 578
+Protoss_Corsair: start at 578, finish at 618
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(0) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Zealot(8) at 3
+Protoss_Robotics_Facility(4) at 4
+Protoss_Dragoon(6) at 5
+Protoss_Stargate(13) at 6
+Protoss_Shuttle(9) at 7
+Protoss_Observatory(10) at 8
+Protoss_Corsair(15) at 9
+Protoss_Nexus(20) at 10
+Protoss_Observer(11) at 11
+Protoss_Corsair(17) at 12
+Protoss_Dragoon(7) at 13
+Protoss_Robotics_Support_Bay(18) at 14
+Protoss_Observer(12) at 15
+Protoss_Forge(19) at 16
+Protoss_Gateway(1) at 17
+Protoss_Dragoon(5) at 18
+Protoss_Corsair(14) at 19
+Protoss_Reaver(21) at 20
+Protoss_Corsair(16) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0218
+Global cost: 0
+Number of tours: 8
+Number of iterations: 303
+Optimization cost: 618
+Opt Cost BEFORE post-processing: 618
+Post-processing time: 3.83588
+
+Time reference: 762.053
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Gateway: start at 117, finish at 177
+Protoss_Forge: start at 145, finish at 185
+Protoss_Zealot: start at 178, finish at 218
+Protoss_Cybernetics_Core: start at 198, finish at 258
+Protoss_Robotics_Facility: start at 258, finish at 338
+Protoss_Dragoon: start at 258, finish at 308
+Protoss_Dragoon: start at 259, finish at 309
+Protoss_Dragoon: start at 308, finish at 358
+Protoss_Observatory: start at 338, finish at 368
+Protoss_Shuttle: start at 338, finish at 398
+Protoss_Nexus: start at 339, finish at 459
+Protoss_Robotics_Support_Bay: start at 340, finish at 370
+Protoss_Stargate: start at 343, finish at 413
+Protoss_Observer: start at 398, finish at 438
+Protoss_Corsair: start at 413, finish at 453
+Protoss_Reaver: start at 438, finish at 508
+Protoss_Corsair: start at 453, finish at 493
+Protoss_Gateway: start at 458, finish at 518
+Protoss_Corsair: start at 493, finish at 533
+Protoss_Observer: start at 508, finish at 548
+Protoss_Corsair: start at 578, finish at 618
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(0) at 1
+Protoss_Gateway(22) at 2
+Protoss_Forge(19) at 3
+Protoss_Zealot(8) at 4
+Protoss_Cybernetics_Core(3) at 5
+Protoss_Dragoon(5) at 6
+Protoss_Robotics_Facility(4) at 7
+Protoss_Dragoon(6) at 8
+Protoss_Observatory(10) at 9
+Protoss_Shuttle(9) at 10
+Protoss_Nexus(20) at 11
+Protoss_Robotics_Support_Bay(18) at 12
+Protoss_Observer(12) at 13
+Protoss_Dragoon(7) at 14
+Protoss_Stargate(13) at 15
+Protoss_Reaver(21) at 16
+Protoss_Corsair(14) at 17
+Protoss_Corsair(15) at 18
+Protoss_Corsair(17) at 19
+Protoss_Gateway(1) at 20
+Protoss_Observer(11) at 21
+Protoss_Corsair(16) at 22
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.3859
+Global cost: 0
+Number of tours: 6
+Number of iterations: 394
+Optimization cost: 618
+Opt Cost BEFORE post-processing: 621
+Post-processing time: 3.77545
+
+Time reference: 762.053
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Nexus: start at 136, finish at 256
+Protoss_Gateway: start at 161, finish at 221
+Protoss_Gateway: start at 182, finish at 242
+Protoss_Cybernetics_Core: start at 221, finish at 281
+Protoss_Zealot: start at 221, finish at 261
+Protoss_Forge: start at 231, finish at 271
+Protoss_Robotics_Facility: start at 281, finish at 361
+Protoss_Dragoon: start at 281, finish at 331
+Protoss_Dragoon: start at 282, finish at 332
+Protoss_Dragoon: start at 331, finish at 381
+Protoss_Robotics_Support_Bay: start at 361, finish at 391
+Protoss_Shuttle: start at 361, finish at 421
+Protoss_Gateway: start at 362, finish at 422
+Protoss_Observatory: start at 363, finish at 393
+Protoss_Stargate: start at 366, finish at 436
+Protoss_Reaver: start at 421, finish at 491
+Protoss_Corsair: start at 436, finish at 476
+Protoss_Corsair: start at 476, finish at 516
+Protoss_Observer: start at 491, finish at 531
+Protoss_Corsair: start at 516, finish at 556
+Protoss_Observer: start at 531, finish at 571
+Protoss_Corsair: start at 578, finish at 618
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Nexus(20) at 1
+Protoss_Gateway(0) at 2
+Protoss_Gateway(22) at 3
+Protoss_Cybernetics_Core(3) at 4
+Protoss_Zealot(8) at 5
+Protoss_Forge(19) at 6
+Protoss_Robotics_Facility(4) at 7
+Protoss_Dragoon(5) at 8
+Protoss_Robotics_Support_Bay(18) at 9
+Protoss_Shuttle(9) at 10
+Protoss_Gateway(1) at 11
+Protoss_Observatory(10) at 12
+Protoss_Reaver(21) at 13
+Protoss_Dragoon(6) at 14
+Protoss_Dragoon(7) at 15
+Protoss_Stargate(13) at 16
+Protoss_Observer(11) at 17
+Protoss_Corsair(16) at 18
+Protoss_Corsair(15) at 19
+Protoss_Corsair(14) at 20
+Protoss_Observer(12) at 21
+Protoss_Corsair(17) at 22
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0529
+Global cost: 0
+Number of tours: 4
+Number of iterations: 357
+Optimization cost: 618
+Opt Cost BEFORE post-processing: 661
+Post-processing time: 3.87005
+
+Time reference: 762.053
+
+
+Protoss_Gateway: start at 73, finish at 133
+Protoss_Assimilator: start at 93, finish at 133
+Protoss_Cybernetics_Core: start at 133, finish at 193
+Protoss_Robotics_Facility: start at 193, finish at 273
+Protoss_Dragoon: start at 193, finish at 243
+Protoss_Dragoon: start at 243, finish at 293
+Protoss_Nexus: start at 253, finish at 373
+Protoss_Observatory: start at 273, finish at 303
+Protoss_Shuttle: start at 273, finish at 333
+Protoss_Observer: start at 333, finish at 373
+Protoss_Zealot: start at 336, finish at 376
+Protoss_Forge: start at 338, finish at 378
+Protoss_Gateway: start at 339, finish at 399
+Protoss_Robotics_Support_Bay: start at 341, finish at 371
+Protoss_Observer: start at 373, finish at 413
+Protoss_Dragoon: start at 376, finish at 426
+Protoss_Stargate: start at 381, finish at 451
+Protoss_Reaver: start at 413, finish at 483
+Protoss_Corsair: start at 451, finish at 491
+Protoss_Corsair: start at 491, finish at 531
+Protoss_Corsair: start at 531, finish at 571
+Protoss_Corsair: start at 600, finish at 640
+
+Domains:
+Protoss_Gateway(0) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Robotics_Facility(4) at 3
+Protoss_Dragoon(7) at 4
+Protoss_Dragoon(5) at 5
+Protoss_Nexus(20) at 6
+Protoss_Observatory(10) at 7
+Protoss_Shuttle(9) at 8
+Protoss_Observer(12) at 9
+Protoss_Forge(19) at 10
+Protoss_Gateway(1) at 11
+Protoss_Zealot(8) at 12
+Protoss_Robotics_Support_Bay(18) at 13
+Protoss_Observer(11) at 14
+Protoss_Dragoon(6) at 15
+Protoss_Stargate(13) at 16
+Protoss_Reaver(21) at 17
+Protoss_Corsair(16) at 18
+Protoss_Corsair(14) at 19
+Protoss_Corsair(17) at 20
+Protoss_Corsair(15) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0304
+Global cost: 0
+Number of tours: 6
+Number of iterations: 346
+Optimization cost: 640
+Opt Cost BEFORE post-processing: 640
+Post-processing time: 4.04158
+
+Time reference: 762.053
+
+
+Protoss_Gateway: start at 73, finish at 133
+Protoss_Assimilator: start at 93, finish at 133
+Protoss_Cybernetics_Core: start at 133, finish at 193
+Protoss_Zealot: start at 135, finish at 175
+Protoss_Robotics_Facility: start at 193, finish at 273
+Protoss_Forge: start at 195, finish at 235
+Protoss_Dragoon: start at 208, finish at 258
+Protoss_Nexus: start at 249, finish at 369
+Protoss_Gateway: start at 260, finish at 320
+Protoss_Dragoon: start at 268, finish at 318
+Protoss_Observatory: start at 273, finish at 303
+Protoss_Stargate: start at 279, finish at 349
+Protoss_Corsair: start at 349, finish at 389
+Protoss_Corsair: start at 389, finish at 429
+Protoss_Corsair: start at 451, finish at 491
+Protoss_Dragoon: start at 461, finish at 511
+Protoss_Observer: start at 476, finish at 516
+Protoss_Observer: start at 516, finish at 556
+Protoss_Shuttle: start at 556, finish at 616
+Protoss_Corsair: start at 560, finish at 600
+Protoss_Robotics_Support_Bay: start at 580, finish at 610
+Protoss_Reaver: start at 616, finish at 686
+
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Zealot(8) at 3
+Protoss_Robotics_Facility(4) at 4
+Protoss_Forge(19) at 5
+Protoss_Dragoon(5) at 6
+Protoss_Nexus(20) at 7
+Protoss_Gateway(0) at 8
+Protoss_Dragoon(7) at 9
+Protoss_Observatory(10) at 10
+Protoss_Stargate(13) at 11
+Protoss_Corsair(15) at 12
+Protoss_Corsair(17) at 13
+Protoss_Corsair(14) at 14
+Protoss_Dragoon(6) at 15
+Protoss_Observer(12) at 16
+Protoss_Observer(11) at 17
+Protoss_Shuttle(9) at 18
+Protoss_Corsair(16) at 19
+Protoss_Robotics_Support_Bay(18) at 20
+Protoss_Reaver(21) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0287
+Global cost: 0
+Number of tours: 4
+Number of iterations: 461
+Optimization cost: 686
+Opt Cost BEFORE post-processing: 686
+Post-processing time: 4.64409
+
+Time reference: 762.053
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Cybernetics_Core: start at 153, finish at 213
+Protoss_Zealot: start at 153, finish at 193
+Protoss_Robotics_Facility: start at 213, finish at 293
+Protoss_Forge: start at 214, finish at 254
+Protoss_Dragoon: start at 217, finish at 267
+Protoss_Gateway: start at 241, finish at 301
+Protoss_Stargate: start at 254, finish at 324
+Protoss_Dragoon: start at 267, finish at 317
+Protoss_Observatory: start at 293, finish at 323
+Protoss_Observer: start at 323, finish at 363
+Protoss_Corsair: start at 324, finish at 364
+Protoss_Corsair: start at 374, finish at 414
+Protoss_Shuttle: start at 375, finish at 435
+Protoss_Dragoon: start at 384, finish at 434
+Protoss_Robotics_Support_Bay: start at 404, finish at 434
+Protoss_Nexus: start at 405, finish at 525
+Protoss_Reaver: start at 435, finish at 505
+Protoss_Corsair: start at 493, finish at 533
+Protoss_Corsair: start at 563, finish at 603
+Protoss_Observer: start at 578, finish at 618
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(0) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Zealot(8) at 3
+Protoss_Robotics_Facility(4) at 4
+Protoss_Forge(19) at 5
+Protoss_Dragoon(7) at 6
+Protoss_Gateway(1) at 7
+Protoss_Stargate(13) at 8
+Protoss_Dragoon(5) at 9
+Protoss_Observatory(10) at 10
+Protoss_Observer(11) at 11
+Protoss_Corsair(17) at 12
+Protoss_Corsair(14) at 13
+Protoss_Shuttle(9) at 14
+Protoss_Dragoon(6) at 15
+Protoss_Robotics_Support_Bay(18) at 16
+Protoss_Nexus(20) at 17
+Protoss_Reaver(21) at 18
+Protoss_Corsair(16) at 19
+Protoss_Corsair(15) at 20
+Protoss_Observer(12) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.083
+Global cost: 0
+Number of tours: 5
+Number of iterations: 335
+Optimization cost: 618
+Opt Cost BEFORE post-processing: 618
+Post-processing time: 3.81243
+
+Time reference: 762.053
+
+
+Protoss_Gateway: start at 73, finish at 133
+Protoss_Assimilator: start at 93, finish at 133
+Protoss_Cybernetics_Core: start at 133, finish at 193
+Protoss_Stargate: start at 193, finish at 263
+Protoss_Dragoon: start at 193, finish at 243
+Protoss_Corsair: start at 263, finish at 303
+Protoss_Zealot: start at 264, finish at 304
+Protoss_Robotics_Facility: start at 282, finish at 362
+Protoss_Dragoon: start at 304, finish at 354
+Protoss_Dragoon: start at 354, finish at 404
+Protoss_Observatory: start at 362, finish at 392
+Protoss_Forge: start at 363, finish at 403
+Protoss_Nexus: start at 364, finish at 484
+Protoss_Corsair: start at 391, finish at 431
+Protoss_Shuttle: start at 392, finish at 452
+Protoss_Robotics_Support_Bay: start at 411, finish at 441
+Protoss_Gateway: start at 412, finish at 472
+Protoss_Reaver: start at 452, finish at 522
+Protoss_Corsair: start at 515, finish at 555
+Protoss_Observer: start at 522, finish at 562
+Protoss_Observer: start at 562, finish at 602
+Protoss_Corsair: start at 600, finish at 640
+
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Stargate(13) at 3
+Protoss_Dragoon(6) at 4
+Protoss_Corsair(16) at 5
+Protoss_Zealot(8) at 6
+Protoss_Robotics_Facility(4) at 7
+Protoss_Dragoon(7) at 8
+Protoss_Dragoon(5) at 9
+Protoss_Observatory(10) at 10
+Protoss_Forge(19) at 11
+Protoss_Nexus(20) at 12
+Protoss_Corsair(15) at 13
+Protoss_Shuttle(9) at 14
+Protoss_Robotics_Support_Bay(18) at 15
+Protoss_Gateway(0) at 16
+Protoss_Reaver(21) at 17
+Protoss_Corsair(14) at 18
+Protoss_Observer(12) at 19
+Protoss_Observer(11) at 20
+Protoss_Corsair(17) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.1993
+Global cost: 0
+Number of tours: 4
+Number of iterations: 359
+Optimization cost: 640
+Opt Cost BEFORE post-processing: 640
+Post-processing time: 22.9907
+
+Time reference: 762.053
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Nexus: start at 136, finish at 256
+Protoss_Gateway: start at 161, finish at 221
+Protoss_Gateway: start at 182, finish at 242
+Protoss_Cybernetics_Core: start at 221, finish at 281
+Protoss_Robotics_Facility: start at 281, finish at 361
+Protoss_Dragoon: start at 281, finish at 331
+Protoss_Dragoon: start at 282, finish at 332
+Protoss_Robotics_Support_Bay: start at 361, finish at 391
+Protoss_Shuttle: start at 361, finish at 421
+Protoss_Stargate: start at 366, finish at 436
+Protoss_Reaver: start at 421, finish at 491
+Protoss_Corsair: start at 436, finish at 476
+Protoss_Corsair: start at 476, finish at 516
+Protoss_Zealot: start at 477, finish at 517
+Protoss_Dragoon: start at 478, finish at 528
+Protoss_Forge: start at 483, finish at 523
+Protoss_Observatory: start at 484, finish at 514
+Protoss_Observer: start at 514, finish at 554
+Protoss_Corsair: start at 516, finish at 556
+Protoss_Observer: start at 554, finish at 594
+Protoss_Corsair: start at 578, finish at 618
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Nexus(20) at 1
+Protoss_Gateway(1) at 2
+Protoss_Gateway(0) at 3
+Protoss_Cybernetics_Core(3) at 4
+Protoss_Robotics_Facility(4) at 5
+Protoss_Dragoon(7) at 6
+Protoss_Dragoon(6) at 7
+Protoss_Robotics_Support_Bay(18) at 8
+Protoss_Shuttle(9) at 9
+Protoss_Stargate(13) at 10
+Protoss_Reaver(21) at 11
+Protoss_Corsair(14) at 12
+Protoss_Corsair(16) at 13
+Protoss_Zealot(8) at 14
+Protoss_Dragoon(5) at 15
+Protoss_Forge(19) at 16
+Protoss_Observatory(10) at 17
+Protoss_Observer(11) at 18
+Protoss_Corsair(17) at 19
+Protoss_Observer(12) at 20
+Protoss_Corsair(15) at 21
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.1074
+Global cost: 0
+Number of tours: 6
+Number of iterations: 369
+Optimization cost: 618
+Opt Cost BEFORE post-processing: 618
+Post-processing time: 4.37461
+
+Time reference: 762.053

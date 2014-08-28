@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for k in {100..1000..100}
+for k in {30..90..10}
 do
     for i in $(ls PvP/*-$k)
     do

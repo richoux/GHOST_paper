@@ -1,0 +1,546 @@
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Forge: start at 93, finish at 133
+Protoss_Gateway: start at 117, finish at 177
+Protoss_Cybernetics_Core: start at 177, finish at 237
+Protoss_Zealot: start at 177, finish at 217
+Protoss_Gateway: start at 207, finish at 267
+Protoss_Zealot: start at 217, finish at 257
+Protoss_Photon_Cannon: start at 228, finish at 278
+Protoss_Citadel_of_Adun: start at 239, finish at 299
+Protoss_Dragoon: start at 257, finish at 307
+Protoss_Robotics_Facility: start at 262, finish at 342
+Protoss_Zealot: start at 275, finish at 315
+Protoss_Dragoon: start at 307, finish at 357
+Protoss_Templar_Archives: start at 311, finish at 371
+Protoss_Observatory: start at 342, finish at 372
+Protoss_High_Templar: start at 371, finish at 421
+Protoss_High_Templar: start at 372, finish at 422
+Protoss_Observer: start at 373, finish at 413
+Protoss_Shuttle: start at 413, finish at 473
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Forge(12) at 1
+Protoss_Gateway(0) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Zealot(6) at 4
+Protoss_Gateway(1) at 5
+Protoss_Zealot(5) at 6
+Protoss_Photon_Cannon(15) at 7
+Protoss_Citadel_of_Adun(10) at 8
+Protoss_Dragoon(7) at 9
+Protoss_Robotics_Facility(9) at 10
+Protoss_Zealot(4) at 11
+Protoss_Dragoon(8) at 12
+Protoss_Templar_Archives(13) at 13
+Protoss_Observatory(11) at 14
+Protoss_High_Templar(17) at 15
+Protoss_High_Templar(16) at 16
+Protoss_Observer(14) at 17
+Protoss_Shuttle(18) at 18
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0621
+Global cost: 0
+Number of tours: 8
+Number of iterations: 473
+Optimization cost: 473
+Opt Cost BEFORE post-processing: 473
+Post-processing time: 2.88866
+
+Time reference: 690.728
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Zealot: start at 153, finish at 193
+Protoss_Cybernetics_Core: start at 175, finish at 235
+Protoss_Zealot: start at 193, finish at 233
+Protoss_Zealot: start at 233, finish at 273
+Protoss_Citadel_of_Adun: start at 235, finish at 295
+Protoss_Robotics_Facility: start at 236, finish at 316
+Protoss_Dragoon: start at 273, finish at 323
+Protoss_Observatory: start at 316, finish at 346
+Protoss_Shuttle: start at 316, finish at 376
+Protoss_Forge: start at 317, finish at 357
+Protoss_Gateway: start at 321, finish at 381
+Protoss_Templar_Archives: start at 322, finish at 382
+Protoss_Dragoon: start at 323, finish at 373
+Protoss_Photon_Cannon: start at 357, finish at 407
+Protoss_High_Templar: start at 382, finish at 432
+Protoss_High_Templar: start at 383, finish at 433
+Protoss_Observer: start at 384, finish at 424
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(1) at 1
+Protoss_Zealot(4) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Zealot(6) at 4
+Protoss_Citadel_of_Adun(10) at 5
+Protoss_Robotics_Facility(9) at 6
+Protoss_Zealot(5) at 7
+Protoss_Dragoon(7) at 8
+Protoss_Observatory(11) at 9
+Protoss_Forge(12) at 10
+Protoss_Shuttle(18) at 11
+Protoss_Gateway(0) at 12
+Protoss_Templar_Archives(13) at 13
+Protoss_Dragoon(8) at 14
+Protoss_Photon_Cannon(15) at 15
+Protoss_High_Templar(17) at 16
+Protoss_High_Templar(16) at 17
+Protoss_Observer(14) at 18
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.1249
+Global cost: 0
+Number of tours: 5
+Number of iterations: 628
+Optimization cost: 433
+Opt Cost BEFORE post-processing: 433
+Post-processing time: 2.47417
+
+Time reference: 690.728
+
+
+Protoss_Gateway: start at 73, finish at 133
+Protoss_Forge: start at 124, finish at 164
+Protoss_Cybernetics_Core: start at 133, finish at 193
+Protoss_Assimilator: start at 139, finish at 179
+Protoss_Zealot: start at 151, finish at 191
+Protoss_Zealot: start at 191, finish at 231
+Protoss_Citadel_of_Adun: start at 199, finish at 259
+Protoss_Dragoon: start at 231, finish at 281
+Protoss_Robotics_Facility: start at 249, finish at 329
+Protoss_Dragoon: start at 281, finish at 331
+Protoss_Templar_Archives: start at 299, finish at 359
+Protoss_Shuttle: start at 329, finish at 389
+Protoss_Observatory: start at 348, finish at 378
+Protoss_Photon_Cannon: start at 349, finish at 399
+Protoss_Gateway: start at 350, finish at 410
+Protoss_High_Templar: start at 359, finish at 409
+Protoss_Observer: start at 393, finish at 433
+Protoss_High_Templar: start at 409, finish at 459
+Protoss_Zealot: start at 410, finish at 450
+
+Domains:
+Protoss_Gateway(0) at 0
+Protoss_Forge(12) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Assimilator(2) at 3
+Protoss_Zealot(4) at 4
+Protoss_Zealot(6) at 5
+Protoss_Citadel_of_Adun(10) at 6
+Protoss_Dragoon(7) at 7
+Protoss_Robotics_Facility(9) at 8
+Protoss_Dragoon(8) at 9
+Protoss_Templar_Archives(13) at 10
+Protoss_Shuttle(18) at 11
+Protoss_Observatory(11) at 12
+Protoss_Photon_Cannon(15) at 13
+Protoss_Gateway(1) at 14
+Protoss_High_Templar(16) at 15
+Protoss_Observer(14) at 16
+Protoss_High_Templar(17) at 17
+Protoss_Zealot(5) at 18
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0795
+Global cost: 0
+Number of tours: 4
+Number of iterations: 627
+Optimization cost: 459
+Opt Cost BEFORE post-processing: 459
+Post-processing time: 2.5647
+
+Time reference: 690.728
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Cybernetics_Core: start at 153, finish at 213
+Protoss_Zealot: start at 153, finish at 193
+Protoss_Zealot: start at 193, finish at 233
+Protoss_Citadel_of_Adun: start at 213, finish at 273
+Protoss_Forge: start at 222, finish at 262
+Protoss_Dragoon: start at 233, finish at 283
+Protoss_Robotics_Facility: start at 257, finish at 337
+Protoss_Templar_Archives: start at 273, finish at 333
+Protoss_Gateway: start at 274, finish at 334
+Protoss_High_Templar: start at 333, finish at 383
+Protoss_Dragoon: start at 334, finish at 384
+Protoss_Shuttle: start at 337, finish at 397
+Protoss_Observatory: start at 342, finish at 372
+Protoss_High_Templar: start at 383, finish at 433
+Protoss_Zealot: start at 384, finish at 424
+Protoss_Photon_Cannon: start at 389, finish at 439
+Protoss_Observer: start at 397, finish at 437
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(1) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Zealot(6) at 3
+Protoss_Zealot(4) at 4
+Protoss_Citadel_of_Adun(10) at 5
+Protoss_Forge(12) at 6
+Protoss_Dragoon(7) at 7
+Protoss_Robotics_Facility(9) at 8
+Protoss_Templar_Archives(13) at 9
+Protoss_Gateway(0) at 10
+Protoss_High_Templar(16) at 11
+Protoss_Dragoon(8) at 12
+Protoss_Shuttle(18) at 13
+Protoss_Observatory(11) at 14
+Protoss_High_Templar(17) at 15
+Protoss_Zealot(5) at 16
+Protoss_Photon_Cannon(15) at 17
+Protoss_Observer(14) at 18
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0011
+Global cost: 0
+Number of tours: 9
+Number of iterations: 549
+Optimization cost: 439
+Opt Cost BEFORE post-processing: 439
+Post-processing time: 2.71908
+
+Time reference: 690.728
+
+
+Protoss_Forge: start at 73, finish at 113
+Protoss_Gateway: start at 98, finish at 158
+Protoss_Assimilator: start at 115, finish at 155
+Protoss_Gateway: start at 133, finish at 193
+Protoss_Zealot: start at 158, finish at 198
+Protoss_Cybernetics_Core: start at 176, finish at 236
+Protoss_Zealot: start at 193, finish at 233
+Protoss_Zealot: start at 198, finish at 238
+Protoss_Robotics_Facility: start at 236, finish at 316
+Protoss_Citadel_of_Adun: start at 237, finish at 297
+Protoss_Gateway: start at 243, finish at 303
+Protoss_Dragoon: start at 259, finish at 309
+Protoss_Dragoon: start at 265, finish at 315
+Protoss_Templar_Archives: start at 297, finish at 357
+Protoss_Observatory: start at 316, finish at 346
+Protoss_Shuttle: start at 316, finish at 376
+Protoss_Photon_Cannon: start at 317, finish at 367
+Protoss_High_Templar: start at 357, finish at 407
+Protoss_High_Templar: start at 358, finish at 408
+Protoss_Observer: start at 376, finish at 416
+
+Domains:
+Protoss_Forge(12) at 0
+Protoss_Gateway(0) at 1
+Protoss_Assimilator(2) at 2
+Protoss_Gateway(19) at 3
+Protoss_Cybernetics_Core(3) at 4
+Protoss_Zealot(4) at 5
+Protoss_Zealot(5) at 6
+Protoss_Robotics_Facility(9) at 7
+Protoss_Citadel_of_Adun(10) at 8
+Protoss_Gateway(1) at 9
+Protoss_Zealot(6) at 10
+Protoss_Dragoon(7) at 11
+Protoss_Templar_Archives(13) at 12
+Protoss_Dragoon(8) at 13
+Protoss_Shuttle(18) at 14
+Protoss_Observatory(11) at 15
+Protoss_Photon_Cannon(15) at 16
+Protoss_High_Templar(17) at 17
+Protoss_High_Templar(16) at 18
+Protoss_Observer(14) at 19
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0965
+Global cost: 0
+Number of tours: 5
+Number of iterations: 595
+Optimization cost: 416
+Opt Cost BEFORE post-processing: 430
+Post-processing time: 2.62089
+
+Time reference: 690.728
+
+
+Protoss_Gateway: start at 73, finish at 133
+Protoss_Assimilator: start at 93, finish at 133
+Protoss_Forge: start at 115, finish at 155
+Protoss_Zealot: start at 133, finish at 173
+Protoss_Photon_Cannon: start at 162, finish at 212
+Protoss_Zealot: start at 175, finish at 215
+Protoss_Gateway: start at 192, finish at 252
+Protoss_Cybernetics_Core: start at 212, finish at 272
+Protoss_Zealot: start at 219, finish at 259
+Protoss_Citadel_of_Adun: start at 272, finish at 332
+Protoss_Dragoon: start at 272, finish at 322
+Protoss_Dragoon: start at 272, finish at 322
+Protoss_Templar_Archives: start at 332, finish at 392
+Protoss_Robotics_Facility: start at 333, finish at 413
+Protoss_High_Templar: start at 392, finish at 442
+Protoss_High_Templar: start at 393, finish at 443
+Protoss_Observatory: start at 413, finish at 443
+Protoss_Shuttle: start at 413, finish at 473
+Protoss_Observer: start at 473, finish at 513
+
+Domains:
+Protoss_Gateway(0) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Forge(12) at 2
+Protoss_Zealot(5) at 3
+Protoss_Photon_Cannon(15) at 4
+Protoss_Zealot(6) at 5
+Protoss_Gateway(1) at 6
+Protoss_Cybernetics_Core(3) at 7
+Protoss_Zealot(4) at 8
+Protoss_Citadel_of_Adun(10) at 9
+Protoss_Dragoon(7) at 10
+Protoss_Dragoon(8) at 11
+Protoss_Templar_Archives(13) at 12
+Protoss_Robotics_Facility(9) at 13
+Protoss_High_Templar(16) at 14
+Protoss_High_Templar(17) at 15
+Protoss_Observatory(11) at 16
+Protoss_Shuttle(18) at 17
+Protoss_Observer(14) at 18
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0238
+Global cost: 0
+Number of tours: 5
+Number of iterations: 576
+Optimization cost: 513
+Opt Cost BEFORE post-processing: 513
+Post-processing time: 2.98388
+
+Time reference: 690.728
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Cybernetics_Core: start at 153, finish at 213
+Protoss_Zealot: start at 153, finish at 193
+Protoss_Zealot: start at 193, finish at 233
+Protoss_Robotics_Facility: start at 213, finish at 293
+Protoss_Gateway: start at 234, finish at 294
+Protoss_Dragoon: start at 234, finish at 284
+Protoss_Citadel_of_Adun: start at 245, finish at 305
+Protoss_Dragoon: start at 284, finish at 334
+Protoss_Shuttle: start at 293, finish at 353
+Protoss_Zealot: start at 294, finish at 334
+Protoss_Templar_Archives: start at 305, finish at 365
+Protoss_High_Templar: start at 365, finish at 415
+Protoss_High_Templar: start at 366, finish at 416
+Protoss_Forge: start at 371, finish at 411
+Protoss_Observatory: start at 372, finish at 402
+Protoss_Observer: start at 402, finish at 442
+Protoss_Photon_Cannon: start at 411, finish at 461
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(0) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Zealot(6) at 3
+Protoss_Zealot(4) at 4
+Protoss_Robotics_Facility(9) at 5
+Protoss_Gateway(1) at 6
+Protoss_Dragoon(8) at 7
+Protoss_Citadel_of_Adun(10) at 8
+Protoss_Dragoon(7) at 9
+Protoss_Shuttle(18) at 10
+Protoss_Zealot(5) at 11
+Protoss_Templar_Archives(13) at 12
+Protoss_High_Templar(16) at 13
+Protoss_High_Templar(17) at 14
+Protoss_Forge(12) at 15
+Protoss_Observatory(11) at 16
+Protoss_Observer(14) at 17
+Protoss_Photon_Cannon(15) at 18
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0623
+Global cost: 0
+Number of tours: 6
+Number of iterations: 520
+Optimization cost: 461
+Opt Cost BEFORE post-processing: 461
+Post-processing time: 2.78311
+
+Time reference: 690.728
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Cybernetics_Core: start at 153, finish at 213
+Protoss_Zealot: start at 153, finish at 193
+Protoss_Zealot: start at 193, finish at 233
+Protoss_Robotics_Facility: start at 213, finish at 293
+Protoss_Citadel_of_Adun: start at 215, finish at 275
+Protoss_Zealot: start at 233, finish at 273
+Protoss_Gateway: start at 243, finish at 303
+Protoss_Forge: start at 268, finish at 308
+Protoss_Shuttle: start at 293, finish at 353
+Protoss_Dragoon: start at 294, finish at 344
+Protoss_Observatory: start at 298, finish at 328
+Protoss_Dragoon: start at 303, finish at 353
+Protoss_Photon_Cannon: start at 308, finish at 358
+Protoss_Templar_Archives: start at 318, finish at 378
+Protoss_Observer: start at 353, finish at 393
+Protoss_High_Templar: start at 378, finish at 428
+Protoss_High_Templar: start at 379, finish at 429
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(0) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Zealot(6) at 3
+Protoss_Zealot(5) at 4
+Protoss_Robotics_Facility(9) at 5
+Protoss_Citadel_of_Adun(10) at 6
+Protoss_Zealot(4) at 7
+Protoss_Gateway(1) at 8
+Protoss_Forge(12) at 9
+Protoss_Shuttle(18) at 10
+Protoss_Dragoon(7) at 11
+Protoss_Observatory(11) at 12
+Protoss_Dragoon(8) at 13
+Protoss_Photon_Cannon(15) at 14
+Protoss_Templar_Archives(13) at 15
+Protoss_Observer(14) at 16
+Protoss_High_Templar(16) at 17
+Protoss_High_Templar(17) at 18
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0915
+Global cost: 0
+Number of tours: 8
+Number of iterations: 452
+Optimization cost: 429
+Opt Cost BEFORE post-processing: 429
+Post-processing time: 2.45675
+
+Time reference: 690.728
+
+
+Protoss_Assimilator: start at 71, finish at 111
+Protoss_Gateway: start at 93, finish at 153
+Protoss_Gateway: start at 117, finish at 177
+Protoss_Zealot: start at 157, finish at 197
+Protoss_Zealot: start at 177, finish at 217
+Protoss_Cybernetics_Core: start at 193, finish at 253
+Protoss_Zealot: start at 201, finish at 241
+Protoss_Forge: start at 240, finish at 280
+Protoss_Robotics_Facility: start at 253, finish at 333
+Protoss_Citadel_of_Adun: start at 254, finish at 314
+Protoss_Dragoon: start at 261, finish at 311
+Protoss_Dragoon: start at 311, finish at 361
+Protoss_Templar_Archives: start at 314, finish at 374
+Protoss_Gateway: start at 316, finish at 376
+Protoss_Shuttle: start at 333, finish at 393
+Protoss_Photon_Cannon: start at 338, finish at 388
+Protoss_Observatory: start at 339, finish at 369
+Protoss_High_Templar: start at 374, finish at 424
+Protoss_High_Templar: start at 375, finish at 425
+Protoss_Observer: start at 393, finish at 433
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(0) at 1
+Protoss_Gateway(19) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Zealot(6) at 4
+Protoss_Zealot(5) at 5
+Protoss_Robotics_Facility(9) at 6
+Protoss_Forge(12) at 7
+Protoss_Zealot(4) at 8
+Protoss_Citadel_of_Adun(10) at 9
+Protoss_Dragoon(8) at 10
+Protoss_Shuttle(18) at 11
+Protoss_Templar_Archives(13) at 12
+Protoss_Dragoon(7) at 13
+Protoss_Gateway(1) at 14
+Protoss_High_Templar(17) at 15
+Protoss_Photon_Cannon(15) at 16
+Protoss_Observatory(11) at 17
+Protoss_High_Templar(16) at 18
+Protoss_Observer(14) at 19
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0265
+Global cost: 0
+Number of tours: 8
+Number of iterations: 402
+Optimization cost: 433
+Opt Cost BEFORE post-processing: 449
+Post-processing time: 2.42799
+
+Time reference: 690.728
+
+
+Protoss_Gateway: start at 73, finish at 133
+Protoss_Assimilator: start at 93, finish at 133
+Protoss_Gateway: start at 115, finish at 175
+Protoss_Zealot: start at 133, finish at 173
+Protoss_Cybernetics_Core: start at 173, finish at 233
+Protoss_Zealot: start at 182, finish at 222
+Protoss_Zealot: start at 194, finish at 234
+Protoss_Forge: start at 217, finish at 257
+Protoss_Robotics_Facility: start at 235, finish at 315
+Protoss_Citadel_of_Adun: start at 245, finish at 305
+Protoss_Gateway: start at 257, finish at 317
+Protoss_Photon_Cannon: start at 274, finish at 324
+Protoss_Dragoon: start at 280, finish at 330
+Protoss_Dragoon: start at 287, finish at 337
+Protoss_Templar_Archives: start at 305, finish at 365
+Protoss_Observatory: start at 315, finish at 345
+Protoss_Observer: start at 345, finish at 385
+Protoss_High_Templar: start at 365, finish at 415
+Protoss_High_Templar: start at 366, finish at 416
+Protoss_Shuttle: start at 385, finish at 445
+
+Domains:
+Protoss_Gateway(0) at 0
+Protoss_Assimilator(2) at 1
+Protoss_Gateway(19) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Zealot(6) at 4
+Protoss_Zealot(4) at 5
+Protoss_Forge(12) at 6
+Protoss_Robotics_Facility(9) at 7
+Protoss_Zealot(5) at 8
+Protoss_Citadel_of_Adun(10) at 9
+Protoss_Gateway(1) at 10
+Protoss_Photon_Cannon(15) at 11
+Protoss_Dragoon(7) at 12
+Protoss_Observatory(11) at 13
+Protoss_Templar_Archives(13) at 14
+Protoss_Observer(14) at 15
+Protoss_High_Templar(16) at 16
+Protoss_High_Templar(17) at 17
+Protoss_Shuttle(18) at 18
+Protoss_Dragoon(8) at 19
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 70.0719
+Global cost: 0
+Number of tours: 8
+Number of iterations: 539
+Optimization cost: 445
+Opt Cost BEFORE post-processing: 463
+Post-processing time: 2.55281
+
+Time reference: 690.728

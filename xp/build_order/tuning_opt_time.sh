@@ -11,7 +11,7 @@ pvp=(`ls -rS data/good/10k_games/PvP | tail --lines=$n`)
 pvt=(`ls -rS data/good/10k_games/PvT | tail --lines=$n`)
 pvz=(`ls -rS data/good/10k_games/PvZ | tail --lines=$n`)
 
-for k in {100..1000..100}
+for k in {30..90..10}
 do
     for i in {1..10}
     do
