@@ -1,0 +1,290 @@
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Gateway: start at 264, finish at 324
+Protoss_Zealot: start at 273, finish at 313
+
+Domains:
+Protoss_Gateway(2) at 0
+Protoss_Zealot(3) at 1
+Protoss_Gateway(1) at 2
+Protoss_Zealot(4) at 3
+Protoss_Zealot(5) at 4
+Protoss_Nexus(0) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.1912
+Global cost: 0
+Number of tours: 79
+Number of iterations: 140
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.959144
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Gateway: start at 264, finish at 324
+Protoss_Zealot: start at 273, finish at 313
+
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Zealot(5) at 1
+Protoss_Zealot(4) at 2
+Protoss_Nexus(0) at 3
+Protoss_Gateway(2) at 4
+Protoss_Zealot(3) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0993
+Global cost: 0
+Number of tours: 64
+Number of iterations: 117
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.920542
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Gateway: start at 264, finish at 324
+Protoss_Zealot: start at 273, finish at 313
+
+Domains:
+Protoss_Gateway(2) at 0
+Protoss_Zealot(5) at 1
+Protoss_Zealot(4) at 2
+Protoss_Nexus(0) at 3
+Protoss_Gateway(1) at 4
+Protoss_Zealot(3) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.1424
+Global cost: 0
+Number of tours: 86
+Number of iterations: 159
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.927568
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Zealot: start at 265, finish at 305
+Protoss_Gateway: start at 273, finish at 333
+
+Domains:
+Protoss_Gateway(2) at 0
+Protoss_Zealot(4) at 1
+Protoss_Zealot(5) at 2
+Protoss_Nexus(0) at 3
+Protoss_Zealot(3) at 4
+Protoss_Gateway(1) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0083
+Global cost: 0
+Number of tours: 111
+Number of iterations: 219
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.631734
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Gateway: start at 264, finish at 324
+Protoss_Zealot: start at 273, finish at 313
+
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Zealot(5) at 1
+Protoss_Gateway(2) at 2
+Protoss_Zealot(3) at 3
+Protoss_Zealot(4) at 4
+Protoss_Nexus(0) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.3045
+Global cost: 0
+Number of tours: 73
+Number of iterations: 121
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.968557
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Gateway: start at 264, finish at 324
+Protoss_Zealot: start at 273, finish at 313
+
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Zealot(3) at 1
+Protoss_Zealot(4) at 2
+Protoss_Nexus(0) at 3
+Protoss_Gateway(2) at 4
+Protoss_Zealot(5) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.149
+Global cost: 0
+Number of tours: 80
+Number of iterations: 151
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.643371
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Gateway: start at 264, finish at 324
+Protoss_Zealot: start at 273, finish at 313
+
+Domains:
+Protoss_Gateway(2) at 0
+Protoss_Zealot(5) at 1
+Protoss_Zealot(4) at 2
+Protoss_Nexus(0) at 3
+Protoss_Gateway(1) at 4
+Protoss_Zealot(3) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0145
+Global cost: 0
+Number of tours: 75
+Number of iterations: 141
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.889772
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Zealot: start at 265, finish at 305
+Protoss_Gateway: start at 273, finish at 333
+
+Domains:
+Protoss_Gateway(2) at 0
+Protoss_Zealot(5) at 1
+Protoss_Zealot(3) at 2
+Protoss_Gateway(1) at 3
+Protoss_Zealot(4) at 4
+Protoss_Nexus(0) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.2583
+Global cost: 0
+Number of tours: 97
+Number of iterations: 167
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.664233
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Zealot: start at 265, finish at 305
+Protoss_Gateway: start at 273, finish at 333
+
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Zealot(3) at 1
+Protoss_Zealot(5) at 2
+Protoss_Nexus(0) at 3
+Protoss_Zealot(4) at 4
+Protoss_Gateway(2) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0748
+Global cost: 0
+Number of tours: 76
+Number of iterations: 151
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 0.898779
+
+Time reference: 436.791
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Zealot: start at 185, finish at 225
+Protoss_Zealot: start at 225, finish at 265
+Protoss_Nexus: start at 246, finish at 366
+Protoss_Zealot: start at 265, finish at 305
+Protoss_Gateway: start at 273, finish at 333
+
+Domains:
+Protoss_Gateway(2) at 0
+Protoss_Zealot(5) at 1
+Protoss_Zealot(3) at 2
+Protoss_Nexus(0) at 3
+Protoss_Zealot(4) at 4
+Protoss_Gateway(1) at 5
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0597
+Global cost: 0
+Number of tours: 74
+Number of iterations: 121
+Optimization cost: 366
+Opt Cost BEFORE post-processing: 366
+Post-processing time: 1.07988
+
+Time reference: 436.791
+

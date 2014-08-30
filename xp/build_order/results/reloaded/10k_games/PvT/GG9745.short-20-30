@@ -1,599 +1,3 @@
-Domains:
-Protoss_Assimilator(2) at 0
-Protoss_Templar_Archives(8) at 1
-Protoss_Dark_Templar(16) at 2
-Protoss_Gateway(1) at 3
-Protoss_Cybernetics_Core(3) at 4
-Protoss_Dragoon(4) at 5
-Protoss_Dark_Templar(11) at 6
-Protoss_Dark_Templar(12) at 7
-Protoss_Dark_Templar(17) at 8
-Protoss_Dark_Templar(13) at 9
-Protoss_Dark_Templar(10) at 10
-Protoss_Dragoon(5) at 11
-Protoss_Dark_Templar(15) at 12
-Protoss_Robotics_Facility(7) at 13
-Protoss_Gateway(0) at 14
-Protoss_Shuttle(9) at 15
-Protoss_Citadel_of_Adun(6) at 16
-Protoss_Dark_Templar(14) at 17
-
-############
-OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.0735
-Global cost: 5
-Number of tours: 2
-Number of iterations: 273
-Optimization cost: 2.14748e+09
-Opt Cost BEFORE post-processing: 2.14748e+09
-
-Time reference: 664.091
-
-Domains:
-Protoss_Assimilator(2) at 0
-Protoss_Templar_Archives(8) at 1
-Protoss_Gateway(0) at 2
-Protoss_Cybernetics_Core(3) at 3
-Protoss_Robotics_Facility(7) at 4
-Protoss_Shuttle(9) at 5
-Protoss_Dragoon(5) at 6
-Protoss_Gateway(1) at 7
-Protoss_Dark_Templar(15) at 8
-Protoss_Dark_Templar(14) at 9
-Protoss_Dark_Templar(17) at 10
-Protoss_Dark_Templar(12) at 11
-Protoss_Dark_Templar(11) at 12
-Protoss_Citadel_of_Adun(6) at 13
-Protoss_Dark_Templar(13) at 14
-Protoss_Dark_Templar(10) at 15
-Protoss_Dragoon(4) at 16
-Protoss_Dark_Templar(16) at 17
-
-############
-OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.0736
-Global cost: 5
-Number of tours: 2
-Number of iterations: 268
-Optimization cost: 2.14748e+09
-Opt Cost BEFORE post-processing: 2.14748e+09
-
-Time reference: 664.091
-
-Domains:
-Protoss_Gateway(0) at 0
-Protoss_Assimilator(2) at 1
-Protoss_Templar_Archives(8) at 2
-Protoss_Dark_Templar(11) at 3
-Protoss_Dark_Templar(14) at 4
-Protoss_Cybernetics_Core(3) at 5
-Protoss_Robotics_Facility(7) at 6
-Protoss_Shuttle(9) at 7
-Protoss_Dark_Templar(13) at 8
-Protoss_Dark_Templar(10) at 9
-Protoss_Dark_Templar(15) at 10
-Protoss_Gateway(1) at 11
-Protoss_Dark_Templar(12) at 12
-Protoss_Dragoon(4) at 13
-Protoss_Citadel_of_Adun(6) at 14
-Protoss_Dragoon(5) at 15
-Protoss_Dark_Templar(16) at 16
-Protoss_Dark_Templar(17) at 17
-
-############
-OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.1493
-Global cost: 5
-Number of tours: 2
-Number of iterations: 302
-Optimization cost: 2.14748e+09
-Opt Cost BEFORE post-processing: 2.14748e+09
-
-Time reference: 664.091
-
-Finish Protoss_Probe at            20     m = 40.8       g = 0         mb = 0      gb = 0     mw = 4    gw = 0    s = 5/9)
-Start Protoss_Probe at             24     m = 1.68       g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Finish Protoss_Probe at            44     m = 69.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Start Protoss_Probe at             44     m = 19.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 7/9)
-Go for first Protoss_Pylon at      61     m = 86.32      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Finish Protoss_Probe at            64     m = 96.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Start Protoss_Probe at             64     m = 46.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 8/9)
-Start Protoss_Pylon at             78     m = 0.92       g = 0         mb = 0      gb = 0     mw = 6    gw = 0    s = 8/9)
-Finish Protoss_Probe at            84     m = 26.76      g = 0         mb = 0      gb = 0     mw = 7    gw = 0    s = 8/9)
-Start Protoss_Probe at             89     m = 1.24       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/9)
-Finish Protoss_Pylon at            108    m = 104.6      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Go for Protoss_Assimilator at      108    m = 104.6      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Finish Protoss_Probe at            109    m = 109.36     g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Start Protoss_Probe at             109    m = 59.36      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 10/17)
-Start Protoss_Assimilator at       117    m = 0.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Finish Protoss_Probe at            129    m = 70.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 10/17)
-Start Protoss_Probe at             129    m = 20.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Go for Protoss_Gateway at          144    m = 120.16     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Probe at            149    m = 150.76     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Start Protoss_Gateway at           149    m = 0.76       g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Assimilator at      157    m = 55.16      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 11/17)
-Start Protoss_Probe at             157    m = 5.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 12/17)
-Finish Protoss_Probe at            177    m = 113.96     g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 12/17)
-Start Protoss_Probe at             177    m = 63.96      g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 13/17)
-Finish Protoss_Probe at            197    m = 183.64     g = 124.2     mb = 0      gb = 0     mw = 9    gw = 3    s = 13/17)
-Start Protoss_Probe at             197    m = 133.64     g = 124.2     mb = 0      gb = 0     mw = 9    gw = 3    s = 14/17)
-Go for Protoss_Pylon at            197    m = 133.64     g = 124.2     mb = 100    gb = 0     mw = 8    gw = 3    s = 14/17)
-Start Protoss_Pylon at             202    m = 61.52      g = 141.45    mb = 0      gb = 0     mw = 9    gw = 3    s = 14/17)
-Finish Protoss_Gateway at          209    m = 106.4      g = 165.6     mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Finish Protoss_Probe at            217    m = 164.2      g = 193.2     mb = 0      gb = 0     mw = 11   gw = 3    s = 14/17)
-Start Protoss_Probe at             217    m = 114.2      g = 193.2     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Go for Protoss_Cybernetics_Core at 223    m = 160.44     g = 213.9     mb = 200    gb = 0     mw = 11   gw = 3    s = 15/17)
-Start Protoss_Cybernetics_Core at  229    m = 5.32       g = 234.6     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Finish Protoss_Pylon at            232    m = 27.76      g = 244.95    mb = 0      gb = 0     mw = 11   gw = 3    s = 15/25)
-Finish Protoss_Probe at            237    m = 67.88      g = 262.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 15/25)
-Start Protoss_Probe at             237    m = 17.88      g = 262.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Probe at            257    m = 191.96     g = 331.2     mb = 0      gb = 0     mw = 13   gw = 3    s = 16/25)
-Start Protoss_Probe at             257    m = 141.96     g = 331.2     mb = 0      gb = 0     mw = 13   gw = 3    s = 17/25)
-Go for Protoss_Gateway at          275    m = 310.6      g = 393.3     mb = 150    gb = 0     mw = 13   gw = 3    s = 17/25)
-Finish Protoss_Probe at            277    m = 328.28     g = 400.2     mb = 150    gb = 0     mw = 13   gw = 3    s = 17/25)
-Start Protoss_Probe at             277    m = 278.28     g = 400.2     mb = 150    gb = 0     mw = 13   gw = 3    s = 18/25)
-Start Protoss_Gateway at           280    m = 154.8      g = 410.55    mb = 0      gb = 0     mw = 13   gw = 3    s = 18/25)
-Go for Protoss_Robotics_Facility at 284    m = 192.2      g = 424.35    mb = 200    gb = 200   mw = 14   gw = 3    s = 18/25)
-Finish Protoss_Cybernetics_Core at 289    m = 239.8      g = 441.6     mb = 200    gb = 200   mw = 14   gw = 3    s = 18/25)
-Start Protoss_Robotics_Facility at 289    m = 39.8       g = 241.6     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Go for Protoss_Pylon at            289    m = 39.8       g = 241.6     mb = 100    gb = 0     mw = 13   gw = 3    s = 18/25)
-Start Protoss_Pylon at             296    m = 6.44       g = 265.75    mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Finish Protoss_Probe at            297    m = 16.64      g = 269.2     mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Start Protoss_Probe at             301    m = 8.12       g = 283       mb = 0      gb = 0     mw = 17   gw = 3    s = 19/25)
-Go for Protoss_Citadel_of_Adun at  309    m = 100.6      g = 310.6     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Start Protoss_Citadel_of_Adun at   314    m = 5          g = 227.85    mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Probe at            321    m = 83.2       g = 252       mb = 0      gb = 0     mw = 17   gw = 3    s = 19/25)
-Start Protoss_Probe at             321    m = 33.2       g = 252       mb = 0      gb = 0     mw = 17   gw = 3    s = 20/25)
-Finish Protoss_Pylon at            326    m = 91.68      g = 269.25    mb = 0      gb = 0     mw = 18   gw = 3    s = 20/33)
-Start Protoss_Dragoon at           329    m = 3.4        g = 229.6     mb = 0      gb = 0     mw = 18   gw = 3    s = 22/33)
-Finish Protoss_Gateway at          340    m = 138.04     g = 267.55    mb = 0      gb = 0     mw = 18   gw = 3    s = 22/33)
-Start Protoss_Dragoon at           340    m = 13.04      g = 217.55    mb = 0      gb = 0     mw = 18   gw = 3    s = 24/33)
-Finish Protoss_Probe at            341    m = 25.28      g = 221       mb = 0      gb = 0     mw = 18   gw = 3    s = 24/33)
-Go for Protoss_Pylon at            341    m = 25.28      g = 221       mb = 100    gb = 0     mw = 17   gw = 3    s = 24/33)
-Start Protoss_Probe at             344    m = 10.64      g = 231.35    mb = 100    gb = 0     mw = 18   gw = 3    s = 25/33)
-Start Protoss_Pylon at             351    m = 0.4        g = 255.5     mb = 0      gb = 0     mw = 19   gw = 3    s = 25/33)
-Finish Protoss_Probe at            364    m = 174.48     g = 300.35    mb = 0      gb = 0     mw = 20   gw = 3    s = 25/33)
-Start Protoss_Probe at             364    m = 124.48     g = 300.35    mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Robotics_Facility at 369    m = 193.16     g = 317.6     mb = 0      gb = 0     mw = 21   gw = 3    s = 26/33)
-Go for Protoss_Templar_Archives at 369    m = 193.16     g = 317.6     mb = 150    gb = 200   mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Citadel_of_Adun at  374    m = 262.52     g = 334.85    mb = 150    gb = 200   mw = 21   gw = 3    s = 26/33)
-Start Protoss_Templar_Archives at  374    m = 112.52     g = 134.85    mb = 0      gb = 0     mw = 21   gw = 3    s = 26/33)
-Finish Protoss_Dragoon at          379    m = 185.96     g = 152.1     mb = 0      gb = 0     mw = 23   gw = 3    s = 26/33)
-Finish Protoss_Pylon at            381    m = 217.24     g = 159       mb = 0      gb = 0     mw = 23   gw = 3    s = 26/41)
-Finish Protoss_Probe at            384    m = 264.16     g = 169.35    mb = 0      gb = 0     mw = 23   gw = 3    s = 26/41)
-Finish Protoss_Dragoon at          390    m = 359.36     g = 190.05    mb = 0      gb = 0     mw = 24   gw = 3    s = 26/41)
-Finish Protoss_Templar_Archives at 434    m = 1077.44    g = 341.85    mb = 0      gb = 0     mw = 24   gw = 3    s = 26/41)
-Start Protoss_Dark_Templar at      434    m = 952.44     g = 241.85    mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Start Protoss_Dark_Templar at      435    m = 843.76     g = 145.3     mb = 0      gb = 0     mw = 24   gw = 3    s = 30/41)
-Finish Protoss_Dark_Templar at     484    m = 1675.4     g = 314.35    mb = 0      gb = 0     mw = 25   gw = 3    s = 30/41)
-Start Protoss_Dark_Templar at      484    m = 1550.4     g = 214.35    mb = 0      gb = 0     mw = 25   gw = 3    s = 32/41)
-Finish Protoss_Dark_Templar at     485    m = 1567.4     g = 217.8     mb = 0      gb = 0     mw = 25   gw = 3    s = 32/41)
-Go for Protoss_Pylon at            485    m = 1567.4     g = 217.8     mb = 100    gb = 0     mw = 24   gw = 3    s = 32/41)
-Start Protoss_Dark_Templar at      485    m = 1442.4     g = 117.8     mb = 100    gb = 0     mw = 24   gw = 3    s = 34/41)
-Start Protoss_Pylon at             490    m = 1424       g = 135.05    mb = 0      gb = 0     mw = 24   gw = 3    s = 34/41)
-Finish Protoss_Pylon at            520    m = 1931.28    g = 238.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 34/49)
-Finish Protoss_Dark_Templar at     534    m = 2169.28    g = 286.85    mb = 0      gb = 0     mw = 25   gw = 3    s = 34/49)
-Start Protoss_Dark_Templar at      534    m = 2044.28    g = 186.85    mb = 0      gb = 0     mw = 25   gw = 3    s = 36/49)
-Finish Protoss_Dark_Templar at     535    m = 2061.28    g = 190.3     mb = 0      gb = 0     mw = 25   gw = 3    s = 36/49)
-Start Protoss_Dark_Templar at      535    m = 1936.28    g = 90.3      mb = 0      gb = 0     mw = 25   gw = 3    s = 38/49)
-Finish Protoss_Dark_Templar at     584    m = 2769.28    g = 259.35    mb = 0      gb = 0     mw = 25   gw = 3    s = 38/49)
-Start Protoss_Dark_Templar at      584    m = 2644.28    g = 159.35    mb = 0      gb = 0     mw = 25   gw = 3    s = 40/49)
-Finish Protoss_Dark_Templar at     585    m = 2661.28    g = 162.8     mb = 0      gb = 0     mw = 25   gw = 3    s = 40/49)
-Go for Protoss_Pylon at            585    m = 2661.28    g = 162.8     mb = 100    gb = 0     mw = 24   gw = 3    s = 40/49)
-Start Protoss_Dark_Templar at      585    m = 2536.28    g = 62.8      mb = 100    gb = 0     mw = 24   gw = 3    s = 42/49)
-Start Protoss_Shuttle at           586    m = 2352.6     g = 66.25     mb = 100    gb = 0     mw = 24   gw = 3    s = 44/49)
-Start Protoss_Pylon at             590    m = 2317.88    g = 80.05     mb = 0      gb = 0     mw = 24   gw = 3    s = 44/49)
-Finish Protoss_Pylon at            620    m = 2825.16    g = 183.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Dark_Templar at     634    m = 3063.16    g = 231.85    mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Dark_Templar at     635    m = 3080.16    g = 235.3     mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Shuttle at          646    m = 3267.16    g = 273.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Probe at            20     m = 40.8       g = 0         mb = 0      gb = 0     mw = 4    gw = 0    s = 5/9)
-Start Protoss_Probe at             24     m = 1.68       g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Finish Protoss_Probe at            44     m = 69.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Start Protoss_Probe at             44     m = 19.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 7/9)
-Go for first Protoss_Pylon at      61     m = 86.32      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Finish Protoss_Probe at            64     m = 96.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Start Protoss_Probe at             64     m = 46.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 8/9)
-Start Protoss_Pylon at             78     m = 0.92       g = 0         mb = 0      gb = 0     mw = 6    gw = 0    s = 8/9)
-Finish Protoss_Probe at            84     m = 26.76      g = 0         mb = 0      gb = 0     mw = 7    gw = 0    s = 8/9)
-Start Protoss_Probe at             89     m = 1.24       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/9)
-Finish Protoss_Pylon at            108    m = 104.6      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Go for Protoss_Assimilator at      108    m = 104.6      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Finish Protoss_Probe at            109    m = 109.36     g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Start Protoss_Probe at             109    m = 59.36      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 10/17)
-Start Protoss_Assimilator at       117    m = 0.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Finish Protoss_Probe at            129    m = 70.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 10/17)
-Start Protoss_Probe at             129    m = 20.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Go for Protoss_Gateway at          144    m = 120.16     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Probe at            149    m = 150.76     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Start Protoss_Gateway at           149    m = 0.76       g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Assimilator at      157    m = 55.16      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 11/17)
-Start Protoss_Probe at             157    m = 5.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 12/17)
-Finish Protoss_Probe at            177    m = 113.96     g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 12/17)
-Start Protoss_Probe at             177    m = 63.96      g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 13/17)
-Finish Protoss_Probe at            197    m = 183.64     g = 124.2     mb = 0      gb = 0     mw = 9    gw = 3    s = 13/17)
-Start Protoss_Probe at             197    m = 133.64     g = 124.2     mb = 0      gb = 0     mw = 9    gw = 3    s = 14/17)
-Go for Protoss_Pylon at            197    m = 133.64     g = 124.2     mb = 100    gb = 0     mw = 8    gw = 3    s = 14/17)
-Start Protoss_Pylon at             202    m = 61.52      g = 141.45    mb = 0      gb = 0     mw = 9    gw = 3    s = 14/17)
-Finish Protoss_Gateway at          209    m = 106.4      g = 165.6     mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Finish Protoss_Probe at            217    m = 164.2      g = 193.2     mb = 0      gb = 0     mw = 11   gw = 3    s = 14/17)
-Start Protoss_Probe at             217    m = 114.2      g = 193.2     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Go for Protoss_Cybernetics_Core at 223    m = 160.44     g = 213.9     mb = 200    gb = 0     mw = 11   gw = 3    s = 15/17)
-Start Protoss_Cybernetics_Core at  229    m = 5.32       g = 234.6     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Finish Protoss_Pylon at            232    m = 27.76      g = 244.95    mb = 0      gb = 0     mw = 11   gw = 3    s = 15/25)
-Finish Protoss_Probe at            237    m = 67.88      g = 262.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 15/25)
-Start Protoss_Probe at             237    m = 17.88      g = 262.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Go for Protoss_Gateway at          248    m = 112.4      g = 300.15    mb = 150    gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Gateway at           253    m = 3.2        g = 317.4     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Probe at            257    m = 35.84      g = 331.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Probe at             259    m = 3.52       g = 338.1     mb = 0      gb = 0     mw = 13   gw = 3    s = 17/25)
-Finish Protoss_Probe at            279    m = 192.56     g = 407.1     mb = 0      gb = 0     mw = 14   gw = 3    s = 17/25)
-Start Protoss_Probe at             279    m = 142.56     g = 407.1     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Go for Protoss_Robotics_Facility at 284    m = 190.84     g = 424.35    mb = 200    gb = 200   mw = 14   gw = 3    s = 18/25)
-Finish Protoss_Cybernetics_Core at 289    m = 238.44     g = 441.6     mb = 200    gb = 200   mw = 14   gw = 3    s = 18/25)
-Start Protoss_Robotics_Facility at 289    m = 38.44      g = 241.6     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Go for Protoss_Pylon at            289    m = 38.44      g = 241.6     mb = 100    gb = 0     mw = 13   gw = 3    s = 18/25)
-Start Protoss_Pylon at             296    m = 5.08       g = 265.75    mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Finish Protoss_Probe at            299    m = 35.68      g = 276.1     mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Start Protoss_Probe at             301    m = 6.76       g = 283       mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Go for Protoss_Citadel_of_Adun at  309    m = 97.88      g = 310.6     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Gateway at          313    m = 141.4      g = 324.4     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Start Protoss_Citadel_of_Adun at   314    m = 2.28       g = 227.85    mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Probe at            321    m = 83.88      g = 252       mb = 0      gb = 0     mw = 18   gw = 3    s = 19/25)
-Start Protoss_Probe at             321    m = 33.88      g = 252       mb = 0      gb = 0     mw = 18   gw = 3    s = 20/25)
-Finish Protoss_Pylon at            326    m = 95.76      g = 269.25    mb = 0      gb = 0     mw = 19   gw = 3    s = 20/33)
-Start Protoss_Dragoon at           329    m = 9.52       g = 229.6     mb = 0      gb = 0     mw = 19   gw = 3    s = 22/33)
-Start Protoss_Dragoon at           338    m = 0.8        g = 210.65    mb = 0      gb = 0     mw = 19   gw = 3    s = 24/33)
-Go for Protoss_Pylon at            339    m = 13.72      g = 214.1     mb = 100    gb = 0     mw = 18   gw = 3    s = 24/33)
-Finish Protoss_Probe at            341    m = 38.2       g = 221       mb = 100    gb = 0     mw = 18   gw = 3    s = 24/33)
-Start Protoss_Probe at             342    m = 0.44       g = 224.45    mb = 100    gb = 0     mw = 18   gw = 3    s = 25/33)
-Start Protoss_Pylon at             350    m = 1.76       g = 252.05    mb = 0      gb = 0     mw = 19   gw = 3    s = 25/33)
-Finish Protoss_Probe at            362    m = 162.24     g = 293.45    mb = 0      gb = 0     mw = 20   gw = 3    s = 25/33)
-Start Protoss_Probe at             362    m = 112.24     g = 293.45    mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Robotics_Facility at 369    m = 209.48     g = 317.6     mb = 0      gb = 0     mw = 21   gw = 3    s = 26/33)
-Start Protoss_Shuttle at           369    m = 9.48       g = 317.6     mb = 0      gb = 0     mw = 21   gw = 3    s = 28/33)
-Finish Protoss_Citadel_of_Adun at  374    m = 82.24      g = 334.85    mb = 0      gb = 0     mw = 22   gw = 3    s = 28/33)
-Go for Protoss_Templar_Archives at 374    m = 82.24      g = 334.85    mb = 150    gb = 200   mw = 21   gw = 3    s = 28/33)
-Finish Protoss_Dragoon at          379    m = 155        g = 352.1     mb = 150    gb = 200   mw = 22   gw = 3    s = 28/33)
-Start Protoss_Templar_Archives at  379    m = 5          g = 152.1     mb = 0      gb = 0     mw = 22   gw = 3    s = 28/33)
-Finish Protoss_Pylon at            380    m = 19.96      g = 155.55    mb = 0      gb = 0     mw = 22   gw = 3    s = 28/41)
-Finish Protoss_Probe at            382    m = 49.88      g = 162.45    mb = 0      gb = 0     mw = 22   gw = 3    s = 28/41)
-Finish Protoss_Dragoon at          388    m = 144.4      g = 183.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Shuttle at          429    m = 813.52     g = 324.6     mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Templar_Archives at 439    m = 976.72     g = 359.1     mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Start Protoss_Dark_Templar at      439    m = 851.72     g = 259.1     mb = 0      gb = 0     mw = 24   gw = 3    s = 30/41)
-Start Protoss_Dark_Templar at      440    m = 743.04     g = 162.55    mb = 0      gb = 0     mw = 24   gw = 3    s = 32/41)
-Go for Protoss_Pylon at            441    m = 759.36     g = 166       mb = 100    gb = 0     mw = 23   gw = 3    s = 32/41)
-Start Protoss_Pylon at             446    m = 740.28     g = 183.25    mb = 0      gb = 0     mw = 24   gw = 3    s = 32/41)
-Finish Protoss_Pylon at            476    m = 1247.56    g = 286.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 32/49)
-Finish Protoss_Dark_Templar at     489    m = 1468.56    g = 331.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 32/49)
-Start Protoss_Dark_Templar at      489    m = 1343.56    g = 231.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 34/49)
-Finish Protoss_Dark_Templar at     490    m = 1360.56    g = 235.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 34/49)
-Start Protoss_Dark_Templar at      490    m = 1235.56    g = 135.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 36/49)
-Finish Protoss_Dark_Templar at     539    m = 2068.56    g = 304.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 36/49)
-Start Protoss_Dark_Templar at      539    m = 1943.56    g = 204.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 38/49)
-Finish Protoss_Dark_Templar at     540    m = 1960.56    g = 207.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 38/49)
-Start Protoss_Dark_Templar at      540    m = 1835.56    g = 107.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 40/49)
-Go for Protoss_Pylon at            541    m = 1852.56    g = 111       mb = 100    gb = 0     mw = 24   gw = 3    s = 40/49)
-Start Protoss_Pylon at             546    m = 1834.16    g = 128.25    mb = 0      gb = 0     mw = 24   gw = 3    s = 40/49)
-Finish Protoss_Pylon at            576    m = 2341.44    g = 231.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 40/57)
-Finish Protoss_Dark_Templar at     589    m = 2562.44    g = 276.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 40/57)
-Start Protoss_Dark_Templar at      589    m = 2437.44    g = 176.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 42/57)
-Finish Protoss_Dark_Templar at     590    m = 2454.44    g = 180.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 42/57)
-Start Protoss_Dark_Templar at      590    m = 2329.44    g = 80.05     mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Dark_Templar at     639    m = 3162.44    g = 249.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Dark_Templar at     640    m = 3179.44    g = 252.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-
-
-Protoss_Assimilator: start at 117, finish at 157
-Protoss_Gateway: start at 149, finish at 209
-Protoss_Cybernetics_Core: start at 229, finish at 289
-Protoss_Gateway: start at 253, finish at 313
-Protoss_Robotics_Facility: start at 289, finish at 369
-Protoss_Citadel_of_Adun: start at 314, finish at 374
-Protoss_Dragoon: start at 329, finish at 379
-Protoss_Dragoon: start at 338, finish at 388
-Protoss_Shuttle: start at 369, finish at 429
-Protoss_Templar_Archives: start at 379, finish at 439
-Protoss_Dark_Templar: start at 439, finish at 489
-Protoss_Dark_Templar: start at 440, finish at 490
-Protoss_Dark_Templar: start at 489, finish at 539
-Protoss_Dark_Templar: start at 490, finish at 540
-Protoss_Dark_Templar: start at 539, finish at 589
-Protoss_Dark_Templar: start at 540, finish at 590
-Protoss_Dark_Templar: start at 589, finish at 639
-Protoss_Dark_Templar: start at 590, finish at 640
-
-Domains:
-Protoss_Assimilator(2) at 0
-Protoss_Gateway(1) at 1
-Protoss_Cybernetics_Core(3) at 2
-Protoss_Gateway(0) at 3
-Protoss_Robotics_Facility(7) at 4
-Protoss_Citadel_of_Adun(6) at 5
-Protoss_Dragoon(4) at 6
-Protoss_Dragoon(5) at 7
-Protoss_Templar_Archives(8) at 8
-Protoss_Dark_Templar(11) at 9
-Protoss_Dark_Templar(17) at 10
-Protoss_Dark_Templar(14) at 11
-Protoss_Dark_Templar(15) at 12
-Protoss_Dark_Templar(13) at 13
-Protoss_Dark_Templar(16) at 14
-Protoss_Dark_Templar(12) at 15
-Protoss_Dark_Templar(10) at 16
-Protoss_Shuttle(9) at 17
-
-############
-OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.0121
-Global cost: 0
-Number of tours: 2
-Number of iterations: 268
-Optimization cost: 640
-Opt Cost BEFORE post-processing: 646
-Post-processing time: 3.89914
-
-Time reference: 664.091
-
-Domains:
-Protoss_Assimilator(2) at 0
-Protoss_Templar_Archives(8) at 1
-Protoss_Dark_Templar(15) at 2
-Protoss_Dark_Templar(10) at 3
-Protoss_Gateway(0) at 4
-Protoss_Gateway(1) at 5
-Protoss_Cybernetics_Core(3) at 6
-Protoss_Dark_Templar(12) at 7
-Protoss_Dark_Templar(11) at 8
-Protoss_Dark_Templar(16) at 9
-Protoss_Robotics_Facility(7) at 10
-Protoss_Shuttle(9) at 11
-Protoss_Dragoon(4) at 12
-Protoss_Dragoon(5) at 13
-Protoss_Dark_Templar(14) at 14
-Protoss_Dark_Templar(17) at 15
-Protoss_Citadel_of_Adun(6) at 16
-Protoss_Dark_Templar(13) at 17
-
-############
-OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.0542
-Global cost: 5
-Number of tours: 2
-Number of iterations: 315
-Optimization cost: 2.14748e+09
-Opt Cost BEFORE post-processing: 2.14748e+09
-
-Time reference: 664.091
-
-Domains:
-Protoss_Assimilator(2) at 0
-Protoss_Templar_Archives(8) at 1
-Protoss_Gateway(0) at 2
-Protoss_Cybernetics_Core(3) at 3
-Protoss_Gateway(1) at 4
-Protoss_Robotics_Facility(7) at 5
-Protoss_Shuttle(9) at 6
-Protoss_Dark_Templar(12) at 7
-Protoss_Dark_Templar(14) at 8
-Protoss_Dark_Templar(10) at 9
-Protoss_Dragoon(4) at 10
-Protoss_Citadel_of_Adun(6) at 11
-Protoss_Dark_Templar(17) at 12
-Protoss_Dark_Templar(13) at 13
-Protoss_Dark_Templar(16) at 14
-Protoss_Dragoon(5) at 15
-Protoss_Dark_Templar(15) at 16
-Protoss_Dark_Templar(11) at 17
-
-############
-OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.0101
-Global cost: 5
-Number of tours: 2
-Number of iterations: 311
-Optimization cost: 2.14748e+09
-Opt Cost BEFORE post-processing: 2.14748e+09
-
-Time reference: 664.091
-
-Finish Protoss_Probe at            20     m = 40.8       g = 0         mb = 0      gb = 0     mw = 4    gw = 0    s = 5/9)
-Start Protoss_Probe at             24     m = 1.68       g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Finish Protoss_Probe at            44     m = 69.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Start Protoss_Probe at             44     m = 19.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 7/9)
-Go for first Protoss_Pylon at      61     m = 86.32      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Finish Protoss_Probe at            64     m = 96.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Start Protoss_Probe at             64     m = 46.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 8/9)
-Start Protoss_Pylon at             78     m = 0.92       g = 0         mb = 0      gb = 0     mw = 6    gw = 0    s = 8/9)
-Finish Protoss_Probe at            84     m = 26.76      g = 0         mb = 0      gb = 0     mw = 7    gw = 0    s = 8/9)
-Start Protoss_Probe at             89     m = 1.24       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/9)
-Finish Protoss_Pylon at            108    m = 104.6      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Finish Protoss_Probe at            109    m = 110.04     g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Start Protoss_Probe at             109    m = 60.04      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Go for Protoss_Gateway at          120    m = 124.64     g = 0         mb = 150    gb = 0     mw = 8    gw = 0    s = 10/17)
-Start Protoss_Gateway at           125    m = 1.84       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Finish Protoss_Probe at            129    m = 23.6       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Start Protoss_Probe at             134    m = 4.88       g = 0         mb = 0      gb = 0     mw = 10   gw = 0    s = 11/17)
-Go for Protoss_Assimilator at      143    m = 66.08      g = 0         mb = 100    gb = 0     mw = 9    gw = 0    s = 11/17)
-Start Protoss_Assimilator at       149    m = 2.8        g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Probe at            154    m = 34.08      g = 0         mb = 0      gb = 0     mw = 10   gw = 0    s = 11/17)
-Start Protoss_Probe at             157    m = 4.48       g = 0         mb = 0      gb = 0     mw = 10   gw = 0    s = 12/17)
-Finish Protoss_Probe at            177    m = 153.4      g = 0         mb = 0      gb = 0     mw = 11   gw = 0    s = 12/17)
-Start Protoss_Probe at             177    m = 103.4      g = 0         mb = 0      gb = 0     mw = 11   gw = 0    s = 13/17)
-Finish Protoss_Gateway at          185    m = 165.96     g = 0         mb = 0      gb = 0     mw = 12   gw = 0    s = 13/17)
-Go for Protoss_Cybernetics_Core at 185    m = 165.96     g = 0         mb = 200    gb = 0     mw = 11   gw = 0    s = 13/17)
-Finish Protoss_Assimilator at      189    m = 196.56     g = 0         mb = 200    gb = 0     mw = 9    gw = 0    s = 13/17)
-Start Protoss_Cybernetics_Core at  190    m = 2.68       g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 13/17)
-Finish Protoss_Probe at            197    m = 47.56      g = 13.8      mb = 0      gb = 0     mw = 10   gw = 3    s = 13/17)
-Start Protoss_Probe at             198    m = 4.36       g = 17.25     mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Go for Protoss_Pylon at            198    m = 4.36       g = 17.25     mb = 100    gb = 0     mw = 9    gw = 3    s = 14/17)
-Start Protoss_Pylon at             213    m = 4.32       g = 69        mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Finish Protoss_Probe at            218    m = 39         g = 86.25     mb = 0      gb = 0     mw = 11   gw = 3    s = 14/17)
-Start Protoss_Probe at             220    m = 3.96       g = 93.15     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Finish Protoss_Probe at            240    m = 165.8      g = 162.15    mb = 0      gb = 0     mw = 12   gw = 3    s = 15/17)
-Start Protoss_Probe at             240    m = 115.8      g = 162.15    mb = 0      gb = 0     mw = 12   gw = 3    s = 16/17)
-Finish Protoss_Pylon at            243    m = 140.28     g = 172.5     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Go for Protoss_Citadel_of_Adun at  245    m = 157.28     g = 179.4     mb = 150    gb = 100   mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Cybernetics_Core at 250    m = 198.08     g = 196.65    mb = 150    gb = 100   mw = 12   gw = 3    s = 16/25)
-Start Protoss_Citadel_of_Adun at   250    m = 48.08      g = 96.65     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Dragoon at           259    m = 4          g = 77.7      mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Finish Protoss_Probe at            260    m = 13.52      g = 81.15     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Start Protoss_Probe at             264    m = 1.6        g = 94.95     mb = 0      gb = 0     mw = 15   gw = 3    s = 19/25)
-Finish Protoss_Probe at            284    m = 205.6      g = 163.95    mb = 0      gb = 0     mw = 15   gw = 3    s = 19/25)
-Start Protoss_Probe at             284    m = 155.6      g = 163.95    mb = 0      gb = 0     mw = 15   gw = 3    s = 20/25)
-Finish Protoss_Probe at            304    m = 370.48     g = 232.95    mb = 0      gb = 0     mw = 16   gw = 3    s = 20/25)
-Start Protoss_Probe at             304    m = 320.48     g = 232.95    mb = 0      gb = 0     mw = 16   gw = 3    s = 21/25)
-Go for Protoss_Templar_Archives at 305    m = 331.36     g = 236.4     mb = 150    gb = 200   mw = 15   gw = 3    s = 21/25)
-Finish Protoss_Dragoon at          309    m = 372.84     g = 250.2     mb = 150    gb = 200   mw = 16   gw = 3    s = 21/25)
-Finish Protoss_Citadel_of_Adun at  310    m = 383.72     g = 253.65    mb = 150    gb = 200   mw = 16   gw = 3    s = 21/25)
-Start Protoss_Templar_Archives at  310    m = 233.72     g = 53.65     mb = 0      gb = 0     mw = 16   gw = 3    s = 21/25)
-Finish Protoss_Probe at            324    m = 400.32     g = 101.95    mb = 0      gb = 0     mw = 18   gw = 3    s = 21/25)
-Start Protoss_Probe at             324    m = 350.32     g = 101.95    mb = 0      gb = 0     mw = 18   gw = 3    s = 22/25)
-Go for Protoss_Pylon at            324    m = 350.32     g = 101.95    mb = 100    gb = 0     mw = 17   gw = 3    s = 22/25)
-Start Protoss_Pylon at             329    m = 308.8      g = 119.2     mb = 0      gb = 0     mw = 18   gw = 3    s = 22/25)
-Finish Protoss_Probe at            344    m = 499.88     g = 170.95    mb = 0      gb = 0     mw = 19   gw = 3    s = 22/25)
-Start Protoss_Probe at             344    m = 449.88     g = 170.95    mb = 0      gb = 0     mw = 19   gw = 3    s = 23/25)
-Finish Protoss_Pylon at            359    m = 651.16     g = 222.7     mb = 0      gb = 0     mw = 20   gw = 3    s = 23/33)
-Finish Protoss_Probe at            364    m = 719.16     g = 239.95    mb = 0      gb = 0     mw = 20   gw = 3    s = 23/33)
-Start Protoss_Probe at             364    m = 669.16     g = 239.95    mb = 0      gb = 0     mw = 20   gw = 3    s = 24/33)
-Finish Protoss_Templar_Archives at 370    m = 752.12     g = 260.65    mb = 0      gb = 0     mw = 21   gw = 3    s = 24/33)
-Start Protoss_Dark_Templar at      370    m = 627.12     g = 160.65    mb = 0      gb = 0     mw = 21   gw = 3    s = 26/33)
-Finish Protoss_Probe at            384    m = 834.52     g = 208.95    mb = 0      gb = 0     mw = 22   gw = 3    s = 26/33)
-Start Protoss_Probe at             384    m = 784.52     g = 208.95    mb = 0      gb = 0     mw = 22   gw = 3    s = 27/33)
-Finish Protoss_Probe at            404    m = 1094.6     g = 277.95    mb = 0      gb = 0     mw = 23   gw = 3    s = 27/33)
-Finish Protoss_Dark_Templar at     420    m = 1353       g = 333.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 27/33)
-Start Protoss_Dark_Templar at      420    m = 1228       g = 233.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 29/33)
-Finish Protoss_Dark_Templar at     470    m = 2044       g = 405.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 29/33)
-Start Protoss_Dark_Templar at      470    m = 1919       g = 305.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 31/33)
-Go for Protoss_Pylon at            471    m = 1935.32    g = 309.1     mb = 100    gb = 0     mw = 23   gw = 3    s = 31/33)
-Start Protoss_Pylon at             476    m = 1913.52    g = 326.35    mb = 0      gb = 0     mw = 23   gw = 3    s = 31/33)
-Finish Protoss_Pylon at            506    m = 2400.4     g = 429.85    mb = 0      gb = 0     mw = 24   gw = 3    s = 31/41)
-Finish Protoss_Dark_Templar at     520    m = 2628.88    g = 478.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 31/41)
-Start Protoss_Dark_Templar at      520    m = 2503.88    g = 378.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 33/41)
-Finish Protoss_Dark_Templar at     570    m = 3319.88    g = 550.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 33/41)
-Start Protoss_Dark_Templar at      570    m = 3194.88    g = 450.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 35/41)
-Finish Protoss_Dark_Templar at     620    m = 4010.88    g = 623.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 35/41)
-Start Protoss_Dark_Templar at      620    m = 3885.88    g = 523.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 37/41)
-Finish Protoss_Dark_Templar at     670    m = 4701.88    g = 695.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 37/41)
-Start Protoss_Dark_Templar at      670    m = 4576.88    g = 595.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 39/41)
-Go for Protoss_Pylon at            671    m = 4593.2     g = 599.1     mb = 100    gb = 0     mw = 23   gw = 3    s = 39/41)
-Start Protoss_Pylon at             676    m = 4571.4     g = 616.35    mb = 0      gb = 0     mw = 23   gw = 3    s = 39/41)
-Finish Protoss_Pylon at            706    m = 5058.28    g = 719.85    mb = 0      gb = 0     mw = 24   gw = 3    s = 39/49)
-Finish Protoss_Dark_Templar at     720    m = 5286.76    g = 768.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 39/49)
-Start Protoss_Dragoon at           720    m = 5161.76    g = 718.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 41/49)
-Go for Protoss_Gateway at          721    m = 5178.08    g = 721.6     mb = 150    gb = 0     mw = 23   gw = 3    s = 41/49)
-Go for Protoss_Robotics_Facility at 722    m = 5193.72    g = 725.05    mb = 350    gb = 200   mw = 22   gw = 3    s = 41/49)
-Start Protoss_Gateway at           726    m = 5103.56    g = 738.85    mb = 200    gb = 200   mw = 22   gw = 3    s = 41/49)
-Start Protoss_Robotics_Facility at 727    m = 4918.52    g = 542.3     mb = 0      gb = 0     mw = 22   gw = 3    s = 41/49)
-Go for Protoss_Pylon at            727    m = 4918.52    g = 542.3     mb = 100    gb = 0     mw = 21   gw = 3    s = 41/49)
-Start Protoss_Pylon at             732    m = 4891.96    g = 559.55    mb = 0      gb = 0     mw = 23   gw = 3    s = 41/49)
-Finish Protoss_Pylon at            762    m = 5378.84    g = 663.05    mb = 0      gb = 0     mw = 24   gw = 3    s = 41/57)
-Finish Protoss_Dragoon at          770    m = 5509.4     g = 690.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 41/57)
-Start Protoss_Dark_Templar at      770    m = 5384.4     g = 590.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 43/57)
-Finish Protoss_Gateway at          786    m = 5645.52    g = 645.85    mb = 0      gb = 0     mw = 24   gw = 3    s = 43/57)
-Finish Protoss_Robotics_Facility at 807    m = 6000.48    g = 718.3     mb = 0      gb = 0     mw = 25   gw = 3    s = 43/57)
-Start Protoss_Shuttle at           807    m = 5800.48    g = 718.3     mb = 0      gb = 0     mw = 25   gw = 3    s = 45/57)
-Finish Protoss_Dark_Templar at     820    m = 6028.28    g = 763.15    mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Shuttle at          867    m = 6859.24    g = 925.3     mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Probe at            20     m = 40.8       g = 0         mb = 0      gb = 0     mw = 4    gw = 0    s = 5/9)
-Start Protoss_Probe at             24     m = 1.68       g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Finish Protoss_Probe at            44     m = 69.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Start Protoss_Probe at             44     m = 19.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 7/9)
-Go for first Protoss_Pylon at      61     m = 86.32      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Finish Protoss_Probe at            64     m = 96.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Start Protoss_Probe at             64     m = 46.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 8/9)
-Start Protoss_Pylon at             78     m = 0.92       g = 0         mb = 0      gb = 0     mw = 6    gw = 0    s = 8/9)
-Finish Protoss_Probe at            84     m = 26.76      g = 0         mb = 0      gb = 0     mw = 7    gw = 0    s = 8/9)
-Start Protoss_Probe at             89     m = 1.24       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/9)
-Finish Protoss_Pylon at            108    m = 104.6      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Finish Protoss_Probe at            109    m = 110.04     g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Start Protoss_Probe at             109    m = 60.04      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Go for Protoss_Gateway at          120    m = 124.64     g = 0         mb = 150    gb = 0     mw = 8    gw = 0    s = 10/17)
-Start Protoss_Gateway at           125    m = 1.84       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Finish Protoss_Probe at            129    m = 23.6       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Start Protoss_Probe at             134    m = 4.88       g = 0         mb = 0      gb = 0     mw = 10   gw = 0    s = 11/17)
-Go for Protoss_Assimilator at      143    m = 66.08      g = 0         mb = 100    gb = 0     mw = 9    gw = 0    s = 11/17)
-Start Protoss_Assimilator at       149    m = 2.8        g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Probe at            154    m = 34.08      g = 0         mb = 0      gb = 0     mw = 10   gw = 0    s = 11/17)
-Start Protoss_Probe at             157    m = 4.48       g = 0         mb = 0      gb = 0     mw = 10   gw = 0    s = 12/17)
-Finish Protoss_Probe at            177    m = 153.4      g = 0         mb = 0      gb = 0     mw = 11   gw = 0    s = 12/17)
-Start Protoss_Probe at             177    m = 103.4      g = 0         mb = 0      gb = 0     mw = 11   gw = 0    s = 13/17)
-Finish Protoss_Gateway at          185    m = 165.96     g = 0         mb = 0      gb = 0     mw = 12   gw = 0    s = 13/17)
-Go for Protoss_Cybernetics_Core at 185    m = 165.96     g = 0         mb = 200    gb = 0     mw = 11   gw = 0    s = 13/17)
-Finish Protoss_Assimilator at      189    m = 196.56     g = 0         mb = 200    gb = 0     mw = 9    gw = 0    s = 13/17)
-Start Protoss_Cybernetics_Core at  190    m = 2.68       g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 13/17)
-Finish Protoss_Probe at            197    m = 47.56      g = 13.8      mb = 0      gb = 0     mw = 10   gw = 3    s = 13/17)
-Start Protoss_Probe at             198    m = 4.36       g = 17.25     mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Go for Protoss_Pylon at            198    m = 4.36       g = 17.25     mb = 100    gb = 0     mw = 9    gw = 3    s = 14/17)
-Start Protoss_Pylon at             213    m = 4.32       g = 69        mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Finish Protoss_Probe at            218    m = 39         g = 86.25     mb = 0      gb = 0     mw = 11   gw = 3    s = 14/17)
-Start Protoss_Probe at             220    m = 3.96       g = 93.15     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Finish Protoss_Probe at            240    m = 165.8      g = 162.15    mb = 0      gb = 0     mw = 12   gw = 3    s = 15/17)
-Start Protoss_Probe at             240    m = 115.8      g = 162.15    mb = 0      gb = 0     mw = 12   gw = 3    s = 16/17)
-Finish Protoss_Pylon at            243    m = 140.28     g = 172.5     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Go for Protoss_Citadel_of_Adun at  245    m = 157.28     g = 179.4     mb = 150    gb = 100   mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Cybernetics_Core at 250    m = 198.08     g = 196.65    mb = 150    gb = 100   mw = 12   gw = 3    s = 16/25)
-Start Protoss_Citadel_of_Adun at   250    m = 48.08      g = 96.65     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Dragoon at           259    m = 4          g = 77.7      mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Finish Protoss_Probe at            260    m = 13.52      g = 81.15     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Start Protoss_Probe at             264    m = 1.6        g = 94.95     mb = 0      gb = 0     mw = 15   gw = 3    s = 19/25)
-Finish Protoss_Probe at            284    m = 205.6      g = 163.95    mb = 0      gb = 0     mw = 15   gw = 3    s = 19/25)
-Start Protoss_Probe at             284    m = 155.6      g = 163.95    mb = 0      gb = 0     mw = 15   gw = 3    s = 20/25)
-Finish Protoss_Probe at            304    m = 370.48     g = 232.95    mb = 0      gb = 0     mw = 16   gw = 3    s = 20/25)
-Start Protoss_Probe at             304    m = 320.48     g = 232.95    mb = 0      gb = 0     mw = 16   gw = 3    s = 21/25)
-Go for Protoss_Templar_Archives at 305    m = 331.36     g = 236.4     mb = 150    gb = 200   mw = 15   gw = 3    s = 21/25)
-Finish Protoss_Dragoon at          309    m = 372.84     g = 250.2     mb = 150    gb = 200   mw = 16   gw = 3    s = 21/25)
-Finish Protoss_Citadel_of_Adun at  310    m = 383.72     g = 253.65    mb = 150    gb = 200   mw = 16   gw = 3    s = 21/25)
-Start Protoss_Templar_Archives at  310    m = 233.72     g = 53.65     mb = 0      gb = 0     mw = 16   gw = 3    s = 21/25)
-Finish Protoss_Probe at            324    m = 400.32     g = 101.95    mb = 0      gb = 0     mw = 18   gw = 3    s = 21/25)
-Start Protoss_Probe at             324    m = 350.32     g = 101.95    mb = 0      gb = 0     mw = 18   gw = 3    s = 22/25)
-Go for Protoss_Pylon at            324    m = 350.32     g = 101.95    mb = 100    gb = 0     mw = 17   gw = 3    s = 22/25)
-Start Protoss_Pylon at             329    m = 308.8      g = 119.2     mb = 0      gb = 0     mw = 18   gw = 3    s = 22/25)
-Finish Protoss_Probe at            344    m = 499.88     g = 170.95    mb = 0      gb = 0     mw = 19   gw = 3    s = 22/25)
-Start Protoss_Probe at             344    m = 449.88     g = 170.95    mb = 0      gb = 0     mw = 19   gw = 3    s = 23/25)
-Finish Protoss_Pylon at            359    m = 651.16     g = 222.7     mb = 0      gb = 0     mw = 20   gw = 3    s = 23/33)
-Finish Protoss_Probe at            364    m = 719.16     g = 239.95    mb = 0      gb = 0     mw = 20   gw = 3    s = 23/33)
-Start Protoss_Probe at             364    m = 669.16     g = 239.95    mb = 0      gb = 0     mw = 20   gw = 3    s = 24/33)
-Finish Protoss_Templar_Archives at 370    m = 752.12     g = 260.65    mb = 0      gb = 0     mw = 21   gw = 3    s = 24/33)
-Start Protoss_Dark_Templar at      370    m = 627.12     g = 160.65    mb = 0      gb = 0     mw = 21   gw = 3    s = 26/33)
-Finish Protoss_Probe at            384    m = 834.52     g = 208.95    mb = 0      gb = 0     mw = 22   gw = 3    s = 26/33)
-Start Protoss_Probe at             384    m = 784.52     g = 208.95    mb = 0      gb = 0     mw = 22   gw = 3    s = 27/33)
-Finish Protoss_Probe at            404    m = 1094.6     g = 277.95    mb = 0      gb = 0     mw = 23   gw = 3    s = 27/33)
-Finish Protoss_Dark_Templar at     420    m = 1353       g = 333.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 27/33)
-Start Protoss_Dark_Templar at      420    m = 1228       g = 233.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 29/33)
-Finish Protoss_Dark_Templar at     470    m = 2044       g = 405.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 29/33)
-Start Protoss_Dark_Templar at      470    m = 1919       g = 305.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 31/33)
-Go for Protoss_Pylon at            471    m = 1935.32    g = 309.1     mb = 100    gb = 0     mw = 23   gw = 3    s = 31/33)
-Start Protoss_Pylon at             476    m = 1913.52    g = 326.35    mb = 0      gb = 0     mw = 23   gw = 3    s = 31/33)
-Finish Protoss_Pylon at            506    m = 2400.4     g = 429.85    mb = 0      gb = 0     mw = 24   gw = 3    s = 31/41)
-Finish Protoss_Dark_Templar at     520    m = 2628.88    g = 478.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 31/41)
-Start Protoss_Dark_Templar at      520    m = 2503.88    g = 378.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 33/41)
-Finish Protoss_Dark_Templar at     570    m = 3319.88    g = 550.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 33/41)
-Start Protoss_Dark_Templar at      570    m = 3194.88    g = 450.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 35/41)
-Finish Protoss_Dark_Templar at     620    m = 4010.88    g = 623.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 35/41)
-Start Protoss_Dark_Templar at      620    m = 3885.88    g = 523.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 37/41)
-Finish Protoss_Dark_Templar at     670    m = 4701.88    g = 695.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 37/41)
-Start Protoss_Dark_Templar at      670    m = 4576.88    g = 595.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 39/41)
-Go for Protoss_Pylon at            671    m = 4593.2     g = 599.1     mb = 100    gb = 0     mw = 23   gw = 3    s = 39/41)
-Go for Protoss_Gateway at          671    m = 4593.2     g = 599.1     mb = 250    gb = 0     mw = 22   gw = 3    s = 39/41)
-Go for Protoss_Robotics_Facility at 672    m = 4608.16    g = 602.55    mb = 450    gb = 200   mw = 21   gw = 3    s = 39/41)
-Start Protoss_Pylon at             676    m = 4565.28    g = 616.35    mb = 350    gb = 200   mw = 21   gw = 3    s = 39/41)
-Start Protoss_Gateway at           676    m = 4415.28    g = 616.35    mb = 200    gb = 200   mw = 21   gw = 3    s = 39/41)
-Start Protoss_Robotics_Facility at 677    m = 4229.56    g = 419.8     mb = 0      gb = 0     mw = 21   gw = 3    s = 39/41)
-Finish Protoss_Pylon at            706    m = 4696.04    g = 519.85    mb = 0      gb = 0     mw = 24   gw = 3    s = 39/49)
-Finish Protoss_Dark_Templar at     720    m = 4924.52    g = 568.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 39/49)
-Start Protoss_Dragoon at           720    m = 4799.52    g = 518.15    mb = 0      gb = 0     mw = 24   gw = 3    s = 41/49)
-Go for Protoss_Pylon at            721    m = 4815.84    g = 521.6     mb = 100    gb = 0     mw = 23   gw = 3    s = 41/49)
-Start Protoss_Pylon at             726    m = 4794.04    g = 538.85    mb = 0      gb = 0     mw = 23   gw = 3    s = 41/49)
-Finish Protoss_Gateway at          736    m = 4954.52    g = 573.35    mb = 0      gb = 0     mw = 24   gw = 3    s = 41/49)
-Start Protoss_Dark_Templar at      736    m = 4829.52    g = 473.35    mb = 0      gb = 0     mw = 24   gw = 3    s = 43/49)
-Finish Protoss_Pylon at            756    m = 5167.48    g = 542.35    mb = 0      gb = 0     mw = 25   gw = 3    s = 43/57)
-Finish Protoss_Robotics_Facility at 757    m = 5184.48    g = 545.8     mb = 0      gb = 0     mw = 25   gw = 3    s = 43/57)
-Start Protoss_Shuttle at           757    m = 4984.48    g = 545.8     mb = 0      gb = 0     mw = 25   gw = 3    s = 45/57)
-Finish Protoss_Dragoon at          770    m = 5212.28    g = 590.65    mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Dark_Templar at     786    m = 5495.16    g = 645.85    mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Shuttle at          817    m = 6043.24    g = 752.8     mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
 
 
 Protoss_Gateway: start at 125, finish at 185
@@ -601,574 +5,394 @@ Protoss_Assimilator: start at 149, finish at 189
 Protoss_Cybernetics_Core: start at 190, finish at 250
 Protoss_Citadel_of_Adun: start at 250, finish at 310
 Protoss_Dragoon: start at 259, finish at 309
-Protoss_Templar_Archives: start at 310, finish at 370
-Protoss_Dark_Templar: start at 370, finish at 420
-Protoss_Dark_Templar: start at 420, finish at 470
-Protoss_Dark_Templar: start at 470, finish at 520
-Protoss_Dark_Templar: start at 520, finish at 570
-Protoss_Dark_Templar: start at 570, finish at 620
-Protoss_Dark_Templar: start at 620, finish at 670
-Protoss_Dark_Templar: start at 670, finish at 720
-Protoss_Gateway: start at 676, finish at 736
-Protoss_Robotics_Facility: start at 677, finish at 757
-Protoss_Dragoon: start at 720, finish at 770
-Protoss_Dark_Templar: start at 736, finish at 786
-Protoss_Shuttle: start at 757, finish at 817
+Protoss_Robotics_Facility: start at 295, finish at 375
+Protoss_Dragoon: start at 315, finish at 365
+Protoss_Templar_Archives: start at 367, finish at 427
+Protoss_Dark_Templar: start at 427, finish at 477
+Protoss_Dark_Templar: start at 477, finish at 527
+Protoss_Dark_Templar: start at 527, finish at 577
+Protoss_Gateway: start at 533, finish at 593
+Protoss_Dark_Templar: start at 577, finish at 627
+Protoss_Shuttle: start at 578, finish at 638
+Protoss_Dark_Templar: start at 593, finish at 643
+Protoss_Dark_Templar: start at 627, finish at 677
+Protoss_Dark_Templar: start at 643, finish at 693
+Protoss_Dark_Templar: start at 677, finish at 727
 
 Domains:
-Protoss_Gateway(1) at 0
+Protoss_Gateway(0) at 0
 Protoss_Assimilator(2) at 1
 Protoss_Cybernetics_Core(3) at 2
 Protoss_Citadel_of_Adun(6) at 3
 Protoss_Dragoon(5) at 4
-Protoss_Templar_Archives(8) at 5
-Protoss_Dark_Templar(10) at 6
-Protoss_Dark_Templar(17) at 7
-Protoss_Dark_Templar(13) at 8
-Protoss_Dark_Templar(12) at 9
-Protoss_Dark_Templar(15) at 10
-Protoss_Dark_Templar(11) at 11
-Protoss_Dark_Templar(16) at 12
-Protoss_Dragoon(4) at 13
-Protoss_Gateway(0) at 14
-Protoss_Robotics_Facility(7) at 15
+Protoss_Robotics_Facility(7) at 5
+Protoss_Dragoon(4) at 6
+Protoss_Templar_Archives(8) at 7
+Protoss_Dark_Templar(16) at 8
+Protoss_Dark_Templar(11) at 9
+Protoss_Dark_Templar(10) at 10
+Protoss_Dark_Templar(12) at 11
+Protoss_Gateway(1) at 12
+Protoss_Dark_Templar(13) at 13
+Protoss_Shuttle(9) at 14
+Protoss_Dark_Templar(17) at 15
 Protoss_Dark_Templar(14) at 16
-Protoss_Shuttle(9) at 17
+Protoss_Dark_Templar(15) at 17
 
 ############
 OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.1232
+Elapsed time: 30.0115
 Global cost: 0
 Number of tours: 3
-Number of iterations: 270
-Optimization cost: 817
-Opt Cost BEFORE post-processing: 867
-Post-processing time: 4.83227
+Number of iterations: 308
+Optimization cost: 727
+Opt Cost BEFORE post-processing: 743
+Post-processing time: 3.73495
+
+Time reference: 664.091
+
+
+
+Protoss_Assimilator: start at 117, finish at 157
+Protoss_Gateway: start at 149, finish at 209
+Protoss_Cybernetics_Core: start at 229, finish at 289
+Protoss_Robotics_Facility: start at 289, finish at 369
+Protoss_Citadel_of_Adun: start at 290, finish at 350
+Protoss_Dragoon: start at 312, finish at 362
+Protoss_Templar_Archives: start at 350, finish at 410
+Protoss_Dark_Templar: start at 410, finish at 460
+Protoss_Dark_Templar: start at 460, finish at 510
+Protoss_Dark_Templar: start at 510, finish at 560
+Protoss_Gateway: start at 516, finish at 576
+Protoss_Dark_Templar: start at 560, finish at 610
+Protoss_Dark_Templar: start at 576, finish at 626
+Protoss_Shuttle: start at 577, finish at 637
+Protoss_Dark_Templar: start at 610, finish at 660
+Protoss_Dark_Templar: start at 626, finish at 676
+Protoss_Dark_Templar: start at 660, finish at 710
+Protoss_Dragoon: start at 676, finish at 726
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(1) at 1
+Protoss_Cybernetics_Core(3) at 2
+Protoss_Robotics_Facility(7) at 3
+Protoss_Citadel_of_Adun(6) at 4
+Protoss_Dragoon(5) at 5
+Protoss_Templar_Archives(8) at 6
+Protoss_Dark_Templar(15) at 7
+Protoss_Dark_Templar(10) at 8
+Protoss_Dark_Templar(13) at 9
+Protoss_Dark_Templar(16) at 10
+Protoss_Gateway(0) at 11
+Protoss_Dark_Templar(11) at 12
+Protoss_Dark_Templar(14) at 13
+Protoss_Shuttle(9) at 14
+Protoss_Dark_Templar(12) at 15
+Protoss_Dark_Templar(17) at 16
+Protoss_Dragoon(4) at 17
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0756
+Global cost: 0
+Number of tours: 3
+Number of iterations: 177
+Optimization cost: 726
+Opt Cost BEFORE post-processing: 760
+Post-processing time: 5.84736
+
+Time reference: 664.091
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Gateway(0) at 1
+Protoss_Templar_Archives(8) at 2
+Protoss_Gateway(1) at 3
+Protoss_Cybernetics_Core(3) at 4
+Protoss_Dragoon(4) at 5
+Protoss_Dark_Templar(12) at 6
+Protoss_Dark_Templar(15) at 7
+Protoss_Dark_Templar(10) at 8
+Protoss_Dark_Templar(13) at 9
+Protoss_Robotics_Facility(7) at 10
+Protoss_Shuttle(9) at 11
+Protoss_Dark_Templar(11) at 12
+Protoss_Dragoon(5) at 13
+Protoss_Citadel_of_Adun(6) at 14
+Protoss_Dark_Templar(17) at 15
+Protoss_Dark_Templar(16) at 16
+Protoss_Dark_Templar(14) at 17
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0226
+Global cost: 5
+Number of tours: 2
+Number of iterations: 306
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
 
 Time reference: 664.091
 
 Domains:
 Protoss_Assimilator(2) at 0
 Protoss_Templar_Archives(8) at 1
-Protoss_Dark_Templar(10) at 2
-Protoss_Gateway(0) at 3
-Protoss_Cybernetics_Core(3) at 4
-Protoss_Robotics_Facility(7) at 5
-Protoss_Gateway(1) at 6
-Protoss_Shuttle(9) at 7
-Protoss_Dark_Templar(13) at 8
-Protoss_Dark_Templar(15) at 9
-Protoss_Dark_Templar(17) at 10
-Protoss_Citadel_of_Adun(6) at 11
-Protoss_Dark_Templar(11) at 12
-Protoss_Dragoon(4) at 13
-Protoss_Dark_Templar(12) at 14
-Protoss_Dragoon(5) at 15
-Protoss_Dark_Templar(14) at 16
-Protoss_Dark_Templar(16) at 17
+Protoss_Gateway(1) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Robotics_Facility(7) at 4
+Protoss_Gateway(0) at 5
+Protoss_Dark_Templar(16) at 6
+Protoss_Citadel_of_Adun(6) at 7
+Protoss_Dark_Templar(17) at 8
+Protoss_Dragoon(5) at 9
+Protoss_Shuttle(9) at 10
+Protoss_Dark_Templar(11) at 11
+Protoss_Dark_Templar(10) at 12
+Protoss_Dark_Templar(12) at 13
+Protoss_Dark_Templar(15) at 14
+Protoss_Dark_Templar(13) at 15
+Protoss_Dragoon(4) at 16
+Protoss_Dark_Templar(14) at 17
 
 ############
 OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.036
+Elapsed time: 30.0803
 Global cost: 5
 Number of tours: 2
-Number of iterations: 321
+Number of iterations: 320
 Optimization cost: 2.14748e+09
 Opt Cost BEFORE post-processing: 2.14748e+09
 
 Time reference: 664.091
 
-Finish Protoss_Probe at            20     m = 40.8       g = 0         mb = 0      gb = 0     mw = 4    gw = 0    s = 5/9)
-Start Protoss_Probe at             24     m = 1.68       g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Finish Protoss_Probe at            44     m = 69.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Start Protoss_Probe at             44     m = 19.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 7/9)
-Go for first Protoss_Pylon at      61     m = 86.32      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Finish Protoss_Probe at            64     m = 96.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Start Protoss_Probe at             64     m = 46.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 8/9)
-Start Protoss_Pylon at             78     m = 0.92       g = 0         mb = 0      gb = 0     mw = 6    gw = 0    s = 8/9)
-Finish Protoss_Probe at            84     m = 26.76      g = 0         mb = 0      gb = 0     mw = 7    gw = 0    s = 8/9)
-Start Protoss_Probe at             89     m = 1.24       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/9)
-Finish Protoss_Pylon at            108    m = 104.6      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Go for Protoss_Assimilator at      108    m = 104.6      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Finish Protoss_Probe at            109    m = 109.36     g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Start Protoss_Probe at             109    m = 59.36      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 10/17)
-Start Protoss_Assimilator at       117    m = 0.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Finish Protoss_Probe at            129    m = 70.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 10/17)
-Start Protoss_Probe at             129    m = 20.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Go for Protoss_Gateway at          144    m = 120.16     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Probe at            149    m = 150.76     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Start Protoss_Gateway at           149    m = 0.76       g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Assimilator at      157    m = 55.16      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 11/17)
-Start Protoss_Probe at             157    m = 5.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 12/17)
-Finish Protoss_Probe at            177    m = 113.96     g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 12/17)
-Start Protoss_Probe at             177    m = 63.96      g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 13/17)
-Finish Protoss_Probe at            197    m = 183.64     g = 124.2     mb = 0      gb = 0     mw = 9    gw = 3    s = 13/17)
-Start Protoss_Probe at             197    m = 133.64     g = 124.2     mb = 0      gb = 0     mw = 9    gw = 3    s = 14/17)
-Go for Protoss_Pylon at            197    m = 133.64     g = 124.2     mb = 100    gb = 0     mw = 8    gw = 3    s = 14/17)
-Start Protoss_Pylon at             202    m = 61.52      g = 141.45    mb = 0      gb = 0     mw = 9    gw = 3    s = 14/17)
-Finish Protoss_Gateway at          209    m = 106.4      g = 165.6     mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Finish Protoss_Probe at            217    m = 164.2      g = 193.2     mb = 0      gb = 0     mw = 11   gw = 3    s = 14/17)
-Start Protoss_Probe at             217    m = 114.2      g = 193.2     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Go for Protoss_Cybernetics_Core at 223    m = 160.44     g = 213.9     mb = 200    gb = 0     mw = 11   gw = 3    s = 15/17)
-Start Protoss_Cybernetics_Core at  229    m = 5.32       g = 234.6     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Finish Protoss_Pylon at            232    m = 27.76      g = 244.95    mb = 0      gb = 0     mw = 11   gw = 3    s = 15/25)
-Finish Protoss_Probe at            237    m = 67.88      g = 262.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 15/25)
-Start Protoss_Probe at             237    m = 17.88      g = 262.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Go for Protoss_Gateway at          248    m = 112.4      g = 300.15    mb = 150    gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Gateway at           253    m = 3.2        g = 317.4     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Probe at            257    m = 35.84      g = 331.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Probe at             259    m = 3.52       g = 338.1     mb = 0      gb = 0     mw = 13   gw = 3    s = 17/25)
-Finish Protoss_Probe at            279    m = 192.56     g = 407.1     mb = 0      gb = 0     mw = 14   gw = 3    s = 17/25)
-Start Protoss_Probe at             279    m = 142.56     g = 407.1     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Go for Protoss_Robotics_Facility at 284    m = 190.84     g = 424.35    mb = 200    gb = 200   mw = 14   gw = 3    s = 18/25)
-Finish Protoss_Cybernetics_Core at 289    m = 238.44     g = 441.6     mb = 200    gb = 200   mw = 14   gw = 3    s = 18/25)
-Start Protoss_Robotics_Facility at 289    m = 38.44      g = 241.6     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Go for Protoss_Pylon at            289    m = 38.44      g = 241.6     mb = 100    gb = 0     mw = 13   gw = 3    s = 18/25)
-Start Protoss_Pylon at             296    m = 5.08       g = 265.75    mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Finish Protoss_Probe at            299    m = 35.68      g = 276.1     mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Start Protoss_Probe at             301    m = 6.76       g = 283       mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Go for Protoss_Citadel_of_Adun at  309    m = 97.88      g = 310.6     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Gateway at          313    m = 141.4      g = 324.4     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Start Protoss_Citadel_of_Adun at   314    m = 2.28       g = 227.85    mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Probe at            321    m = 83.88      g = 252       mb = 0      gb = 0     mw = 18   gw = 3    s = 19/25)
-Start Protoss_Probe at             321    m = 33.88      g = 252       mb = 0      gb = 0     mw = 18   gw = 3    s = 20/25)
-Finish Protoss_Pylon at            326    m = 95.76      g = 269.25    mb = 0      gb = 0     mw = 19   gw = 3    s = 20/33)
-Finish Protoss_Probe at            341    m = 289.56     g = 321       mb = 0      gb = 0     mw = 19   gw = 3    s = 20/33)
-Start Protoss_Probe at             341    m = 239.56     g = 321       mb = 0      gb = 0     mw = 19   gw = 3    s = 21/33)
-Start Protoss_Dragoon at           348    m = 207.04     g = 295.15    mb = 0      gb = 0     mw = 20   gw = 3    s = 23/33)
-Finish Protoss_Probe at            361    m = 383.84     g = 340       mb = 0      gb = 0     mw = 20   gw = 3    s = 23/33)
-Start Protoss_Probe at             361    m = 333.84     g = 340       mb = 0      gb = 0     mw = 20   gw = 3    s = 24/33)
-Go for Protoss_Pylon at            361    m = 333.84     g = 340       mb = 100    gb = 0     mw = 19   gw = 3    s = 24/33)
-Start Protoss_Pylon at             366    m = 299.12     g = 357.25    mb = 0      gb = 0     mw = 20   gw = 3    s = 24/33)
-Finish Protoss_Robotics_Facility at 369    m = 339.92     g = 367.6     mb = 0      gb = 0     mw = 20   gw = 3    s = 24/33)
-Start Protoss_Shuttle at           369    m = 139.92     g = 367.6     mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Start Protoss_Dragoon at           370    m = 28.52      g = 321.05    mb = 0      gb = 0     mw = 21   gw = 3    s = 28/33)
-Finish Protoss_Citadel_of_Adun at  374    m = 87         g = 334.85    mb = 0      gb = 0     mw = 22   gw = 3    s = 28/33)
-Go for Protoss_Templar_Archives at 374    m = 87         g = 334.85    mb = 150    gb = 200   mw = 21   gw = 3    s = 28/33)
-Start Protoss_Templar_Archives at  379    m = 9.76       g = 152.1     mb = 0      gb = 0     mw = 22   gw = 3    s = 28/33)
-Finish Protoss_Probe at            381    m = 39.68      g = 159       mb = 0      gb = 0     mw = 22   gw = 3    s = 28/33)
-Finish Protoss_Pylon at            396    m = 280.4      g = 210.75    mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Dragoon at          398    m = 313.04     g = 217.65    mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Dragoon at          420    m = 672.08     g = 293.55    mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Shuttle at          429    m = 818.96     g = 324.6     mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Templar_Archives at 439    m = 982.16     g = 359.1     mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Start Protoss_Dark_Templar at      439    m = 857.16     g = 259.1     mb = 0      gb = 0     mw = 24   gw = 3    s = 30/41)
-Start Protoss_Dark_Templar at      440    m = 748.48     g = 162.55    mb = 0      gb = 0     mw = 24   gw = 3    s = 32/41)
-Go for Protoss_Pylon at            441    m = 764.8      g = 166       mb = 100    gb = 0     mw = 23   gw = 3    s = 32/41)
-Start Protoss_Pylon at             446    m = 745.72     g = 183.25    mb = 0      gb = 0     mw = 24   gw = 3    s = 32/41)
-Finish Protoss_Pylon at            476    m = 1253       g = 286.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 32/49)
-Finish Protoss_Dark_Templar at     489    m = 1474       g = 331.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 32/49)
-Start Protoss_Dark_Templar at      489    m = 1349       g = 231.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 34/49)
-Finish Protoss_Dark_Templar at     490    m = 1366       g = 235.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 34/49)
-Start Protoss_Dark_Templar at      490    m = 1241       g = 135.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 36/49)
-Finish Protoss_Dark_Templar at     539    m = 2074       g = 304.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 36/49)
-Start Protoss_Dark_Templar at      539    m = 1949       g = 204.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 38/49)
-Finish Protoss_Dark_Templar at     540    m = 1966       g = 207.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 38/49)
-Start Protoss_Dark_Templar at      540    m = 1841       g = 107.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 40/49)
-Go for Protoss_Pylon at            541    m = 1858       g = 111       mb = 100    gb = 0     mw = 24   gw = 3    s = 40/49)
-Start Protoss_Pylon at             546    m = 1839.6     g = 128.25    mb = 0      gb = 0     mw = 24   gw = 3    s = 40/49)
-Finish Protoss_Pylon at            576    m = 2346.88    g = 231.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 40/57)
-Finish Protoss_Dark_Templar at     589    m = 2567.88    g = 276.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 40/57)
-Start Protoss_Dark_Templar at      589    m = 2442.88    g = 176.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 42/57)
-Finish Protoss_Dark_Templar at     590    m = 2459.88    g = 180.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 42/57)
-Start Protoss_Dark_Templar at      590    m = 2334.88    g = 80.05     mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Dark_Templar at     639    m = 3167.88    g = 249.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Dark_Templar at     640    m = 3184.88    g = 252.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Probe at            20     m = 40.8       g = 0         mb = 0      gb = 0     mw = 4    gw = 0    s = 5/9)
-Start Protoss_Probe at             24     m = 1.68       g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Finish Protoss_Probe at            44     m = 69.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Start Protoss_Probe at             44     m = 19.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 7/9)
-Go for first Protoss_Pylon at      61     m = 86.32      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Finish Protoss_Probe at            64     m = 96.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Start Protoss_Probe at             64     m = 46.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 8/9)
-Start Protoss_Pylon at             78     m = 0.92       g = 0         mb = 0      gb = 0     mw = 6    gw = 0    s = 8/9)
-Finish Protoss_Probe at            84     m = 26.76      g = 0         mb = 0      gb = 0     mw = 7    gw = 0    s = 8/9)
-Start Protoss_Probe at             89     m = 1.24       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/9)
-Finish Protoss_Pylon at            108    m = 104.6      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Go for Protoss_Assimilator at      108    m = 104.6      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Finish Protoss_Probe at            109    m = 109.36     g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Start Protoss_Probe at             109    m = 59.36      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 10/17)
-Start Protoss_Assimilator at       117    m = 0.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Finish Protoss_Probe at            129    m = 70.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 10/17)
-Start Protoss_Probe at             129    m = 20.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Go for Protoss_Gateway at          144    m = 120.16     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Probe at            149    m = 150.76     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Start Protoss_Gateway at           149    m = 0.76       g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Assimilator at      157    m = 55.16      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 11/17)
-Start Protoss_Probe at             157    m = 5.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 12/17)
-Finish Protoss_Probe at            177    m = 113.96     g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 12/17)
-Start Protoss_Probe at             177    m = 63.96      g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 13/17)
-Finish Protoss_Probe at            197    m = 183.64     g = 124.2     mb = 0      gb = 0     mw = 9    gw = 3    s = 13/17)
-Start Protoss_Probe at             197    m = 133.64     g = 124.2     mb = 0      gb = 0     mw = 9    gw = 3    s = 14/17)
-Go for Protoss_Pylon at            197    m = 133.64     g = 124.2     mb = 100    gb = 0     mw = 8    gw = 3    s = 14/17)
-Start Protoss_Pylon at             202    m = 61.52      g = 141.45    mb = 0      gb = 0     mw = 9    gw = 3    s = 14/17)
-Finish Protoss_Gateway at          209    m = 106.4      g = 165.6     mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Finish Protoss_Probe at            217    m = 164.2      g = 193.2     mb = 0      gb = 0     mw = 11   gw = 3    s = 14/17)
-Start Protoss_Probe at             217    m = 114.2      g = 193.2     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Go for Protoss_Cybernetics_Core at 223    m = 160.44     g = 213.9     mb = 200    gb = 0     mw = 11   gw = 3    s = 15/17)
-Start Protoss_Cybernetics_Core at  229    m = 5.32       g = 234.6     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Finish Protoss_Pylon at            232    m = 27.76      g = 244.95    mb = 0      gb = 0     mw = 11   gw = 3    s = 15/25)
-Finish Protoss_Probe at            237    m = 67.88      g = 262.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 15/25)
-Start Protoss_Probe at             237    m = 17.88      g = 262.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Go for Protoss_Gateway at          248    m = 112.4      g = 300.15    mb = 150    gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Gateway at           253    m = 3.2        g = 317.4     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Probe at            257    m = 35.84      g = 331.2     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Probe at             259    m = 3.52       g = 338.1     mb = 0      gb = 0     mw = 13   gw = 3    s = 17/25)
-Finish Protoss_Probe at            279    m = 192.56     g = 407.1     mb = 0      gb = 0     mw = 14   gw = 3    s = 17/25)
-Start Protoss_Probe at             279    m = 142.56     g = 407.1     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Go for Protoss_Robotics_Facility at 284    m = 190.84     g = 424.35    mb = 200    gb = 200   mw = 14   gw = 3    s = 18/25)
-Finish Protoss_Cybernetics_Core at 289    m = 238.44     g = 441.6     mb = 200    gb = 200   mw = 14   gw = 3    s = 18/25)
-Start Protoss_Robotics_Facility at 289    m = 38.44      g = 241.6     mb = 0      gb = 0     mw = 14   gw = 3    s = 18/25)
-Go for Protoss_Pylon at            289    m = 38.44      g = 241.6     mb = 100    gb = 0     mw = 13   gw = 3    s = 18/25)
-Start Protoss_Pylon at             296    m = 5.08       g = 265.75    mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Finish Protoss_Probe at            299    m = 35.68      g = 276.1     mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Start Protoss_Probe at             301    m = 6.76       g = 283       mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Go for Protoss_Citadel_of_Adun at  309    m = 97.88      g = 310.6     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Gateway at          313    m = 141.4      g = 324.4     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Start Protoss_Citadel_of_Adun at   314    m = 2.28       g = 227.85    mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Probe at            321    m = 83.88      g = 252       mb = 0      gb = 0     mw = 18   gw = 3    s = 19/25)
-Start Protoss_Probe at             321    m = 33.88      g = 252       mb = 0      gb = 0     mw = 18   gw = 3    s = 20/25)
-Finish Protoss_Pylon at            326    m = 95.76      g = 269.25    mb = 0      gb = 0     mw = 19   gw = 3    s = 20/33)
-Start Protoss_Dragoon at           329    m = 9.52       g = 229.6     mb = 0      gb = 0     mw = 19   gw = 3    s = 22/33)
-Finish Protoss_Probe at            341    m = 164.56     g = 271       mb = 0      gb = 0     mw = 19   gw = 3    s = 22/33)
-Start Protoss_Probe at             341    m = 114.56     g = 271       mb = 0      gb = 0     mw = 19   gw = 3    s = 23/33)
-Start Protoss_Dragoon at           357    m = 204.44     g = 276.2     mb = 0      gb = 0     mw = 20   gw = 3    s = 25/33)
-Go for Protoss_Pylon at            358    m = 218.04     g = 279.65    mb = 100    gb = 0     mw = 19   gw = 3    s = 25/33)
-Finish Protoss_Probe at            361    m = 256.8      g = 290       mb = 100    gb = 0     mw = 19   gw = 3    s = 25/33)
-Start Protoss_Probe at             361    m = 206.8      g = 290       mb = 100    gb = 0     mw = 19   gw = 3    s = 26/33)
-Start Protoss_Pylon at             363    m = 132.64     g = 296.9     mb = 0      gb = 0     mw = 19   gw = 3    s = 26/33)
-Finish Protoss_Robotics_Facility at 369    m = 214.24     g = 317.6     mb = 0      gb = 0     mw = 21   gw = 3    s = 26/33)
-Start Protoss_Shuttle at           369    m = 14.24      g = 317.6     mb = 0      gb = 0     mw = 21   gw = 3    s = 28/33)
-Finish Protoss_Citadel_of_Adun at  374    m = 87         g = 334.85    mb = 0      gb = 0     mw = 22   gw = 3    s = 28/33)
-Go for Protoss_Templar_Archives at 374    m = 87         g = 334.85    mb = 150    gb = 200   mw = 21   gw = 3    s = 28/33)
-Finish Protoss_Dragoon at          379    m = 159.76     g = 352.1     mb = 150    gb = 200   mw = 22   gw = 3    s = 28/33)
-Start Protoss_Templar_Archives at  379    m = 9.76       g = 152.1     mb = 0      gb = 0     mw = 22   gw = 3    s = 28/33)
-Finish Protoss_Probe at            381    m = 39.68      g = 159       mb = 0      gb = 0     mw = 22   gw = 3    s = 28/33)
-Finish Protoss_Pylon at            393    m = 231.44     g = 200.4     mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Dragoon at          407    m = 459.92     g = 248.7     mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Shuttle at          429    m = 818.96     g = 324.6     mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Finish Protoss_Templar_Archives at 439    m = 982.16     g = 359.1     mb = 0      gb = 0     mw = 24   gw = 3    s = 28/41)
-Start Protoss_Dark_Templar at      439    m = 857.16     g = 259.1     mb = 0      gb = 0     mw = 24   gw = 3    s = 30/41)
-Start Protoss_Dark_Templar at      440    m = 748.48     g = 162.55    mb = 0      gb = 0     mw = 24   gw = 3    s = 32/41)
-Go for Protoss_Pylon at            441    m = 764.8      g = 166       mb = 100    gb = 0     mw = 23   gw = 3    s = 32/41)
-Start Protoss_Pylon at             446    m = 745.72     g = 183.25    mb = 0      gb = 0     mw = 24   gw = 3    s = 32/41)
-Finish Protoss_Pylon at            476    m = 1253       g = 286.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 32/49)
-Finish Protoss_Dark_Templar at     489    m = 1474       g = 331.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 32/49)
-Start Protoss_Dark_Templar at      489    m = 1349       g = 231.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 34/49)
-Finish Protoss_Dark_Templar at     490    m = 1366       g = 235.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 34/49)
-Start Protoss_Dark_Templar at      490    m = 1241       g = 135.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 36/49)
-Finish Protoss_Dark_Templar at     539    m = 2074       g = 304.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 36/49)
-Start Protoss_Dark_Templar at      539    m = 1949       g = 204.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 38/49)
-Finish Protoss_Dark_Templar at     540    m = 1966       g = 207.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 38/49)
-Start Protoss_Dark_Templar at      540    m = 1841       g = 107.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 40/49)
-Go for Protoss_Pylon at            541    m = 1858       g = 111       mb = 100    gb = 0     mw = 24   gw = 3    s = 40/49)
-Start Protoss_Pylon at             546    m = 1839.6     g = 128.25    mb = 0      gb = 0     mw = 24   gw = 3    s = 40/49)
-Finish Protoss_Pylon at            576    m = 2346.88    g = 231.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 40/57)
-Finish Protoss_Dark_Templar at     589    m = 2567.88    g = 276.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 40/57)
-Start Protoss_Dark_Templar at      589    m = 2442.88    g = 176.6     mb = 0      gb = 0     mw = 25   gw = 3    s = 42/57)
-Finish Protoss_Dark_Templar at     590    m = 2459.88    g = 180.05    mb = 0      gb = 0     mw = 25   gw = 3    s = 42/57)
-Start Protoss_Dark_Templar at      590    m = 2334.88    g = 80.05     mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Dark_Templar at     639    m = 3167.88    g = 249.1     mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-Finish Protoss_Dark_Templar at     640    m = 3184.88    g = 252.55    mb = 0      gb = 0     mw = 25   gw = 3    s = 44/57)
-
-
-Protoss_Assimilator: start at 117, finish at 157
-Protoss_Gateway: start at 149, finish at 209
-Protoss_Cybernetics_Core: start at 229, finish at 289
-Protoss_Gateway: start at 253, finish at 313
-Protoss_Robotics_Facility: start at 289, finish at 369
-Protoss_Citadel_of_Adun: start at 314, finish at 374
-Protoss_Dragoon: start at 348, finish at 398
-Protoss_Shuttle: start at 369, finish at 429
-Protoss_Dragoon: start at 370, finish at 420
-Protoss_Templar_Archives: start at 379, finish at 439
-Protoss_Dark_Templar: start at 439, finish at 489
-Protoss_Dark_Templar: start at 440, finish at 490
-Protoss_Dark_Templar: start at 489, finish at 539
-Protoss_Dark_Templar: start at 490, finish at 540
-Protoss_Dark_Templar: start at 539, finish at 589
-Protoss_Dark_Templar: start at 540, finish at 590
-Protoss_Dark_Templar: start at 589, finish at 639
-Protoss_Dark_Templar: start at 590, finish at 640
-
 Domains:
 Protoss_Assimilator(2) at 0
 Protoss_Gateway(0) at 1
-Protoss_Cybernetics_Core(3) at 2
-Protoss_Gateway(1) at 3
-Protoss_Robotics_Facility(7) at 4
-Protoss_Citadel_of_Adun(6) at 5
-Protoss_Dragoon(4) at 6
-Protoss_Shuttle(9) at 7
-Protoss_Dragoon(5) at 8
-Protoss_Templar_Archives(8) at 9
-Protoss_Dark_Templar(15) at 10
-Protoss_Dark_Templar(12) at 11
+Protoss_Templar_Archives(8) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Dark_Templar(14) at 4
+Protoss_Dragoon(5) at 5
+Protoss_Dark_Templar(11) at 6
+Protoss_Dark_Templar(17) at 7
+Protoss_Dark_Templar(15) at 8
+Protoss_Dark_Templar(10) at 9
+Protoss_Dragoon(4) at 10
+Protoss_Citadel_of_Adun(6) at 11
 Protoss_Dark_Templar(16) at 12
-Protoss_Dark_Templar(13) at 13
-Protoss_Dark_Templar(11) at 14
-Protoss_Dark_Templar(17) at 15
-Protoss_Dark_Templar(10) at 16
-Protoss_Dark_Templar(14) at 17
+Protoss_Robotics_Facility(7) at 13
+Protoss_Dark_Templar(13) at 14
+Protoss_Dark_Templar(12) at 15
+Protoss_Shuttle(9) at 16
+Protoss_Gateway(1) at 17
 
 ############
 OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.0536
-Global cost: 0
-Number of tours: 3
-Number of iterations: 271
-Optimization cost: 640
-Opt Cost BEFORE post-processing: 640
-Post-processing time: 5.93435
+Elapsed time: 30.0195
+Global cost: 5
+Number of tours: 2
+Number of iterations: 334
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
 
 Time reference: 664.091
 
-Finish Protoss_Probe at            20     m = 40.8       g = 0         mb = 0      gb = 0     mw = 4    gw = 0    s = 5/9)
-Start Protoss_Probe at             24     m = 1.68       g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Finish Protoss_Probe at            44     m = 69.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Start Protoss_Probe at             44     m = 19.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 7/9)
-Go for first Protoss_Pylon at      61     m = 86.32      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Finish Protoss_Probe at            64     m = 96.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Start Protoss_Probe at             64     m = 46.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 8/9)
-Start Protoss_Pylon at             78     m = 0.92       g = 0         mb = 0      gb = 0     mw = 6    gw = 0    s = 8/9)
-Finish Protoss_Probe at            84     m = 26.76      g = 0         mb = 0      gb = 0     mw = 7    gw = 0    s = 8/9)
-Start Protoss_Probe at             89     m = 1.24       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/9)
-Finish Protoss_Pylon at            108    m = 104.6      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Go for Protoss_Assimilator at      108    m = 104.6      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Finish Protoss_Probe at            109    m = 109.36     g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Start Protoss_Probe at             109    m = 59.36      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 10/17)
-Start Protoss_Assimilator at       117    m = 0.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Finish Protoss_Probe at            129    m = 70.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 10/17)
-Start Protoss_Probe at             129    m = 20.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Go for Protoss_Gateway at          144    m = 120.16     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Probe at            149    m = 150.76     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Start Protoss_Gateway at           149    m = 0.76       g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Assimilator at      157    m = 55.16      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 11/17)
-Start Protoss_Probe at             157    m = 5.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 12/17)
-Finish Protoss_Probe at            177    m = 113.96     g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 12/17)
-Start Protoss_Probe at             177    m = 63.96      g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 13/17)
-Go for Protoss_Gateway at          187    m = 122.44     g = 89.7      mb = 150    gb = 0     mw = 8    gw = 3    s = 13/17)
-Start Protoss_Gateway at           193    m = 5.08       g = 110.4     mb = 0      gb = 0     mw = 8    gw = 3    s = 13/17)
-Go for Protoss_Pylon at            193    m = 5.08       g = 110.4     mb = 100    gb = 0     mw = 7    gw = 3    s = 13/17)
-Finish Protoss_Probe at            197    m = 24.12      g = 124.2     mb = 100    gb = 0     mw = 7    gw = 3    s = 13/17)
-Start Protoss_Probe at             202    m = 2          g = 141.45    mb = 100    gb = 0     mw = 9    gw = 3    s = 14/17)
-Finish Protoss_Gateway at          209    m = 44.84      g = 165.6     mb = 100    gb = 0     mw = 9    gw = 3    s = 14/17)
-Start Protoss_Pylon at             218    m = 4          g = 196.65    mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Finish Protoss_Probe at            222    m = 31.2       g = 210.45    mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Start Protoss_Probe at             225    m = 3.64       g = 220.8     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Finish Protoss_Probe at            245    m = 166.16     g = 289.8     mb = 0      gb = 0     mw = 12   gw = 3    s = 15/17)
-Start Protoss_Probe at             245    m = 116.16     g = 289.8     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/17)
-Finish Protoss_Pylon at            248    m = 140.64     g = 300.15    mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Go for Protoss_Cybernetics_Core at 250    m = 157.64     g = 307.05    mb = 200    gb = 0     mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Gateway at          253    m = 182.12     g = 317.4     mb = 200    gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Cybernetics_Core at  256    m = 6.6        g = 327.75    mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Probe at            265    m = 89.56      g = 358.8     mb = 0      gb = 0     mw = 14   gw = 3    s = 16/25)
-Start Protoss_Probe at             265    m = 39.56      g = 358.8     mb = 0      gb = 0     mw = 14   gw = 3    s = 17/25)
-Finish Protoss_Probe at            285    m = 240.84     g = 427.8     mb = 0      gb = 0     mw = 15   gw = 3    s = 17/25)
-Start Protoss_Probe at             285    m = 190.84     g = 427.8     mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Finish Protoss_Probe at            305    m = 405.72     g = 496.8     mb = 0      gb = 0     mw = 16   gw = 3    s = 18/25)
-Start Protoss_Probe at             305    m = 355.72     g = 496.8     mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Go for Protoss_Citadel_of_Adun at  311    m = 422.36     g = 517.5     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Cybernetics_Core at 316    m = 476.76     g = 534.75    mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Start Protoss_Citadel_of_Adun at   316    m = 326.76     g = 434.75    mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Start Protoss_Dragoon at           316    m = 201.76     g = 384.75    mb = 0      gb = 0     mw = 16   gw = 3    s = 21/25)
-Go for Protoss_Pylon at            317    m = 212.64     g = 388.2     mb = 100    gb = 0     mw = 15   gw = 3    s = 21/25)
-Start Protoss_Dragoon at           319    m = 108.04     g = 345.1     mb = 100    gb = 0     mw = 16   gw = 3    s = 23/25)
-Start Protoss_Pylon at             322    m = 42.04      g = 355.45    mb = 0      gb = 0     mw = 17   gw = 3    s = 23/25)
-Finish Protoss_Probe at            325    m = 76.72      g = 365.8     mb = 0      gb = 0     mw = 17   gw = 3    s = 23/25)
-Start Protoss_Probe at             325    m = 26.72      g = 365.8     mb = 0      gb = 0     mw = 17   gw = 3    s = 24/25)
-Finish Protoss_Probe at            345    m = 281.72     g = 434.8     mb = 0      gb = 0     mw = 19   gw = 3    s = 24/25)
-Start Protoss_Probe at             345    m = 231.72     g = 434.8     mb = 0      gb = 0     mw = 19   gw = 3    s = 25/25)
-Finish Protoss_Pylon at            352    m = 324.2      g = 458.95    mb = 0      gb = 0     mw = 20   gw = 3    s = 25/33)
-Finish Protoss_Probe at            365    m = 501        g = 503.8     mb = 0      gb = 0     mw = 20   gw = 3    s = 25/33)
-Start Protoss_Probe at             365    m = 451        g = 503.8     mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Dragoon at          366    m = 464.6      g = 507.25    mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Dragoon at          369    m = 505.4      g = 517.6     mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Go for Protoss_Templar_Archives at 371    m = 533.96     g = 524.5     mb = 150    gb = 200   mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Citadel_of_Adun at  376    m = 601.96     g = 541.75    mb = 150    gb = 200   mw = 20   gw = 3    s = 26/33)
-Start Protoss_Templar_Archives at  376    m = 451.96     g = 341.75    mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Probe at            385    m = 581.84     g = 372.8     mb = 0      gb = 0     mw = 22   gw = 3    s = 26/33)
-Start Protoss_Probe at             385    m = 531.84     g = 372.8     mb = 0      gb = 0     mw = 22   gw = 3    s = 27/33)
-Finish Protoss_Probe at            405    m = 841.92     g = 441.8     mb = 0      gb = 0     mw = 23   gw = 3    s = 27/33)
-Finish Protoss_Templar_Archives at 436    m = 1345.12    g = 548.75    mb = 0      gb = 0     mw = 24   gw = 3    s = 27/33)
-Start Protoss_Dark_Templar at      436    m = 1220.12    g = 448.75    mb = 0      gb = 0     mw = 24   gw = 3    s = 29/33)
-Go for Protoss_Pylon at            437    m = 1236.44    g = 452.2     mb = 100    gb = 0     mw = 23   gw = 3    s = 29/33)
-Start Protoss_Dark_Templar at      437    m = 1111.44    g = 352.2     mb = 100    gb = 0     mw = 23   gw = 3    s = 31/33)
-Start Protoss_Pylon at             442    m = 1091.68    g = 369.45    mb = 0      gb = 0     mw = 24   gw = 3    s = 31/33)
-Finish Protoss_Pylon at            472    m = 1598.96    g = 472.95    mb = 0      gb = 0     mw = 25   gw = 3    s = 31/41)
-Finish Protoss_Dark_Templar at     486    m = 1836.96    g = 521.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 31/41)
-Start Protoss_Dark_Templar at      486    m = 1711.96    g = 421.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 33/41)
-Finish Protoss_Dark_Templar at     487    m = 1728.96    g = 424.7     mb = 0      gb = 0     mw = 25   gw = 3    s = 33/41)
-Start Protoss_Dark_Templar at      487    m = 1603.96    g = 324.7     mb = 0      gb = 0     mw = 25   gw = 3    s = 35/41)
-Finish Protoss_Dark_Templar at     536    m = 2436.96    g = 493.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 35/41)
-Start Protoss_Dark_Templar at      536    m = 2311.96    g = 393.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 37/41)
-Finish Protoss_Dark_Templar at     537    m = 2328.96    g = 397.2     mb = 0      gb = 0     mw = 25   gw = 3    s = 37/41)
-Go for Protoss_Pylon at            537    m = 2328.96    g = 397.2     mb = 100    gb = 0     mw = 24   gw = 3    s = 37/41)
-Start Protoss_Dark_Templar at      537    m = 2203.96    g = 297.2     mb = 100    gb = 0     mw = 24   gw = 3    s = 39/41)
-Go for Protoss_Robotics_Facility at 538    m = 2220.28    g = 300.65    mb = 300    gb = 200   mw = 23   gw = 3    s = 39/41)
-Start Protoss_Pylon at             542    m = 2182.84    g = 314.45    mb = 200    gb = 200   mw = 23   gw = 3    s = 39/41)
-Start Protoss_Robotics_Facility at 543    m = 1998.48    g = 117.9     mb = 0      gb = 0     mw = 23   gw = 3    s = 39/41)
-Finish Protoss_Pylon at            572    m = 2486.72    g = 217.95    mb = 0      gb = 0     mw = 25   gw = 3    s = 39/49)
-Finish Protoss_Dark_Templar at     586    m = 2724.72    g = 266.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 39/49)
-Start Protoss_Dark_Templar at      586    m = 2599.72    g = 166.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 41/49)
-Finish Protoss_Dark_Templar at     587    m = 2616.72    g = 169.7     mb = 0      gb = 0     mw = 25   gw = 3    s = 41/49)
-Go for Protoss_Pylon at            587    m = 2616.72    g = 169.7     mb = 100    gb = 0     mw = 24   gw = 3    s = 41/49)
-Start Protoss_Dark_Templar at      587    m = 2491.72    g = 69.7      mb = 100    gb = 0     mw = 24   gw = 3    s = 43/49)
-Start Protoss_Pylon at             592    m = 2473.32    g = 86.95     mb = 0      gb = 0     mw = 24   gw = 3    s = 43/49)
-Finish Protoss_Pylon at            622    m = 2980.6     g = 190.45    mb = 0      gb = 0     mw = 25   gw = 3    s = 43/57)
-Finish Protoss_Robotics_Facility at 623    m = 2997.6     g = 193.9     mb = 0      gb = 0     mw = 25   gw = 3    s = 43/57)
-Start Protoss_Shuttle at           623    m = 2797.6     g = 193.9     mb = 0      gb = 0     mw = 25   gw = 3    s = 45/57)
-Finish Protoss_Dark_Templar at     636    m = 3025.4     g = 238.75    mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Dark_Templar at     637    m = 3043.08    g = 242.2     mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Shuttle at          683    m = 3856.36    g = 400.9     mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Probe at            20     m = 40.8       g = 0         mb = 0      gb = 0     mw = 4    gw = 0    s = 5/9)
-Start Protoss_Probe at             24     m = 1.68       g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Finish Protoss_Probe at            44     m = 69.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 6/9)
-Start Protoss_Probe at             44     m = 19.68      g = 0         mb = 0      gb = 0     mw = 5    gw = 0    s = 7/9)
-Go for first Protoss_Pylon at      61     m = 86.32      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Finish Protoss_Probe at            64     m = 96.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 7/9)
-Start Protoss_Probe at             64     m = 46.52      g = 0         mb = 100    gb = 0     mw = 5    gw = 0    s = 8/9)
-Start Protoss_Pylon at             78     m = 0.92       g = 0         mb = 0      gb = 0     mw = 6    gw = 0    s = 8/9)
-Finish Protoss_Probe at            84     m = 26.76      g = 0         mb = 0      gb = 0     mw = 7    gw = 0    s = 8/9)
-Start Protoss_Probe at             89     m = 1.24       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/9)
-Finish Protoss_Pylon at            108    m = 104.6      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 9/17)
-Go for Protoss_Assimilator at      108    m = 104.6      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Finish Protoss_Probe at            109    m = 109.36     g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 9/17)
-Start Protoss_Probe at             109    m = 59.36      g = 0         mb = 100    gb = 0     mw = 7    gw = 0    s = 10/17)
-Start Protoss_Assimilator at       117    m = 0.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 10/17)
-Finish Protoss_Probe at            129    m = 70.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 10/17)
-Start Protoss_Probe at             129    m = 20.88      g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Go for Protoss_Gateway at          144    m = 120.16     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Probe at            149    m = 150.76     g = 0         mb = 150    gb = 0     mw = 9    gw = 0    s = 11/17)
-Start Protoss_Gateway at           149    m = 0.76       g = 0         mb = 0      gb = 0     mw = 9    gw = 0    s = 11/17)
-Finish Protoss_Assimilator at      157    m = 55.16      g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 11/17)
-Start Protoss_Probe at             157    m = 5.16       g = 0         mb = 0      gb = 0     mw = 8    gw = 0    s = 12/17)
-Finish Protoss_Probe at            177    m = 113.96     g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 12/17)
-Start Protoss_Probe at             177    m = 63.96      g = 55.2      mb = 0      gb = 0     mw = 8    gw = 3    s = 13/17)
-Go for Protoss_Gateway at          187    m = 122.44     g = 89.7      mb = 150    gb = 0     mw = 8    gw = 3    s = 13/17)
-Start Protoss_Gateway at           193    m = 5.08       g = 110.4     mb = 0      gb = 0     mw = 8    gw = 3    s = 13/17)
-Go for Protoss_Pylon at            193    m = 5.08       g = 110.4     mb = 100    gb = 0     mw = 7    gw = 3    s = 13/17)
-Finish Protoss_Probe at            197    m = 24.12      g = 124.2     mb = 100    gb = 0     mw = 7    gw = 3    s = 13/17)
-Start Protoss_Probe at             202    m = 2          g = 141.45    mb = 100    gb = 0     mw = 9    gw = 3    s = 14/17)
-Finish Protoss_Gateway at          209    m = 44.84      g = 165.6     mb = 100    gb = 0     mw = 9    gw = 3    s = 14/17)
-Start Protoss_Pylon at             218    m = 4          g = 196.65    mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Finish Protoss_Probe at            222    m = 31.2       g = 210.45    mb = 0      gb = 0     mw = 10   gw = 3    s = 14/17)
-Start Protoss_Probe at             225    m = 3.64       g = 220.8     mb = 0      gb = 0     mw = 11   gw = 3    s = 15/17)
-Finish Protoss_Probe at            245    m = 166.16     g = 289.8     mb = 0      gb = 0     mw = 12   gw = 3    s = 15/17)
-Start Protoss_Probe at             245    m = 116.16     g = 289.8     mb = 0      gb = 0     mw = 12   gw = 3    s = 16/17)
-Finish Protoss_Pylon at            248    m = 140.64     g = 300.15    mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Go for Protoss_Cybernetics_Core at 250    m = 157.64     g = 307.05    mb = 200    gb = 0     mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Gateway at          253    m = 182.12     g = 317.4     mb = 200    gb = 0     mw = 12   gw = 3    s = 16/25)
-Start Protoss_Cybernetics_Core at  256    m = 6.6        g = 327.75    mb = 0      gb = 0     mw = 12   gw = 3    s = 16/25)
-Finish Protoss_Probe at            265    m = 89.56      g = 358.8     mb = 0      gb = 0     mw = 14   gw = 3    s = 16/25)
-Start Protoss_Probe at             265    m = 39.56      g = 358.8     mb = 0      gb = 0     mw = 14   gw = 3    s = 17/25)
-Finish Protoss_Probe at            285    m = 240.84     g = 427.8     mb = 0      gb = 0     mw = 15   gw = 3    s = 17/25)
-Start Protoss_Probe at             285    m = 190.84     g = 427.8     mb = 0      gb = 0     mw = 15   gw = 3    s = 18/25)
-Finish Protoss_Probe at            305    m = 405.72     g = 496.8     mb = 0      gb = 0     mw = 16   gw = 3    s = 18/25)
-Start Protoss_Probe at             305    m = 355.72     g = 496.8     mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Go for Protoss_Citadel_of_Adun at  311    m = 422.36     g = 517.5     mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Finish Protoss_Cybernetics_Core at 316    m = 476.76     g = 534.75    mb = 150    gb = 100   mw = 16   gw = 3    s = 19/25)
-Start Protoss_Citadel_of_Adun at   316    m = 326.76     g = 434.75    mb = 0      gb = 0     mw = 16   gw = 3    s = 19/25)
-Start Protoss_Dragoon at           316    m = 201.76     g = 384.75    mb = 0      gb = 0     mw = 16   gw = 3    s = 21/25)
-Go for Protoss_Pylon at            317    m = 212.64     g = 388.2     mb = 100    gb = 0     mw = 15   gw = 3    s = 21/25)
-Start Protoss_Dragoon at           319    m = 108.04     g = 345.1     mb = 100    gb = 0     mw = 16   gw = 3    s = 23/25)
-Start Protoss_Pylon at             322    m = 42.04      g = 355.45    mb = 0      gb = 0     mw = 17   gw = 3    s = 23/25)
-Finish Protoss_Probe at            325    m = 76.72      g = 365.8     mb = 0      gb = 0     mw = 17   gw = 3    s = 23/25)
-Start Protoss_Probe at             325    m = 26.72      g = 365.8     mb = 0      gb = 0     mw = 17   gw = 3    s = 24/25)
-Finish Protoss_Probe at            345    m = 281.72     g = 434.8     mb = 0      gb = 0     mw = 19   gw = 3    s = 24/25)
-Start Protoss_Probe at             345    m = 231.72     g = 434.8     mb = 0      gb = 0     mw = 19   gw = 3    s = 25/25)
-Finish Protoss_Pylon at            352    m = 324.2      g = 458.95    mb = 0      gb = 0     mw = 20   gw = 3    s = 25/33)
-Finish Protoss_Probe at            365    m = 501        g = 503.8     mb = 0      gb = 0     mw = 20   gw = 3    s = 25/33)
-Start Protoss_Probe at             365    m = 451        g = 503.8     mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Dragoon at          366    m = 464.6      g = 507.25    mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Dragoon at          369    m = 505.4      g = 517.6     mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Go for Protoss_Templar_Archives at 371    m = 533.96     g = 524.5     mb = 150    gb = 200   mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Citadel_of_Adun at  376    m = 601.96     g = 541.75    mb = 150    gb = 200   mw = 20   gw = 3    s = 26/33)
-Start Protoss_Templar_Archives at  376    m = 451.96     g = 341.75    mb = 0      gb = 0     mw = 20   gw = 3    s = 26/33)
-Finish Protoss_Probe at            385    m = 581.84     g = 372.8     mb = 0      gb = 0     mw = 22   gw = 3    s = 26/33)
-Start Protoss_Probe at             385    m = 531.84     g = 372.8     mb = 0      gb = 0     mw = 22   gw = 3    s = 27/33)
-Finish Protoss_Probe at            405    m = 841.92     g = 441.8     mb = 0      gb = 0     mw = 23   gw = 3    s = 27/33)
-Finish Protoss_Templar_Archives at 436    m = 1345.12    g = 548.75    mb = 0      gb = 0     mw = 24   gw = 3    s = 27/33)
-Start Protoss_Dark_Templar at      436    m = 1220.12    g = 448.75    mb = 0      gb = 0     mw = 24   gw = 3    s = 29/33)
-Go for Protoss_Pylon at            437    m = 1236.44    g = 452.2     mb = 100    gb = 0     mw = 23   gw = 3    s = 29/33)
-Start Protoss_Dark_Templar at      437    m = 1111.44    g = 352.2     mb = 100    gb = 0     mw = 23   gw = 3    s = 31/33)
-Start Protoss_Pylon at             442    m = 1091.68    g = 369.45    mb = 0      gb = 0     mw = 24   gw = 3    s = 31/33)
-Finish Protoss_Pylon at            472    m = 1598.96    g = 472.95    mb = 0      gb = 0     mw = 25   gw = 3    s = 31/41)
-Finish Protoss_Dark_Templar at     486    m = 1836.96    g = 521.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 31/41)
-Start Protoss_Dark_Templar at      486    m = 1711.96    g = 421.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 33/41)
-Finish Protoss_Dark_Templar at     487    m = 1728.96    g = 424.7     mb = 0      gb = 0     mw = 25   gw = 3    s = 33/41)
-Start Protoss_Dark_Templar at      487    m = 1603.96    g = 324.7     mb = 0      gb = 0     mw = 25   gw = 3    s = 35/41)
-Finish Protoss_Dark_Templar at     536    m = 2436.96    g = 493.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 35/41)
-Start Protoss_Dark_Templar at      536    m = 2311.96    g = 393.75    mb = 0      gb = 0     mw = 25   gw = 3    s = 37/41)
-Finish Protoss_Dark_Templar at     537    m = 2328.96    g = 397.2     mb = 0      gb = 0     mw = 25   gw = 3    s = 37/41)
-Go for Protoss_Pylon at            537    m = 2328.96    g = 397.2     mb = 100    gb = 0     mw = 24   gw = 3    s = 37/41)
-Start Protoss_Dark_Templar at      537    m = 2203.96    g = 297.2     mb = 100    gb = 0     mw = 24   gw = 3    s = 39/41)
-Go for Protoss_Robotics_Facility at 538    m = 2220.28    g = 300.65    mb = 300    gb = 200   mw = 23   gw = 3    s = 39/41)
-Start Protoss_Pylon at             542    m = 2182.84    g = 314.45    mb = 200    gb = 200   mw = 23   gw = 3    s = 39/41)
-Start Protoss_Robotics_Facility at 543    m = 1998.48    g = 117.9     mb = 0      gb = 0     mw = 23   gw = 3    s = 39/41)
-Finish Protoss_Pylon at            572    m = 2486.72    g = 217.95    mb = 0      gb = 0     mw = 25   gw = 3    s = 39/49)
-Finish Protoss_Dark_Templar at     586    m = 2724.72    g = 266.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 39/49)
-Start Protoss_Dark_Templar at      586    m = 2599.72    g = 166.25    mb = 0      gb = 0     mw = 25   gw = 3    s = 41/49)
-Finish Protoss_Dark_Templar at     587    m = 2616.72    g = 169.7     mb = 0      gb = 0     mw = 25   gw = 3    s = 41/49)
-Go for Protoss_Pylon at            587    m = 2616.72    g = 169.7     mb = 100    gb = 0     mw = 24   gw = 3    s = 41/49)
-Start Protoss_Dark_Templar at      587    m = 2491.72    g = 69.7      mb = 100    gb = 0     mw = 24   gw = 3    s = 43/49)
-Start Protoss_Pylon at             592    m = 2473.32    g = 86.95     mb = 0      gb = 0     mw = 24   gw = 3    s = 43/49)
-Finish Protoss_Pylon at            622    m = 2980.6     g = 190.45    mb = 0      gb = 0     mw = 25   gw = 3    s = 43/57)
-Finish Protoss_Robotics_Facility at 623    m = 2997.6     g = 193.9     mb = 0      gb = 0     mw = 25   gw = 3    s = 43/57)
-Start Protoss_Shuttle at           623    m = 2797.6     g = 193.9     mb = 0      gb = 0     mw = 25   gw = 3    s = 45/57)
-Finish Protoss_Dark_Templar at     636    m = 3025.4     g = 238.75    mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Dark_Templar at     637    m = 3043.08    g = 242.2     mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
-Finish Protoss_Shuttle at          683    m = 3856.36    g = 400.9     mb = 0      gb = 0     mw = 26   gw = 3    s = 45/57)
 
 
-Protoss_Assimilator: start at 117, finish at 157
-Protoss_Gateway: start at 149, finish at 209
-Protoss_Gateway: start at 193, finish at 253
-Protoss_Cybernetics_Core: start at 256, finish at 316
-Protoss_Citadel_of_Adun: start at 316, finish at 376
-Protoss_Dragoon: start at 316, finish at 366
-Protoss_Dragoon: start at 319, finish at 369
-Protoss_Templar_Archives: start at 376, finish at 436
-Protoss_Dark_Templar: start at 436, finish at 486
-Protoss_Dark_Templar: start at 437, finish at 487
-Protoss_Dark_Templar: start at 486, finish at 536
-Protoss_Dark_Templar: start at 487, finish at 537
-Protoss_Dark_Templar: start at 536, finish at 586
-Protoss_Dark_Templar: start at 537, finish at 587
-Protoss_Robotics_Facility: start at 543, finish at 623
-Protoss_Dark_Templar: start at 586, finish at 636
-Protoss_Dark_Templar: start at 587, finish at 637
-Protoss_Shuttle: start at 623, finish at 683
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Cybernetics_Core: start at 185, finish at 245
+Protoss_Assimilator: start at 190, finish at 230
+Protoss_Dragoon: start at 249, finish at 299
+Protoss_Citadel_of_Adun: start at 278, finish at 338
+Protoss_Dragoon: start at 299, finish at 349
+Protoss_Templar_Archives: start at 350, finish at 410
+Protoss_Dark_Templar: start at 410, finish at 460
+Protoss_Gateway: start at 416, finish at 476
+Protoss_Robotics_Facility: start at 437, finish at 517
+Protoss_Dark_Templar: start at 466, finish at 516
+Protoss_Dark_Templar: start at 495, finish at 545
+Protoss_Shuttle: start at 517, finish at 577
+Protoss_Dark_Templar: start at 524, finish at 574
+Protoss_Dark_Templar: start at 553, finish at 603
+Protoss_Dark_Templar: start at 582, finish at 632
+Protoss_Dark_Templar: start at 611, finish at 661
+Protoss_Dark_Templar: start at 640, finish at 690
 
 Domains:
-Protoss_Assimilator(2) at 0
-Protoss_Gateway(0) at 1
-Protoss_Gateway(1) at 2
-Protoss_Cybernetics_Core(3) at 3
+Protoss_Gateway(1) at 0
+Protoss_Cybernetics_Core(3) at 1
+Protoss_Assimilator(2) at 2
+Protoss_Dragoon(4) at 3
 Protoss_Citadel_of_Adun(6) at 4
 Protoss_Dragoon(5) at 5
-Protoss_Dragoon(4) at 6
-Protoss_Templar_Archives(8) at 7
-Protoss_Dark_Templar(13) at 8
-Protoss_Dark_Templar(11) at 9
-Protoss_Dark_Templar(17) at 10
-Protoss_Dark_Templar(12) at 11
-Protoss_Dark_Templar(16) at 12
-Protoss_Dark_Templar(15) at 13
-Protoss_Robotics_Facility(7) at 14
-Protoss_Dark_Templar(10) at 15
-Protoss_Dark_Templar(14) at 16
-Protoss_Shuttle(9) at 17
+Protoss_Templar_Archives(8) at 6
+Protoss_Dark_Templar(15) at 7
+Protoss_Gateway(0) at 8
+Protoss_Robotics_Facility(7) at 9
+Protoss_Dark_Templar(14) at 10
+Protoss_Dark_Templar(11) at 11
+Protoss_Shuttle(9) at 12
+Protoss_Dark_Templar(12) at 13
+Protoss_Dark_Templar(10) at 14
+Protoss_Dark_Templar(13) at 15
+Protoss_Dark_Templar(17) at 16
+Protoss_Dark_Templar(16) at 17
 
 ############
 OPTIMIZATION run with objective MakeSpanMaxProd
-Elapsed time: 30.0102
+Elapsed time: 30.1117
 Global cost: 0
 Number of tours: 3
-Number of iterations: 294
-Optimization cost: 683
-Opt Cost BEFORE post-processing: 683
-Post-processing time: 4.26491
+Number of iterations: 167
+Optimization cost: 690
+Opt Cost BEFORE post-processing: 690
+Post-processing time: 5.84968
+
+Time reference: 664.091
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Templar_Archives(8) at 1
+Protoss_Dark_Templar(12) at 2
+Protoss_Dark_Templar(10) at 3
+Protoss_Gateway(1) at 4
+Protoss_Dark_Templar(16) at 5
+Protoss_Cybernetics_Core(3) at 6
+Protoss_Dragoon(5) at 7
+Protoss_Citadel_of_Adun(6) at 8
+Protoss_Dark_Templar(13) at 9
+Protoss_Gateway(0) at 10
+Protoss_Dark_Templar(11) at 11
+Protoss_Dark_Templar(14) at 12
+Protoss_Dark_Templar(15) at 13
+Protoss_Dragoon(4) at 14
+Protoss_Robotics_Facility(7) at 15
+Protoss_Shuttle(9) at 16
+Protoss_Dark_Templar(17) at 17
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0312
+Global cost: 5
+Number of tours: 2
+Number of iterations: 307
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 664.091
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Templar_Archives(8) at 1
+Protoss_Gateway(0) at 2
+Protoss_Cybernetics_Core(3) at 3
+Protoss_Dark_Templar(12) at 4
+Protoss_Gateway(1) at 5
+Protoss_Dragoon(5) at 6
+Protoss_Dark_Templar(13) at 7
+Protoss_Dark_Templar(10) at 8
+Protoss_Dragoon(4) at 9
+Protoss_Dark_Templar(14) at 10
+Protoss_Dark_Templar(11) at 11
+Protoss_Citadel_of_Adun(6) at 12
+Protoss_Dark_Templar(16) at 13
+Protoss_Dark_Templar(17) at 14
+Protoss_Robotics_Facility(7) at 15
+Protoss_Shuttle(9) at 16
+Protoss_Dark_Templar(15) at 17
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.0006
+Global cost: 5
+Number of tours: 2
+Number of iterations: 346
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 664.091
+
+Domains:
+Protoss_Assimilator(2) at 0
+Protoss_Robotics_Facility(7) at 1
+Protoss_Shuttle(9) at 2
+Protoss_Gateway(0) at 3
+Protoss_Cybernetics_Core(3) at 4
+Protoss_Citadel_of_Adun(6) at 5
+Protoss_Templar_Archives(8) at 6
+Protoss_Dark_Templar(10) at 7
+Protoss_Dark_Templar(13) at 8
+Protoss_Dark_Templar(17) at 9
+Protoss_Dark_Templar(11) at 10
+Protoss_Dark_Templar(12) at 11
+Protoss_Dark_Templar(15) at 12
+Protoss_Gateway(1) at 13
+Protoss_Dragoon(5) at 14
+Protoss_Dragoon(4) at 15
+Protoss_Dark_Templar(14) at 16
+Protoss_Dark_Templar(16) at 17
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.057
+Global cost: 5
+Number of tours: 2
+Number of iterations: 299
+Optimization cost: 2.14748e+09
+Opt Cost BEFORE post-processing: 2.14748e+09
+
+Time reference: 664.091
+
+
+
+Protoss_Gateway: start at 125, finish at 185
+Protoss_Cybernetics_Core: start at 185, finish at 245
+Protoss_Assimilator: start at 190, finish at 230
+Protoss_Dragoon: start at 249, finish at 299
+Protoss_Citadel_of_Adun: start at 278, finish at 338
+Protoss_Dragoon: start at 299, finish at 349
+Protoss_Templar_Archives: start at 350, finish at 410
+Protoss_Dark_Templar: start at 410, finish at 460
+Protoss_Dark_Templar: start at 460, finish at 510
+Protoss_Robotics_Facility: start at 466, finish at 546
+Protoss_Dark_Templar: start at 510, finish at 560
+Protoss_Shuttle: start at 546, finish at 606
+Protoss_Dark_Templar: start at 560, finish at 610
+Protoss_Dark_Templar: start at 610, finish at 660
+Protoss_Gateway: start at 616, finish at 676
+Protoss_Dark_Templar: start at 660, finish at 710
+Protoss_Dark_Templar: start at 676, finish at 726
+Protoss_Dark_Templar: start at 710, finish at 760
+
+Domains:
+Protoss_Gateway(1) at 0
+Protoss_Cybernetics_Core(3) at 1
+Protoss_Assimilator(2) at 2
+Protoss_Dragoon(5) at 3
+Protoss_Citadel_of_Adun(6) at 4
+Protoss_Dragoon(4) at 5
+Protoss_Templar_Archives(8) at 6
+Protoss_Dark_Templar(17) at 7
+Protoss_Dark_Templar(14) at 8
+Protoss_Robotics_Facility(7) at 9
+Protoss_Dark_Templar(10) at 10
+Protoss_Dark_Templar(11) at 11
+Protoss_Shuttle(9) at 12
+Protoss_Dark_Templar(12) at 13
+Protoss_Dark_Templar(15) at 14
+Protoss_Gateway(0) at 15
+Protoss_Dark_Templar(16) at 16
+Protoss_Dark_Templar(13) at 17
+
+############
+OPTIMIZATION run with objective MakeSpanMaxProd
+Elapsed time: 30.036
+Global cost: 0
+Number of tours: 3
+Number of iterations: 277
+Optimization cost: 760
+Opt Cost BEFORE post-processing: 776
+Post-processing time: 4.08291
 
 Time reference: 664.091
 

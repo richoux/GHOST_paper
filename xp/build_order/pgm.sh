@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in $(ls data/PGM_replays/extract/*10000*)
+for i in $(ls data/PGM_replays/extract/*)
 do
     IFS='/' read -a filename <<< "$i"
     for k in {1..10}
