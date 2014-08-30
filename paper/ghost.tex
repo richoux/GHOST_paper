@@ -203,30 +203,73 @@ just to fulfill a bit the section, otherwise the table doesn't show up
 \begin{table*}[tba]
   \label{tbl:bo}
   \centering
-  \caption{Average makespan in seconds of Human and \ghost build orders over 5269
-    games. \ghost has been run 10 times on each game.}
-  \begin{tabular}{|l|c|c|c||c|c|} 
-    \cline{3-6}
-    \multicolumn{2}{c|}{ } &\multicolumn{4}{c|}{\ghost} \\ 
+  \caption{Average makespan of Humans and \ghost build orders in StarCraft time over 3647
+    games.}
+  \begin{tabular}{|l|c|c|c|c|} 
     \hline
-    {\em Match-up} & Humans & Timings in \cite{ChurchillB11} &
-    Gain (Human - \ghost) & Strict
-    timings & Gain (Human - \ghost)\\ 
+    \multicolumn{5}{|c|}{ Games till 10.000 frames} \\ 
     \hline
-    {\em All} & 461.77 & 464.49 & -3.15 & 469.57 & -8.19\\
-    {\em PvP} & 463.09 & 465.51 & -2.86 & 470.40 & -7.71\\
-    {\em PvT} & 471.24 & 482.21 & -11.36 & 486.55 & -15.65\\
-    {\em PvZ} & 449.97 & 443.02 & 6.49 & 449.04 & 0.49\\ 
+    {\em Match-up} & Humans & \ghost & \% solved &
+    Gain \\ 
+    \hline
+    {\em All} & 656.02 & 619.62 & 94.4 & 36.40\\
+    {\em PvP} & 651.51 & 608.06 & 95.0 & 44.45\\
+    {\em PvT} & 660.50 & 628.17 & 93.9 & 32.33\\
+    {\em PvZ} & 649.20 & 609.34 & 95.0 & 39.86\\
+    \hline
+  \end{tabular}
+  \hfill  
+  \begin{tabular}{|l|c|c|c|c|} 
+    \hline
+    \multicolumn{5}{|c|}{ Games till 7.800 frames} \\ 
+    \hline
+    {\em Match-up} & Humans & \ghost & \% solved &
+    Gain \\ 
+    \hline
+    {\em All} & 522.50 & 491.11 & 98.8 & 31.39\\
+    {\em PvP} & 516.08 & 485.56 & 99.3 & 30.52\\
+    {\em PvT} & 527.66 & 506.65 & 98.3 & 21.01\\
+    {\em PvZ} & 515.81 & 458.23 & 99.7 & 57.58\\ 
     \hline
   \end{tabular}  
 \end{table*}
 
-\lipsum[1]
+For Table~\ref{tbl:bo}, \ghost has been run 10 times on each game. We also analyzed replays of games played by top Korean pro-gamers (Bisu, BeSt, Violet, Cure, against Flash, Jaedong, Savior) and match their BO with \ghost (no data here, but I can put them). 
+
+Computation time is only 20ms for satisfaction runs and 30ms for the (global) optimization run. This means that \ghost can compute a highly optimized build order within one StarCraft frame only.
+
+Why BO is easier than wall-in? Because BO can be modeled in \csp by a permutation problem, which drastically decrease the combinatorial complexity of the problem.
+
+Set up: \cite{ChurchillB11} gives too advantageous set up. Based on the analysis of games from Korean pro-gamers listed above, we parameterized our simulator as follow (in StarCraft time t):
+\begin{itemize}
+\item Time to go build something: 5t (4t in \cite{ChurchillB11})
+\item Time to go back gathering minerals after building something: 4t (0 in \cite{ChurchillB11})
+\item Time to go from the base to mineral patches to start mining: 5t (0 in \cite{ChurchillB11})
+\item Time for a probe to switch from mineral to gas: 5t (0 in \cite{ChurchillB11})
+\item Mineral gathering rate: 0.68 mineral per worker per t (1.07 in \cite{ChurchillB11})
+\item Gas gathering rate: 1.15 gas per worker per t (1.66 in \cite{ChurchillB11})
+\end{itemize}  
 
 \section{Tactic problem: Wall-in}\label{sec:wall}
 Refer to \cite{Certicky13, RichouxUO14}
 \subsection{Problem statement}
 \subsection{\ghost results}
+
+\begin{table*}[tba]
+    \centering
+    \caption{Optimization results over 48 different problems, extracted form 7 different maps from the StarCraft AI competition. Results are the average of 100 runs in each problem (total of 4800 runs per configuration).}
+    \begin{tabular}{|l|c|c|c|} \hline
+    \label{tbl:wall}
+									& {\em Satisfaction run}& {\em Optimization run}& {\em Optimization run solved} \\
+                                                                        \hline
+    	{\em Optimizing number of buildings (number of buildings)} 	& ?                  & ?                  & ? \\ 
+    	{\em Optimizing gaps (number of gaps)} 				& ?                  & 0.02                  & 97.48\%  \\ 
+    	{\em Optimizing tech-level (average tech level of buildings)} 	& ?                  & ?                  & ?  \\
+        \hline
+    \end{tabular}  
+\end{table*}
+
+4800 runs, 4679 walls found, 4549 perfect walls (\ie, 97.22\% of walls found) 
 
 \section{Reactive control problem: The target selection}\label{sec:target}
 Refer to ???
