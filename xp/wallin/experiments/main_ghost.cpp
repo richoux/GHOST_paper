@@ -16,17 +16,18 @@ using namespace ghost;
 
 int main(int argc, char **argv)
 {
-  if (argc!=4) {
-    printf("Usage %s <datafile> <time limit> <tabu>\n", argv[0]);
+  if( argc < 3 || argc > 4 ) {
+    printf("You gave %d arguments. ", argc);
+    printf("Usage %s <datafile> <time limit>\n", argv[0]);
     printf("The datafile is the result of analyzing a .scx map using Alberto's offline BWTA\n");
     return 1;
   }
 
   int time_limit = 20;
   int attempts = 1;
-  int tabu = 5;
   sscanf(argv[2],"%i",&time_limit);
-  sscanf(argv[3],"%i",&tabu);
+  if( argc == 4)
+    sscanf(argv[3],"%i",&attempts);
 
   // yes, yes, I know this is old school C, but I code in "old fashioned" C++ ;)
   FILE *fp = fopen(argv[1],"r+");
@@ -87,20 +88,21 @@ int main(int argc, char **argv)
 	  vector< Building > vec = makeTerranBuildings();
 	  WallinDomain domain( dx, dy, unbuildables, &vec, start.first, start.second, end.first, end.second );
 	  vector< shared_ptr<WallinConstraint> > vecConstraints = makeTerranConstraints( &vec, &domain );
-	  shared_ptr<WallinObjective> objective = make_shared<GapObj>();
+	  // shared_ptr<WallinObjective> objective = make_shared<TechTreeObj>();
 
           // for(int attempt = 0;attempt<attempts;attempt++) {
           //   printf("attempt %i\n",attempt+1);
 	  printf("map size: %i,%i\n",dx,dy);
 	  printf("calling solver...\n");
-
-	  Solver<Building, WallinDomain, WallinConstraint> solver(&vec, &domain, vecConstraints, objective );
-
+	  
+	  // Solver<Building, WallinDomain, WallinConstraint> solver(&vec, &domain, vecConstraints, objective );
+	  Solver<Building, WallinDomain, WallinConstraint> solver(&vec, &domain, vecConstraints );
+	  
 	  std::cout << "File name: " << argv[1] << std::endl; 
-	  solver.solve( time_limit, tabu, 160 );    
+	  solver.solve( time_limit, 160 );    
 	}
-
-        printf("\n\n");        
+	
+	printf("\n\n");        
       }
     }
     if (line!=NULL) free(line);
