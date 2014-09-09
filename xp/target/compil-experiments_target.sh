@@ -1,5 +1,5 @@
 #!/bin/bash
-GHOST=/home/flo/ghost
+GHOST=/home/flo/Dropbox/Recherche/Programmes/GHOST
 
 rm ./bin/experiments_target -f
 
