@@ -10,3 +10,8 @@ paper/ghost.log
 
 # Dave BOSS code sample
 docs/Dave_BOSS
+
+# execs
+xp/build_order/bin/experiments_bo
+xp/wallin/bin/experiments_ghost
+xp/target/bin/experiments_target

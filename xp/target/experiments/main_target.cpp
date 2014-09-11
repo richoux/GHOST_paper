@@ -69,20 +69,20 @@ int main(int argc, char **argv)
 
   // Define variables
   vector< Unit > vec {
-    // Unit( unitOf["Terran_Firebat"], {20, 10} ),
-    // Unit( unitOf["Terran_Firebat"], {40, 10} ),
-    // Unit( unitOf["Terran_Firebat"], {60, 10} ),
-    // Unit( unitOf["Terran_Firebat"], {80, 10} ),
-    Unit( unitOf["Terran_Marine"], {10, 40} ),
-    Unit( unitOf["Terran_Marine"], {30, 40} ),
-    Unit( unitOf["Terran_Marine"], {50, 40} ),
-    Unit( unitOf["Terran_Marine"], {70, 40} ),
-    Unit( unitOf["Terran_Marine"], {90, 40} ),
-    Unit( unitOf["Terran_Vulture"], {40, 65} ),
-    Unit( unitOf["Terran_Vulture"], {60, 65} ),
-    Unit( unitOf["Terran_Siege_Tank_Tank_Mode"], {15, 65} ),
-    Unit( unitOf["Terran_Siege_Tank_Tank_Mode"], {85, 65} ),
-    Unit( unitOf["Terran_Siege_Tank_Siege_Mode"], {50, 139} ),
+    Unit( unitOf["Terran_Marine"], {30, 30} ),
+    Unit( unitOf["Terran_Marine"], {50, 30} ),
+    Unit( unitOf["Terran_Marine"], {70, 30} ),
+    Unit( unitOf["Terran_Marine"], {90, 30} ),
+    Unit( unitOf["Terran_Marine"], {110, 30} ),
+    Unit( unitOf["Terran_Goliath"], {10, 65} ),
+    Unit( unitOf["Terran_Vulture"], {50, 65} ),
+    Unit( unitOf["Terran_Vulture"], {90, 65} ),
+    Unit( unitOf["Terran_Goliath"], {130, 65} ),
+    Unit( unitOf["Terran_Siege_Tank_Tank_Mode"], {10, 102} ),
+    Unit( unitOf["Terran_Ghost"], {65, 102} ),
+    Unit( unitOf["Terran_Ghost"], {75, 102} ),
+    Unit( unitOf["Terran_Siege_Tank_Tank_Mode"], {130, 102} ),
+    Unit( unitOf["Terran_Siege_Tank_Siege_Mode"], {70, 139} ),
   };
 
   // Define enemies, mirror to our units
