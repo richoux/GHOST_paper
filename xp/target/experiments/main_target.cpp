@@ -69,28 +69,27 @@ int main(int argc, char **argv)
 
   // Define variables
   vector< Unit > vec {
+    // Unit( unitOf["Terran_Firebat"], {20, 10} ),
+    // Unit( unitOf["Terran_Firebat"], {40, 10} ),
+    // Unit( unitOf["Terran_Firebat"], {60, 10} ),
+    // Unit( unitOf["Terran_Firebat"], {80, 10} ),
     Unit( unitOf["Terran_Marine"], {10, 40} ),
     Unit( unitOf["Terran_Marine"], {30, 40} ),
     Unit( unitOf["Terran_Marine"], {50, 40} ),
     Unit( unitOf["Terran_Marine"], {70, 40} ),
     Unit( unitOf["Terran_Marine"], {90, 40} ),
-    Unit( unitOf["Terran_Vulture"], {30, 65} ),
-    Unit( unitOf["Terran_Vulture"], {70, 65} ),
-    Unit( unitOf["Terran_Siege_Tank_Tank_Mode"], {50, 102} ),
+    Unit( unitOf["Terran_Vulture"], {40, 65} ),
+    Unit( unitOf["Terran_Vulture"], {60, 65} ),
+    Unit( unitOf["Terran_Siege_Tank_Tank_Mode"], {15, 65} ),
+    Unit( unitOf["Terran_Siege_Tank_Tank_Mode"], {85, 65} ),
+    Unit( unitOf["Terran_Siege_Tank_Siege_Mode"], {50, 139} ),
   };
 
-  // Define enemies
-  vector< UnitEnemy > enemies {
-    UnitEnemy( unitOf["Terran_Marine"], {10, -40} ),
-      UnitEnemy( unitOf["Terran_Marine"], {30, -40} ),
-      UnitEnemy( unitOf["Terran_Marine"], {50, -40} ),
-      UnitEnemy( unitOf["Terran_Marine"], {70, -40} ),
-      UnitEnemy( unitOf["Terran_Marine"], {90, -40} ),
-      UnitEnemy( unitOf["Terran_Vulture"], {30, -65} ),
-      UnitEnemy( unitOf["Terran_Vulture"], {70, -65} ),
-      UnitEnemy( unitOf["Terran_Siege_Tank_Tank_Mode"], {50, -102} )
-  };
-    
+  // Define enemies, mirror to our units
+  vector< UnitEnemy > enemies;
+  for( int i = 0 ; i < vec.size() ; ++i )
+    enemies.emplace_back( UnitEnemy( vec.at(i).getData(), { vec.at(i).getX(), -vec.at(i).getY() } ) );
+
   // Define domain
   TargetSelectionDomain domain( vec.size(), &enemies );
   
@@ -100,7 +99,7 @@ int main(int argc, char **argv)
   Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints );
 
   Random random;
-  vector<Unit*> inRange;
+  vector<int> inRange;
 
   int numUnits = vec.size();
   int numEnemy = enemies.size();
@@ -110,64 +109,87 @@ int main(int argc, char **argv)
 
   int tour = 1;
 
+  vector< UnitEnemy > copyEnemies( enemies );
 
-  // 3 problems:
-  // 1. my units don't take damage (object copy somewhere)
-  // 2. my tank never shoot the enemy tank
-  // 3. I must copy vectors in order to not have dead enemies before they shoot
-
-  cout << numUnits << " " << numEnemy << endl;
-  cout << "distance: " << vec[7].distanceFrom( enemies[7] ) << endl;
   do
   {
     cout << "Tour " << tour++ << endl;
     solver.solve( sat, opt );
 
     // My units attack
+    cout << ":::: My turn ::::" << endl;
+
+    for( int i = 0 ; i < enemies.size() ; ++i )
+      copyEnemies[i].data.hp = enemies[i].data.hp;
+    
     for( auto &v : vec )
       if( !v.isDead() )
 	if( v.canShoot() && v.getValue() != -1 )
-	  v.doDamage( enemies );
+	  v.doDamage( copyEnemies );
 	else
-	  v.oneStep();
-
+	{
+	  cout << v.getFullName() << ":" << v.getId() << " HP=" << v.getHP() << ", wait=" << v.canShootIn() << endl;
+	  if( !v.canShoot() )
+	    v.oneStep();
+	}
+    
     // The enemy attacks
+    cout << "@@@@ Enemy's turn @@@@" << endl;
+
     for( int i = 0 ; i < enemies.size() ; ++i )
     {
       if( !enemies[i].isDead() )
       {
-	auto e = enemies[i];
-	if( e.canShoot() )
+	if( enemies[i].canShoot() )
 	{
 	  inRange.clear();
-	  for( auto &v : vec )
-	    if( e.isInRangeAndAlive( v ) )
-	      inRange.push_back( &v );
-	  
-	  e.doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );
+	  for( int j = 0 ; j < vec.size() ; ++j )
+	    if( enemies[i].isInRangeAndAlive( vec[j] ) )
+	      inRange.push_back( j );
+
+	  if( !inRange.empty() )
+	    enemies[i].doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );
+	  else
+	    cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;	    
 	}
 	else
-	  e.oneStep();
+	{
+	  cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;
+	  if( !enemies[i].canShoot() )
+	    enemies[i].oneStep();
+	}
       }
     }
 
-    deadUnits = count_if( begin(vec), end(vec), [&](Unit &u){ return u.isDead(); } );
-    deadEnemy = count_if( begin(enemies), end(enemies), [&](UnitEnemy &u){ return u.isDead(); } );
-    cout << "Nber dead units: " << deadUnits << endl 
-	 << "Nber dead enemies: " << deadEnemy << endl;
+    for( int i = 0 ; i < enemies.size() ; ++i )
+      enemies[i].data.hp = copyEnemies[i].data.hp;
+    
+    deadUnits = count_if( begin(vec), end(vec), [](Unit &u){ return u.isDead(); } );
+    deadEnemy = count_if( begin(enemies), end(enemies), [](UnitEnemy &u){ return u.isDead(); } );
+    cout << "XXXX Turns over XXXX" << endl
+	 << "Number of dead units: " << deadUnits << endl 
+	 << "Number of dead enemies: " << deadEnemy << endl;
 
   } while( deadUnits < numUnits && deadEnemy < numEnemy );
 
-  if( count_if( begin(vec), end(vec), [&](Unit &u){ return u.isDead(); } ) == numUnits )
+  if( count_if( begin(enemies), end(enemies), [&](UnitEnemy &u){ return u.isDead(); } ) == numEnemy
+      &&
+      count_if( begin(vec), end(vec), [&](Unit &u){ return u.isDead(); } ) < numUnits)
   {
     cout << "Winner: You!" << endl;
     for( const auto &v : vec )
       cout << v.getFullName() << ":" << v.getId() << " " << v.getHP() << " HP left" << endl;
   }
-  else
+  else if( count_if( begin(enemies), end(enemies), [&](UnitEnemy &u){ return u.isDead(); } ) < numEnemy
+	   &&
+	   count_if( begin(vec), end(vec), [&](Unit &u){ return u.isDead(); } ) == numUnits)
   {
     cout << "Winner: The enemy..." << endl;
     for( int i = 0 ; i < enemies.size() ; ++i )
       cout << enemies[i].data.name << "@" << i << " " << enemies[i].data.hp << " HP left" << endl;
-  }  
+  }
+  else
+  {
+    cout << "Draw!" << endl;
+  }
 }

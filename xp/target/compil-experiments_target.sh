@@ -1,3 +1,4 @@
+
 #!/bin/bash
 GHOST=/home/flo/Dropbox/Recherche/Programmes/GHOST
 
