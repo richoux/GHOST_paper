@@ -9,7 +9,7 @@
 #include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/variables/unit.hpp"
 #include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/domains/targetSelectionDomain.hpp"
 #include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/constraints/targetSelectionConstraint.hpp"
-#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/objectives/objective.hpp"
+#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/objectives/targetSelectionObjective.hpp"
 #include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/misc/unitMap.hpp"
 #include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/solver.hpp"
 #include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/misc/random.hpp"
@@ -96,7 +96,11 @@ int main(int argc, char **argv)
   // Define constraints
   vector< shared_ptr<TargetSelectionConstraint> > vecConstraints { make_shared<TargetSelectionConstraint>( &vec, &domain ) };
 
-  Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints );
+  // Define objective
+  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxDamage>();
+  
+
+  Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints, objective );
 
   Random random;
   vector<int> inRange;
@@ -107,14 +111,30 @@ int main(int argc, char **argv)
   int deadUnits;
   int deadEnemy;
 
+  double totalDamages;
+  double totalDamagesEnemy;
+
   int tour = 1;
 
   vector< UnitEnemy > copyEnemies( enemies );
 
   do
   {
-    cout << "Tour " << tour++ << endl;
     solver.solve( sat, opt );
+
+    if( none_of( begin(vec), end(vec), [](Unit &u){return !u.isDead() && u.canShoot() && u.getValue() != -1;} ) 
+	&&
+	none_of( begin(enemies), end(enemies), [](UnitEnemy &u){return !u.isDead() && u.canShoot();} ) )
+    {
+      for_each( begin(vec), end(vec), [](Unit &u){u.oneStep();} );
+      for_each( begin(enemies), end(enemies), [](UnitEnemy &u){u.oneStep();} );
+      continue;
+    }
+
+    totalDamages = 0.;
+    totalDamagesEnemy = 0.;
+
+    cout << "Tour " << tour++ << endl;
 
     // My units attack
     cout << ":::: My turn ::::" << endl;
@@ -125,7 +145,7 @@ int main(int argc, char **argv)
     for( auto &v : vec )
       if( !v.isDead() )
 	if( v.canShoot() && v.getValue() != -1 )
-	  v.doDamage( copyEnemies );
+	  totalDamages += v.doDamage( copyEnemies );
 	else
 	{
 	  cout << v.getFullName() << ":" << v.getId() << " HP=" << v.getHP() << ", wait=" << v.canShootIn() << endl;
@@ -148,7 +168,7 @@ int main(int argc, char **argv)
 	      inRange.push_back( j );
 
 	  if( !inRange.empty() )
-	    enemies[i].doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );
+	    totalDamagesEnemy += enemies[i].doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );
 	  else
 	    cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;	    
 	}
@@ -167,6 +187,8 @@ int main(int argc, char **argv)
     deadUnits = count_if( begin(vec), end(vec), [](Unit &u){ return u.isDead(); } );
     deadEnemy = count_if( begin(enemies), end(enemies), [](UnitEnemy &u){ return u.isDead(); } );
     cout << "XXXX Turns over XXXX" << endl
+	 << "Total damages from you: " << totalDamages << endl 
+	 << "Total damages from the enemy: " << totalDamagesEnemy << endl
 	 << "Number of dead units: " << deadUnits << endl 
 	 << "Number of dead enemies: " << deadEnemy << endl;
 
