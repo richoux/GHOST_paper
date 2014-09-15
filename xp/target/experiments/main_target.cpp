@@ -17,6 +17,18 @@
 using namespace ghost;
 using namespace std;
 
+vector<int> getLivingEnemiesInRange( const UnitEnemy &u, const vector<Unit> &vec )
+{
+  vector<int> inRange;
+
+  for( int j = 0 ; j < vec.size() ; ++j )
+    if( u.isInRangeAndAlive( vec[j] ) )
+      inRange.push_back( j );
+      
+  return inRange;
+}
+
+
 int main(int argc, char **argv)
 {
   // input
@@ -97,7 +109,7 @@ int main(int argc, char **argv)
   vector< shared_ptr<TargetSelectionConstraint> > vecConstraints { make_shared<TargetSelectionConstraint>( &vec, &domain ) };
 
   // Define objective
-  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxDamage>();
+  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxKill>();
   
 
   Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints, objective );
@@ -120,16 +132,16 @@ int main(int argc, char **argv)
 
   do
   {
-    solver.solve( sat, opt );
-
-    if( none_of( begin(vec), end(vec), [](Unit &u){return !u.isDead() && u.canShoot() && u.getValue() != -1;} ) 
+    if( none_of( begin(vec), end(vec), [&](Unit &u){return !u.isDead() && u.canShoot() && !domain.getLivingEnemiesInRange( u ).empty(); } ) 
 	&&
-	none_of( begin(enemies), end(enemies), [](UnitEnemy &u){return !u.isDead() && u.canShoot();} ) )
+	none_of( begin(enemies), end(enemies), [&](UnitEnemy &u){return !u.isDead() && u.canShoot() && !getLivingEnemiesInRange( u, vec ).empty(); } ) )
     {
       for_each( begin(vec), end(vec), [](Unit &u){u.oneStep();} );
       for_each( begin(enemies), end(enemies), [](UnitEnemy &u){u.oneStep();} );
       continue;
     }
+
+    solver.solve( sat, opt );
 
     totalDamages = 0.;
     totalDamagesEnemy = 0.;
@@ -153,6 +165,28 @@ int main(int argc, char **argv)
 	    v.oneStep();
 	}
     
+    // cout << endl << endl << "Simulation" << endl;
+    // for( auto &v : vec )
+    // {
+    //   if( !v.isDead() && v.canShootIn() == v.getCooldown() )
+    //   {
+    // 	int backup = v.getValue();
+	
+    // 	for( int j = 0 ; j < copyEnemies.size() ; ++j )
+    // 	{
+    // 	  v.setValue( j );
+    // 	  auto hits = v.computeDamage( &copyEnemies );
+    // 	  if( hits.at( j ) != 0. )
+    // 	    cout << v.getFullName() << ":" << v.getId() << " can hit " << copyEnemies.at(j).data.name << "@" << j << " with " << hits.at( j ) << " (dist=" << v.distanceFrom(copyEnemies.at(j)) << ")" << endl;
+    // 	}
+	
+    // 	v.setValue( backup );
+    //   }
+    // }
+    // cout << endl << endl;
+	
+
+
     // The enemy attacks
     cout << "@@@@ Enemy's turn @@@@" << endl;
 
@@ -162,10 +196,7 @@ int main(int argc, char **argv)
       {
 	if( enemies[i].canShoot() )
 	{
-	  inRange.clear();
-	  for( int j = 0 ; j < vec.size() ; ++j )
-	    if( enemies[i].isInRangeAndAlive( vec[j] ) )
-	      inRange.push_back( j );
+	  inRange = getLivingEnemiesInRange( enemies[i], vec );
 
 	  if( !inRange.empty() )
 	    totalDamagesEnemy += enemies[i].doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );

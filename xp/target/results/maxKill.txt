@@ -1,0 +1,1119 @@
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.1964
+Global cost: 0
+Number of tours: 8
+Number of iterations: 102
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 1
+
+Tour 1
+:::: My turn ::::
+Terran_Marine:0 does 6 damage to Terran_Marine@4 (34 HP left)
+Terran_Marine:1 does 6 damage to Terran_Marine@2 (34 HP left)
+Terran_Marine:2 does 6 damage to Terran_Marine@4 (28 HP left)
+Terran_Marine:3 does 6 damage to Terran_Marine@2 (28 HP left)
+Terran_Marine:4 does 6 damage to Terran_Marine@2 (22 HP left)
+Terran_Goliath:5 does 12 damage to Terran_Marine@1 (28 HP left)
+Terran_Vulture:6 does 20 damage to Terran_Marine@3 (20 HP left)
+Terran_Vulture:7 does 20 damage to Terran_Marine@4 (8 HP left)
+Terran_Goliath:8 does 12 damage to Terran_Marine@4 (-4 HP left)
+Terran_Siege_Tank_Tank_Mode:9 does 15 damage to Terran_Marine@4 (-19 HP left)
+Terran_Ghost:10 does 10 damage to Terran_Marine@2 (12 HP left)
+Terran_Ghost:11 does 10 damage to Terran_Marine@1 (18 HP left)
+Terran_Siege_Tank_Tank_Mode:12 does 15 damage to Terran_Marine@4 (-34 HP left)
+Terran_Siege_Tank_Siege_Mode:13 does 8.75 quarter splash damage to Terran_Marine@2 (3.25 HP left)
+Terran_Siege_Tank_Siege_Mode:13 does 17.5 half splash damage to Terran_Marine@3 (2.5 HP left)
+Terran_Siege_Tank_Siege_Mode:13 aims Terran_Marine@4 (-69 HP left) and does 35 full splash damage
+@@@@ Enemy's turn @@@@
+Terran_Marine@0 does 6 damage to Terran_Vulture:7 (74 HP left)
+Terran_Marine@1 does 5 damage to Terran_Goliath:5 (120 HP left)
+Terran_Marine@2 does 6 damage to Terran_Marine:2 (34 HP left)
+Terran_Marine@3 does 6 damage to Terran_Marine:3 (34 HP left)
+Terran_Marine@4 does 6 damage to Terran_Vulture:7 (68 HP left)
+Terran_Goliath@5 does 12 damage to Terran_Marine:3 (22 HP left)
+Terran_Vulture@6 does 20 damage to Terran_Marine:1 (20 HP left)
+Terran_Vulture@7 does 4.75 damage to Terran_Goliath:5 (115.25 HP left)
+Terran_Goliath@8 does 12 damage to Terran_Vulture:6 (68 HP left)
+Terran_Siege_Tank_Tank_Mode@9 does 15 damage to Terran_Ghost:10 (30 HP left)
+Terran_Ghost@10 does 10 damage to Terran_Marine:2 (24 HP left)
+Terran_Ghost@11 does 10 damage to Terran_Marine:0 (30 HP left)
+Terran_Siege_Tank_Tank_Mode@12 does 15 damage to Terran_Marine:4 (25 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 8.75 quarter splash damage to Terran_Marine:2 (15.25 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 17.5 half splash damage to Terran_Marine:3 (4.5 HP left)
+Terran_Siege_Tank_Siege_Mode@13 aims Terran_Marine:4 (-10 HP left) and does 35 full splash damage
+XXXX Turns over XXXX
+Total damages from you: 205.25
+Total damages from the enemy: 189
+Number of dead units: 1
+Number of dead enemies: 1
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0002
+Global cost: 0
+Number of tours: 46
+Number of iterations: 230
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 2
+
+Tour 2
+:::: My turn ::::
+Terran_Marine:0 does 6 damage to Terran_Marine@2 (-2.75 HP left)
+Terran_Marine:1 does 6 damage to Terran_Marine@2 (-8.75 HP left)
+Terran_Marine:2 does 6 damage to Terran_Marine@2 (-14.75 HP left)
+Terran_Marine:3 does 6 damage to Terran_Marine@2 (-20.75 HP left)
+Terran_Goliath:5 HP=115.25, wait=7
+Terran_Vulture:6 HP=68, wait=15
+Terran_Vulture:7 HP=68, wait=15
+Terran_Goliath:8 HP=125, wait=7
+Terran_Siege_Tank_Tank_Mode:9 HP=150, wait=22
+Terran_Ghost:10 HP=30, wait=7
+Terran_Ghost:11 HP=45, wait=7
+Terran_Siege_Tank_Tank_Mode:12 HP=150, wait=22
+Terran_Siege_Tank_Siege_Mode:13 HP=150, wait=60
+@@@@ Enemy's turn @@@@
+Terran_Marine@0 does 6 damage to Terran_Vulture:6 (62 HP left)
+Terran_Marine@1 does 6 damage to Terran_Vulture:7 (62 HP left)
+Terran_Marine@2 does 6 damage to Terran_Marine:1 (14 HP left)
+Terran_Marine@3 does 6 damage to Terran_Marine:3 (-1.5 HP left)
+Terran_Goliath@5 HP=125, wait=7
+Terran_Vulture@6 HP=80, wait=15
+Terran_Vulture@7 HP=80, wait=15
+Terran_Goliath@8 HP=125, wait=7
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=22
+Terran_Ghost@10 HP=45, wait=7
+Terran_Ghost@11 HP=45, wait=7
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=22
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=60
+XXXX Turns over XXXX
+Total damages from you: 24
+Total damages from the enemy: 24
+Number of dead units: 2
+Number of dead enemies: 2
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.1209
+Global cost: 0
+Number of tours: 56
+Number of iterations: 223
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 3
+
+Tour 3
+:::: My turn ::::
+Terran_Marine:0 HP=30, wait=9
+Terran_Marine:1 HP=14, wait=9
+Terran_Marine:2 HP=15.25, wait=9
+Terran_Goliath:5 does 12 damage to Terran_Marine@3 (-9.5 HP left)
+Terran_Vulture:6 HP=62, wait=8
+Terran_Vulture:7 HP=62, wait=8
+Terran_Goliath:8 does 12 damage to Terran_Marine@3 (-21.5 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=150, wait=15
+Terran_Ghost:10 does 10 damage to Terran_Marine@3 (-31.5 HP left)
+Terran_Ghost:11 does 10 damage to Terran_Marine@3 (-41.5 HP left)
+Terran_Siege_Tank_Tank_Mode:12 HP=150, wait=15
+Terran_Siege_Tank_Siege_Mode:13 HP=150, wait=53
+@@@@ Enemy's turn @@@@
+Terran_Marine@0 HP=40, wait=9
+Terran_Marine@1 HP=18, wait=9
+Terran_Marine@3 HP=2.5, wait=9
+Terran_Goliath@5 does 12 damage to Terran_Marine:0 (18 HP left)
+Terran_Vulture@6 HP=80, wait=8
+Terran_Vulture@7 HP=80, wait=8
+Terran_Goliath@8 does 12 damage to Terran_Vulture:6 (50 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=15
+Terran_Ghost@10 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:9 (147.75 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:12 (147.75 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=15
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=53
+XXXX Turns over XXXX
+Total damages from you: 44
+Total damages from the enemy: 28.5
+Number of dead units: 2
+Number of dead enemies: 3
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.1013
+Global cost: 0
+Number of tours: 137
+Number of iterations: 273
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 4
+
+Tour 4
+:::: My turn ::::
+Terran_Marine:0 HP=18, wait=1
+Terran_Marine:1 HP=14, wait=1
+Terran_Marine:2 HP=15.25, wait=1
+Terran_Goliath:5 HP=115.25, wait=15
+Terran_Vulture:6 does 20 damage to Terran_Marine@1 (-2 HP left)
+Terran_Vulture:7 does 20 damage to Terran_Marine@1 (-22 HP left)
+Terran_Goliath:8 HP=125, wait=15
+Terran_Siege_Tank_Tank_Mode:9 HP=147.75, wait=7
+Terran_Ghost:10 HP=30, wait=15
+Terran_Ghost:11 HP=45, wait=15
+Terran_Siege_Tank_Tank_Mode:12 HP=147.75, wait=7
+Terran_Siege_Tank_Siege_Mode:13 HP=150, wait=45
+@@@@ Enemy's turn @@@@
+Terran_Marine@0 HP=40, wait=1
+Terran_Marine@1 HP=18, wait=1
+Terran_Goliath@5 HP=125, wait=15
+Terran_Vulture@6 does 10 damage to Terran_Vulture:7 (52 HP left)
+Terran_Vulture@7 does 4.75 damage to Terran_Goliath:5 (110.5 HP left)
+Terran_Goliath@8 HP=125, wait=15
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=7
+Terran_Ghost@10 HP=45, wait=15
+Terran_Ghost@11 HP=45, wait=15
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=7
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=45
+XXXX Turns over XXXX
+Total damages from you: 40
+Total damages from the enemy: 14.75
+Number of dead units: 2
+Number of dead enemies: 4
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0689
+Global cost: 0
+Number of tours: 98
+Number of iterations: 293
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 4
+
+Tour 5
+:::: My turn ::::
+Terran_Marine:0 does 6 damage to Terran_Marine@0 (34 HP left)
+Terran_Marine:1 does 6 damage to Terran_Marine@0 (28 HP left)
+Terran_Marine:2 does 6 damage to Terran_Marine@0 (22 HP left)
+Terran_Goliath:5 HP=110.5, wait=14
+Terran_Vulture:6 HP=50, wait=30
+Terran_Vulture:7 HP=52, wait=30
+Terran_Goliath:8 HP=125, wait=14
+Terran_Siege_Tank_Tank_Mode:9 HP=147.75, wait=6
+Terran_Ghost:10 HP=30, wait=14
+Terran_Ghost:11 HP=45, wait=14
+Terran_Siege_Tank_Tank_Mode:12 HP=147.75, wait=6
+Terran_Siege_Tank_Siege_Mode:13 HP=150, wait=44
+@@@@ Enemy's turn @@@@
+Terran_Marine@0 does 5 damage to Terran_Goliath:5 (105.5 HP left)
+Terran_Goliath@5 HP=125, wait=14
+Terran_Vulture@6 HP=80, wait=30
+Terran_Vulture@7 HP=80, wait=30
+Terran_Goliath@8 HP=125, wait=14
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=6
+Terran_Ghost@10 HP=45, wait=14
+Terran_Ghost@11 HP=45, wait=14
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=6
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=44
+XXXX Turns over XXXX
+Total damages from you: 18
+Total damages from the enemy: 5
+Number of dead units: 2
+Number of dead enemies: 4
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0878
+Global cost: 0
+Number of tours: 152
+Number of iterations: 303
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 5
+
+Tour 6
+:::: My turn ::::
+Terran_Marine:0 HP=18, wait=10
+Terran_Marine:1 HP=14, wait=10
+Terran_Marine:2 HP=15.25, wait=10
+Terran_Goliath:5 HP=105.5, wait=8
+Terran_Vulture:6 HP=50, wait=24
+Terran_Vulture:7 HP=52, wait=24
+Terran_Goliath:8 HP=125, wait=8
+Terran_Siege_Tank_Tank_Mode:9 does 15 damage to Terran_Marine@0 (7 HP left)
+Terran_Ghost:10 HP=30, wait=8
+Terran_Ghost:11 HP=45, wait=8
+Terran_Siege_Tank_Tank_Mode:12 does 15 damage to Terran_Marine@0 (-8 HP left)
+Terran_Siege_Tank_Siege_Mode:13 HP=150, wait=38
+@@@@ Enemy's turn @@@@
+Terran_Marine@0 HP=22, wait=10
+Terran_Goliath@5 HP=125, wait=8
+Terran_Vulture@6 HP=80, wait=24
+Terran_Vulture@7 HP=80, wait=24
+Terran_Goliath@8 HP=125, wait=8
+Terran_Siege_Tank_Tank_Mode@9 does 15 damage to Terran_Ghost:10 (15 HP left)
+Terran_Ghost@10 HP=45, wait=8
+Terran_Ghost@11 HP=45, wait=8
+Terran_Siege_Tank_Tank_Mode@12 does 29 damage to Terran_Goliath:8 (96 HP left)
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=38
+XXXX Turns over XXXX
+Total damages from you: 30
+Total damages from the enemy: 44
+Number of dead units: 2
+Number of dead enemies: 5
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0801
+Global cost: 0
+Number of tours: 70
+Number of iterations: 280
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 5
+
+Tour 7
+:::: My turn ::::
+Terran_Marine:0 HP=18, wait=2
+Terran_Marine:1 HP=14, wait=2
+Terran_Marine:2 HP=15.25, wait=2
+Terran_Goliath:5 does 11 damage to Terran_Goliath@5 (114 HP left)
+Terran_Vulture:6 HP=50, wait=16
+Terran_Vulture:7 HP=52, wait=16
+Terran_Goliath:8 does 11 damage to Terran_Goliath@5 (103 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=147.75, wait=30
+Terran_Ghost:10 does 2.25 damage to Terran_Goliath@5 (100.75 HP left)
+Terran_Ghost:11 does 2.25 damage to Terran_Goliath@5 (98.5 HP left)
+Terran_Siege_Tank_Tank_Mode:12 HP=147.75, wait=30
+Terran_Siege_Tank_Siege_Mode:13 HP=150, wait=30
+@@@@ Enemy's turn @@@@
+Terran_Goliath@5 does 11 damage to Terran_Goliath:5 (94.5 HP left)
+Terran_Vulture@6 HP=80, wait=16
+Terran_Vulture@7 HP=80, wait=16
+Terran_Goliath@8 does 11 damage to Terran_Goliath:8 (85 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=30
+Terran_Ghost@10 does 2.25 damage to Terran_Goliath:8 (82.75 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Siege_Mode:13 (147.75 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=30
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=30
+XXXX Turns over XXXX
+Total damages from you: 26.5
+Total damages from the enemy: 26.5
+Number of dead units: 2
+Number of dead enemies: 5
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0152
+Global cost: 0
+Number of tours: 109
+Number of iterations: 325
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 5
+
+Tour 8
+:::: My turn ::::
+Terran_Marine:0 does 5 damage to Terran_Goliath@5 (93.5 HP left)
+Terran_Marine:1 does 5 damage to Terran_Goliath@5 (88.5 HP left)
+Terran_Marine:2 does 5 damage to Terran_Goliath@5 (83.5 HP left)
+Terran_Goliath:5 HP=94.5, wait=21
+Terran_Vulture:6 HP=50, wait=14
+Terran_Vulture:7 HP=52, wait=14
+Terran_Goliath:8 HP=82.75, wait=21
+Terran_Siege_Tank_Tank_Mode:9 HP=147.75, wait=28
+Terran_Ghost:10 HP=15, wait=21
+Terran_Ghost:11 HP=45, wait=21
+Terran_Siege_Tank_Tank_Mode:12 HP=147.75, wait=28
+Terran_Siege_Tank_Siege_Mode:13 HP=147.75, wait=28
+@@@@ Enemy's turn @@@@
+Terran_Goliath@5 HP=98.5, wait=21
+Terran_Vulture@6 HP=80, wait=14
+Terran_Vulture@7 HP=80, wait=14
+Terran_Goliath@8 HP=125, wait=21
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=28
+Terran_Ghost@10 HP=45, wait=21
+Terran_Ghost@11 HP=45, wait=21
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=28
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=28
+XXXX Turns over XXXX
+Total damages from you: 15
+Total damages from the enemy: 0
+Number of dead units: 2
+Number of dead enemies: 5
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0034
+Global cost: 0
+Number of tours: 172
+Number of iterations: 343
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 5
+
+Tour 9
+:::: My turn ::::
+Terran_Marine:0 HP=18, wait=2
+Terran_Marine:1 HP=14, wait=2
+Terran_Marine:2 HP=15.25, wait=2
+Terran_Goliath:5 HP=94.5, wait=7
+Terran_Vulture:6 does 4.75 damage to Terran_Goliath@5 (78.75 HP left)
+Terran_Vulture:7 does 4.75 damage to Terran_Goliath@5 (74 HP left)
+Terran_Goliath:8 HP=82.75, wait=7
+Terran_Siege_Tank_Tank_Mode:9 HP=147.75, wait=14
+Terran_Ghost:10 HP=15, wait=7
+Terran_Ghost:11 HP=45, wait=7
+Terran_Siege_Tank_Tank_Mode:12 HP=147.75, wait=14
+Terran_Siege_Tank_Siege_Mode:13 HP=147.75, wait=14
+@@@@ Enemy's turn @@@@
+Terran_Goliath@5 HP=83.5, wait=7
+Terran_Vulture@6 does 20 damage to Terran_Marine:1 (-6 HP left)
+Terran_Vulture@7 does 20 damage to Terran_Marine:2 (-4.75 HP left)
+Terran_Goliath@8 HP=125, wait=7
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=14
+Terran_Ghost@10 HP=45, wait=7
+Terran_Ghost@11 HP=45, wait=7
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=14
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=14
+XXXX Turns over XXXX
+Total damages from you: 9.5
+Total damages from the enemy: 40
+Number of dead units: 4
+Number of dead enemies: 5
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0733
+Global cost: 0
+Number of tours: 111
+Number of iterations: 332
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 5
+
+Tour 10
+:::: My turn ::::
+Terran_Marine:0 does 5 damage to Terran_Goliath@5 (69 HP left)
+Terran_Goliath:5 HP=94.5, wait=5
+Terran_Vulture:6 HP=50, wait=29
+Terran_Vulture:7 HP=52, wait=29
+Terran_Goliath:8 HP=82.75, wait=5
+Terran_Siege_Tank_Tank_Mode:9 HP=147.75, wait=12
+Terran_Ghost:10 HP=15, wait=5
+Terran_Ghost:11 HP=45, wait=5
+Terran_Siege_Tank_Tank_Mode:12 HP=147.75, wait=12
+Terran_Siege_Tank_Siege_Mode:13 HP=147.75, wait=12
+@@@@ Enemy's turn @@@@
+Terran_Goliath@5 HP=74, wait=5
+Terran_Vulture@6 HP=80, wait=29
+Terran_Vulture@7 HP=80, wait=29
+Terran_Goliath@8 HP=125, wait=5
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=12
+Terran_Ghost@10 HP=45, wait=5
+Terran_Ghost@11 HP=45, wait=5
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=12
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=12
+XXXX Turns over XXXX
+Total damages from you: 5
+Total damages from the enemy: 0
+Number of dead units: 4
+Number of dead enemies: 5
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0178
+Global cost: 0
+Number of tours: 70
+Number of iterations: 280
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 5
+
+Tour 11
+:::: My turn ::::
+Terran_Marine:0 HP=18, wait=11
+Terran_Goliath:5 does 11 damage to Terran_Goliath@5 (58 HP left)
+Terran_Vulture:6 HP=50, wait=24
+Terran_Vulture:7 HP=52, wait=24
+Terran_Goliath:8 does 11 damage to Terran_Goliath@5 (47 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=147.75, wait=7
+Terran_Ghost:10 does 2.25 damage to Terran_Goliath@5 (44.75 HP left)
+Terran_Ghost:11 does 2.25 damage to Terran_Goliath@5 (42.5 HP left)
+Terran_Siege_Tank_Tank_Mode:12 HP=147.75, wait=7
+Terran_Siege_Tank_Siege_Mode:13 HP=147.75, wait=7
+@@@@ Enemy's turn @@@@
+Terran_Goliath@5 does 12 damage to Terran_Marine:0 (6 HP left)
+Terran_Vulture@6 HP=80, wait=24
+Terran_Vulture@7 HP=80, wait=24
+Terran_Goliath@8 does 11 damage to Terran_Siege_Tank_Tank_Mode:12 (136.75 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=150, wait=7
+Terran_Ghost@10 does 5 damage to Terran_Vulture:7 (47 HP left)
+Terran_Ghost@11 does 10 damage to Terran_Ghost:10 (5 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=7
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=7
+XXXX Turns over XXXX
+Total damages from you: 26.5
+Total damages from the enemy: 38
+Number of dead units: 4
+Number of dead enemies: 5
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0511
+Global cost: 0
+Number of tours: 101
+Number of iterations: 302
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 6
+
+Tour 12
+:::: My turn ::::
+Terran_Marine:0 HP=6, wait=4
+Terran_Goliath:5 HP=94.5, wait=16
+Terran_Vulture:6 HP=50, wait=17
+Terran_Vulture:7 HP=47, wait=17
+Terran_Goliath:8 HP=82.75, wait=16
+Terran_Siege_Tank_Tank_Mode:9 does 29 damage to Terran_Goliath@5 (13.5 HP left)
+Terran_Ghost:10 HP=5, wait=16
+Terran_Ghost:11 HP=45, wait=16
+Terran_Siege_Tank_Tank_Mode:12 does 29 damage to Terran_Goliath@5 (-15.5 HP left)
+Terran_Siege_Tank_Siege_Mode:13 aims Terran_Goliath@5 (-84.5 HP left) and does 69 full splash damage
+Terran_Siege_Tank_Siege_Mode:13 does 13.125 quarter splash damage to Terran_Vulture@6 (66.875 HP left)
+Terran_Siege_Tank_Siege_Mode:13 does 16.5 quarter splash damage to Terran_Siege_Tank_Tank_Mode@9 (133.5 HP left)
+@@@@ Enemy's turn @@@@
+Terran_Goliath@5 HP=42.5, wait=16
+Terran_Vulture@6 HP=80, wait=17
+Terran_Vulture@7 HP=80, wait=17
+Terran_Goliath@8 HP=125, wait=16
+Terran_Siege_Tank_Tank_Mode@9 does 29 damage to Terran_Goliath:8 (53.75 HP left)
+Terran_Ghost@10 HP=45, wait=16
+Terran_Ghost@11 HP=45, wait=16
+Terran_Siege_Tank_Tank_Mode@12 does 15 damage to Terran_Marine:0 (-9 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 13.125 quarter splash damage to Terran_Vulture:7 (33.875 HP left)
+Terran_Siege_Tank_Siege_Mode@13 aims Terran_Goliath:8 (-15.25 HP left) and does 69 full splash damage
+Terran_Siege_Tank_Siege_Mode@13 does 16.5 quarter splash damage to Terran_Siege_Tank_Tank_Mode:12 (120.25 HP left)
+XXXX Turns over XXXX
+Total damages from you: 156.625
+Total damages from the enemy: 142.625
+Number of dead units: 6
+Number of dead enemies: 6
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0674
+Global cost: 0
+Number of tours: 82
+Number of iterations: 327
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 6
+
+Tour 13
+:::: My turn ::::
+Terran_Goliath:5 does 12 damage to Terran_Vulture@6 (54.875 HP left)
+Terran_Vulture:6 HP=50, wait=1
+Terran_Vulture:7 HP=33.875, wait=1
+Terran_Siege_Tank_Tank_Mode:9 HP=147.75, wait=22
+Terran_Ghost:10 does 5 damage to Terran_Vulture@6 (49.875 HP left)
+Terran_Ghost:11 does 5 damage to Terran_Vulture@6 (44.875 HP left)
+Terran_Siege_Tank_Tank_Mode:12 HP=120.25, wait=22
+Terran_Siege_Tank_Siege_Mode:13 HP=147.75, wait=60
+@@@@ Enemy's turn @@@@
+Terran_Vulture@6 HP=66.875, wait=1
+Terran_Vulture@7 HP=80, wait=1
+Terran_Goliath@8 does 12 damage to Terran_Ghost:10 (-7 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=22
+Terran_Ghost@10 does 5 damage to Terran_Vulture:6 (45 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:9 (145.5 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=22
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=60
+XXXX Turns over XXXX
+Total damages from you: 22
+Total damages from the enemy: 19.25
+Number of dead units: 7
+Number of dead enemies: 6
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0738
+Global cost: 0
+Number of tours: 124
+Number of iterations: 371
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 6
+
+Tour 14
+:::: My turn ::::
+Terran_Goliath:5 HP=94.5, wait=22
+Terran_Vulture:6 does 10 damage to Terran_Vulture@6 (34.875 HP left)
+Terran_Vulture:7 does 10 damage to Terran_Vulture@6 (24.875 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=145.5, wait=21
+Terran_Ghost:11 HP=45, wait=22
+Terran_Siege_Tank_Tank_Mode:12 HP=120.25, wait=21
+Terran_Siege_Tank_Siege_Mode:13 HP=147.75, wait=59
+@@@@ Enemy's turn @@@@
+Terran_Vulture@6 does 4.75 damage to Terran_Goliath:5 (89.75 HP left)
+Terran_Vulture@7 does 10 damage to Terran_Vulture:6 (35 HP left)
+Terran_Goliath@8 HP=125, wait=22
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=21
+Terran_Ghost@10 HP=45, wait=22
+Terran_Ghost@11 HP=45, wait=22
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=21
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=59
+XXXX Turns over XXXX
+Total damages from you: 20
+Total damages from the enemy: 14.75
+Number of dead units: 7
+Number of dead enemies: 6
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0556
+Global cost: 0
+Number of tours: 185
+Number of iterations: 370
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 7
+
+Tour 15
+:::: My turn ::::
+Terran_Goliath:5 HP=89.75, wait=1
+Terran_Vulture:6 HP=35, wait=10
+Terran_Vulture:7 HP=33.875, wait=10
+Terran_Siege_Tank_Tank_Mode:9 does 22.5 damage to Terran_Vulture@6 (2.375 HP left)
+Terran_Ghost:11 HP=45, wait=1
+Terran_Siege_Tank_Tank_Mode:12 does 22.5 damage to Terran_Vulture@6 (-20.125 HP left)
+Terran_Siege_Tank_Siege_Mode:13 HP=147.75, wait=38
+@@@@ Enemy's turn @@@@
+Terran_Vulture@6 HP=24.875, wait=10
+Terran_Vulture@7 HP=80, wait=10
+Terran_Goliath@8 HP=125, wait=1
+Terran_Siege_Tank_Tank_Mode@9 does 22.5 damage to Terran_Vulture:7 (11.375 HP left)
+Terran_Ghost@10 HP=45, wait=1
+Terran_Ghost@11 HP=45, wait=1
+Terran_Siege_Tank_Tank_Mode@12 does 29 damage to Terran_Goliath:5 (60.75 HP left)
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=38
+XXXX Turns over XXXX
+Total damages from you: 45
+Total damages from the enemy: 51.5
+Number of dead units: 7
+Number of dead enemies: 7
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0333
+Global cost: 0
+Number of tours: 203
+Number of iterations: 405
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 7
+
+Tour 16
+:::: My turn ::::
+Terran_Goliath:5 does 12 damage to Terran_Vulture@7 (68 HP left)
+Terran_Vulture:6 HP=35, wait=9
+Terran_Vulture:7 HP=11.375, wait=9
+Terran_Siege_Tank_Tank_Mode:9 HP=145.5, wait=37
+Terran_Ghost:11 does 5 damage to Terran_Vulture@7 (63 HP left)
+Terran_Siege_Tank_Tank_Mode:12 HP=120.25, wait=37
+Terran_Siege_Tank_Siege_Mode:13 HP=147.75, wait=37
+@@@@ Enemy's turn @@@@
+Terran_Vulture@7 HP=80, wait=9
+Terran_Goliath@8 does 11 damage to Terran_Siege_Tank_Tank_Mode:12 (109.25 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=37
+Terran_Ghost@10 does 10 damage to Terran_Ghost:11 (35 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Siege_Mode:13 (145.5 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=37
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=37
+XXXX Turns over XXXX
+Total damages from you: 17
+Total damages from the enemy: 23.25
+Number of dead units: 7
+Number of dead enemies: 7
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0227
+Global cost: 0
+Number of tours: 239
+Number of iterations: 478
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 7
+
+Tour 17
+:::: My turn ::::
+Terran_Goliath:5 HP=60.75, wait=14
+Terran_Vulture:6 does 10 damage to Terran_Vulture@7 (53 HP left)
+Terran_Vulture:7 does 10 damage to Terran_Vulture@7 (43 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=145.5, wait=28
+Terran_Ghost:11 HP=35, wait=14
+Terran_Siege_Tank_Tank_Mode:12 HP=109.25, wait=28
+Terran_Siege_Tank_Siege_Mode:13 HP=145.5, wait=28
+@@@@ Enemy's turn @@@@
+Terran_Vulture@7 does 4.75 damage to Terran_Goliath:5 (56 HP left)
+Terran_Goliath@8 HP=125, wait=14
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=28
+Terran_Ghost@10 HP=45, wait=14
+Terran_Ghost@11 HP=45, wait=14
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=28
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=28
+XXXX Turns over XXXX
+Total damages from you: 20
+Total damages from the enemy: 4.75
+Number of dead units: 7
+Number of dead enemies: 7
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.039
+Global cost: 0
+Number of tours: 208
+Number of iterations: 415
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 7
+
+Tour 18
+:::: My turn ::::
+Terran_Goliath:5 does 12 damage to Terran_Vulture@7 (31 HP left)
+Terran_Vulture:6 HP=35, wait=17
+Terran_Vulture:7 HP=11.375, wait=17
+Terran_Siege_Tank_Tank_Mode:9 HP=145.5, wait=14
+Terran_Ghost:11 does 5 damage to Terran_Vulture@7 (26 HP left)
+Terran_Siege_Tank_Tank_Mode:12 HP=109.25, wait=14
+Terran_Siege_Tank_Siege_Mode:13 HP=145.5, wait=14
+@@@@ Enemy's turn @@@@
+Terran_Vulture@7 HP=43, wait=17
+Terran_Goliath@8 does 12 damage to Terran_Ghost:11 (23 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=14
+Terran_Ghost@10 does 10 damage to Terran_Ghost:11 (13 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:9 (143.25 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=14
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=14
+XXXX Turns over XXXX
+Total damages from you: 17
+Total damages from the enemy: 24.25
+Number of dead units: 7
+Number of dead enemies: 7
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0201
+Global cost: 0
+Number of tours: 133
+Number of iterations: 399
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 8
+
+Tour 19
+:::: My turn ::::
+Terran_Goliath:5 HP=56, wait=9
+Terran_Vulture:6 HP=35, wait=3
+Terran_Vulture:7 HP=11.375, wait=3
+Terran_Siege_Tank_Tank_Mode:9 does 22.5 damage to Terran_Vulture@7 (3.5 HP left)
+Terran_Ghost:11 HP=13, wait=9
+Terran_Siege_Tank_Tank_Mode:12 does 22.5 damage to Terran_Vulture@7 (-19 HP left)
+Terran_Siege_Tank_Siege_Mode:13 aims Terran_Vulture@7 (-71.5 HP left) and does 52.5 full splash damage
+Terran_Siege_Tank_Siege_Mode:13 does 16.5 quarter splash damage to Terran_Goliath@8 (108.5 HP left)
+Terran_Siege_Tank_Siege_Mode:13 does 8.75 quarter splash damage to Terran_Ghost@11 (36.25 HP left)
+@@@@ Enemy's turn @@@@
+Terran_Vulture@7 HP=26, wait=3
+Terran_Goliath@8 HP=125, wait=9
+Terran_Siege_Tank_Tank_Mode@9 does 22.5 damage to Terran_Vulture:6 (12.5 HP left)
+Terran_Ghost@10 HP=45, wait=9
+Terran_Ghost@11 HP=45, wait=9
+Terran_Siege_Tank_Tank_Mode@12 does 22.5 damage to Terran_Vulture:6 (-10 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 13.125 quarter splash damage to Terran_Vulture:7 (-1.75 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 35 full splash damage to Terran_Ghost:10 (-42 HP left)
+Terran_Siege_Tank_Siege_Mode@13 aims Terran_Ghost:11 (-22 HP left) and does 35 full splash damage
+Terran_Siege_Tank_Siege_Mode@13 does 16.5 quarter splash damage to Terran_Siege_Tank_Siege_Mode:13 (129 HP left)
+XXXX Turns over XXXX
+Total damages from you: 122.75
+Total damages from the enemy: 144.625
+Number of dead units: 10
+Number of dead enemies: 8
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0421
+Global cost: 0
+Number of tours: 277
+Number of iterations: 554
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 8
+
+Tour 20
+:::: My turn ::::
+Terran_Goliath:5 does 11 damage to Terran_Goliath@8 (97.5 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=143.25, wait=29
+Terran_Siege_Tank_Tank_Mode:12 HP=109.25, wait=29
+Terran_Siege_Tank_Siege_Mode:13 HP=129, wait=67
+@@@@ Enemy's turn @@@@
+Terran_Goliath@8 does 11 damage to Terran_Siege_Tank_Tank_Mode:12 (98.25 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=29
+Terran_Ghost@10 does 2.25 damage to Terran_Goliath:5 (53.75 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Goliath:5 (51.5 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=29
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=67
+XXXX Turns over XXXX
+Total damages from you: 11
+Total damages from the enemy: 15.5
+Number of dead units: 10
+Number of dead enemies: 8
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0419
+Global cost: 0
+Number of tours: 609
+Number of iterations: 609
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 8
+
+Tour 21
+:::: My turn ::::
+Terran_Goliath:5 does 11 damage to Terran_Goliath@8 (86.5 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=143.25, wait=6
+Terran_Siege_Tank_Tank_Mode:12 HP=98.25, wait=6
+Terran_Siege_Tank_Siege_Mode:13 HP=129, wait=44
+@@@@ Enemy's turn @@@@
+Terran_Goliath@8 does 11 damage to Terran_Goliath:5 (40.5 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=6
+Terran_Ghost@10 does 2.25 damage to Terran_Siege_Tank_Siege_Mode:13 (126.75 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Goliath:5 (38.25 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=6
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=44
+XXXX Turns over XXXX
+Total damages from you: 11
+Total damages from the enemy: 15.5
+Number of dead units: 10
+Number of dead enemies: 8
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.032
+Global cost: 0
+Number of tours: 290
+Number of iterations: 579
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 8
+
+Tour 22
+:::: My turn ::::
+Terran_Goliath:5 HP=38.25, wait=17
+Terran_Siege_Tank_Tank_Mode:9 does 29 damage to Terran_Goliath@8 (57.5 HP left)
+Terran_Siege_Tank_Tank_Mode:12 does 29 damage to Terran_Goliath@8 (28.5 HP left)
+Terran_Siege_Tank_Siege_Mode:13 HP=126.75, wait=38
+@@@@ Enemy's turn @@@@
+Terran_Goliath@8 HP=86.5, wait=17
+Terran_Siege_Tank_Tank_Mode@9 does 29 damage to Terran_Goliath:5 (9.25 HP left)
+Terran_Ghost@10 HP=45, wait=17
+Terran_Ghost@11 HP=36.25, wait=17
+Terran_Siege_Tank_Tank_Mode@12 does 29 damage to Terran_Siege_Tank_Tank_Mode:12 (69.25 HP left)
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=38
+XXXX Turns over XXXX
+Total damages from you: 58
+Total damages from the enemy: 58
+Number of dead units: 10
+Number of dead enemies: 8
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0331
+Global cost: 0
+Number of tours: 610
+Number of iterations: 610
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 8
+
+Tour 23
+:::: My turn ::::
+Terran_Goliath:5 does 11 damage to Terran_Goliath@8 (17.5 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=143.25, wait=21
+Terran_Siege_Tank_Tank_Mode:12 HP=69.25, wait=21
+Terran_Siege_Tank_Siege_Mode:13 HP=126.75, wait=21
+@@@@ Enemy's turn @@@@
+Terran_Goliath@8 does 11 damage to Terran_Siege_Tank_Tank_Mode:12 (58.25 HP left)
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=21
+Terran_Ghost@10 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:12 (56 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Siege_Mode:13 (124.5 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=150, wait=21
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=21
+XXXX Turns over XXXX
+Total damages from you: 11
+Total damages from the enemy: 15.5
+Number of dead units: 10
+Number of dead enemies: 8
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0542
+Global cost: 0
+Number of tours: 179
+Number of iterations: 537
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 9
+
+Tour 24
+:::: My turn ::::
+Terran_Goliath:5 HP=9.25, wait=2
+Terran_Siege_Tank_Tank_Mode:9 does 29 damage to Terran_Goliath@8 (-11.5 HP left)
+Terran_Siege_Tank_Tank_Mode:12 does 29 damage to Terran_Goliath@8 (-40.5 HP left)
+Terran_Siege_Tank_Siege_Mode:13 aims Terran_Goliath@8 (-109.5 HP left) and does 69 full splash damage
+Terran_Siege_Tank_Siege_Mode:13 does 16.5 quarter splash damage to Terran_Siege_Tank_Tank_Mode@12 (133.5 HP left)
+@@@@ Enemy's turn @@@@
+Terran_Goliath@8 HP=17.5, wait=2
+Terran_Siege_Tank_Tank_Mode@9 does 29 damage to Terran_Siege_Tank_Tank_Mode:9 (114.25 HP left)
+Terran_Ghost@10 HP=45, wait=2
+Terran_Ghost@11 HP=36.25, wait=2
+Terran_Siege_Tank_Tank_Mode@12 does 29 damage to Terran_Siege_Tank_Tank_Mode:12 (27 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 8.75 quarter splash damage to Terran_Ghost:10 (-50.75 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 8.75 quarter splash damage to Terran_Ghost:11 (-30.75 HP left)
+Terran_Siege_Tank_Siege_Mode@13 aims Terran_Siege_Tank_Siege_Mode:13 (55.5 HP left) and does 69 full splash damage
+XXXX Turns over XXXX
+Total damages from you: 143.5
+Total damages from the enemy: 144.5
+Number of dead units: 10
+Number of dead enemies: 9
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0213
+Global cost: 0
+Number of tours: 676
+Number of iterations: 676
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 9
+
+Tour 25
+:::: My turn ::::
+Terran_Goliath:5 does 11 damage to Terran_Siege_Tank_Tank_Mode@9 (122.5 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=114.25, wait=36
+Terran_Siege_Tank_Tank_Mode:12 HP=27, wait=36
+Terran_Siege_Tank_Siege_Mode:13 HP=55.5, wait=74
+@@@@ Enemy's turn @@@@
+Terran_Siege_Tank_Tank_Mode@9 HP=133.5, wait=36
+Terran_Ghost@10 does 2.25 damage to Terran_Goliath:5 (7 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Goliath:5 (4.75 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=36
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=74
+XXXX Turns over XXXX
+Total damages from you: 11
+Total damages from the enemy: 4.5
+Number of dead units: 10
+Number of dead enemies: 9
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0428
+Global cost: 0
+Number of tours: 681
+Number of iterations: 681
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 9
+
+Tour 26
+:::: My turn ::::
+Terran_Goliath:5 does 11 damage to Terran_Siege_Tank_Tank_Mode@9 (111.5 HP left)
+Terran_Siege_Tank_Tank_Mode:9 HP=114.25, wait=13
+Terran_Siege_Tank_Tank_Mode:12 HP=27, wait=13
+Terran_Siege_Tank_Siege_Mode:13 HP=55.5, wait=51
+@@@@ Enemy's turn @@@@
+Terran_Siege_Tank_Tank_Mode@9 HP=122.5, wait=13
+Terran_Ghost@10 does 2.25 damage to Terran_Siege_Tank_Siege_Mode:13 (53.25 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:12 (24.75 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=13
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=51
+XXXX Turns over XXXX
+Total damages from you: 11
+Total damages from the enemy: 4.5
+Number of dead units: 10
+Number of dead enemies: 9
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0199
+Global cost: 0
+Number of tours: 327
+Number of iterations: 654
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 9
+
+Tour 27
+:::: My turn ::::
+Terran_Goliath:5 HP=4.75, wait=10
+Terran_Siege_Tank_Tank_Mode:9 does 29 damage to Terran_Siege_Tank_Tank_Mode@9 (82.5 HP left)
+Terran_Siege_Tank_Tank_Mode:12 does 15 damage to Terran_Ghost@10 (30 HP left)
+Terran_Siege_Tank_Siege_Mode:13 HP=53.25, wait=38
+@@@@ Enemy's turn @@@@
+Terran_Siege_Tank_Tank_Mode@9 does 29 damage to Terran_Siege_Tank_Tank_Mode:9 (85.25 HP left)
+Terran_Ghost@10 HP=45, wait=10
+Terran_Ghost@11 HP=36.25, wait=10
+Terran_Siege_Tank_Tank_Mode@12 does 29 damage to Terran_Goliath:5 (-24.25 HP left)
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=38
+XXXX Turns over XXXX
+Total damages from you: 44
+Total damages from the enemy: 58
+Number of dead units: 11
+Number of dead enemies: 9
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0294
+Global cost: 0
+Number of tours: 687
+Number of iterations: 687
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 9
+
+Tour 28
+:::: My turn ::::
+Terran_Siege_Tank_Tank_Mode:9 HP=85.25, wait=28
+Terran_Siege_Tank_Tank_Mode:12 HP=24.75, wait=28
+Terran_Siege_Tank_Siege_Mode:13 HP=53.25, wait=28
+@@@@ Enemy's turn @@@@
+Terran_Siege_Tank_Tank_Mode@9 HP=82.5, wait=28
+Terran_Ghost@10 does 2.25 damage to Terran_Siege_Tank_Siege_Mode:13 (51 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Siege_Mode:13 (48.75 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=28
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=28
+XXXX Turns over XXXX
+Total damages from you: 0
+Total damages from the enemy: 4.5
+Number of dead units: 11
+Number of dead enemies: 9
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0154
+Global cost: 2.14748e+09
+Number of tours: 759
+Number of iterations: 759
+Optimization cost: 9
+Opt Cost BEFORE post-processing: 9
+
+Tour 29
+:::: My turn ::::
+Terran_Siege_Tank_Tank_Mode:9 HP=85.25, wait=5
+Terran_Siege_Tank_Tank_Mode:12 HP=24.75, wait=5
+Terran_Siege_Tank_Siege_Mode:13 HP=48.75, wait=5
+@@@@ Enemy's turn @@@@
+Terran_Siege_Tank_Tank_Mode@9 HP=82.5, wait=5
+Terran_Ghost@10 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:12 (22.5 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Siege_Mode:13 (46.5 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=5
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=5
+XXXX Turns over XXXX
+Total damages from you: 0
+Total damages from the enemy: 4.5
+Number of dead units: 11
+Number of dead enemies: 9
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0023
+Global cost: 0
+Number of tours: 191
+Number of iterations: 571
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 10
+
+Tour 30
+:::: My turn ::::
+Terran_Siege_Tank_Tank_Mode:9 does 29 damage to Terran_Siege_Tank_Tank_Mode@9 (53.5 HP left)
+Terran_Siege_Tank_Tank_Mode:12 does 15 damage to Terran_Ghost@10 (15 HP left)
+Terran_Siege_Tank_Siege_Mode:13 aims Terran_Siege_Tank_Tank_Mode@9 (-15.5 HP left) and does 69 full splash damage
+@@@@ Enemy's turn @@@@
+Terran_Siege_Tank_Tank_Mode@9 does 29 damage to Terran_Siege_Tank_Tank_Mode:9 (56.25 HP left)
+Terran_Ghost@10 HP=30, wait=18
+Terran_Ghost@11 HP=36.25, wait=18
+Terran_Siege_Tank_Tank_Mode@12 does 29 damage to Terran_Siege_Tank_Tank_Mode:12 (-6.5 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 8.75 quarter splash damage to Terran_Ghost:10 (-59.5 HP left)
+Terran_Siege_Tank_Siege_Mode@13 does 8.75 quarter splash damage to Terran_Ghost:11 (-39.5 HP left)
+Terran_Siege_Tank_Siege_Mode@13 aims Terran_Siege_Tank_Siege_Mode:13 (-22.5 HP left) and does 69 full splash damage
+XXXX Turns over XXXX
+Total damages from you: 113
+Total damages from the enemy: 144.5
+Number of dead units: 13
+Number of dead enemies: 10
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0246
+Global cost: 2.14748e+09
+Number of tours: 905
+Number of iterations: 905
+Optimization cost: 10
+Opt Cost BEFORE post-processing: 10
+
+Tour 31
+:::: My turn ::::
+Terran_Siege_Tank_Tank_Mode:9 HP=56.25, wait=20
+@@@@ Enemy's turn @@@@
+Terran_Ghost@10 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:9 (54 HP left)
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:9 (51.75 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=20
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=58
+XXXX Turns over XXXX
+Total damages from you: 0
+Total damages from the enemy: 4.5
+Number of dead units: 13
+Number of dead enemies: 10
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0358
+Global cost: 0
+Number of tours: 798
+Number of iterations: 798
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 11
+
+Tour 32
+:::: My turn ::::
+Terran_Siege_Tank_Tank_Mode:9 does 15 damage to Terran_Ghost@10 (0 HP left)
+@@@@ Enemy's turn @@@@
+Terran_Ghost@10 HP=15, wait=3
+Terran_Ghost@11 HP=36.25, wait=3
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=0
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=38
+XXXX Turns over XXXX
+Total damages from you: 15
+Total damages from the enemy: 0
+Number of dead units: 13
+Number of dead enemies: 11
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0026
+Global cost: 2.14748e+09
+Number of tours: 1100
+Number of iterations: 1100
+Optimization cost: 11
+Opt Cost BEFORE post-processing: 11
+
+Tour 33
+:::: My turn ::::
+Terran_Siege_Tank_Tank_Mode:9 HP=51.75, wait=35
+@@@@ Enemy's turn @@@@
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:9 (49.5 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=-2
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=35
+XXXX Turns over XXXX
+Total damages from you: 0
+Total damages from the enemy: 2.25
+Number of dead units: 13
+Number of dead enemies: 11
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.0111
+Global cost: 2.14748e+09
+Number of tours: 1111
+Number of iterations: 1111
+Optimization cost: 11
+Opt Cost BEFORE post-processing: 11
+
+Tour 34
+:::: My turn ::::
+Terran_Siege_Tank_Tank_Mode:9 HP=49.5, wait=12
+@@@@ Enemy's turn @@@@
+Terran_Ghost@11 does 2.25 damage to Terran_Siege_Tank_Tank_Mode:9 (47.25 HP left)
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=-25
+Terran_Siege_Tank_Siege_Mode@13 HP=150, wait=12
+XXXX Turns over XXXX
+Total damages from you: 0
+Total damages from the enemy: 2.25
+Number of dead units: 13
+Number of dead enemies: 11
+############
+OPTIMIZATION run with objective MaxKill
+Elapsed time: 30.016
+Global cost: 0
+Number of tours: 1019
+Number of iterations: 1019
+Optimization cost: 0
+Opt Cost BEFORE post-processing: 11
+
+Tour 35
+:::: My turn ::::
+Terran_Siege_Tank_Tank_Mode:9 does 15 damage to Terran_Ghost@11 (21.25 HP left)
+@@@@ Enemy's turn @@@@
+Terran_Ghost@11 HP=36.25, wait=11
+Terran_Siege_Tank_Tank_Mode@12 HP=133.5, wait=-37
+Terran_Siege_Tank_Siege_Mode@13 does 16.5 quarter splash damage to Terran_Goliath:5 (-40.75 HP left)
+Terran_Siege_Tank_Siege_Mode@13 aims Terran_Siege_Tank_Tank_Mode:9 (-21.75 HP left) and does 69 full splash damage
+XXXX Turns over XXXX
+Total damages from you: 15
+Total damages from the enemy: 85.5
+Number of dead units: 14
+Number of dead enemies: 11
+Winner: The enemy...
+Terran_Marine@0 -8 HP left
+Terran_Marine@1 -22 HP left
+Terran_Marine@2 -20.75 HP left
+Terran_Marine@3 -41.5 HP left
+Terran_Marine@4 -69 HP left
+Terran_Goliath@5 -84.5 HP left
+Terran_Vulture@6 -20.125 HP left
+Terran_Vulture@7 -71.5 HP left
+Terran_Goliath@8 -109.5 HP left
+Terran_Siege_Tank_Tank_Mode@9 -15.5 HP left
+Terran_Ghost@10 0 HP left
+Terran_Ghost@11 21.25 HP left
+Terran_Siege_Tank_Tank_Mode@12 133.5 HP left
+Terran_Siege_Tank_Siege_Mode@13 150 HP left
