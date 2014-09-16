@@ -46,9 +46,9 @@ int main(int argc, char **argv)
   int sat = 20;
   int opt = 30;
   if( argc > 1 )
-    sat = stoi(argv[2]);
+    sat = stoi(argv[1]);
   if( argc > 2 )
-    opt = stoi(argv[3]);
+    opt = stoi(argv[2]);
 
   // inputFile.open( argv[1], std::ifstream::in );
   // if( inputFile.is_open() && inputFile.peek() != std::ifstream::traits_type::eof() )
@@ -111,8 +111,8 @@ int main(int argc, char **argv)
   // Define objective
   shared_ptr<TargetSelectionObjective> objective = make_shared<MaxKill>();
   
-
   Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints, objective );
+  // Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints );
 
   Random random;
   vector<int> inRange;
