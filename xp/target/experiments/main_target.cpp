@@ -109,7 +109,7 @@ int main(int argc, char **argv)
   vector< shared_ptr<TargetSelectionConstraint> > vecConstraints { make_shared<TargetSelectionConstraint>( &vec, &domain ) };
 
   // Define objective
-  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxKill>();
+  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxDamage>();
   
   Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints, objective );
   // Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints );
@@ -239,24 +239,41 @@ int main(int argc, char **argv)
 
   } while( deadUnits < numUnits && deadEnemy < numEnemy );
 
-  cout << "Number of dead units: " << deadUnits << endl 
-       << "Number of dead enemies: " << deadEnemy << endl;
+  double total_hp = 0.;
   
   if( count_if( begin(enemies), end(enemies), [&](UnitEnemy &u){ return u.isDead(); } ) == numEnemy
       &&
       count_if( begin(vec), end(vec), [&](Unit &u){ return u.isDead(); } ) < numUnits)
   {
-    cout << "Winner: You!" << endl;
+    for( const auto &v : vec )
+      if( !v.isDead() )
+	total_hp += v.getHP();
+    
+    cout << "Winner: You!" << endl
+	 << "Diff: " << deadEnemy - deadUnits << endl
+	 << "HP: " << total_hp << endl;
+    
+#ifndef NDEBUG
     for( const auto &v : vec )
       cout << v.getFullName() << ":" << v.getId() << " " << v.getHP() << " HP left" << endl;
+#endif
   }
   else if( count_if( begin(enemies), end(enemies), [&](UnitEnemy &u){ return u.isDead(); } ) < numEnemy
 	   &&
 	   count_if( begin(vec), end(vec), [&](Unit &u){ return u.isDead(); } ) == numUnits)
   {
-    cout << "Winner: The enemy..." << endl;
+    for( const auto &e : enemies )
+      if( !e.isDead() )
+	total_hp += e.data.hp;
+
+    cout << "Winner: The enemy..." << endl
+      	 << "Diff: " << deadEnemy - deadUnits << endl
+      	 << "HP: " << total_hp << endl;
+    
+#ifndef NDEBUG
     for( int i = 0 ; i < enemies.size() ; ++i )
       cout << enemies[i].data.name << "@" << i << " " << enemies[i].data.hp << " HP left" << endl;
+#endif
   }
   else
   {
