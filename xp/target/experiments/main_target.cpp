@@ -146,10 +146,12 @@ int main(int argc, char **argv)
     totalDamages = 0.;
     totalDamagesEnemy = 0.;
 
+#ifndef NDEBUG
     cout << "Tour " << tour++ << endl;
 
     // My units attack
     cout << ":::: My turn ::::" << endl;
+#endif
 
     for( int i = 0 ; i < enemies.size() ; ++i )
       copyEnemies[i].data.hp = enemies[i].data.hp;
@@ -160,11 +162,14 @@ int main(int argc, char **argv)
 	  totalDamages += v.doDamage( copyEnemies );
 	else
 	{
+#ifndef NDEBUG
 	  cout << v.getFullName() << ":" << v.getId() << " HP=" << v.getHP() << ", wait=" << v.canShootIn() << endl;
+#endif
 	  if( !v.canShoot() )
 	    v.oneStep();
 	}
     
+#ifndef NDEBUG
     // cout << endl << endl << "Simulation" << endl;
     // for( auto &v : vec )
     // {
@@ -184,11 +189,14 @@ int main(int argc, char **argv)
     //   }
     // }
     // cout << endl << endl;
+#endif
 	
 
 
     // The enemy attacks
+#ifndef NDEBUG
     cout << "@@@@ Enemy's turn @@@@" << endl;
+#endif
 
     for( int i = 0 ; i < enemies.size() ; ++i )
     {
@@ -200,12 +208,16 @@ int main(int argc, char **argv)
 
 	  if( !inRange.empty() )
 	    totalDamagesEnemy += enemies[i].doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );
+#ifndef NDEBUG
 	  else
 	    cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;	    
+#endif
 	}
 	else
 	{
+#ifndef NDEBUG
 	  cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;
+#endif
 	  if( !enemies[i].canShoot() )
 	    enemies[i].oneStep();
 	}
@@ -217,14 +229,19 @@ int main(int argc, char **argv)
     
     deadUnits = count_if( begin(vec), end(vec), [](Unit &u){ return u.isDead(); } );
     deadEnemy = count_if( begin(enemies), end(enemies), [](UnitEnemy &u){ return u.isDead(); } );
+#ifndef NDEBUG
     cout << "XXXX Turns over XXXX" << endl
-	 << "Total damages from you: " << totalDamages << endl 
-	 << "Total damages from the enemy: " << totalDamagesEnemy << endl
-	 << "Number of dead units: " << deadUnits << endl 
-	 << "Number of dead enemies: " << deadEnemy << endl;
+    	 << "Total damages from you: " << totalDamages << endl 
+    	 << "Total damages from the enemy: " << totalDamagesEnemy << endl
+    	 << "Number of dead units: " << deadUnits << endl 
+    	 << "Number of dead enemies: " << deadEnemy << endl;
+#endif
 
   } while( deadUnits < numUnits && deadEnemy < numEnemy );
 
+  cout << "Number of dead units: " << deadUnits << endl 
+       << "Number of dead enemies: " << deadEnemy << endl;
+  
   if( count_if( begin(enemies), end(enemies), [&](UnitEnemy &u){ return u.isDead(); } ) == numEnemy
       &&
       count_if( begin(vec), end(vec), [&](Unit &u){ return u.isDead(); } ) < numUnits)
