@@ -41,6 +41,8 @@
 \usepackage{stfloats}
 \usepackage{url}
 
+\usepackage{amssymb}\newcommand{\todonote}[1]{\footnote{\color{red}TODO: #1}\marginpar[\color{red}\hfill$\blacktriangleright$]{\color{red}$\blacktriangleleft$\hfill}}
+
 \newcommand{\csp}{\textsc{CSP}\xspace}
 \newcommand{\cop}{\textsc{COP}\xspace}
 \newcommand{\ghost}{\textsc{GHOST}\xspace}
@@ -369,8 +371,8 @@ also analyzed replays  of games played by top  Korean pro-gamers, \ie,
 Kim "Bisu" Taek Yong, Doh "BeSt"  Jae Wook, Woo "Violet" Jung Ho, Yang
 "Cure" Jung  Hyun, all Protoss  players, against Lee "Flash"  Young Ho
 (Terran), Lee "Jaedong"  Jae Dong (Zerg), Ma "sAviOr"  Jae Yoon (Zerg)
-and match their build orders with \ghost  (no data here, but I can put
-them).
+and match their build orders with \ghost \todonote{[Flo] no data here, but I can put
+them}.
 
 Computation time is  only 20ms for satisfaction runs and  30ms for the
 (global) optimization run. This means that \ghost can compute a highly
