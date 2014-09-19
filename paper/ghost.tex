@@ -210,13 +210,45 @@ D$  such that  each constraint  of  the formula  is satisfied.   Since
 will represent an instance of $\mathcal{P}$.
 
 Roughly  speaking, there  exist two  different kind  of algorithms  to
-solve \csp/\cop problems.
+solve \csp/\cop problems: 
+\begin{itemize}
+\item Tree-based  search algorithms,  also called  complete algorithms
+  since they completely  explore the search space  of solutions, using
+  smart moves  (backtracking, forward  checking, etc) to  localize and
+  avoid dead-ends in the search space.
+\item Meta-heuristics,  also called incomplete algorithms,  since they
+  are based  upon local  moves to find  optimums, rather  than dealing
+  with the problem  as a whole. In practice, these  algorithms are the
+  only  viable methods  to  manage industrial-size  problems within  a
+  reasonable runtime. On  the other hand, they cannot  prove they have
+  found the optimal  solution, neither they cannot prove  there are no
+  solutions to the given problem.
+\end{itemize}
+
+For \ghost, we have chosen a  meta-heuristic algorithm to be the heart
+of the solver, {\it  Adaptive Search}~\cite{Codognet01}. The reason we
+have chosen  a meta-heuristics is  simple: To solve  combinatorial and
+optimization problems while playing a RTS game, the solver needs to be
+very fast to find a solution,  within some tens of milliseconds, which
+is virtually impossible with  tree-based search algorithms. The reason
+we  have  chosen  Adaptive  Search  is that,  although  it  is  not  a
+well-known algorithm, it is one  of the fastest meta-heuristics at the
+moment, up to our knowledge~\cite{Caniou14}.
+
 
 \subsection{\ghost architecture}
 
 Without  loss  of  generality,  \ghost  always  try  to  minimize  the
 objective function  $f$. This  is trivially possible  since maximizing
 $f$ corresponds to minimizing $1 / f$.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{figs/ghost.png}
+  \caption{A simplified class diagram of \ghost}
+  \label{fig:ghost}
+\end{figure}
+
 
 \section{Reactive control problem: The target selection}\label{sec:target}
 Refer to ???
@@ -316,7 +348,7 @@ following one:
     {\em PvZ} & 649.20 & 609.34 & 95.0 & 39.86\\
     \hline
   \end{tabular}
-  \hfill  
+  %\hfill  
   \begin{tabular}{|l|c|c|c|c|} 
     \hline
     \multicolumn{5}{|c|}{ Games till 7.800 frames} \\ 
