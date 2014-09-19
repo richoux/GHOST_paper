@@ -25,7 +25,12 @@
 \fi
 
 \usepackage[cmex10]{amsmath}
-\usepackage{algorithmic}
+%\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+
 \usepackage{array}
 \usepackage{xspace}
 \usepackage{amssymb, stmaryrd, algorithm, mathrsfs}
@@ -39,7 +44,15 @@
 %\usepackage[caption=false,font=footnotesize]{subfig}
 \usepackage{fixltx2e}
 \usepackage{stfloats}
-\usepackage{url}
+%\usepackage{url}\newcommand{\urlb}[1]{{\color{blue}\url{#1}}}
+\usepackage{color, xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
 
 \usepackage{amssymb}\newcommand{\todonote}[1]{\footnote{\color{red}TODO: #1}\marginpar[\color{red}\hfill$\blacktriangleright$]{\color{red}$\blacktriangleleft$\hfill}}
 
@@ -79,6 +92,16 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
+
+\lstset{
+  language=[ISO]C++,
+  basicstyle=\footnotesize,
+  keywordstyle=\color{red}\bfseries,
+  commentstyle=\color{violet}\textit,
+  stringstyle=\color{blue}\ttfamily
+}%,labelstyle=\tiny}
+
+
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
@@ -137,8 +160,8 @@ This paper presents ...
 \end{abstract}
 
 \begin{IEEEkeywords}
-Game AI, Real-Time Strategy, StarCraft, CSP, COP
-
+Game   AI,   Real-Time   Strategy,  StarCraft,   CSP,   COP,   Solver,
+Optimization, Combinatorics.
 \end{IEEEkeywords}
 
 % For peer review papers, you can put extra information on the cover
@@ -158,7 +181,8 @@ Game AI, Real-Time Strategy, StarCraft, CSP, COP
 Refer to \cite{OntanonSURCM13}
 
 
-\section{\ghost: A General meta-Heuristic Optimization Solving Tool}\label{sec:ghost}
+\section{\ghost:   A  General   meta-Heuristic  Optimization   Solving
+  Tool}\label{sec:ghost}
 \subsection{A brief introduction to \csp / \cop}
 
 Constraint  Satisfaction Problems  (\csp) and  Constraint Optimization
@@ -237,20 +261,95 @@ we  have  chosen  Adaptive  Search  is that,  although  it  is  not  a
 well-known algorithm, it is one  of the fastest meta-heuristics at the
 moment, up to our knowledge~\cite{Caniou14}.
 
+In  the next  sections,  we  will see  that  looking  for the  optimal
+solution is not always an  interesting strategy for RTS games. Indeed,
+it is sufficient to have a solution ``optimal enough'' in some tens of
+milliseconds   rather  than   spending  seconds   to  find   a  global
+optimum. The results  we obtain with \ghost on  different problems are
+very good, and  even often better than results the  reader can find in
+the current literature.
 
 \subsection{\ghost architecture}
 
-Without  loss  of  generality,  \ghost  always  try  to  minimize  the
-objective function  $f$. This  is trivially possible  since maximizing
-$f$ corresponds to minimizing $1 / f$.
+\ghost is a template C++ solver\footnote{\href{https://github.com/richoux/GHOST}{github.com/richoux/GHOST}}, under the GNU GPL v3 licence, designed to solve any kind of
+RTS-related problems,  as soon as  they are modeled  into a \csp  or a
+\cop. Two different users are targeted:
 
-\begin{figure}
+\begin{itemize}
+\item  The casual  user, who  only wants  to use  \ghost to  solve an
+  already encoded problem,  like the three problems  presented in next
+  sections.  The user only need  to instantiate variables, the domain,
+  constraints and eventually an objective  to describe the instance of
+  his problem, and  call the function \texttt{solve} of  the solver to
+  run the  search. This is  done in 5 short  C++ lines.
+\item The developer user, who has  a specific problem not written with
+  \ghost  yet.  \ghost  has  been designed  to  easily implements  new
+  problems without changing  a single line in the  solver, and without
+  expertise needed  in Constraint  Programming.  Also, our  solver has
+  been  designed to  have  as  few parameters  as  possible, to  avoid
+  tedious  and  time-consuming   parameters  tuning  before  obtaining
+  interesting results.   Actually, experiments  presented in  the next
+  sections shown that  no parameters tuning is necessary  to have good
+  performance:  The only  real parameter  of the  solver is  set to  a
+  default  value  that   leaded  to  the  best  results   in  all  our
+  experiments. Of course, it remains  possible to change this value by
+  the developed user.
+\end{itemize}
+
+\ghost    is    implemented    around   five    main    C++    classes
+(Fig.~\ref{fig:ghost}):    \texttt{Variable,    Domain,    Constraint,
+  Objective}                                                       and
+\texttt{Solver}\footnote{\href{http://richoux.github.io/GHOST/}{See
+    \ghost manual pages for more details: richoux.github.io/GHOST/}}.
+
+A developed user  has to build his own classes  upon theses first four
+ones,  by inheriting  from  it. For  instance, to  create  a class  of
+variables     representing     units,      this     is     done     by
+\texttt{class~Unit~:~public~Variable}.   Classes  composed  for  other
+classes, like \texttt{Domain} which need  to know on what variables it
+will work with, must instantiate  the right templates. Thus, declaring
+the   domain   for  the   target   selection   problem  is   done   by
+\texttt{class~TargetDomain~:~public~Domain<Unit>}.
+
+Concerning objective  functions, \ghost has been  designed to minimize
+their  value.  If  a developer  user  needs to  maximize an  objective
+function $f$,  this can be  simply adapted  to \ghost by  defining the
+objective function $1/f$.
+
+Implementation  of new  problems are  welcomed to  be integrated  into
+\ghost.
+
+At the  moment these lines are  written, \ghost is not  yet a library,
+but it should be turned into a library in the next few months. 
+
+\begin{figure}[tba]
   \centering
   \includegraphics[width=\columnwidth]{figs/ghost.png}
   \caption{A simplified class diagram of \ghost}
   \label{fig:ghost}
 \end{figure}
 
+% \begin{figure*}
+%   \begin{lstlisting}
+% vector< Unit > variables = { ... }
+% vector< UnitEnemy  > enemies  = {  ... }  //specific  to the target selection problem
+% TargetSelectionDomain domain( variables.size(), &enemies );
+% vector< shared_ptr<TargetSelectionConstraint> > vecConstraints
+%       { make_shared<TargetSelectionConstraint>( &vec, &domain ) };
+% shared_ptr<TargetSelectionObjective> objective =
+%       make_shared<MaxDamage>();
+% Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint>
+%       solver( &vec, &domain, vecConstraints, objective );
+% solver.solve();
+% \end{lstlisting}
+  
+%   \centering
+%   \includegraphics[width=\linewidth]{figs/solve.png}
+
+%   \caption{Example  of  a  casual  use   of  \ghost,  for  the  target
+%     selection problem}
+%   \label{algo:casual}
+% \end{figure*}
 
 \section{Reactive control problem: The target selection}\label{sec:target}
 Refer to ???
