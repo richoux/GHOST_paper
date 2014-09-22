@@ -156,7 +156,12 @@
 \maketitle
 
 \begin{abstract}
-This paper presents ...
+This paper  presents \ghost, a combinatorial  optimization solver that
+an RTS AI developer can use as a blackbox to solve any problem encoded
+into a  constraint satisfaction/optimization  problem. We  have tested
+our solver on  three very different problems, each one  belonging to a
+specific level of  abstraction. One the three, \ghost  shows very good
+results computed within some tens of milliseconds.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -175,7 +180,13 @@ Optimization, Combinatorics.
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}\label{sec:intro}
-\IEEEPARstart{T}{he} field of real-time strategy (RTS) game AI...
+\IEEEPARstart {T}{here} are few works  in RTS game AI using constraint
+programming  techniques.  Among  others, branch  and bound  algorithms
+have been  used to optimize build  order~\cite{ChurchillB11}.  Genetic
+algorithms have been  used off-line to optimize build  order, but with
+multiple    objectives,    analyzed   in~\cite{KuchemPR13}    and    a
+population-based  algorithm   has  been  used  for   multi-  objective
+procedural aesthetic map generation~\cite{LaraCF14}.
 
 \subsection{RTS problem families}
 Refer to \cite{OntanonSURCM13}
@@ -271,7 +282,9 @@ the current literature.
 
 \subsection{\ghost architecture}
 
-\ghost is a template C++ solver\footnote{\href{https://github.com/richoux/GHOST}{github.com/richoux/GHOST}}, under the GNU GPL v3 licence, designed to solve any kind of
+\ghost             is            a             template            C++
+solver\footnote{\href{https://github.com/richoux/GHOST}{github.com/richoux/GHOST}},
+under  the  GNU  GPL  v3  licence,  designed  to  solve  any  kind  of
 RTS-related problems,  as soon as  they are modeled  into a \csp  or a
 \cop. Two different users are targeted:
 
@@ -500,7 +513,7 @@ shows that the Max Damage objective  wins 92\% of the time against the
 mirror unit group shooting randomly. The Max Kill objective seems less
 efficient with  a win rate of  79\%. One explanation is  that Max Kill
 may not  be a heuristic  as good as Mas  Damage when enemy  units have
-their full HP.  It would be interesting to cross  these two objectives
+their full HP.  It would be  interesting to cross these two objectives
 to see if it leads to better results.
 
 \subsection{Improvements}
@@ -518,7 +531,10 @@ Refer to \cite{Certicky13, RichouxUO14}
 
 \begin{table*}[h!]
     \centering
-    \caption{Optimization results over 48 different problems, extracted form 7 different maps from the StarCraft AI competition. Results are the average of 100 runs in each problem (total of 4800 runs per configuration).}
+    \caption{Optimization   results   over  48   different   problems,
+      extracted  form   7  different   maps  from  the   StarCraft  AI
+      competition. Results are the average of 100 runs in each problem
+      (total of 4800 runs per configuration).}
     \label{tab:wall}
     \begin{tabular}{|l|c|c|c|} \hline
       & {\em Satisfaction run}& {\em Optimization run}& {\em Optimization run solved} \\
@@ -533,7 +549,7 @@ Refer to \cite{Certicky13, RichouxUO14}
 4800 runs, 4680 walls found, 4527 perfect walls (\ie, 96.73\% of walls
 found)
 
-Table~\ref{tab:wall}\footnote{All wall-in  data and  experiment results
+Table~\ref{tab:wall}\footnote{All wall-in data  and experiment results
   can                   be                  found                   at
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/wallin}{github.com/richoux/GHOST\_paper/tree/master/xp/wallin}}
 shows
@@ -579,8 +595,8 @@ following one:
 
 \begin{table*}[h!]
   \centering
-  \caption{Average makespan of Humans and \ghost build orders in StarCraft time over 3647
-    games.}
+  \caption{Average  makespan  of Humans  and  \ghost  build orders  in
+    StarCraft time over 3647 games.}
   \label{tab:bo}
   \begin{tabular}{|l|c|c|c|c|} 
     \hline
@@ -635,11 +651,16 @@ the  analysis  of  games  from  Korean  pro-gamers  listed  above,  we
 parameterized our simulator as follow (in StarCraft time t):
 \begin{itemize}
 \item Time to go build something: 5t (4t in \cite{ChurchillB11})
-\item Time to go back gathering minerals after building something: 4t (0 in \cite{ChurchillB11})
-\item Time to go from the base to mineral patches to start mining: 5t (0 in \cite{ChurchillB11})
-\item Time for a probe to switch from mineral to gas: 5t (0 in \cite{ChurchillB11})
-\item Mineral gathering rate: 0.68 mineral per worker per t (1.07 in \cite{ChurchillB11})
-\item Gas gathering rate: 1.15 gas per worker per t (1.66 in \cite{ChurchillB11})
+\item Time to go back  gathering minerals after building something: 4t
+  (0 in \cite{ChurchillB11})
+\item Time to go from the base  to mineral patches to start mining: 5t
+  (0 in \cite{ChurchillB11})
+\item  Time for  a probe  to  switch from  mineral  to gas:  5t (0  in
+  \cite{ChurchillB11})
+\item Mineral gathering  rate: 0.68 mineral per worker per  t (1.07 in
+  \cite{ChurchillB11})
+\item  Gas  gathering  rate:  1.15  gas per  worker  per  t  (1.66  in
+  \cite{ChurchillB11})
 \end{itemize}  
 
 \subsection{Improvements}
