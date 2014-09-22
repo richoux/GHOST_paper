@@ -31,7 +31,7 @@
 \usepackage{algpseudocode}
 \usepackage{listings}
 
-\usepackage{array}
+\usepackage{array,multirow,graphicx}
 \usepackage{xspace}
 \usepackage{amssymb, stmaryrd, algorithm, mathrsfs}
 \usepackage{mdwmath}
@@ -45,7 +45,7 @@
 \usepackage{fixltx2e}
 \usepackage{stfloats}
 %\usepackage{url}\newcommand{\urlb}[1]{{\color{blue}\url{#1}}}
-\usepackage{color, xcolor}
+\usepackage{color}
 \usepackage{hyperref}
 \hypersetup{
   colorlinks   = true, %Colours links instead of ugly boxes
@@ -93,13 +93,13 @@
 
 \begin{document}
 
-\lstset{
-  language=[ISO]C++,
-  basicstyle=\footnotesize,
-  keywordstyle=\color{red}\bfseries,
-  commentstyle=\color{violet}\textit,
-  stringstyle=\color{blue}\ttfamily
-}%,labelstyle=\tiny}
+% \lstset{
+%   language=[ISO]C++,
+%   basicstyle=\footnotesize,
+%   keywordstyle=\color{red}\bfseries,
+%   commentstyle=\color{violet}\textit,
+%   stringstyle=\color{blue}\ttfamily
+% }%,labelstyle=\tiny}
 
 
 %
@@ -352,15 +352,137 @@ but it should be turned into a library in the next few months.
 % \end{figure*}
 
 \section{Reactive control problem: The target selection}\label{sec:target}
+
 Refer to ???
 \subsection{Problem statement}
+
+The  target   selection  problem  is  a   classical  reactive  control
+problem. Its satisfaction  version is very easy, like it  is often the
+case: It  consists of  assigning to  each unit of  a fighting  group a
+reachable target, \ie, an enemy unit within our unit range.
+
+In addition, one has also to take  into account a cooldown, that is to
+say a fixed  number of StarCraft time $t$ within  a unit recharges and
+has to  wait before shooting  again. This number  is the same  for all
+units of  the same  type. We  can then  describe the  target selection
+problem with the following \csp.
+
+\modelcsp{the Target Selection problem}%
+{A subset of our units.}%
+{A group of enemy units.}%
+{Each living, ready-to-shoot  unit must aim a living  enemy within its
+  range, if any.}
+
+We have decided to model this  problem as a frame-by-frame problem: we
+only consider the question ``what  enemy should I shoot this frame?'',
+without  looking at  micro-management moves  like kiting,  \ie, moving
+backward while recharging then attacking  forward when one is ready to
+shoot.
+
+Usually, RTS games  define specific characteristics to  each unit type
+making the target selection more  subtle. Thus in StarCraft, each unit
+type  has  a  size  (small,  medium   or  large)  and  a  damage  type
+(concussive, normal  or explosive).  Table~\ref{tab:damage}  shows the
+damage penalty  applied according the size  of the aimed unit  and the
+damage type of  the shooter.  For instance, a  normal-damage unit will
+always  afflict  a  target  with  full  damage,  whatever  the  target
+size. But a  concussive-damage unit, like a Terran  Vulture, will only
+make 5 damage points (without  counting upgrade neither armor) against
+a large unit like a Terran Tank, instead of 20 damage points as usual.
+
+\begin{table}[h!]
+  \centering
+  \caption{Damage efficiency matrix in StarCraft.}
+  \label{tab:damage}
+  \begin{tabular}{|c|l|c|c|c|} 
+    \hline
+    & & \multicolumn{3}{c|}{Damage type} \\ 
+    & & Concussive & Normal & Explosive\\
+    \hline
+    \multirow{3}{*}{\rotatebox[origin=c]{90}{size}}& {\em Small} & 100\% & 100\% & 50\%\\
+    & {\em Medium} & 50\% & 100\% & 75\%\\
+    & {\em Large} & 25\% & 100\% & 100\%\\
+    \hline
+  \end{tabular}
+\end{table}
+
+Moreover, some  units have a  splash attack, afflicting damage  to the
+target's neighbors. In  StarCraft, two splash attack  types exist: the
+linear splash, where the  unit can hit a line of  enemies, such as the
+Zerg Lurker, and the radial splash  where an attack triggers a circled
+wave shock hitting units around the target within one the three splash
+radiuses. The  first radius  afflict 100\% of  damage, the  second one
+50\% and the  last one 25\%.  Terran Firebat are  special cases mixing
+both linear and radial splashes.
+
+This,   combined  with   damage  efficiency,   leads  to   interesting
+optimization  opportunities.   In  this  work,  we   investigated  two
+different objective functions:
+
+\begin{itemize}
+\item {\bf Max  damage}, where our group tries to  deal as much damage
+  as possible within the current frame.
+\item {\bf  Max kill},  where our  group tries to  kill as  much enemy
+  units as possible within the current frame.
+\end{itemize}
+
+Notice that these two objective are  more complex that looking for the
+maximal damage  or maximal dead  enemies for each  unit independently:
+Imagine a scenario where  we have two units U1 and  U2 and two enemies
+E1 and E2,  such that U1 can afflict  10 damage points to E1  and 9 to
+E2, U2 can afflict 8 damage points to  E1, but E2 is out of range, and
+E1 has 5 hit points (HP) left.  The best global assignment is U1 to E2
+and U2 to E1, even if U1 deals more damage to E1.
+
 \subsection{\ghost results}
 
-\begin{table*}[tba]
-  \label{tbl:target}
+Figure~\ref{fig:target}   shows  the   mirror   setup   we  used   for
+experiments. We chose  Terran units since many of  them are long-range
+attack  units and  this make  things  more interesting  form a  target
+selection point of  view. Also, we packed units close  each others, to
+make significant the Terran Siege Tank's splash damage.
+
+\begin{figure}[h!]
   \centering
-  \caption{Average makespan of Humans and \ghost build orders in StarCraft time over 3647
-    games.}
+  \includegraphics[width=0.7\columnwidth]{figs/target_setup.png}
+  \caption{Mirror  Terran  unit  composition and  placement  used  for
+    experiments. Line 1: 5 marines. Line  2: 2 Goliaths and 2 Vultures
+    (in the middle). Line  3: 2 Siege Tanks in tank  mode and 2 Ghosts
+    (in the middle). Line 4: 1  Siege Tank in siege mode, doing splash
+    damage.}
+  \label{fig:target}
+\end{figure}
+
+Terran Firebat has not been taking into account in the small simulator
+we wrote for testing \ghost on the target selection problem.  We first
+planned    to    use   SparCraft~\cite{ChurchillB11,    ChurchillSB12,
+  ChurchillB12}, but  we were lacking of  time to learn how  to use it
+and combined  it with \ghost. It  was then faster to  develop an quick
+ad-hoc simulator (about 200 lines of C++ code). 
+
+The simulator is here to emulate a  combat of two unit groups and thus
+need to trigger cooldowns, manage each unit HP, apply damages, compute
+Euclidian  distances  between  units. Ranges,  damage  efficiency  and
+splash damages  are directly  managed by \ghost.   It is  important to
+stress that, in this simulator, enemy units are randomly shooting at a
+reachable target.
+
+What our simulator does not consider:
+\begin{itemize}
+\item Healing, repair, HP or shield regeneration,
+\item Terran level (high/low ground),
+\item Air shots (in StarCraft, there is always a small chance to miss
+  the target),
+\item Upgrades, Researches, Spells,
+\item Friendly fire,
+\item Firebats.
+\end{itemize}
+
+\begin{table*}[h!]
+  \centering
+  \caption{Average  results over  100 simulations  for both  objective
+    functions, with the setup shown in Figure~\ref{fig:target}.}
+  \label{tab:target}
   \begin{tabular}{|l|c|c|c|} 
     \hline
     {\em Objective} & Win \% & Average number of living units & Average HP of living units\\
@@ -371,28 +493,52 @@ Refer to ???
   \end{tabular}
 \end{table*}
 
-%\lipsum[1-5]
+Table~\ref{tab:target}\footnote{All target experiment  results and the
+  simulator            can            be           found            at
+  \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/target}{github.com/richoux/GHOST\_paper/tree/master/xp/target}}
+shows that the Max Damage objective  wins 92\% of the time against the
+mirror unit group shooting randomly. The Max Kill objective seems less
+efficient with  a win rate of  79\%. One explanation is  that Max Kill
+may not  be a heuristic  as good as Mas  Damage when enemy  units have
+their full HP.  It would be interesting to cross  these two objectives
+to see if it leads to better results.
+
+\subsection{Improvements}
+
+\begin{itemize}
+\item new objectives: min damage waste, min overkill, mixed objectives
+\item SparCraft or better simulator. No random shots.
+\end{itemize}
+
 
 \section{Tactic problem: Wall-in}\label{sec:wall}
 Refer to \cite{Certicky13, RichouxUO14}
 \subsection{Problem statement}
 \subsection{\ghost results}
 
-\begin{table*}[tba]
+\begin{table*}[h!]
     \centering
     \caption{Optimization results over 48 different problems, extracted form 7 different maps from the StarCraft AI competition. Results are the average of 100 runs in each problem (total of 4800 runs per configuration).}
+    \label{tab:wall}
     \begin{tabular}{|l|c|c|c|} \hline
-    \label{tbl:wall}
-									& {\em Satisfaction run}& {\em Optimization run}& {\em Optimization run solved} \\
-                                                                        \hline
-    	{\em Optimizing number of buildings (number of buildings)} 	& 4.05                  & 2.56                  & 98.04\% \\ 
-    	{\em Optimizing gaps (number of gaps)} 				& 1.32                  & 0.03                  & 97.50\%  \\ 
-    	{\em Optimizing tech-level (average tech level of buildings)} 	& 1.99                  & 1.35                 & 97.54\%  \\
-        \hline
+      & {\em Satisfaction run}& {\em Optimization run}& {\em Optimization run solved} \\
+      \hline
+      {\em Optimizing number of buildings (number of buildings)} 	& 4.05                  & 2.56                  & 98.04\% \\ 
+      {\em Optimizing gaps (number of gaps)} 				& 1.32                  & 0.03                  & 97.50\%  \\ 
+      {\em Optimizing tech-level (average tech level of buildings)} 	& 1.99                  & 1.35                 & 97.54\%  \\
+      \hline
     \end{tabular}  
 \end{table*}
 
-4800 runs, 4680 walls found, 4527 perfect walls (\ie, 96.73\% of walls found) 
+4800 runs, 4680 walls found, 4527 perfect walls (\ie, 96.73\% of walls
+found)
+
+Table~\ref{tab:wall}\footnote{All wall-in  data and  experiment results
+  can                   be                  found                   at
+  \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/wallin}{github.com/richoux/GHOST\_paper/tree/master/xp/wallin}}
+shows
+
+\subsection{Improvements}
 
 
 \section{Strategy problem: The build order}\label{sec:bo}
@@ -431,14 +577,14 @@ following one:
 
 \subsection{\ghost results}
 
-\begin{table*}[tba]
-  \label{tbl:bo}
+\begin{table*}[h!]
   \centering
   \caption{Average makespan of Humans and \ghost build orders in StarCraft time over 3647
     games.}
+  \label{tab:bo}
   \begin{tabular}{|l|c|c|c|c|} 
     \hline
-    \multicolumn{5}{|c|}{ Games till 10.000 frames} \\ 
+    \multicolumn{5}{|c|}{Games till 10.000 frames} \\ 
     \hline
     {\em Match-up} & Humans & \ghost & \% solved &
     Gain \\ 
@@ -452,7 +598,7 @@ following one:
   %\hfill  
   \begin{tabular}{|l|c|c|c|c|} 
     \hline
-    \multicolumn{5}{|c|}{ Games till 7.800 frames} \\ 
+    \multicolumn{5}{|c|}{Games till 7.800 frames} \\ 
     \hline
     {\em Match-up} & Humans & \ghost & \% solved &
     Gain \\ 
@@ -465,13 +611,15 @@ following one:
   \end{tabular}  
 \end{table*}
 
-For Table~\ref{tbl:bo}, \ghost has been run  10 times on each game. We
-also analyzed replays  of games played by top  Korean pro-gamers, \ie,
-Kim "Bisu" Taek Yong, Doh "BeSt"  Jae Wook, Woo "Violet" Jung Ho, Yang
-"Cure" Jung  Hyun, all Protoss  players, against Lee "Flash"  Young Ho
-(Terran), Lee "Jaedong"  Jae Dong (Zerg), Ma "sAviOr"  Jae Yoon (Zerg)
-and match their build orders with \ghost \todonote{[Flo] no data here, but I can put
-them}.
+For  Table~\ref{tab:bo}\footnote{All build  order data  and experiment
+  results            can             be            found            at
+  \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/build\_order}{github.com/richoux/GHOST\_paper/tree/master/xp/build\_order}},
+\ghost has been run 10 times on each game. We also analyzed replays of
+games played by top Korean pro-gamers,  \ie, Kim "Bisu" Taek Yong, Doh
+"BeSt" Jae  Wook, Woo  "Violet" Jung  Ho, Yang  "Cure" Jung  Hyun, all
+Protoss players, against Lee "Flash"  Young Ho (Terran), Lee "Jaedong"
+Jae Dong  (Zerg), Ma "sAviOr"  Jae Yoon  (Zerg) and match  their build
+orders with \ghost \todonote{[Flo] no data here, but I can put them}.
 
 Computation time is  only 20ms for satisfaction runs and  30ms for the
 (global) optimization run. This means that \ghost can compute a highly
@@ -493,6 +641,8 @@ parameterized our simulator as follow (in StarCraft time t):
 \item Mineral gathering rate: 0.68 mineral per worker per t (1.07 in \cite{ChurchillB11})
 \item Gas gathering rate: 1.15 gas per worker per t (1.66 in \cite{ChurchillB11})
 \end{itemize}  
+
+\subsection{Improvements}
 
 
 \section{Conclusion}\label{sec:conclusion}
