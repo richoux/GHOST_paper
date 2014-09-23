@@ -387,11 +387,18 @@ RTS-related problems,  as soon as  they are modeled  into a \csp  or a
 \texttt{Solver}\footnote{\href{http://richoux.github.io/GHOST/}{See
     \ghost manual pages for more details: richoux.github.io/GHOST/}}.
 %--------------
-\begin{figure}[tba]
+\begin{figure}[th]
   \centering
   \includegraphics[width=\columnwidth]{figs/ghost.png}
   \caption{A simplified class diagram of \ghost}
   \label{fig:ghost}
+\end{figure}
+%--------------
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/archi.png}
+  \caption{\ghost architecture}
+  \label{fig:archi}
 \end{figure}
 %--------------
 
@@ -436,8 +443,10 @@ problem, a  tactic problem  and a strategy  problem with  a respective
 models.   We   would  like  to   stress  that  no   modifications,  no
 optimizations of  the solver has  been done to manage  these different
 problems:   The  core   of  the   solver,  \ie,   everything  in   the
-\texttt{Solver}   class,    is   rigorously   the    same,   remaining
-unchanged. 
+\texttt{Solver} class, remains unchanged.   Even if post-processes are
+defined  differently in  their respective  \texttt{Objective} classes,
+the way they are included and called into the solver is rigorously the
+same.
 
 % \begin{figure*}
 %   \begin{lstlisting}
