@@ -264,7 +264,11 @@ Time's flow  in StarCraft is tricky:  The game has 7  speed modes from
 time's flow  (one second is  one second)  and the 6  others disturbing
 this. This  is why when  we will write  about in-game time,  all along
 this paper  we will  refer to  the terms {\it  StarCraft unit  time}
-rather than second, to not make any confusions with regular seconds.
+rather  than  second,   to  not  make  any   confusions  with  regular
+seconds. In the fastest mode, one  game frame takes 42ms. In StarCraft
+AI competitions,  it is  necessary for bots  to not  make computations
+longer than 55ms per frame, in which case the bot automatically looses
+the game after 200 frames exceeding 55ms.
 
 \subsection{Goals and summary}
 
@@ -693,7 +697,8 @@ What our simulator does not consider:
 %--------------
 \begin{table*}[ht]
   \caption{Average  results over  100 simulations  for both  objective
-    functions, with the setup shown in Figure~\ref{fig:target}.}
+    functions, with  the setup shown in  Figure~\ref{fig:target}. Each
+    calls to \ghost lasts for 30ms}
   \label{tab:target}
   \centering
   \begin{tabular}{|l|c|c|c|c|c|c|} 
@@ -715,7 +720,11 @@ time. Eventually,  the two groups can  kill one another, leading  to a
 draw. We  can then compute \ghost's  win rate, as well  as the average
 number of \ghost's  living units at the end of  the simulation and the
 average of remaining HP for \ghost  living units when \ghost wins, and
-the same averages when the opponent wins.
+the same averages  when the opponent wins. For  these experiments, we
+fixed  the  $x$  satisfaction  timeout and  $y$  optimization  timeout
+parameters  respectively  to  13ms  and 30ms.  It  means  that  \ghost
+runtimes on  the target selection problem  was at most 30ms,  which is
+short enough to be called during one StarCraft frame in fastest mode.
 
 Table~\ref{tab:target}\footnote{All target experiment  results and the
   simulator            can            be           found            at
@@ -762,7 +771,8 @@ Refer to Certicky~\cite{Certicky13}, Richoux et al.~\cite{RichouxUO14}
     \caption{Optimization   results   over  48   different   problems,
       extracted  form   7  different   maps  from  the   StarCraft  AI
       competition. Results are the average of 100 runs in each problem
-      (total of 4800 runs per configuration).}
+      (total of  4800 runs  per configuration).  Each calls  of \ghost
+      lasts for 150ms}
     \label{tab:wall}
     \centering
     \begin{tabular}{|l|c|c|c|}
@@ -829,7 +839,8 @@ following one:
 %--------------
 \begin{table*}[ht]
   \caption{Average  makespan  of Humans  and  \ghost  build orders  in
-    StarCraft unit time over 3647 games.}
+    StarCraft unit time over 3647 games. Each calls  of \ghost
+    lasts for 30ms}
   \label{tab:bo}
   \centering
   \begin{tabular}{|l|c|c|c|c|} 
