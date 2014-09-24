@@ -109,7 +109,7 @@ int main(int argc, char **argv)
   vector< shared_ptr<TargetSelectionConstraint> > vecConstraints { make_shared<TargetSelectionConstraint>( &vec, &domain ) };
 
   // Define objective
-  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxDamage>();
+  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxKill>();
   
   Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints, objective );
   // Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints );
