@@ -343,8 +343,8 @@ Diaz~\cite{Codognet01}. The reason we have chosen a meta-heuristics is
 simple: To solve combinatorial and optimization problems while playing
 a RTS  game, the  solver needs  to be  very fast  to find  a solution,
 within some tens  of milliseconds, which is  virtually impossible with
-tree-based  search  algorithms. The  reason  we  have chosen  Adaptive
-Search is that,  although it is not a well-known  algorithm, it is one
+tree-based search algorithms. The reason we have chosen {\it Adaptive
+Search} is that,  although it is not a well-known  algorithm, it is one
 of the fastest meta-heuristics at the moment, up to our knowledge (see
 Caniou et al.~\cite{Caniou14}).
 
@@ -397,25 +397,88 @@ RTS-related problems,  as soon as  they are modeled  into a \csp  or a
 \begin{figure}[th]
   \centering
   \includegraphics[width=\columnwidth]{figs/archi2.png}
-  \caption{\ghost architecture}
+  \caption{\ghost architecture: In red, the satisfaction inner
+    loop,  running  for  $x$  milliseconds top.  In  blue,  optimization
+    mechanisms.    The   whole    process,   excluding    optimization
+    post-process, runs under $y$ milliseconds.}
   \label{fig:archi}
 \end{figure}
 %--------------
 
-There are only three parameters in  the solver: The two first ones are
-temporal parameters. 
+The  function \texttt{solve}  defined in  \texttt{Solver} follows  the
+steps exposed  in Figure~\ref{fig:archi}. It  is composed of  two main
+loops: the outer loop for  optimization, containing the inner loop for
+satisfaction.      The     satisfaction     part,    in     red     in
+Figure~\ref{fig:archi}, only  tries to find a  possible solution among
+all configurations, \ie, tries to  find an assignment of each variable
+such that all constraints of the \csp are satisfied. It is possible to
+call \texttt{Solver::solve} without  defining any objective functions.
+In  that case,  a null,  default objective  is applied,  doing nothing
+special,  and the  solver will  about  a solution  that satisfied  all
+constraints, if it find such one.
 
+If an ``real'' objective function  is set, then the optimization part,
+in blue  in Figure~\ref{fig:archi}, is  triggered. Even more:  it will
+influence  the satisfaction  part (finding  a valid  solution) if  the
+objective  implements optional  heuristics to  select the  variable to
+change and the value to assign,  if the current configuration is not a
+solution.
 
-Even parameters Actually, experiments presented in the next sections shown
-that no parameters  tuning is necessary to have  good performance: The
-only  real parameter  of the  solver is  set to  a default  value that
-leaded  to the  best results  in all  our experiments.  Of course,  it
-remains possible to change this value by the developed user.
+The  optimization   part  also   applies  two   optional  post-process
+optimizations, one on the output of  the satisfaction loop, one on the
+final output,  giving the  solution returned by  the solver.   We will
+detail  later  the  purpose  of   such  functions,  in  particular  in
+Section~\ref{sec:wall}.
 
+The fundamental  thing in  the optimization  part is  the optimization
+loop itself. To explain how this  loop works, we have to introduce the
+two temporal  parameters in \ghost. The  function \texttt{solve} takes
+two parameters: The first one,  mandatory, is the satisfaction timeout
+$x$ in  milliseconds.  It means  that, if after  $x$ ms, we  leave the
+satisfaction loop, certainly  without a valid solution  since the loop
+stops as soon  as it finds a solution. The  second parameter, optional
+this time, is the optimization timeout $y$, always in milliseconds. It
+corresponds  also  to   the  total  runtime  of   \ghost,  modulo  the
+post-process  after  the optimization  loop  (which  is negligible  in
+practice and should  be about 100 times smaller than  $y$). If the $y$
+parameter is not given, then it is set to 10 times $x$.
 
-A developed user  has to build his own classes  upon theses first four
-ones,  by inheriting  from  it. For  instance, to  create  a class  of
-variables     representing     units,      this     is     done     by
+Thus, the optimization  loop repeats $n$ times  the satisfaction loop,
+and receives  in total $m \leq  n$ valid solutions. After  receiving a
+new  solution for  the  satisfaction loop,  and  applying an  eventual
+satisfaction post-process, it calls  the objective function to compute
+the optimization  cost, compares it  with its saved solution  (if any)
+and  keeps the  solution with  the lower  cost.  Then  it repeats  the
+satisfaction loop  to obtain a new  solution, and so on,  until $y$ ms
+are reached.
+
+Thus, \ghost is  applying a sort of Monte Carlo  sampling. Notice that
+this is  not MCTS.  It  would certainly  possible to implement  a MCTS
+though  \ghost, by  twisting derived  classes from  \texttt{Variable},
+\texttt{Domain},  \texttt{Constraint} and  \texttt{Objective}, however
+the authors do  not recommend to use \ghost this  way, since it should
+be more efficient to develop a proper, ad-hoc MCTS program.
+
+There exists a third and last  parameters in the solver: The length of
+the tabu list.  Indeed, {\it Adaptive  Search} contains a tabu list of
+explored variables in order to not  revisit the same variable too soon
+during the search. The tabu parameter  is then a number expressing how
+long  the solver  has  to  wait before  being  allowed  to revisit  an
+explored variable. Actually, we  also have implement escape mechanisms
+to not make  this tabu list strict,  by allowing the solver  to draw a
+tabu   variable   if   there   really   are   no   other   interesting
+variables. Thus, \ghost's tabu list is more like a priority list.
+
+During our  experiments presented  in the  next sections,  we realized
+that  the  same  value  for  this parameter  was  leading  to  optimal
+performances, when  set to $|V|-1$.  It  is a priori not  necessary to
+tune this  parameter, however this  remains of course possible  to the
+developer user.
+
+A developer user has to  build his own classes upon \texttt{Variable},
+\texttt{Domain},   \texttt{Constraint}   and  \texttt{Objective},   by
+inheriting from  them. For  instance, to create  a class  of variables
+representing        units,        this        is        done        by
 \texttt{class~Unit~:~public~Variable}.   Classes  composed  for  other
 classes, like \texttt{Domain} which need  to know on what variables it
 will work with, must instantiate  the right templates. Thus, declaring
