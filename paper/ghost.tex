@@ -257,7 +257,18 @@ tiles: Walk  tiles, composed of  $8 \times  8$ pixels and  build tiles
 composed of $4 \times 4$ walk  tiles, \ie, $32 \times 32$ pixels. Like
 every RTS games, the map is recovered by a fog of war, only dissipated
 around our own units/buildings. This means that one cannot know at any
-time the full state of the game.
+time the full state of the game.  The player has to deal with a supply
+capacity, limiting the  number of his units to a  given supply number,
+but  that  he can  increase  by  constructing  the right  building  or
+producing the right unit, according to the race.
+
+StarCraft has  been a world wide  success, and is still  the most sold
+RTS game of the  history with 11 millions of copies  sold. It has been
+and still  is particularly popular  in South Korea, where  a StarCraft
+league has been  specially created for the  game, organizing televised
+tournaments between  sponsored teams. Korean professional  players, or
+pro-gamers, are reputed  to be among the best  StarCraft pro-gamers in
+the world.
 
 Time's flow  in StarCraft is tricky:  The game has 7  speed modes from
 ``slowest'' to ``fastest'' where ``normal'' corresponds to the regular
@@ -570,7 +581,7 @@ same.
 Refer to Churchill  et al.~\cite{ChurchillSB12, ChurchillB12}, Uriarte
 and Onta{\~n}{\'o}n~\cite{UriarteO12}
 
-\subsection{Problem statement}
+\subsection{Problem statement and model}
 
 The  target   selection  problem  is  a   classical  reactive  control
 problem. Its satisfaction  version is very easy, like it  is often the
@@ -650,7 +661,7 @@ E2, U2 can afflict 8 damage points to  E1, but E2 is out of range, and
 E1 has 5 hit points (HP) left.  The best global assignment is U1 to E2
 and U2 to E1, even if U1 deals more damage to E1.
 
-\subsection{\ghost results}
+\subsection{\ghost implementation and results}
 
 Figure~\ref{fig:target}   shows  the   mirror   setup   we  used   for
 experiments. We chose  Terran units since many of  them are long-range
@@ -720,11 +731,13 @@ time. Eventually,  the two groups can  kill one another, leading  to a
 draw. We  can then compute \ghost's  win rate, as well  as the average
 number of \ghost's  living units at the end of  the simulation and the
 average of remaining HP for \ghost  living units when \ghost wins, and
-the same averages  when the opponent wins. For  these experiments, we
+the same  averages when the  opponent wins. For these  experiments, we
 fixed  the  $x$  satisfaction  timeout and  $y$  optimization  timeout
-parameters  respectively  to  13ms  and 30ms.  It  means  that  \ghost
+parameters  respectively  to 13ms  and  30ms.   It means  that  \ghost
 runtimes on  the target selection problem  was at most 30ms,  which is
-short enough to be called during one StarCraft frame in fastest mode.
+short enough to be called during  one StarCraft frame in fastest mode.
+For  this problem,  no particular  post-processing optimizations  have
+been necessary.
 
 Table~\ref{tab:target}\footnote{All target experiment  results and the
   simulator            can            be           found            at
@@ -764,8 +777,8 @@ decision about what unit to aim.
 
 \section{Tactic problem: Wall-in}\label{sec:wall}
 Refer to Certicky~\cite{Certicky13}, Richoux et al.~\cite{RichouxUO14}
-\subsection{Problem statement}
-\subsection{\ghost results}
+\subsection{Problem statement and model}
+\subsection{\ghost implementation and results}
 %--------------
 \begin{table*}[ht]
     \caption{Optimization   results   over  48   different   problems,
@@ -803,7 +816,7 @@ Refer   to   Churchill   and   Buro~\cite{ChurchillB11},   Kuchem   et
 al.~\cite{KuchemPR13},  Weber   and  Mateas~\cite{WeberM09},   Cho  et
 al.~\cite{ChoKC13}, Blackford~\cite{Blackford14}
 
-\subsection{Problem statement}
+\subsection{Problem statement and model}
 A build  order planning is  a series  of actions following  a specific
 timing, in order  to achieve a goal.  Such a goal is  a combination of
 buildings,  units,  upgrades  and researches  produced.  Usually,  the
@@ -835,8 +848,92 @@ following one:
 {Order of actions.}%
 {Each dependency of an action $\alpha$ must occurs before $\alpha$.}
 
-\subsection{\ghost results}
+\subsection{\ghost implementation and results}
+
+Like the wall-in problem, We choose to focus on Protoss to test \ghost
+on the build  order problem. The current implementation  can deal with
+any Protoss buildings, units, researches and upgrades.
+
+For this  problem, we  have implemented  one objective  function only:
+Minimizing the build order makespan.  With this objective function, we
+did not  have implemented a special  satisfaction post-processing, but
+we did  for the optimization  post-processing. Imagine the  case where
+the user asked, among others, to  produce $n$ units of type $U$. Thus,
+\ghost will  automatically add,  recursively, all dependencies  of $U$
+into the variable  set.  Suppose the unit type $U$  is produced by the
+building  of type  $B$, and  the  user eventually  asked for  $m <  n$
+buildings  of type  $B$.   After having  computed  an optimized  build
+order, the optimization post-processing  will retake this solution and
+try to  see if it can  shorten even more the  makespan by constructing
+more buildings  of type $B$,  to speed-up  the production of  units of
+type   $U$.   This   post-processing  optimization   is  significantly
+efficient in cases the user ask for a high number $n$ of the same unit
+$U$, and none or a low number $m$ of $B$.
+
+Unlike the target selection problem,  we needed this time to integrate
+a simulator inside  \ghost to emulate a game (without  combats) and be
+able to  compute the  makespan of build  orders. Thus,  this simulator
+must emulate resources gathering, units producing (including workers),
+supply capacity, constructions, etc.  Our simulator will always try to
+produce workers  until reaching saturation  (24 workers per  base), as
+well as  maintaining supply in  order to never be  ``supply blocked'',
+that  is, unable  to  produce a  unit because  we  reached the  supply
+capacity limit.
+
+In~\cite{ChurchillB11},  Churchill and  Buro  give  details about  the
+simulator they developed for their  build order planer.  We first used
+the same  settings, but  after matching  \ghost results  against build
+order from Korean pro-gamers, we realized that these settings were too
+advantageous  for the  simulator.   We then  analyzed  in detail  some
+replays  from  Korean pro-gamers  to  refine  our simulator  settings,
+listed below (in StarCraft unit time $t$):
 %--------------
+\begin{itemize}
+\item Time to go build something: 5t (4t in \cite{ChurchillB11})
+\item Time to go back  gathering minerals after building something: 4t
+  (0 in \cite{ChurchillB11})
+\item Time to go from the base  to mineral patches to start mining: 5t
+  (0 in \cite{ChurchillB11})
+\item  Time for  a worker  to  switch from  mineral  to gas:  5t (0  in
+  \cite{ChurchillB11})
+\item Mineral gathering  rate: 0.68 mineral per worker per  t (1.07 in
+  \cite{ChurchillB11})
+\item  Gas  gathering  rate:  1.15  gas per  worker  per  t  (1.66  in
+  \cite{ChurchillB11})
+\end{itemize}  
+%--------------
+To be sure these parameters make our simulator realist, we matched its
+execution  against the  first  2  minutes of  games  played by  Korean
+pro-gamers. Table~\ref{tab:korean}  give an  example of  our simulator
+matched against the Protoss Korean pro-gamer Kim "Bisu" Taek Yong. Gas
+is not  revealed since it  remained at 0 for  both during the  first 2
+minutes.
+%--------------
+\begin{table*}[ht]
+  \caption{Our simulator execution matched  against the pro-gamer Bisu
+    during the first two minutes.}
+  \label{tab:korean}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|} 
+    \cline{3-6}
+    \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\ghost} & \multicolumn{2}{c|}{Bisu}\\ 
+    \hline
+    Action (by G(HOST) of B(isu)) & Time t & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)} & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)}\\
+    \hline
+    G starts a probe & 20 & 40.8 & 5/9 & 40 & 5/9\\
+    G starts a probe & 44 & 19.7 & 7/9 & 20 & 7/9\\
+    G starts a probe & 64 & 46.5 & 8/9 & 50 & 8/9\\
+    G starts a pylon & 75 & - & - & - & -\\
+    B starts a pylon & 78 & - & - & - & -\\
+    G starts a probe & 89 & 1.2 & 9/9 & 12 & 9/9\\
+    G starts a probe & 109 & 60.0 & 10/17 & 132 & 9/17\\
+    B starts a gateway & 116 & - & - & - & -\\
+    G starts a gateway & 125 & - & - & - & -\\
+    G starts a probe & 125 & 1.8 & 11/17 & 78 & 9/17\\
+    \hline    
+  \end{tabular}
+\end{table*}
+% --------------
 \begin{table*}[ht]
   \caption{Average  makespan  of Humans  and  \ghost  build orders  in
     StarCraft unit time over 3647 games. Each calls  of \ghost
@@ -880,36 +977,21 @@ games played by top Korean pro-gamers,  \ie, Kim "Bisu" Taek Yong, Doh
 "BeSt" Jae  Wook, Woo  "Violet" Jung  Ho, Yang  "Cure" Jung  Hyun, all
 Protoss players, against Lee "Flash"  Young Ho (Terran), Lee "Jaedong"
 Jae Dong  (Zerg), Ma "sAviOr"  Jae Yoon  (Zerg) and match  their build
-orders with \ghost \todonote{[Flo] no data here, but I can put them}.
+orders with \ghost.
 
 Computation time is  only 20ms for satisfaction runs and  30ms for the
 (global) optimization run. This means that \ghost can compute a highly
-optimized build order within one StarCraft frame only.
+optimized build order  within only one StarCraft frame  at the fastest
+speed.
 
 Why planing a build  order is easier than wall-in? A  huge part of the
 answer is  that planing  a build  order can  be modeled  in \csp  by a
 permutation  problem,  which  drastically decrease  the  combinatorial
-complexity of the problem.
-
-Set up: Churchill and  Buro~\cite{ChurchillB11} gives too advantageous
-set up.  Based on the analysis  of games from Korean pro-gamers listed
-above, we  parameterized our  simulator as  follow (in  StarCraft unit
-time):
-%--------------
-\begin{itemize}
-\item Time to go build something: 5t (4t in \cite{ChurchillB11})
-\item Time to go back  gathering minerals after building something: 4t
-  (0 in \cite{ChurchillB11})
-\item Time to go from the base  to mineral patches to start mining: 5t
-  (0 in \cite{ChurchillB11})
-\item  Time for  a probe  to  switch from  mineral  to gas:  5t (0  in
-  \cite{ChurchillB11})
-\item Mineral gathering  rate: 0.68 mineral per worker per  t (1.07 in
-  \cite{ChurchillB11})
-\item  Gas  gathering  rate:  1.15  gas per  worker  per  t  (1.66  in
-  \cite{ChurchillB11})
-\end{itemize}  
-%--------------
+complexity of the problem. Also,  the satisfaction part for the target
+selection and the  build order problems are not  difficult to compute,
+since constraints  modeling these problems  are trivial.  This  is not
+the case for  the wall-in problem, where even  getting a non-optimized
+valid solution is hard.
 
 \subsection{Future works}
 
