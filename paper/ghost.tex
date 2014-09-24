@@ -907,7 +907,11 @@ execution  against the  first  2  minutes of  games  played by  Korean
 pro-gamers. Table~\ref{tab:korean}  give an  example of  our simulator
 matched against the Protoss Korean pro-gamer Kim "Bisu" Taek Yong. Gas
 is not  revealed since it  remained at 0 for  both during the  first 2
-minutes.
+minutes. Each  time the simulator started  to produce a probe,  \ie, a
+worker, we write down the simulator  and Bisu mineral stock and supply
+situation (used supply  over supply capacity). One can  see that these
+two  early game  are  very similar,  with a  slight  advantage to  the
+simulator since its probe production is nearly perfect.
 %--------------
 \begin{table*}[ht]
   \caption{Our simulator execution matched  against the pro-gamer Bisu
@@ -916,20 +920,20 @@ minutes.
   \centering
   \begin{tabular}{|c|c|c|c|c|c|} 
     \cline{3-6}
-    \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\ghost} & \multicolumn{2}{c|}{Bisu}\\ 
+    \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{Simulator in \ghost} & \multicolumn{2}{c|}{Bisu}\\ 
     \hline
-    Action (by G(HOST) of B(isu)) & Time t & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)} & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)}\\
+    Action (by S(im) or B(isu)) & Time t & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)} & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)}\\
     \hline
-    G starts a probe & 20 & 40.8 & 5/9 & 40 & 5/9\\
-    G starts a probe & 44 & 19.7 & 7/9 & 20 & 7/9\\
-    G starts a probe & 64 & 46.5 & 8/9 & 50 & 8/9\\
-    G starts a pylon & 75 & - & - & - & -\\
+    S starts a probe & 20 & 40.8 & 5/9 & 40 & 5/9\\
+    S starts a probe & 44 & 19.7 & 7/9 & 20 & 7/9\\
+    S starts a probe & 64 & 46.5 & 8/9 & 50 & 8/9\\
+    S starts a pylon & 75 & - & - & - & -\\
     B starts a pylon & 78 & - & - & - & -\\
-    G starts a probe & 89 & 1.2 & 9/9 & 12 & 9/9\\
-    G starts a probe & 109 & 60.0 & 10/17 & 132 & 9/17\\
+    S starts a probe & 89 & 1.2 & 9/9 & 12 & 9/9\\
+    S starts a probe & 109 & 60.0 & 10/17 & 132 & 9/17\\
     B starts a gateway & 116 & - & - & - & -\\
-    G starts a gateway & 125 & - & - & - & -\\
-    G starts a probe & 125 & 1.8 & 11/17 & 78 & 9/17\\
+    S starts a gateway & 125 & - & - & - & -\\
+    S starts a probe & 125 & 1.8 & 11/17 & 78 & 9/17\\
     \hline    
   \end{tabular}
 \end{table*}
@@ -952,6 +956,9 @@ minutes.
     {\em PvT} & 660.50 & 628.17 & 93.9 & 32.33\\
     {\em PvZ} & 649.20 & 609.34 & 95.0 & 39.86\\
     \hline
+    \hline
+    {\em All pro} & 643.38 & 597.25 & 96.3 & 46.13\\
+    \hline
   \end{tabular}
   %\hfill  
   \begin{tabular}{|l|c|c|c|c|} 
@@ -966,23 +973,54 @@ minutes.
     {\em PvT} & 527.66 & 506.65 & 98.3 & 21.01\\
     {\em PvZ} & 515.81 & 458.23 & 99.7 & 57.58\\ 
     \hline
+    \hline
+    {\em All pro} & 506.38 & 480.88 & 100 & 25.50\\
+    \hline
   \end{tabular}  
 \end{table*}
 %--------------
+
 For  Table~\ref{tab:bo}\footnote{All  build   order  data,  experiment
   results     and     the     simulator    can     be     found     at
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/build\_order}{github.com/richoux/GHOST\_paper/tree/master/xp/build\_order}},
-\ghost has been run 10 times on each game. We also analyzed replays of
-games played by top Korean pro-gamers,  \ie, Kim "Bisu" Taek Yong, Doh
-"BeSt" Jae  Wook, Woo  "Violet" Jung  Ho, Yang  "Cure" Jung  Hyun, all
-Protoss players, against Lee "Flash"  Young Ho (Terran), Lee "Jaedong"
-Jae Dong (Zerg), Ma "sAviOr" Jae  Yoon (Zerg) and we match their build
-orders with \ghost.
+\ghost has been  run 10 times on each build  order. We run experiments
+on two sets  of build orders: Those extracted from  replays by Gabriel
+Synnaeve and  refined by Glen  Robinson, and those extracted  from top
+Korean pro-gamers.
+
+In total, the first set is  composed of 3647 build orders: 768 Protoss
+versus  Protoss, 2043  Protoss versus  Terran and  836 Protoss  versus
+Zerg.   Replays  where  these  build  orders  occur  are  coming  from
+TeamLiquid,  Gosugamer and  ICCup web  sites. Table\ref{tab:bo}  shows
+that \ghost outperforms by far human build orders, with a mean of 36.4
+StarCraft unit time of gain considering 10,000 frames build orders and
+31.39  StarCraft unit  time  of gain  considering  7,800 frames  build
+orders, all match-ups taken together. 
+
+We have also  analyzed some few replays of games  played by top Korean
+pro-gamers,  \ie, Kim  "Bisu"  Taek  Yong, Doh  "BeSt"  Jae Wook,  Woo
+"Violet" Jung Ho, Yang "Cure"  Jung Hyun, all Protoss players, against
+Lee  "Flash" Young  Ho (Terran),  Lee  "Jaedong" Jae  Dong (Zerg),  Ma
+"sAviOr"  Jae  Yoon  (Zerg)  and  we match  their  build  orders  with
+\ghost.  Since we  had to manually select those replays,  we have only
+downloaded 6 of them (2 for each match-up including a Protoss player),
+giving us a set of 8 build orders to give to \ghost.
+
+Results against  these pro-gamers are shown  at the very last  line of
+Table~\ref{tab:bo}.  One  can see  that \ghost clearly  obtains better
+build order than  Protoss Korean pro-gamers listed above,  with a gain
+of 45.38 StarCraft unit time for  10,000 frames build orders and 24.88
+StarCraft unit  time for 7,800 frames  build orders. We have  to lower
+the  first  result by  stressing  that  pro-gamers are  often  already
+engaged  in  a   fight  before  10,000  frames   and/or  are  applying
+ouside-the-book  strategies,  and  thus  minimizing  the  build  order
+makespan is not  be their first priority anymore. To  a lesser extent,
+this is also true with 7,800 frames build orders.
 
 Computation time is  only 20ms for satisfaction runs and  30ms for the
 (global) optimization run. This means that \ghost can compute a highly
 optimized build order  within only one StarCraft frame  at the fastest
-speed.
+speed. {\bf ratio CPU time / makespan}.
 
 Why planing a build  order is easier than wall-in? A  huge part of the
 answer is  that planing  a build  order can  be modeled  in \csp  by a
