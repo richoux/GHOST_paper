@@ -193,8 +193,8 @@ computer  to make  predictions,  have a  global  understanding of  the
 current situation  and then take  a decision. This is  especially true
 when  information is  incomplete, forcing  the computer  to infer  the
 global state of the game from  pieces of information. This is the case
-with Real-Time Strategy  games, where a Clausewitz's fog  of war hides
-the  opponent moves.   Thus, RTS  games  are very  suitable to  design
+with Real-Time Strategy  games (RTS), where a Clausewitz's  fog of war
+hides the opponent moves.  Thus, RTS games are very suitable to design
 Artificial Intelligence techniques that  could be applied afterward in
 other domains.
 
@@ -235,6 +235,36 @@ easy-to-extend, general solver.
 Refer  to Onta{\~n}{\'o}n  et al.~\cite{OntanonSURCM13}  and Robertson
 and Watson~\cite{RobertsonW14}.
 
+
+\subsection{StarCraft: Brood War}
+
+StarCraft:  Brood War  is the  extension of  the game  StarCraft, both
+released in 1998  by Blizzard Entertainment.  It is an  RTS game where
+three very different  races (Terran, Protoss and Zerg)  can be played,
+giving an  asymmetric but perfectly  well balanced strategy  game.  In
+this paper,  the term  ``StarCraft'' will actually  refer to  the game
+plus its extension StarCraft: Brood War.
+
+A player  has to  gather two  kind of resources,  mineral and  gas, in
+order   to  construct   buildings  for   producing  units,   upgrading
+characteristics such as damage points or armor, unlocking technologies
+and special abilities. Producing units has also a cost, each unit type
+having their own characteristic (hit points, damage points, size, etc)
+and a price in consequence.
+
+The game  is run on  a rectangular map,  discretized into two  kind of
+tiles: Walk  tiles, composed of  $8 \times  8$ pixels and  build tiles
+composed of $4 \times 4$ walk  tiles, \ie, $32 \times 32$ pixels. Like
+every RTS games, the map is recovered by a fog of war, only dissipated
+around our own units/buildings. This means that one cannot know at any
+time the full state of the game.
+
+Time's flow  in StarCraft is tricky:  The game has 7  speed modes from
+``slowest'' to ``fastest'' where ``normal'' corresponds to the regular
+time's flow  (one second is  one second)  and the 6  others disturbing
+this. This  is why when  we will write  about in-game time,  all along
+this paper  we will  refer to  the terms {\it  StarCraft unit  time}
+rather than second, to not make any confusions with regular seconds.
 
 \subsection{Goals and summary}
 
@@ -544,7 +574,7 @@ case: It  consists of  assigning to  each unit of  a fighting  group a
 reachable target, \ie, an enemy unit within our unit range.
 
 In addition, one has also to take  into account a cooldown, that is to
-say a fixed  number of StarCraft time $t$ within  a unit recharges and
+say a fixed number of StarCraft  unit time within a unit recharges and
 has to  wait before shooting  again. This number  is the same  for all
 units of  the same  type. We  can then  describe the  target selection
 problem with the following \csp.
@@ -680,11 +710,12 @@ What our simulator does not consider:
 \end{table*}
 %--------------
 We ran  100 simulations  for both objective  functions until  only one
-group is completely  annihilated. Eventually, the two  groups can kill
-one another, leading to a draw. We can then compute \ghost's win rate,
-as well as the  average number of \ghost's living units  at the end of
-the simulation and the average of remaining HP for \ghost living units
-when \ghost wins, and the same averages when the opponent wins.
+group is completely annihilated, calling \ghost at each StarCraft unit
+time. Eventually,  the two groups can  kill one another, leading  to a
+draw. We  can then compute \ghost's  win rate, as well  as the average
+number of \ghost's  living units at the end of  the simulation and the
+average of remaining HP for \ghost  living units when \ghost wins, and
+the same averages when the opponent wins.
 
 Table~\ref{tab:target}\footnote{All target experiment  results and the
   simulator            can            be           found            at
@@ -798,7 +829,7 @@ following one:
 %--------------
 \begin{table*}[ht]
   \caption{Average  makespan  of Humans  and  \ghost  build orders  in
-    StarCraft time over 3647 games.}
+    StarCraft unit time over 3647 games.}
   \label{tab:bo}
   \centering
   \begin{tabular}{|l|c|c|c|c|} 
@@ -851,7 +882,8 @@ complexity of the problem.
 
 Set up: Churchill and  Buro~\cite{ChurchillB11} gives too advantageous
 set up.  Based on the analysis  of games from Korean pro-gamers listed
-above, we parameterized our simulator as follow (in StarCraft time t):
+above, we  parameterized our  simulator as  follow (in  StarCraft unit
+time):
 %--------------
 \begin{itemize}
 \item Time to go build something: 5t (4t in \cite{ChurchillB11})
