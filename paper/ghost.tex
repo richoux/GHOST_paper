@@ -614,8 +614,8 @@ In addition, one has also to take  into account a cooldown, that is to
 say a fixed number of StarCraft  unit time within a unit recharges and
 has to  wait before shooting  again. This number  is the same  for all
 units of  the same  type. We  can then  describe the  target selection
-problem with the following \csp.
-
+problem with the following \csp:
+%--------------
 \modelcsp{the Target Selection problem}%
 {A group of our units.}%
 {A group of enemy units.}%
@@ -823,6 +823,73 @@ decision about what unit to aim.
 \section{Tactic problem: Wall-in}\label{sec:wall}
 Refer to Certicky~\cite{Certicky13}, Richoux et al.~\cite{RichouxUO14}
 \subsection{Problem statement and model}
+
+A classical tactic in RTS to defend a base is to make a wall, that is,
+to construct buildings side by side in order to close or to narrow the
+base entrance. Closing a base gives the player extra-time to prepare a
+defense, or  helps him to  hide some  pieces of information  about his
+current strategy. Narrowing  an entrance creates a  bottleneck that is
+easier to defend in case of invasion. In this paper we will focus only
+in walls  constructed by  buildings, discarding small  narrow passages
+that can be closed by small units like workers.
+
+We will  define two properties  of buildings: their {\em  build size},
+and their {\em real size}. The build  size is a pair $(w, h)$ of build
+tiles. In  order to  create such  a building, we  need a  rectangle of
+buildable tiles  in the map  ($w$ build tiles  in width and  $h$ build
+tiles in height). The real size is a pair $(w_p, h_p)$, such that $w_p
+\leq 32 \times w$ and $h_p  \leq 32 \times h$, representing the actual
+size of  the building  in pixels  once it's  constructed in  the game,
+where $32$  is the size  in pixels of a  build tile in  StarCraft. The
+real size of a building can then  be smaller than its build size. This
+is actually always the case in StarCraft.
+
+This  means that  two buildings  constructed  side by  side are  still
+separated by a gap  which may be big enough to  let small units enter,
+like Zerglings, Marines or Zealots in StarCraft.
+
+The  wall-in  problem has  been  first  modeled  in \csp  by  Certicky
+in~\cite{Certicky13}. Then, Richoux et al. proposed a different model,
+always  in \csp,  in~\cite{RichouxUO14}.  The  work published  in this
+paper  has been  \ghost  foundation. One  can see  \ghost  has a  deep
+extension and generalization of the solver used in~\cite{RichouxUO14}.
+
+For  \ghost,   the  model   of  the   wall-in  problem   is  unchanged
+since~\cite{RichouxUO14}:
+%--------------
+\modelcsp{the Wall-in problem}%
+{Buildings of the player race.}%
+{Possible positions around the chokepoint.}%
+{Overlap, Buildable, NoHoles and StartingTargetTile.}
+
+Constraints     of      our     models     are      illustrated     in
+Figure~\ref{fig:wall_constraint}. They are defined as follows:
+%--------------
+\begin{itemize}
+\item {\bf Overlap}: buildings should not overlap each others.
+\item {\bf Buildable}: buildings can be built on their positions.
+\item {\bf NoHoles}: there should not be any holes of the size of a
+  build tile (or greater) in the wall.
+\item {\bf StartingTargetTile}: there should have exactly one building
+  constructed on a given starting tile $s$, and one building (could be the
+  same) on a given target tile $t$.
+\end{itemize}
+%--------------
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/all_constraints.png}
+  \caption{Constraint             are:            Overlap(upper-left),
+    Buildable(upper-right),          NoHoles(bottom-left)          and
+    StartingTargetTile(bottom-right).    Dark  grey   tiles  represent
+    unwalkable and  unbuildable tiles.  Light grey tiles  are walkable
+    but unbuildable tiles.}
+  \label{fig:wall_constraint}
+\end{figure}
+%--------------
+Actually,  Overlap, Buildable  and NoHoles  are sufficient  to make  a
+wall. We added the constraint StartingTargetTile to help the solver to
+find how to surround the chokepoint.
+
 \subsection{\ghost implementation and results}
 %--------------
 \begin{table*}[ht]
@@ -887,7 +954,7 @@ these  dependencies  list. Thus  if  someone  aims to  do  \textit{Air
 
 The \csp model we propose for  the build order planning problem is the
 following one:
-
+%--------------
 \modelcsp{the Build Order Planning problem}%
 {All actions we need to reach our goal.}%
 {Order of actions.}%
