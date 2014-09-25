@@ -708,19 +708,27 @@ What our simulator does not consider:
 %--------------
 \begin{table*}[ht]
   \caption{Average  results over  100 simulations  for both  objective
-    functions, with  the setup shown in  Figure~\ref{fig:target}. Each
-    calls to \ghost lasts for 30ms}
+    functions, with  the setup  shown in  Figure~\ref{fig:target}. The
+    table  above shows  experiments where  calls to  \ghost lasts  for
+    3ms, and in the second table calls to  \ghost lasts  for 5ms}
   \label{tab:target}
   \centering
-  \begin{tabular}{|l|c|c|c|c|c|c|} 
-    \cline{4-7}
-    \multicolumn{3}{c|}{} & \multicolumn{2}{c|}{\ghost victory} & \multicolumn{2}{c|}{Opponent victory}\\
+  \begin{tabular}{|c|l|c|c|c|c|c|c|} 
+    \cline{5-8}
+    \multicolumn{4}{c|}{}  &   \multicolumn{2}{c|}{\ghost  victory}  &
+    \multicolumn{2}{c|}{Opponent victory}\\ 
+    \cline{2-8}
+    \multicolumn{1}{c|}{}& {\em Objective} &  Win \% & \# Draws & \#  \ghost living units &
+    \ghost HP & \# Opponent living units & Opponent HP\\
     \hline
-    {\em Objective} & Win \% & \# Draws & \# \ghost living units & \ghost HP &
-    \# Opponent living units & Opponent HP\\
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{3ms}}}&
+    {\em Max Damage} & 86.0 & 3 & 2.8 & 153.4 & 1.0 & 37.1\\
+    & {\em Max Kill} & 80.0 & 2 & 3.0 & 163.2 & 1.1 & 62.8\\
     \hline
-    {\em Max Damage} & 92.0 & 2 & 3.6 & 191.7 & 1.0 & 46.5\\
-    {\em Max Kill} & 79.0 & 4 & 3.6 & 203.0 & 1.1 & 83.6\\
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{5ms}}}&
+    {\em Max Damage} & 91.0 & 1 & 2.8 & 149.6 & 1.1 & 58.7\\
+    & {\em Max Kill} & 82.0 & 3 & 3.0 & 169.5 & 1.0 & 37.2\\
     \hline
   \end{tabular}
 \end{table*}
@@ -732,25 +740,40 @@ draw. We  can then compute \ghost's  win rate, as well  as the average
 number of \ghost's  living units at the end of  the simulation and the
 average of remaining HP for \ghost  living units when \ghost wins, and
 the same  averages when the  opponent wins. For these  experiments, we
-fixed  the  $x$  satisfaction  timeout and  $y$  optimization  timeout
-parameters  respectively  to 13ms  and  30ms.   It means  that  \ghost
-runtimes on  the target selection problem  was at most 30ms,  which is
-short enough to be called during  one StarCraft frame in fastest mode.
-For  this problem,  no particular  post-processing optimizations  have
-been necessary.
+first fixed the $x$ satisfaction  timeout and $y$ optimization timeout
+parameters respectively  to 1ms and  3ms, and we  ran a new  series of
+experiments with parameters  $x=2$ and $y=5$.  In~\cite{ChurchillSB12,
+  ChurchillB12}, Churchill et al. propose an Alpha-Beta search and run
+it for 5ms.  We then chose to  set the optimization timeout to 3ms and
+5ms to  compare our results with  the same timeout and  with a shorter
+one.  For this  problem, no  particular post-processing  optimizations
+have been necessary.
+
+Although Churchill et al. method predict a 100\% victory in average in
+the different  scenarios they have  tested, the real win  rate in-game
+was 84\%.   It is however difficult  to compare their results  to ours
+from Table~\ref{tab:target}  for many  reasons: their 84\%  of victory
+comes from  in-game experiments against  the built-in AI,  where units
+are  moving. Our  simulator,  although realistic  for  damage, do  not
+emulate  movements  since  it  is  outside the  scope  of  the  target
+selection  problem (\ie,  answering  the question  ``what enemy  units
+should I  aim this  frame?''). Plus, the  simulator is  considering an
+enemy shooting randomly, and the  built-in AI is applying the slightly
+smarter heuristic.
 
 Table~\ref{tab:target}\footnote{All target experiment  results and the
   simulator            can            be           found            at
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/target}{github.com/richoux/GHOST\_paper/tree/master/xp/target}}
-shows that the Max Damage objective  wins 92\% of the time against the
-mirror unit group shooting randomly. The Max Kill objective seems less
-efficient with  a win rate of  79\%. One explanation is  that Max Kill
-may not  be a heuristic  as good as Mas  Damage when enemy  units have
-their full HP.  It would be  interesting to cross these two objectives
-to see if it leads to better results.
+shows that the Max Damage objective  wins 91\% of the time against the
+mirror unit  group shooting  randomly if  we let 5ms  to \ghost  to do
+computations (and 86\% within 3ms).  The Max Kill objective seems less
+efficient with a  win rate of 82\% within 5ms,  (80\% within 3ms). One
+explanation is  that Max Kill  may not be a  heuristic as good  as Mas
+Damage when enemy  units have their full HP.  It  would be interesting
+to cross these two objectives to see if it leads to better results.
 
 For both objectives, we see that \ghost victories are undeniable, with
-in average  3.6 remaining units  after the simulation,  whereas losses
+in average  2.9 remaining units  after the simulation,  whereas losses
 are  tight,  with  just one  living  enemy  unit  at  the end  of  the
 combat. The average of total remaining  HP is also clearly in favor of
 \ghost.
@@ -1020,7 +1043,14 @@ this is also true with 7,800 frames build orders.
 Computation time is  only 20ms for satisfaction runs and  30ms for the
 (global) optimization run. This means that \ghost can compute a highly
 optimized build order  within only one StarCraft frame  at the fastest
-speed. {\bf ratio CPU time / makespan}.
+speed. In~\cite{ChurchillB11},  Churchill and Buro's branch  and bound
+method  is computing  90\%  of the  time build  orders  with the  same
+makespan as pro-gamers in about 3.735 seconds (for build orders with a
+makespan up to 249s), giving thus a CPU time / makespan ratio of
+1.5\%. Considering \ghost is computing  in average build orders with a
+makespan of  619.62 StarCraft  unit time within  30ms. In  the fastest
+mode, 619.62 StarCraft unit time corresponds to about 423s; leading to
+a CPU time / makespan ratio of 0.007\%.
 
 Why planing a build  order is easier than wall-in? A  huge part of the
 answer is  that planing  a build  order can  be modeled  in \csp  by a
@@ -1029,10 +1059,17 @@ complexity of the problem. Also,  the satisfaction part for the target
 selection and the  build order problems are not  difficult to compute,
 since constraints  modeling these problems  are trivial.  This  is not
 the case for  the wall-in problem, where even  getting a non-optimized
-valid solution is hard.
+valid solution is hard. 
 
 \subsection{Future works}
 
+As  for  all other  problems,  we  could implement  another  objective
+function  for the  build  order  problem. For  instance,  it would  be
+natural to  propose an objective  function trying to  first minimizing
+the makespan of all army units asked by the user, and then to minimize
+the   makespan   of    remaining   actions   (buildings,   researches,
+upgrades). This would allow the user  to secure first his base with an
+army.
 
 \section{Conclusion}\label{sec:conclusion}
 
