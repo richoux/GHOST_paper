@@ -23,7 +23,7 @@ file.each do |line|
   words = line.split(': ')
   if words[0] == "File name"
     path = words[1].split('/')
-    mapname = path[3][0..-2]    
+    mapname = path[2][0..-2]    
   end
   if words[0] == "Optimization cost" and words[1].to_i == 0
     hmap[mapname] += 1

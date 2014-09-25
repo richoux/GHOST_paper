@@ -14,7 +14,9 @@ end
 # Open file
 file = File.open(ARGV[0])
 hmap = Hash.new(0)
+hnb = Hash.new(0)
 mapname = ""
+fullname = ""
 #inputs = 0
 #loops = 0
 
@@ -23,11 +25,18 @@ file.each do |line|
   words = line.split(': ')
   if words[0] == "File name"
     path = words[1].split('/')
-    mapname = path[3][0..-2]    
+    fullname = path[2][0..-2]
+    mapnamesplit = fullname.split('-')
+    mapname = mapnamesplit[0]
+    hnb[mapname] += 1
   end
   if words[0] == "Global cost" and words[1].to_i == 0
     hmap[mapname] += 1
   end
+end
+
+hmap.each do |k,v|
+  hmap[k] = v * 100 / hnb[k]
 end
 
 mapsort = hmap.sort_by {|mapname,nb| nb}.reverse

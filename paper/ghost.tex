@@ -30,6 +30,7 @@
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
 \usepackage{listings}
+\usepackage{tikz}
 
 \usepackage{array,multirow,graphicx}
 \usepackage{xspace}
@@ -456,7 +457,8 @@ RTS-related problems,  as soon as  they are modeled  into a \csp  or a
 %--------------
 \begin{figure}[th]
   \centering
-  \includegraphics[width=\columnwidth]{figs/ghost.png}
+  \includegraphics[width=\columnwidth]{figs/ghost_vert.png}
+  %\input{figs/ghost_vert.tex}
   \caption{A simplified class diagram of \ghost}
   \label{fig:ghost}
 \end{figure}
@@ -600,8 +602,9 @@ same.
 
 \section{Reactive control problem: The target selection}\label{sec:target}
 
-Refer to Churchill  et al.~\cite{ChurchillSB12, ChurchillB12}, Uriarte
-and Onta{\~n}{\'o}n~\cite{UriarteO12}
+Refer to Churchill et al.~\cite{ChurchillSB12, ChurchillB12}, Synnaeve
+and          Bessière~\cite{SynnaeveB11},         Uriarte          and
+Onta{\~n}{\'o}n~\cite{UriarteO12}
 
 \subsection{Problem statement and model}
 
@@ -846,7 +849,9 @@ is actually always the case in StarCraft.
 
 This  means that  two buildings  constructed  side by  side are  still
 separated by a gap  which may be big enough to  let small units enter,
-like Zerglings, Marines or Zealots in StarCraft.
+like Zerglings, Marines or Zealots in  StarCraft. That is what we will
+call a  significant gap  in this paper,  by considering  gaps allowing
+Zerglings ($16 \times 16$ pixels) to enter into the base.
 
 The  wall-in  problem has  been  first  modeled  in \csp  by  Certicky
 in~\cite{Certicky13}. Then, Richoux et al. proposed a different model,
@@ -878,11 +883,11 @@ Figure~\ref{fig:wall_constraint}. They are defined as follows:
 \begin{figure}[htb]
   \centering
   \includegraphics[width=\columnwidth]{figs/all_constraints.png}
-  \caption{Constraint             are:            Overlap(upper-left),
-    Buildable(upper-right),          NoHoles(bottom-left)          and
-    StartingTargetTile(bottom-right).    Dark  grey   tiles  represent
-    unwalkable and  unbuildable tiles.  Light grey tiles  are walkable
-    but unbuildable tiles.}
+  \caption{Constraint    are:    Overlap    (upper-left),    Buildable
+    (upper-right),   NoHoles   (bottom-left)  and   StartingTargetTile
+    (bottom-right).    Dark  grey   tiles  represent   unwalkable  and
+    unbuildable tiles.  Light grey  tiles are walkable but unbuildable
+    tiles.}
   \label{fig:wall_constraint}
 \end{figure}
 %--------------
@@ -891,33 +896,117 @@ wall. We added the constraint StartingTargetTile to help the solver to
 find how to surround the chokepoint.
 
 \subsection{\ghost implementation and results}
+
+Like for the  target selection problem, we focused on  the Terran race
+for  experiments.   The  wall-in   problem  offers   many  interesting
+optimization  opportunities.  Therefore,  we  have  implemented  three
+different objective functions, aiming to minimize:
 %--------------
-\begin{table*}[ht]
-    \caption{Optimization   results   over  48   different   problems,
-      extracted  form   7  different   maps  from  the   StarCraft  AI
-      competition. Results are the average of 100 runs in each problem
-      (total of  4800 runs  per configuration).  Each calls  of \ghost
-      lasts for 150ms}
+\begin{itemize}
+\item {\bf Building}: the number of buildings in the wall,
+\item {\bf  Gap}: the number of  gaps between buildings which  are big
+  enough to let small units enter,
+\item {\bf  TreeTech}: the required  technology level in the  game (in
+  games  like  StarCraft,  some buildings  require  technologies  that
+  require resources  to acquire, so  it is interesting to  build walls
+  with buildings of low technology).
+\end{itemize}
+% --------------
+
+To evaluate the  technology level of a wall, we  simply take the depth
+in the  technology tree of  the most technological  building composing
+the wall. Thus, a Command Center has  a depth 0, a Barracks a depth 1,
+a Factory a depth 2, and so on.
+
+This  time, the  satisfaction post-processing  is important  for these
+three objective functions, and the optimization post-processing really
+helps to improve the Gap and  the TreeTech objectives.  Thus, the role
+of the satisfaction post-processing is to ``clean'' the proposed wall,
+\ie, to remove  all unnecessary buildings in the  valid solution, such
+that the  resulting wall still  satisfies the four constraints  of the
+model.
+
+The  optimization  post-processing  used  with the  Gap  and  TreeTech
+objectives  tries to  swap each  building  of the  proposed wall  with
+another building of  the same size, from the set  of variables $V$ and
+not already used in the  wall. This simple permutation can drastically
+decrease  the number  of significant  gaps between  buildings and  the
+technology level required.
+% --------------
+\begin{table}[ht]
+  \caption{Results  over 48  chokepoints  extracted  from 7  StarCraft
+    maps. Results  are the  average of 100  runs for  each chokepoint.
+    Each calls of \ghost lasts for 150ms} 
     \label{tab:wall}
     \centering
     \begin{tabular}{|l|c|c|c|}
       \cline{2-4}
-      \multicolumn{1}{c|}{} & {\em Satisfaction run}& {\em Optimization run}& {\em Optimization run solved} \\
+      \multicolumn{1}{c|}{}   &    {\em   Satisfaction    run}&   {\em
+        Optimization run}& {\em \% solved (opti)} \\
       \hline
-      {\em Optimizing number of buildings (number of buildings)} 	& 4.05                  & 2.56                  & 98.04\% \\ 
-      {\em Optimizing gaps (number of gaps)} 				& 1.32                  & 0.03                  & 97.50\%  \\ 
-      {\em Optimizing tech-level (average tech level of buildings)} 	& 1.99                  & 1.35                 & 97.54\%  \\
+      {\em Building} & 4.05 & 2.56 & 98.04\% \\
+      {\em Gap} & 1.32 & 0.03 & 97.50\% \\ 
+      {\em TreeTech} & 1.99 & 1.35 & 97.54\% \\ 
       \hline
     \end{tabular}  
-\end{table*}
+\end{table}
 %--------------
-4800 runs, 4680 walls found, 4527 perfect walls (\ie, 96.73\% of walls
-found)
-
-Table~\ref{tab:wall}\footnote{All wall-in data  and experiment results
-  can                   be                  found                   at
+Satisfaction runs in Table~\ref{tab:wall}  are \ghost runs without any
+objective functions  and with  a satisfaction  timeout of  160ms, like
+in~\cite{RichouxUO14}  with the  difference that  in Richoux  et al.'s
+paper, they  compiled 8 satisfaction runs  of 20ms each to  have great
+chances to find  a valid solution. We measure their  average number of
+buildings, significant  gaps and  technology level  in order  to match
+them  with   optimization  runs.   Always  following   the  experiment
+methodology  of~\cite{RichouxUO14},  optimization  runs  are  slightly
+defavored since there global timeout is 10ms shorter than satisfaction
+runs,  with 150ms.  We  can  see in  Table~\ref{tab:wall}\footnote{All
+  wall-in   data   and   experiment    results   can   be   found   at
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/wallin}{github.com/richoux/GHOST\_paper/tree/master/xp/wallin}}
-shows
+that  optimization  runs  leads   to  real  improvements  compared  to
+satisfaction runs. This  is particularly true with  the Gap objective,
+where significant  gaps are  almost completely eliminated:  Over 4,800
+runs in total, 4,680 walls have been found (97.50\%), and 4527 of them
+are perfect walls (\ie, without any significant gaps). In other words,
+96.73\% of walls found by \ghost are perfect.
+
+Since  \ghost   code  has  been   improved  compared  to   the  solver
+in~\cite{RichouxUO14},  we  obtained   results  slightly  better:  the
+percentage  of problems  solved goes  from 95-96\%  to 97-98\%,  walls
+decided with  the Building objective  were composed of  2.65 buildings
+against 2.56  now, the number  of significant  gaps goes from  0.05 to
+0.03 and the technology level from 1.56 to 1.35 currently.
+
+Table~\ref{tab:map} shows the percentage of walls found in each of the
+seven maps. These numbers correspond  to pure satisfaction runs, since
+they do not defer significantly for optimization runs. We can see that
+\ghost   has  more   difficulties  to   find  a   wall  for   Fortress
+chokepoints. This  can be  explained by the  fact that  many extracted
+Fortress chokepoints  are very narrow  (5 or  6 tiles wide),  which is
+usually too  small to make  place two  buildings.  Moreover, it  is in
+practice not worthable to try to  narrow with a wall a chokepoint that
+small.
+% --------------
+\begin{table}[ht]
+  \caption{Percentage of solutions found for each map.} 
+    \label{tab:map}
+    \centering
+    \begin{tabular}{|c|c|}
+      \hline
+      Map name & \% solved\\
+      \hline
+      Python & 100\\
+      Heartbreak Ridge & 100\\
+      Circuit Breaker & 99\\
+      Benzene & 99\\
+      Aztec & 97\\
+      Andromeda & 96\\
+      Fortress & 90\\
+      \hline
+    \end{tabular}  
+\end{table}
+
+
 
 \subsection{Future works}
 
@@ -962,9 +1051,9 @@ following one:
 
 \subsection{\ghost implementation and results}
 
-Like the wall-in problem, We choose to focus on Protoss to test \ghost
-on the build  order problem. The current implementation  can deal with
-any Protoss buildings, units, researches and upgrades.
+We  choose to  focus on  Protoss  to test  \ghost on  the build  order
+problem.  The  current  implementation   can  deal  with  any  Protoss
+buildings, units, researches and upgrades.
 
 For this  problem, we  have implemented  one objective  function only:
 Minimizing the build order makespan.  With this objective function, we
@@ -1160,7 +1249,7 @@ the   makespan   of    remaining   actions   (buildings,   researches,
 upgrades). This would allow the user  to secure first his base with an
 army.
 
-\section{Conclusion}\label{sec:conclusion}
+\section{Discussion and conclusion}\label{sec:conclusion}
 
 
 
