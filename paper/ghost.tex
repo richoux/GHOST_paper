@@ -602,9 +602,16 @@ same.
 
 \section{Reactive control problem: The target selection}\label{sec:target}
 
-Refer to Churchill et al.~\cite{ChurchillSB12, ChurchillB12}, Synnaeve
-and          Bessière~\cite{SynnaeveB11},         Uriarte          and
-Onta{\~n}{\'o}n~\cite{UriarteO12}
+Reactive control problems have been fairly well studied for StarCraft,
+with  many different  techniques  applied: We  can  cite Synnaeve  and
+Bessi{\`e}re  proposing   in~\cite{SynnaeveB11-b}  a   Bayesian  model
+allowing units to move in group  without being in each other's way, to
+find  the right  distance  for  attack, etc;  on  kiting, Uriarte  and
+Onta{\~n}{\'o}n   in~\cite{UriarteO12}  using   influence  maps,   and
+Churchill  et  al.  in~\cite{ChurchillSB12,  ChurchillB12}  showing  a
+heuristic search method making  predictions of combats' outcome. These
+two last papers  are also among the rare ones  dealing with the target
+selection problem.
 
 \subsection{Problem statement and model}
 
@@ -824,7 +831,18 @@ simulations through  Monte Carlo sampling,  and then help to  make the
 decision about what unit to aim.
 
 \section{Tactic problem: Wall-in}\label{sec:wall}
-Refer to Certicky~\cite{Certicky13}, Richoux et al.~\cite{RichouxUO14}
+
+Up  to  our  knowledge,  tactic  problems  has  not  been  intensively
+investigated for StarCraft.  We can cite however the broadly used BWTA
+library  implementing Voronoi  decomposition  to cut  out  and find  a
+delimitation    between    regions     and    chokepoints    presented
+in~\cite{Perkins10}. 
+
+However,  the only  works  dealing  with the  wall-in  problem is  the
+pioneer paper  from Certicky~\cite{Certicky13} and the  wall-in solver
+from Richoux  et al.   in~\cite{RichouxUO14}. As already  written, the
+latter provided the basis for the present work.
+
 \subsection{Problem statement and model}
 
 A classical tactic in RTS to defend a base is to make a wall, that is,
@@ -1006,16 +1024,37 @@ small.
     \end{tabular}  
 \end{table}
 
-
-
 \subsection{Future works}
+
+For the wall-in problem, we could add new objective functions to widen
+possibilities. For  example, trying to  make a wall by  minimizing the
+cost, or  the makespan.  This last objective  is trickier  and related
+to  the  next  section  (it  is somehow  the  wall-in  +  build  order
+problems). 
+
+Most importantly, since the necessary  runtime to well optimize a wall
+is longer than  a StarCraft frame duration, we  could implement \ghost
+in order to  support computation pauses and  resumes. Actually, \ghost
+architecture has  been designed by  keeping in mind this  feature: the
+satisfaction part is executed int 30ms, \ie, it can be executed within
+on StarCraft  frame in the fastest  mode.  Marking a pause  after each
+satisfaction  loop and  resume  \ghost  at the  next  frame until  the
+computation ends would not be difficult  to do. This is more discussed
+in detail in Section~\ref{sec:conclusion}.
 
 
 \section{Strategy problem: The build order}\label{sec:bo}
 
-Refer   to   Churchill   and   Buro~\cite{ChurchillB11},   Kuchem   et
-al.~\cite{KuchemPR13},  Weber   and  Mateas~\cite{WeberM09},   Cho  et
-al.~\cite{ChoKC13}, Blackford~\cite{Blackford14}
+The reader can  find an extensive literature about  build order planer
+and/or   prediction  for   StarCraft:  Churchill   and  Buro   propose
+in~\cite{ChurchillB11} a build  order planer using a  branch and bound
+technique, Kuchem  et al. analyze  build order tools for  StarCraft II
+in~\cite{KuchemPR13},  Cho  et  al.    present  in  ~\cite{ChoKC13}  a
+strategy prediction  and build  order adaptation system  learning from
+replays,  in~\cite{SynnaeveB11-a}  Synnaeve  and Bessi{\`e}re  show  a
+Bayesian model  to predict  the opponent build  order in-game  and the
+Blackford's Master's  thesis~\cite{Blackford14} is dedicated  to build
+order optimization.
 
 \subsection{Problem statement and model}
 A build  order planning is  a series  of actions following  a specific
