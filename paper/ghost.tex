@@ -1238,9 +1238,10 @@ For  Table~\ref{tab:bo}\footnote{All  build   order  data,  experiment
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/build\_order}{github.com/richoux/GHOST\_paper/tree/master/xp/build\_order}},
 \ghost has been  run 10 times on each build  order. We run experiments
 on two sets  of build orders: Those extracted from  replays by Gabriel
-Synnaeve\footnote{\href{http://emotion.inrialpes.fr/people/synnaeve/TLGGICCUP\_gosu\_reps.7z}{http://emotion.inrialpes.fr/people/synnaeve/TLGGICCUP\_gosu\_reps.7z}}
-and refined by Glen Robertson\footnote{\href{}{}}, and those extracted from top
-Korean pro-gamers.
+Synnaeve\footnote{\href{http://emotion.inrialpes.fr/people/synnaeve/TLGGICCUP\_gosu\_reps.7z}{emotion.inrialpes.fr/people/synnaeve/TLGGICCUP\_gosu\_reps.7z}}
+and                  refined                  by                  Glen
+Robertson\footnote{\href{http://scidrive.uoa.auckland.ac.nz/gameai/scdata/files.txt}{scidrive.uoa.auckland.ac.nz/gameai/scdata/files.txt}},
+and those extracted from top Korean pro-gamers.
 
 In total, the first set is  composed of 3647 build orders: 768 Protoss
 versus  Protoss, 2043  Protoss versus  Terran and  836 Protoss  versus
@@ -1308,7 +1309,58 @@ discussed in the next section.
 
 \section{Discussion and conclusion}\label{sec:conclusion}
 
+In  this paper,  we  introduced \ghost,  a combinatorial  optimization
+solver   to    solve   any   problems   encoded    by   a   constraint
+satisfaction/optimization problem.   We presented three  different RTS
+problems belonging to a specific  level of abstraction, and proposed a
+\csp/\cop model for each. Experiments  applying \ghost on these models
+shown very  good results  computed within  some tens  of milliseconds,
+without  any  modification  or   optimization  of  the  solver  source
+code. Results obtained  are often better than the ones  we can find in
+the current literature.
 
+One claim written in Section~\ref{sec:ghost} is now clear: Looking for
+the absolute  optimal solution may  not be  the best strategy  for RTS
+games; runtimes  to find such solutions  can last far beyond  what one
+can  allow  oneself.  Fast  meta-heuristics  can  output an  ``optimal
+enough'' solution in some tens of  milliseconds, and if no good enough
+solutions has been found, the user can always re-run the solver on the
+next frame.   One has to seriously  consider such a way  to manage and
+solve optimization problems in RTS  games; results shown in this paper
+proves it is absolutely viable.
+
+The  discerning reader  had noted  that \ghost  is actually  a general
+\csp/\cop  solver, and  can not  only solve  any RTS-related  problems
+modeled with this  formalisms but also any kind of  such problems from
+other  fields. One  of our  starting  point is  to make  \ghost a  C++
+library to be very easily included into StarCraft bots. This should be
+done in the  next few months by  using the BWAPI 4  library, giving us
+(almost) all informations we need on units, buildings, events, etc, in
+StarCraft.  We could  also use  other libraries  related to  other RTS
+games to make \ghost broadly available.
+
+Some  improvements we  have in  mind concern  the implementation  of a
+pause/resume system, allowing  \ghost to start a  long computation and
+hash it into small pieces fitting  within one frame (say, less than or
+equals  to 30ms  to let  some  time for  other computations).   \ghost
+architecture has been designed to  make such an implementation easy to
+do,  in  particular  thanks  to the  decoupling  satisfaction  loop  -
+optimization  loop. Another  improvement would  be to  let the  solver
+check how many cores are available  in the machine running it, and use
+all of the to speed up the  search. This can also be done easily since
+{\it  Adaptive  Search}   is  known  to  be  very   efficient  with  a
+straightforward      parallel      scheme     (see      Caniou      et
+al.~\cite{Caniou14}). Indeed, this algorithm  has been parallelized on
+super-computer and  shows linear  speed-ups over  8,192 cores  on some
+problems (and fairly  good speed-ups on others),  which are impressive
+parallel performances.
+
+\ghost has  also been  designed following  the famous  Object Oriented
+programming  ``open-close  principle'',  to  let  the  door  open  for
+extensions without needing  to modify the already  written classes. It
+is  easy to  implement and  include new  problems in  \ghost, and  the
+authors highly  encourage contributors  to propose  implementations of
+new problems to integrate into the library.
 
 
 
