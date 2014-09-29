@@ -715,7 +715,7 @@ make significant the Terran Siege Tank's splash damage.
 %--------------
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.7\columnwidth]{figs/target_setup.png}
+  \includegraphics[width=0.8\columnwidth]{figs/target_setup.png}
   \caption{Mirror  Terran  unit  composition and  placement  used  for
     experiments. Line 1: 5 marines. Line  2: 2 Goliaths and 2 Vultures
     (in the middle). Line  3: 2 Siege Tanks in tank  mode and 2 Ghosts
@@ -1032,7 +1032,7 @@ buildings.
       \hline
     \end{tabular}  
 \end{table}
-
+% --------------
 \subsection{Future works}
 
 For the wall-in problem, we could add new objective functions to widen
@@ -1303,9 +1303,9 @@ the   makespan   of    remaining   actions   (buildings,   researches,
 upgrades). This would allow the user  to secure first his base with an
 army.
 
-Also, we would  like to take into account other  races.  This would be
-done  through a  general way  by coupling  \ghost with  BWAPI 4,  like
-discussed in the next section.
+% Also, we would  like to take into account other  races.  This would be
+% done  through a  general way  by coupling  \ghost with  BWAPI 4,  like
+% discussed in the next section.
 
 \section{Discussion and conclusion}\label{sec:conclusion}
 
@@ -1336,8 +1336,8 @@ other  fields. One  of our  starting  point is  to make  \ghost a  C++
 library to be very easily included into StarCraft bots. This should be
 done in the  next few months by  using the BWAPI 4  library, giving us
 (almost) all informations we need on units, buildings, events, etc, in
-StarCraft.  We could  also use  other libraries  related to  other RTS
-games to make \ghost broadly available.
+StarCraft for each race.  We could also use other libraries related to
+other RTS games to make \ghost broadly available.
 
 Some  improvements we  have in  mind concern  the implementation  of a
 pause/resume system, allowing  \ghost to start a  long computation and
@@ -1362,7 +1362,18 @@ is  easy to  implement and  include new  problems in  \ghost, and  the
 authors highly  encourage contributors  to propose  implementations of
 new problems to integrate into the library.
 
-
+Finally, this work leads us to take a global view on \csp/\cop, and to
+consider the  following: Even  if a huge  number of  combinatorial and
+optimization problems can be modeled with \csp/\cop, this framework is
+not   well   adapted   to   deal  with   uncertainty   or   incomplete
+information. This  is penalizing for many  RTS-related problems, where
+most of interesting challenges come  from the fact that information is
+incomplete. Some variations of  Constraint Programming propose to take
+into account  uncertainty through formalisms like  soft constraints or
+fuzzy constraints, however  none of these formalisms  favor the design
+of efficient solvers, up to our  knowledge. Thus, far beyond the scope
+if  the present  work, we  would  like to  investigate on  a new  \csp
+formalism that could manage uncertainty efficiently.
 
 %\section*{Acknowledgments} {\color{blue} This research is partially funded by projects ... and ... . }
 
