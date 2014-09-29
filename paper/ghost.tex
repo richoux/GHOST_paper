@@ -1,3 +1,6 @@
+%\RequirePackage[l2tabu, orthodox]{nag} % Check if some command or packages are obsolete
+\RequirePackage{fix-cm} % Recent fixes for LaTeX2e
+
 \documentclass[journal]{IEEEtran}
 
 \usepackage{cite, graphicx}
@@ -56,6 +59,24 @@
   linkcolor    = blue, %Colour of internal links
   citecolor   = red %Colour of citations
 }
+
+% etoolbox package: boolean, CQFD, ...
+\usepackage{etoolbox}
+% ToDoNotes
+\newbool{use_todo}
+\setbool{use_todo}{true}
+\ifbool{use_todo}{%true
+  \usepackage{todonotes}
+  \setlength{\marginparwidth}{1.4cm}}{%false
+\usepackage[disable]{todonotes}
+}
+\newcommand{\todotiny}[1]{\todo[size=\footnotesize]{#1}}
+% Recent fixes to LaTeX2e
+\usepackage{fixltx2e}
+% Improve spacement between words (to add after language package if any)
+\usepackage{microtype}
+
+
 
 \usepackage{amssymb}\newcommand{\todonote}[1]{\footnote{\color{red}TODO: #1}\marginpar[\color{red}\hfill$\blacktriangleright$]{\color{red}$\blacktriangleleft$\hfill}}
 
@@ -129,7 +150,7 @@
 % \thanks{Manuscript received April 19, 2499; revised January 11, 2500.}}
 
 \author{Florian~Richoux\thanks{Florian~Richoux is with the LINA of the Universit{\'e} de Nantes, France, and the JFLI of the University of Tokyo, Japan.},
-        Jean-Fran{\c c}ois~Baffier\thanks{Jean-Fran{\c c}ois~Baffier is with the Department of Computing Science of the University of Tokyo, Japan.},
+        Jean-Fran{\c c}ois~Baffier\thanks{Jean-Fran{\c c}ois~Baffier is with the Department of Computer Science and the JFLI at the University of Tokyo, Japan.},
         Alberto~Uriarte\thanks{Alberto Uriarte is with the Computer Science Department at Drexel University, Philadelphia, PA, USA.}}
 
 
@@ -166,8 +187,8 @@
   satisfaction/optimization  problem,  each  problem  belonging  to  a
   specific level  of abstraction, and  test our solver on  them, using
   StarCraft  as  a  testbed.   For  the  three  problems  (the  target
-  selection problem, the wall-ion problem and the build order planning
-  problem), \ghost shows  very good results computed  within some tens
+  selection problem, the wall-in problem and the build order planning
+  problem), \ghost shows very good results computed  within some tens
   of milliseconds.
 \end{abstract}
 
@@ -188,8 +209,8 @@ Optimization, Combinatorics.
 
 \section{Introduction}\label{sec:intro}
 
-\IEEEPARstart {O}{ne} can see games  as a simplification of the world:
-The playground  is smaller, rules  are easier and less  numerous, thus
+\IEEEPARstart {O}{ne} can see games  as a simplification of the real world:
+The playground  is smaller, rules  are easier and fewer, thus
 possibilities  are more  limited. However,  games are  rich enough  to
 propose complex, dynamic environments where it remains difficult for a
 computer  to make  predictions,  have a  global  understanding of  the
@@ -198,15 +219,15 @@ when  information is  incomplete, forcing  the computer  to infer  the
 global state of the game from  pieces of information. This is the case
 with Real-Time Strategy  games (RTS), where a Clausewitz's  fog of war
 hides  the opponent's  moves.  Thus,  RTS games  are very  suitable to
-design  Artificial  Intelligence  techniques  that  could  be  applied
+design  Artificial  Intelligence  techniques  that  may  be  applied
 afterward in other domains.
 
-Many AI techniques are used in RTS games. Without making an exhaustive
+Various AI techniques are used in RTS games. Without making an exhaustive
 list,  we  can  cite   reinforcement  learning,  case-base  reasoning,
 Bayesian programming, goal-driven autonomy,  potential fields, etc. We
 recommend  the  reader to  look  at  surveys from  Onta{\~n}{\'o}n  et
 al.~\cite{OntanonSURCM13} and Robertson and Watson~\cite{RobertsonW14}
-to have a very complete overview of AI techniques in RTS games.
+to have a detailed overview of AI techniques in RTS games.
 
 However,  there  are  few  works  in  RTS  game  AI  using  constraint
 programming    techniques,    in   particular    through    constraint
@@ -241,15 +262,14 @@ abstraction. From  the higher to  the lower level, these  families are
 (extracted from~\cite{OntanonSURCM13}):
 %--------------
 \begin{itemize}
-\item {\bf  Strategy}: corresponds  to the high-level  decision making
+\item {\textbf  Strategy}: corresponds  to the high-level  decision making
   process.   This is  the highest  level of  abstraction for  the game
   comprehension.   Finding an  efficient strategy  or counter-strategy
   against a given opponent is key  in RTS games. It concerns the whole
   set of units and buildings a player owns.
-\item {\bf Tactics}:  are the implementation of  the current strategy.
-  It implies army and building  positioning, movements, timing, and so
-  on. Tactics concerns a group of units.
-\item {\bf Reactive  control}: is the implementation  of tactics. This
+\item {\textbf Tactics}:  are the implementation of  the current strategy.
+  It \todotiny{implies, infers, includes? I am a bit confused about the idea behind.}implies, \emph{inter alia}, army and building  positioning, movements, timing. Tactics concerns a group of units.
+\item {\textbf Reactive  control}: is the implementation  of tactics. It
   consists   in  moving,   targeting,  firing,   fleeing,  hit-and-run
   techniques  (also  knows  as ``kiting'')  during  battle.   Reactive
   control focuses on a specific unit.
@@ -257,8 +277,8 @@ abstraction. From  the higher to  the lower level, these  families are
 %--------------
 Problems from different families  usually involve different algorithms
 to solve them.  In  this paper, we will model one  problem for each of
-these three family,  and use our solver \ghost to  solve them, without
-any modifications  of the  solver core. Only  problem models  will, of
+these three family,  and use \ghost to  solve them, without
+any modification  of the  solver core. Only the problem models  will, of
 course, differ.
 
 \subsection{StarCraft: Brood War}
@@ -266,21 +286,21 @@ course, differ.
 StarCraft:  Brood War  is the  extension of  the game  StarCraft, both
 released in 1998  by Blizzard Entertainment.  It is an  RTS game where
 three very different  races (Terran, Protoss and Zerg)  can be played,
-giving an  asymmetric but perfectly  well balanced strategy  game.  In
+giving an  asymmetric yet thoroughly balanced strategy game.  In
 this paper,  the term  ``StarCraft'' will actually  refer to  the game
 plus its extension StarCraft: Brood War.
 
-A player  has to  gather two  kind of resources,  mineral and  gas, in
-order   to  construct   buildings  for   producing  units,   upgrading
+A player has to  gather two  kind of resources,  mineral and  gas, in
+order   to  construct   buildings  necessary to produce units,   upgrading
 characteristics such as damage points or armor, unlocking technologies
-and special abilities. Producing units has also a cost, each unit type
+and special abilities. The production of units has also a cost, each unit type
 having their own characteristic (hit points, damage points, size, etc)
-and a price in consequence.
+and an adequate price.
 
 The game  is run on  a rectangular map,  discretized into two  kind of
 tiles: Walk  tiles, composed of  $8 \times  8$ pixels and  build tiles
 composed of $4  \times 4$ walk tiles, \ie, $32  \times 32$ pixels. The
-difference  between these  two kinds  of tiles  would be  explained in
+difference  between these  two kinds  of tiles  will be  explained in
 Section~\ref{sec:wall},  while introducing  the wall-in  problem. Like
 every RTS games, the map is recovered by a fog of war, only dissipated
 around our own units/buildings. This means that one cannot know at any
@@ -301,8 +321,8 @@ Time's flow  in StarCraft is tricky:  The game has 7  speed modes from
 ``slowest'' to ``fastest'' where ``normal'' corresponds to the regular
 time's flow  (one second is  one second)  and the 6  others disturbing
 it. This is why when we will  write about in-game time, all along this
-paper we will refer to the terms {\it StarCraft unit time} rather than
-second, to not make any confusions with proper seconds. In the fastest
+paper we will refer to the terms {\textit StarCraft unit time} rather than
+second, to avoid any confusions with proper seconds. In the fastest
 mode, one game  frame takes 42ms. In StarCraft AI  competitions, it is
 necessary  for bots  to not  make  computations longer  than 55ms  per
 frame, in which  case the bot automatically looses the  game after 200
@@ -315,7 +335,7 @@ al.~\cite{RichouxUO14}, where  the problem to  make a wall at  a given
 chokepoint  in StarCraft  has been  modeled  and solved  thanks to  an
 ad-hoc algorithm.
 
-The goal of this paper is double:
+The goal of this paper is twofold:
 \begin{itemize}
 \item  To present  to  the RTS  AI community  our  solver \ghost,  its
   architecture,  how  to model  different  problems  with it  and  the
@@ -332,7 +352,7 @@ architecture, what  user is aimed, how  to use it to  solve an already
 encoded  problem  and how  to  write  your  own problems  via  \ghost.
 Sections~\ref{sec:target},~\ref{sec:wall}     and~\ref{sec:bo}    give
 details about three  different problem, each from a  specific level of
-abstraction (from  the lower to  the higher: Reactive  Control, Tactic
+abstraction (from  the lowest to  the highest: Reactive  Control, Tactics
 and Strategy), how  we modeled them into a \csp/\cop  and what results
 we obtained  by applying  \ghost. Finally,  this paper  concludes with
 future works.
@@ -361,7 +381,7 @@ The difference between a \csp and a \cop is simple:
   to workplace, but some of them are shorter.
 \end{itemize}
 %--------------
-Formally, a {\bf \csp} is defined by a tuple ($V$, $D$, $C$) such that:
+Formally, a {\textbf \csp} is defined by a tuple ($V$, $D$, $C$) such that:
 \begin{itemize}
 \item $V$ is a set of variables,
 \item $D$ is a domain, \ie, a set of values for variables in $V$,
@@ -371,16 +391,16 @@ Formally, a {\bf \csp} is defined by a tuple ($V$, $D$, $C$) such that:
 A  constraint  $c   \in  C$  can  be  seen  as   a  $k$-ary  predicate
 $c:~V^k\rightarrow\{\top,\bot\}$  where  $\top$  can  be  semantically
 interpreted by true and $\bot$ by  false. Thus, regarding the value of
-the vector $V^k$, we say that $c$ is either {\it satisfied} (equals to
-$\top$) or {\it unsatisfied} (equals to $\bot$).
+the vector $V^k$, we say that $c$ is either {\textit satisfied} (equals to
+$\top$) or {\textit unsatisfied} (equals to $\bot$).
 
 Notice also that $D$ should formally be the set of the domain for each
 variable in $V$, thus a set of  set of values. However it is common to
 define the same set  of values for all variables of  $V$, thus one can
 simplify $D$ to be the set of values each variable in $V$ can take.
 
-A {\bf \cop} a defined by a tuple ($V$, $D$, $C$, $f$) where $V$, $D$ and
-$C$ represent the same sets as a \csp, and $f$ is an {\it objective
+A {\textbf \cop} a defined by a tuple ($V$, $D$, $C$, $f$) where $V$, $D$ and
+$C$ represent the same sets as a \csp, and $f$ is an {\textit objective
 function} to minimize  or maximize.
 
 Upon a \csp or a \cop, one can build a \csp formula or a \cop formula,
@@ -391,7 +411,7 @@ from $C$,  each constraint taking their  variables from $V$. We  say a
 satisfied. Considering the  vector $v \in V^n$ of variables  used in a
 \csp/\cop formula, a vector $z \in D^n$ such that
 $\forall i \in \{1,n\}, z[i] = q(v[i])$ 
-is called a {\it configuration}.  Since
+is called a {\textit configuration}.  Since
 \csp/\cop models a specific problem $\mathcal{P}$, a \csp/\cop formula
 represents an instance of $\mathcal{P}$.
 
@@ -414,12 +434,12 @@ solve \csp/\cop problems:
 %--------------
 
 For \ghost, we have chosen a  meta-heuristic algorithm to be the heart
-of   the   solver,   {\it   Adaptive   Search}   from   Codognet   and
+of   the   solver,   {\textit   Adaptive   Search}   from   Codognet   and
 Diaz~\cite{Codognet01}. The reason we have chosen a meta-heuristics is
 simple: To solve combinatorial and optimization problems while playing
 a RTS  game, the  solver needs  to be  very fast  to find  a solution,
 within some tens  of milliseconds, which is  virtually impossible with
-tree-based search algorithms. The reason  we have chosen {\it Adaptive
+tree-based search algorithms. The reason  we have chosen {\textit Adaptive
   Search} is  that, although it is  not a well-known algorithm,  it is
 one of the fastest meta-heuristics at  the moment, up to our knowledge
 (see Caniou et al.~\cite{Caniou14}).
@@ -543,7 +563,7 @@ this  way, since  it should  be more  efficient to  develop a  proper,
 ad-hoc MCTS program.
 
 There exists a third and last  parameters in the solver: The length of
-the tabu list.  Indeed, {\it Adaptive  Search} contains a tabu list of
+the tabu list.  Indeed, {\textit Adaptive  Search} contains a tabu list of
 explored variables in order to not  revisit the same variable too soon
 during the search. The tabu parameter  is then a number expressing how
 long  the solver  has  to  wait before  being  allowed  to revisit  an
@@ -690,9 +710,9 @@ optimization  opportunities.   In  this   work,  we  investigated  two
 different objective functions:
 %--------------
 \begin{itemize}
-\item {\bf Max  damage}, where our group tries to  deal as much damage
+\item {\textbf Max  damage}, where our group tries to  deal as much damage
   as possible within the current frame.
-\item {\bf  Max kill},  where our  group tries to  kill as  much enemy
+\item {\textbf  Max kill},  where our  group tries to  kill as  much enemy
   units as possible within the current frame.
 \end{itemize}
 %--------------
@@ -874,7 +894,7 @@ is actually always the case in StarCraft.
 
 This  means that  two buildings  constructed  side by  side are  still
 separated by a gap  which may be big enough to  let small units enter,
-like Zerglings, Marines  or Zealots. In this paper, we  will call {\it
+like Zerglings, Marines  or Zealots. In this paper, we  will call {\textit
   significant gap} a gap allowing Zerglings ($16 \times 16$ pixels) to
 enter into the base.
 
@@ -896,11 +916,11 @@ Constraints     of      our     models     are      illustrated     in
 Figure~\ref{fig:wall_constraint}. They are defined as follows:
 %--------------
 \begin{itemize}
-\item {\bf Overlap}: buildings do not overlap each others.
-\item {\bf Buildable}: buildings do not overlap unbuildable tiles.
-\item {\bf NoHoles}: no holes of the size of a build tile (or greater)
+\item {\textbf Overlap}: buildings do not overlap each others.
+\item {\textbf Buildable}: buildings do not overlap unbuildable tiles.
+\item {\textbf NoHoles}: no holes of the size of a build tile (or greater)
   in the wall.
-\item  {\bf  StartingTargetTile}:  there   are  exactly  one  building
+\item  {\textbf  StartingTargetTile}:  there   are  exactly  one  building
   constructed on a  given starting tile $s$, and one  building (it can
   be the same one) on a given target tile $t$.
 \end{itemize}
@@ -928,9 +948,9 @@ optimization  opportunities.   Therefore,  we have  implemented  three
 different objective functions, aiming to minimize:
 %--------------
 \begin{itemize}
-\item {\bf Building}: the number of buildings in the wall,
-\item {\bf Gap}: the number of significant gaps in the wall,
-\item {\bf  TreeTech}: the required  technology level in the  game (in
+\item {\textbf Building}: the number of buildings in the wall,
+\item {\textbf Gap}: the number of significant gaps in the wall,
+\item {\textbf  TreeTech}: the required technology level in the  game (in
   games  like  StarCraft,  some buildings  require  technologies  that
   require resources  to acquire, so  it is interesting to  build walls
   with buildings of low technology).
@@ -1348,7 +1368,7 @@ do,  in  particular  thanks  to the  decoupling  satisfaction  loop  -
 optimization  loop. Another  improvement would  be to  let the  solver
 check how many cores are available  in the machine running it, and use
 all of the to speed up the  search. This can also be done easily since
-{\it  Adaptive  Search}   is  known  to  be  very   efficient  with  a
+{\textit  Adaptive  Search}   is  known  to  be  very   efficient  with  a
 straightforward      parallel      scheme     (see      Caniou      et
 al.~\cite{Caniou14}). Indeed, this algorithm  has been parallelized on
 super-computer and  shows linear  speed-ups over  8,192 cores  on some
