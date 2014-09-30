@@ -5,6 +5,7 @@ paper/ghost.bbl
 paper/ghost.blg
 paper/ghost.log
 paper/ghost.out
+*.tex.backup
 
 # Emacs copies
 *~
