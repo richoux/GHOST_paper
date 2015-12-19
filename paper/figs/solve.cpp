@@ -1,11 +1,26 @@
+// Variables
 vector< Unit > variables = { ... }
-vector< UnitEnemy  > enemies  = {  ... }  //specific  to the target selection problem
-TargetSelectionDomain domain( variables.size(), &enemies );
-vector< shared_ptr<TargetSelectionConstraint> > vecConstraints
-      { make_shared<TargetSelectionConstraint>( &vec, &domain ) };
-shared_ptr<TargetSelectionObjective> objective =
-      make_shared<MaxDamage>();
-Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint>
-      solver( &vec, &domain, vecConstraints, objective );
+
+// Specific to the target selection problem
+vector< UnitEnemy  > enemies  = {  ... }
+
+// Domain  
+TargetDomain domain( variables.size(), &enemies );
+
+// Constraints
+vector< shared_ptr<TargetConstraint> > constraints
+{ make_shared<TargetConstraint>( &variables, &domain ) };
+
+// Objective
+shared_ptr<TargetObjective> objective = make_shared<MaxDamage>();
+
+// Solver
+Solver<Unit, TargetDomain, TargetConstraint>
+  solver( &variables, &domain, constraints, objective );
+
+// Call Solver::solve
 solver.solve();
+
+
+
 

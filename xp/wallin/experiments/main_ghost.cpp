@@ -88,18 +88,18 @@ int main(int argc, char **argv)
 	  vector< Building > vec = makeTerranBuildings();
 	  WallinDomain domain( dx, dy, unbuildables, &vec, start.first, start.second, end.first, end.second );
 	  vector< shared_ptr<WallinConstraint> > vecConstraints = makeTerranConstraints( &vec, &domain );
-	  // shared_ptr<WallinObjective> objective = make_shared<TechTreeObj>();
+	  shared_ptr<WallinObjective> objective = make_shared<GapObj>();
 
           // for(int attempt = 0;attempt<attempts;attempt++) {
           //   printf("attempt %i\n",attempt+1);
 	  printf("map size: %i,%i\n",dx,dy);
 	  printf("calling solver...\n");
 	  
-	  // Solver<Building, WallinDomain, WallinConstraint> solver(&vec, &domain, vecConstraints, objective );
-	  Solver<Building, WallinDomain, WallinConstraint> solver(&vec, &domain, vecConstraints );
+	  Solver<Building, WallinDomain, WallinConstraint> solver(&vec, &domain, vecConstraints, objective );
+	  //Solver<Building, WallinDomain, WallinConstraint> solver(&vec, &domain, vecConstraints );
 	  
 	  std::cout << "File name: " << argv[1] << std::endl; 
-	  solver.solve( time_limit, 160 );    
+	  solver.solve( time_limit, 150 );    
 	}
 	
 	printf("\n\n");        
