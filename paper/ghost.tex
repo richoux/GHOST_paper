@@ -163,12 +163,12 @@
 
 \begin{abstract}
   This paper  presents \ghost, a combinatorial  optimization framework
-  an RTS  AI developer can  use as a blackbox  to model and  solve any
-  problems encoded by  a constraint satisfaction/optimization problem.
-  We  show a  way to  model  three very  different RTS  problems by  a
-  constraint satisfaction/optimization problem, each problem belonging
-  to a  specific level of  abstraction, and  test our solver  on them,
-  using StarCraft  as a testbed.   For the three problems  (the target
+  an RTS AI developer can use  to model and solve any problems encoded
+  by a constraint satisfaction/optimization problem.  We show a way to
+  model   three  very   different   RTS  problems   by  a   constraint
+  satisfaction/optimization  problem,  each  problem  belonging  to  a
+  specific level  of abstraction, and  test our solver on  them, using
+  StarCraft  as  a  testbed.   For  the  three  problems  (the  target
   selection problem, the wall-ion problem and the build order planning
   problem), \ghost shows  very good results computed  within some tens
   of milliseconds.
@@ -233,7 +233,6 @@ modeled in that framework. Besides the generality, it is also easy and
 intuitive  to model  a problem  with a  \csp/\cop.  Altogether,  these
 bring  ideal  conditions  to   design  and  develop  a  user-friendly,
 easy-to-extend, general solver.
-
 
 
 \subsection{RTS problem families}
@@ -337,8 +336,9 @@ Sections~\ref{sec:target},~\ref{sec:wall}     and~\ref{sec:bo}    give
 details about three  different problem, each from a  specific level of
 abstraction (from  the lower to  the higher: Reactive  Control, Tactic
 and Strategy), how  we modeled them into a \csp/\cop  and what results
-we obtained  by applying  \ghost. Finally,  this paper  concludes with
-future works.
+we obtained by applying \ghost. Section~\ref{SOTA} matches \ghost with
+state-of-the-art  constraint solvers.  Finally,  this paper  concludes
+with future works.
 
 \section{\ghost:   A  General   meta-Heuristic  Optimization   Solving
   Tool}\label{sec:ghost}
