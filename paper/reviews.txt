@@ -1,0 +1,234 @@
+Associate Editor
+Comments to the Author:
+
+The reviews for  this article show mixed opinions on  whether the main
+topic of  the paper is  presented well  enough to be  publishable. The
+major identified  problem is  that there  is little  direct comparison
+with other, available methods (solvers). I therefore recommend to mark
+the paper as "major revision" in order to remedy this problem.  As one
+reviewer states,  there are  currently only few  works on  the matter,
+which makes the paper interesting.   In addition to the necessary work
+on experiments  (and comparisons), more  existing work shall  be taken
+into  account   (there  are  several  possible   cites  the  reviewers
+recommend), and the language issues (especially in the 2nd half of the
+paper) shall be tackled.
+
+Reviewer(s)' Comments to Author:
+
+Reviewer: 1
+
+Comments to the Author
+The   paper  proposes  a   new  constraint
+satisfaction toolkit, called GHOST, meant to be applicable for various
+problems  in RTS  games. It  demonstrates its  applicability on  three
+problems in RTS games.
+
+There are several problems with this paper.
+
+The major problem is that the method the paper is all about (GHOST) is
+actually not RTS-specialized, but it  is a general tool for constraint
+satisfaction/optimization problems. (This is  even acknowledged in the
+conclusions  of   the  paper).  Thus   the  title  of  the   paper  is
+misleading. In  this light,  it is  unclear why  GHOST should  be used
+instead one of dozen of so efficient CSP toolkits available: or-tools,
+gecode,                           Drools                          (see
+http://ianm.host.cs.st-andrews.ac.uk/CSPLib/links.shtml for  a partial
+list of available options).
+
+One possibility to prove any new  method to suitable for some problems
+is to  *directly* compare it  against the state-of-the-art  methods on
+the same problem. Unfortunately, the paper fails also in this respect.
+
+In particular, the  small combat scenario has  already been considered
+several times in the literature (c.f.  [1]). Thus, a new method should
+be  *directly* compared  with  the  state-of-the-art ones.  Otherwise,
+there is  no progress  in the  field. The  comparison against  [12] is
+indirect  since they  use,  among others,  a  different simulator  and
+different computational resources. Moreover  the model employed in the
+reviewed paper  is too simplistic (and  much more simple than  the one
+used in [12]) since it neither  involves unit movements nor takes into
+consideration that the  small combat is not an episodic  problem but a
+sequential decision one.   The only enemy the  paper compares directly
+against is a random strategy, which  says nothing about your method in
+the context of the state of the art.
+
+I find similar problems in the  other two experiments. For the wall-in
+problem the proposed method do not compare directly against [15], thus
+the  reader  cannot learn  how  good  the proposed  solution  actually
+is. The  build order problem  is also a  well-studied task in  the RTS
+literature  and the  experiment has  several flaws.  First, the  human
+players do not necessarily optimize  for minimum makespan, because the
+build *order* matters. Second, even assuming that the minimum makespan
+is the right criterium, the GHOST-method again do not compare directly
+with any other state-of-the-art methods.
+
+Therefore, in my opinion, the paper, in its current form, does not lead to advance in RTS games.
+
+Reviewer: 2
+
+Comments to the Author
+
+The authors consider CSP  formulations of three different sub-problems
+that  an  AI might  need  to  solve  while playing  StarCraft:  Target
+Selection, Wall-in,  and Build-Order  optimization. In order  to solve
+these  constraint problems,  they introduce  a new  constraint solver,
+GHOST,  and  show  that  it  can solve  such  constraints  within  the
+timeframe required for real-time usage.
+
+I am glad  to to see constraint solvers being  applied to real-time AI
+and planning problems. Existing work in  related areas that I am aware
+of is  largely limited to  offline planning  (eg, [1]), as  opposed to
+real-time planning. I  think this is a great  direction for constraint
+solvers;  and I  think that  RTS AI  is a  neat application  domain in
+general. I  find the application  of CSP to StarCraft  AI particularly
+compelling, for many of the reasons that the authors cite.
+
+My concerns  about this paper  are mostly  limited to the  claims made
+about the authors' constraint solver,  GHOST. The introduction of this
+constraint  solver is  a central  claim of  this paper.  Although many
+architectural details  are given (describing how  users might interact
+with or  extend the solver), in  other respects the paper  is light on
+details. How do  the problems that GHOST can  solve efficiently differ
+from the problems that other, existing CSP solvers can handle, and how
+does GHOST  compare to existing state-of-the-art  solvers when solving
+such instances? These  are questions that are almost  not addressed at
+all  in either  the current  paper or  its predecessor([3]),  with the
+exception  of  some small  comparisons  to  the authors  own  previous
+version of the same solver from [3].
+
+This is especially irking  in the case of the work  on wall-in, as the
+authors  in fact  do cite  another constraint  solver (the  ASP solver
+Clasp/Clingo)  being used  to solve  the wall-in  problem (in  work by
+Certicky [2]), but despite this don't actually compare their practical
+performance to  that previous work.  This is,  in my opinion,  also an
+oversight  in  the  authors  previous   paper  on  this  subject  [3].
+Certicky's paper mentions  a 200ms runtime - which is  not the far off
+from the runtimes  reported here, especially considering  that a major
+part  of   Clingo's  runtime,   the  grounding  step   (essentially  a
+pre-processing step that only has to  be applied once when an instance
+is going  to be  solved repeatedly), can  typically be  amortized over
+multiple runs, which would probably be the case here.
+
+So how does a state-of-the-art  constraint solver compare to GHOST? Is
+there reason to believe that GHOST models problems that cannot already
+be solved  as well  or better  by an off  the shelf  solver? Or  is it
+instead the case that the claim of this paper is only that GHOST makes
+it convenient to model constraints that are especially relevant to RTS
+AI, and not that it is  necessarily faster at solving such constraints
+than other solvers?
+
+I dug a little  bit deeper into the Certicky paper,  and it seems that
+there is  in fact  an implementation of  (or follow-up  to) Certicky's
+wall in  work, again using  Clingo as  its solver, in  the open-source
+StarCraft  bot "ITUBot"[2].  The ITUBot  designers actually  provide a
+fairly detailed report of their bot and the performance of its wall-in
+solver, including detailed runtime results, which from my reading seem
+to show  that it scales poorly  in practice (taking more  than 10's or
+100's of seconds  to solve in many cases), which  would likely make it
+impractical to  use in many cases.  So that actually seems  to suggest
+that the  GHOST would indeed  compare well against  Clingo - but  I am
+drawing  that   conclusion  based  on  not-quite   comparable  numbers
+(different maps being analyzed, different run-time cutoffs being used,
+etc) reported by three different sources.
+
+I would very much  like to see a direct comparison  of GHOST against a
+state-of-the-art constraint solver (possibly  Clingo, or possibly some
+other solver).  The good news  is that it  appears from my  reading of
+both Certicky's paper and ITUBot's reports that such comparisons would
+indeed favour GHOST. So this seems to be an easily remedied oversight,
+as opposed  to a fatal  flaw. And I would  really, really like  to see
+these  comparisons, because  I am  otherwise impressed  with the  work
+presented here.
+
+On the  other hand,  I find  the results  for part  three, Build-Order
+optimization,  more   compelling.  Here   there  are   comparisons  to
+human-optimized build-orders,  and indeed the results  seem to suggest
+that GHOST  can solve these problems  not only very quickly,  but well
+enough to improve on a human player.  On the whole, I think this paper
+does a strong  enough job of presenting the case  for using constraint
+solvers for RTS  AI, in particular by showing how  the same solver can
+be usefully applied  to solve a diverse set of  different AI tasks, to
+still  be  worthy  of  publication.  But  I  am  concerned  about  the
+weaknesses mentioned above in the case made for GHOST as a general CSP
+solver in this paper.
+
+
+Minor Comments:
+
+This  isn't  hugely   important,  but  on  page  3,   you  write  that
+meta-heuristic algorithms (as opposed to complete, tree-based methods)
+are the only  viable methods to manage industrial  size problems. This
+isn't true in  general (though it may be true  for special cases); for
+example, the constraint solver  mentioned earlier (Clasp/Clingo) is an
+example of a complete solver used at industrial scales.
+
+In many places,  and in particular on  page 2, you cited  the need for
+computations to complete  within a tight time frame (55ms).  I can see
+how this  is relevant for  something like target selection,  where you
+may wish to  make a computation repeatedly in each  frame as the state
+of the  game changes over  time. However, for something  like wall-in,
+where executing the computed strategy may take several minutes of game
+time anyhow,  can't the  computation be performed  over the  course of
+several frames  of the game  without stalling  the AI (by  running the
+wall-in solver  in a separate thread?)  Or is it really  the case that
+every individual  calculation the AI  performs must complete  within a
+strict 55 ms window?
+
+
+[1]: Havur, Giray, et al. "A case study on the Tower of Hanoi challenge: Representation, reasoning and execution." Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.
+[2]: Certicky, Michal. "Implementing a wall-in building placement in starcraft with declarative programming." arXiv preprint arXiv:1306.4460 (2013).
+[3] Richoux, Florian, Alberto Uriarte, and Santiago Ontañón. "Walling in Strategy Games via Constraint Optimization." Tenth Artificial Intelligence and Interactive Digital Entertainment Conference. 2014.
+[4]: https://github.com/vilbeyli/ITUBot
+
+Reviewer: 3
+
+Comments to the Author
+
+The paper  presents a CSP  solver and  applies it to  several relevant
+problems  of the  RTS domain  (Situational Micro  Management, Tactics,
+Strategy). Only  few examples  apply CSP to  RTS games,  rendering the
+paper  relevant.  The  paper  is well  structured,  but  suffers  from
+language issues, particularly  in the second half, making  some of the
+rationale hard to follow.
+
+Micro Management: Reactive Control
+
+This  example  seems  rather  artificial.  In  RTS  games,  the  Micro
+Management problem typically involves situationally choosing an action
+while  taking short-term  development -  such as  units moving  - into
+account, such as the work by Weber  or Synnaeve. An example would be a
+group  of hostile  units moving  into range  of a  Siege Tank  dealing
+splash damage  or melee  units having  to flock  around an  enemy. The
+problem  becomes  more  sever  if   the  game  utilizes  real  physics
+simulations  for  projectiles.  The   paper  reduces  the  problem  to
+stationary  units,  which is  still  interesting,  but doesn't  really
+convince. It could be cut or shortened in favor of more information on
+performance benchmarks of the implementation.
+
+Tactical: Wall-In:
+
+A typical CSP,  already approached in the past by  Certicky. The paper
+extends previous work and presents the  problem well. This is the most
+solid  section  of the  paper.  A  closer  evaluation of  the  runtime
+performance, especially  when adding  additional objectives,  would be
+interesting.  CSPs  are  somewhat  unpredictable  in  performance,  so
+working on better  real-time capable solutions is a  vector for future
+work.
+
+Strategy: Build Order execution:
+
+Build  Order execution  is not  often modeled  as a  CSP, making  this
+chapter particularly interesting.  It is also the  most well evaluated
+chapter,  including comparison  with professional  replays. Yet,  on a
+strategic  level,  opponent  modelling  and  reacting  on  adversarial
+actions becomes more  and more important, e.g. to  counter an opponent
+strategy by building appropriate units. It would be interesting to see
+how the  CSP approach on  build order  execution can be  combined with
+opponent modelling  or other  key strategic elements  of RTS,  such as
+scouting.
+
+The paper  models three typical  RTS problems as CSPs,  including some
+novel  approaches. Yet,  some of  the examples  feel a  bit forced.  A
+revision  could focus  more on  existing  work (for  example on  micro
+management)  and  evaluate  if  and  how  a  CSP  could  extend  those
+approaches.

@@ -1,0 +1,15 @@
+nproducts = 6; % zergling, hydralisk, lurker, ultralisk, mutalisk, guardian
+profit = [15000 , 16000 , 12973 , 32000 , 7200 , 16000]; % ground DPS
+pname = ["zergling", "hydralisk", "lurker", "ultralisk", "mutalisk", "guardian"];
+
+nresources = 3;      % mineral, gas, supply
+capacity = [20000, 14000, 760]; % supply*2 to have zergling=1
+rname = ["mineral","gas","supply"];
+
+% supply*2 to have zergling=1
+consumption= [| 25, 0, 1,
+	      | 75, 25, 2, 
+              | 125, 125, 4,
+              | 200, 200, 8,
+              | 100, 100, 4,
+              | 150, 200, 4 |];
