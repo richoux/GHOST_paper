@@ -16,13 +16,24 @@ total = 0
 dps = 0
 max = 0
 
+if ARGV[0].include? "zerg"
+  opti = "11400"
+elsif ARGV[0].include? "protoss"
+  opti = "4916.36"
+elsif ARGV[0].include? "terran"
+  opti = "6632.73"
+else
+  puts "Bad file name"
+  exit
+end
+  
+
+  
 # For each line in file
 file.each do |line|
   words = line.split(' : ')
   if words[0].include? "DPS"
-    #if words[1].include? "4916.36"
-    if words[1].include? "6632.73"
-    #if words[1].include? "11400"
+    if words[1].include? opti
       max += 1
     end
     dps += words[1].to_i

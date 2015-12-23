@@ -336,9 +336,9 @@ Sections~\ref{sec:target},~\ref{sec:wall}     and~\ref{sec:bo}    give
 details about three  different problem, each from a  specific level of
 abstraction (from  the lower to  the higher: Reactive  Control, Tactic
 and Strategy), how  we modeled them into a \csp/\cop  and what results
-we obtained by applying \ghost. Section~\ref{SOTA} matches \ghost with
-state-of-the-art  constraint solvers.  Finally,  this paper  concludes
-with future works.
+we obtained by applying  \ghost. Section~\ref{sec:SOTA} matches \ghost
+with  state-of-the-art   constraint  solvers.   Finally,   this  paper
+concludes with future works.
 
 \section{\ghost:   A  General   meta-Heuristic  Optimization   Solving
   Tool}\label{sec:ghost}
@@ -468,16 +468,16 @@ RTS-related problems,  as soon as  they are modeled  into a \csp  or a
 \texttt{Domain},    \texttt{Constraint},     \texttt{Objective}    and
 \texttt{Solver}\footnote{See        \ghost         manual        pages
   (\href{http://richoux.github.io/GHOST/}{richoux.github.io/GHOST/})
-  for more  details}. Interactions between these  classes are depicted
-in Figure~\ref{fig:ghost}.
-%--------------
-\begin{figure}[th]
-  \centering
-  \includegraphics[width=\columnwidth]{figs/ghost_vert.png}
-  %\input{figs/ghost_vert.tex}
-  \caption{A simplified class diagram of \ghost}
-  \label{fig:ghost}
-\end{figure}
+  for more  details}. % Interactions between these  classes are depicted
+% in Figure~\ref{fig:ghost}.
+% %--------------
+% \begin{figure}[th]
+%   \centering
+%   \includegraphics[width=\columnwidth]{figs/ghost_vert.png}
+%   %\input{figs/ghost_vert.tex}
+%   \caption{A simplified class diagram of \ghost}
+%   \label{fig:ghost}
+% \end{figure}
 %--------------
 \begin{figure}[th]
   \centering
@@ -485,7 +485,7 @@ in Figure~\ref{fig:ghost}.
   \caption{\ghost architecture:  In red, the satisfaction  inner loop,
     running  for   $x$  milliseconds   top.   In   blue,  optimization
     mechanisms.    The    whole   process,    excluding   optimization
-    post-process, runs under $y$ milliseconds.}
+    post-process, runs under $y$ milliseconds}
   \label{fig:archi}
 \end{figure}
 %--------------
@@ -664,7 +664,7 @@ points (without counting  upgrade neither armor) against  a large unit
 like a Terran Tank, instead of 20 damage points as usual.
 %--------------
 \begin{table}[!h]
-  \caption{Damage efficiency matrix in StarCraft.}
+  \caption{Damage efficiency matrix in StarCraft}
   \label{tab:damage}
   \centering
   \begin{tabular}{|c|l|c|c|c|} 
@@ -710,22 +710,26 @@ E1.
 
 \subsection{\ghost implementation and results}
 
-Figure~\ref{fig:target}   shows  the   mirror   setup   we  used   for
-experiments. We chose  Terran units since many of  them are long-range
-attack  units  and  this  makes  the  target  selection  problem  more
-interesting.  Also, we packed units, places them close each others, to
-make significant the Terran Siege Tank's splash damage.
+%Figure~\ref{fig:target}   shows  the   mirror   setup   we  used   for
+%experiments. 
+Our instance is a mirror setup composed of four lines of units: Line 1
+contains 5 marines. Line 2: 2 Goliaths and 2 Vultures. Line 3: 2 Siege
+Tanks in tank mode  and 2 Ghosts. Line 4: 1 Siege  Tank in siege mode,
+doing splash  damage.  We chose  Terran units  since many of  them are
+long-range attack  units and this  makes the target  selection problem
+more  interesting.  Also,  we  packed units,  places  them close  each
+others, to make significant the Terran Siege Tank's splash damage.
 %--------------
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=0.8\columnwidth]{figs/target_setup.png}
-  \caption{Mirror  Terran  unit  composition and  placement  used  for
-    experiments. Line 1: 5 marines. Line  2: 2 Goliaths and 2 Vultures
-    (in the middle). Line  3: 2 Siege Tanks in tank  mode and 2 Ghosts
-    (in the middle). Line 4: 1  Siege Tank in siege mode, doing splash
-    damage.}
-  \label{fig:target}
-\end{figure}
+% \begin{figure}[!h]
+%   \centering
+%   \includegraphics[width=0.8\columnwidth]{figs/target_setup.png}
+%   \caption{Mirror  Terran  unit  composition and  placement  used  for
+%     experiments. Line 1: 5 marines. Line  2: 2 Goliaths and 2 Vultures
+%     (in the middle). Line  3: 2 Siege Tanks in tank  mode and 2 Ghosts
+%     (in the middle). Line 4: 1  Siege Tank in siege mode, doing splash
+%     damage}
+%   \label{fig:target}
+% \end{figure}
 %--------------
 Terran Firebat has not been taking into account in the small simulator
 we wrote for testing \ghost on the target selection problem.  We first
@@ -754,8 +758,8 @@ Our simulator does not implement:
 %--------------
 \begin{table*}[ht]
   \caption{Average  results over  100 simulations  for both  objective
-    functions, with  the setup  shown in  Figure~\ref{fig:target}. The
-    first table shows experiments where calls to \ghost lasts for 3ms,
+    functions.%, with  the setup  shown in  Figure~\ref{fig:target}. The
+    The first table shows experiments where calls to \ghost lasts for 3ms,
     and the second table calls lasting for 5ms}
   \label{tab:target}
   \centering
@@ -915,7 +919,7 @@ Figure~\ref{fig:wall_constraint}. They are defined as follows:
     (upper-right),   NoHoles   (bottom-left)  and   StartingTargetTile
     (bottom-right).    Dark  grey   tiles  represent   unwalkable  and
     unbuildable tiles.  Light grey  tiles are walkable but unbuildable
-    tiles.}
+    tiles}
   \label{fig:wall_constraint}
 \end{figure}
 %--------------
@@ -1018,7 +1022,7 @@ solution  can  only  be  achieved  by using  two  $3  \times  2$-sized
 buildings.
 % --------------
 \begin{table}[ht]
-  \caption{Percentage of solutions found for each map.} 
+  \caption{Percentage of solutions found for each map} 
     \label{tab:map}
     \centering
     \begin{tabular}{|c|c|}
@@ -1072,7 +1076,7 @@ replays and  in~\cite{SynnaeveB11-a} Synnaeve and Bessi{\`e}re  show a
 Bayesian model to predict the opponent build order in-game.
 
 \subsection{Problem statement and model}
-A build  order planning is  a series  of actions following  a specific
+A build order (BO) planning is a series of actions following a specific
 timing, in order to  achieve a goal.  Such a goal  is a combination of
 buildings,  units, upgrades  and  researches  produced.  Usually,  the
 objective for a  player is to reach a fixed  goal the fastest possible
@@ -1080,7 +1084,7 @@ way. However, alternatives  can also be considered,  like reaching the
 goal without sacrificing  the economy, or focussing first  on units in
 order to have an army quickly available.
 
-A  build order  planning can  be intuitively  modeled by  a \csp  as a
+A  BO  planning can  be intuitively  modeled by  a \csp  as a
 permutation problem,  where a bijection  maps the set of  variables to
 the  domain. Changing  the  value  of one  variable  is then  actually
 swapping its value with another variable.
@@ -1095,7 +1099,7 @@ dependency  lists.  Thus  if someone  aims to  do \textit{Air  Weapons
   Upgrade level 1}, which requires itself a \textit{Cybernetics Core},
 which requires a \textit{Gateway}.
 
-The \csp model we propose for  the build order planning problem is the
+The \csp model we propose for  the BO planning problem is the
 following one:
 %--------------
 \modelcsp{the Build Order Planning problem}%
@@ -1110,24 +1114,24 @@ problem.   The  current  implementation  can  deal  with  any  Protoss
 buildings, units, researches and upgrades.
 
 For this  problem, we  have implemented  one objective  function only:
-Minimizing the build order makespan.  With this objective function, we
-did not  have implemented a special  satisfaction post-processing, but
-we did  for the optimization  post-processing. Imagine the  case where
-the user asked, among others, to  produce $n$ units of type $U$. Thus,
-\ghost will  automatically add,  recursively, all dependencies  of $U$
-into the variable  set.  Suppose the unit type $U$  is produced by the
-building  of type  $B$, and  the  user eventually  asked for  $m <  n$
-buildings  of type  $B$.   After having  computed  an optimized  build
-order, the optimization post-processing  will retake this solution and
-try to  see if it can  shorten the makespan even  more by constructing
-more buildings  of type $B$,  to speed up  the production of  units of
-type   $U$.   This   post-processing  optimization   is  significantly
-efficient in cases the user ask for a high number $n$ of the same unit
-$U$, and none or a low number $m$ of $B$.
+Minimizing the BO makespan.  With  this objective function, we did not
+have implemented  a special  satisfaction post-processing, but  we did
+for the optimization post-processing. Imagine  the case where the user
+asked, among  others, to produce $n$  units of type $U$.  Thus, \ghost
+will automatically add, recursively, all  dependencies of $U$ into the
+variable set.  Suppose  the unit type $U$ is produced  by the building
+of type $B$,  and the user eventually  asked for $m <  n$ buildings of
+type $B$.   After having  computed an  optimized BO,  the optimization
+post-processing will  retake this solution  and try  to see if  it can
+shorten the makespan even more  by constructing more buildings of type
+$B$,  to  speed  up  the  production  of  units  of  type  $U$.   This
+post-processing optimization  is significantly efficient in  cases the
+user ask for a high number $n$ of the same unit $U$, and none or a low
+number $m$ of $B$.
 
 Unlike the target selection problem,  we needed this time to integrate
 a simulator inside  \ghost to emulate a game (without  combats) and be
-able to  compute the  makespan of build  orders. Thus,  this simulator
+able to  compute the  makespan of BOs. Thus,  this simulator
 must emulate resources gathering, units producing (including workers),
 supply capacity, constructions, etc.  Our simulator will always try to
 produce workers  until reaching saturation  (24 workers per  base), as
@@ -1136,7 +1140,7 @@ that  is, unable  to  produce a  unit because  we  reached the  supply
 capacity limit.
 
 In~\cite{ChurchillB11},  Churchill and  Buro  give  details about  the
-simulator they developed for their build order planner.  We first used
+simulator they developed for their BO planner.  We first used
 the same  settings, but  after matching  \ghost results  against build
 order from Korean pro-gamers, we realized that these settings were too
 advantageous for the simulator.  We then closely analyzed some replays
@@ -1171,7 +1175,7 @@ perfect.
 %--------------
 \begin{table*}[ht]
   \caption{Our simulator execution matched  against the pro-gamer Bisu
-    during the first two minutes.}
+    during the first two minutes}
   \label{tab:korean}
   \centering
   \begin{tabular}{|c|c|c|c|c|c|} 
@@ -1195,7 +1199,7 @@ perfect.
 \end{table*}
 % --------------
 \begin{table*}[ht]
-  \caption{Average  makespan  of Humans  and  \ghost  build orders  in
+  \caption{Average  makespan  of Humans  and  \ghost  BOs  in
     StarCraft unit time over 3647 games. Each calls  of \ghost
     lasts for 30ms}
   \label{tab:bo}
@@ -1248,12 +1252,11 @@ and those extracted from top Korean pro-gamers.
 
 In total, the first set is  composed of 3647 build orders: 768 Protoss
 versus  Protoss, 2043  Protoss versus  Terran and  836 Protoss  versus
-Zerg.   Replays  where  these  build  orders  occur  are  coming  from
-TeamLiquid, GosuGamers  and ICCup  web sites.  Table\ref{tab:bo} shows
-that \ghost outperforms by far human build orders, with a mean of 36.4
-StarCraft unit time of gain considering 10,000 frames build orders and
-31.39  StarCraft unit  time  of gain  considering  7,800 frames  build
-orders, all match-ups taken together.
+Zerg.   Replays where  these  BOs occur  are  coming from  TeamLiquid,
+GosuGamers and  ICCup web sites.  Table\ref{tab:bo}  shows that \ghost
+outperforms by far human BOs, with  a mean of 36.4 StarCraft unit time
+of gain considering 10,000 frames BOs and 31.39 StarCraft unit time of
+gain considering 7,800 frames BOs, all match-ups taken together.
 
 We have also  analyzed some few replays of games  played by top Korean
 pro-gamers,  \ie, Kim  "Bisu"  Taek  Yong, Doh  "BeSt"  Jae Wook,  Woo
@@ -1262,33 +1265,32 @@ Lee  "Flash" Young  Ho (Terran),  Lee  "Jaedong" Jae  Dong (Zerg),  Ma
 "sAviOr" Jae Yoon (Zerg) and we  match their build orders with \ghost.
 Since we had to manually select those replays, we have only downloaded
 6 of them (2 for each  match-up including a Protoss player), giving us
-a set of 8 build orders to give to \ghost.
+a set of 8 BOs to give to \ghost.
 
 Results against  these pro-gamers are shown  at the very last  line of
-Table~\ref{tab:bo}.  One  can see  that \ghost clearly  obtains better
-build order than  Protoss Korean pro-gamers listed above,  with a gain
-of 45.38 StarCraft unit time for  10,000 frames build orders and 24.88
-StarCraft unit  time for 7,800 frames  build orders. We have  to lower
-the  first  result by  stressing  that  pro-gamers are  often  already
-engaged  in  a   fight  before  10,000  frames   and/or  are  applying
-ouside-the-book  strategies,  and  thus  minimizing  the  build  order
-makespan may not be their first  priority anymore. To a lesser extent,
-this is also true with 7,800 frames build orders.
+Table~\ref{tab:bo}.  One can see that \ghost clearly obtains better BO
+than  Protoss Korean  pro-gamers listed  above, with  a gain  of 45.38
+StarCraft unit  time for  10,000 frames BOs  and 24.88  StarCraft unit
+time  for 7,800  frames BOs.  We  have to  lower the  first result  by
+stressing that pro-gamers are often  already engaged in a fight before
+10,000 frames and/or are applying ouside-the-book strategies, and thus
+minimizing the BO makespan may not be their first priority anymore. To
+a lesser extent, this is also true with 7,800 frames BOs.
 
 Computation time is  only 20ms for satisfaction runs and  30ms for the
 (global) optimization run. This means that \ghost can compute a highly
-optimized build order  within only one StarCraft frame  at the fastest
+optimized BO  within only one StarCraft frame  at the fastest
 speed. In~\cite{ChurchillB11},  Churchill and Buro's branch  and bound
-method  is computing  90\%  of the  time build  orders  with the  same
+method  is computing  90\%  of the  time BOs  with the  same
 makespan as pro-gamers in about 3.735 seconds (for build orders with a
 makespan  up to  249s), giving  thus a  CPU time  / makespan  ratio of
-1.5\%. Considering \ghost is computing  in average build orders with a
+1.5\%. Considering \ghost is computing  in average BOs with a
 makespan of  619.62 StarCraft  unit time within  30ms. In  the fastest
 mode, 619.62 StarCraft unit time corresponds to about 423s; leading to
 a CPU time / makespan ratio of 0.007\%.
 
 Why planning a build order is easier  than wall-in? A huge part of the
-answer is  that planning  a build order  can be modeled  in \csp  by a
+answer is  that planning  a BO can be modeled  in \csp  by a
 permutation  problem,  which  drastically decrease  the  combinatorial
 complexity of the problem. Also,  the satisfaction part for the target
 selection and the  build order problems are not  difficult to compute,
@@ -1310,9 +1312,245 @@ army.
 % done  through a  general way  by coupling  \ghost with  BWAPI 4,  like
 % discussed in the next section.
 
-\section{Matching state-of-the-art constraint solvers}
+\section{Matching state-of-the-art constraint solvers}\label{sec:SOTA}
 
-plop
+One  of \ghost  main goals  is  to provide  a user-friendly,  flexible
+interface   to  make   easier  combinatorial   problem  modeling   for
+non-specialists, and to use \ghost inner solver as a blackbox to solve
+these models. A previous study has  shown \ghost to be both robust and
+flexible~\cite{aiide15_rts},  robust in  the sense  that \ghost  inner
+solver shows good  behavior to solve problems it is  not designed for,
+and flexible since proposing different models to the same problem only
+requires shallow modifications.
+
+\subsection{State-of-the-art constraint solvers}
+
+In this section, we compare  \ghost inner solver performances with the
+state-of-the-art  constraint solvers,  namely {\it  Opturion CPX}  and
+{\it Gecode}.  We chose these  two solvers  for two reasons:  1. Both
+are able to parse MiniZinc code, a common language to model constraint
+optimization problems. Therefore, we only need to model a problem once
+and  give   this  model   to  different   solvers  to   measure  their
+performances.   2.   Opturion   CPX   and  Gecode   are   well   known
+state-of-the-art  solvers,   participation  to  the   annual  MiniZinc
+Challenges.   Gecode won  all gold  medals in  all categories  (fixed,
+free and parallel) at the
+MiniZinc Challenges from  2008 to 2012.  Starting  from 2013, MiniZinc
+Challenges are composed of four  categories: fixed, free, parallel and
+open\footnote{See
+  \href{http://www.minizinc.org/challenge.html}{www.minizinc.org/challenge.html}
+  for further details}. Opturion CPX won two gold
+medals (fixed  and free  categories) and  two bronze  medals (parallel
+and open categories)  in 2013, the four silver medals  in 2014 and two
+gold  medals (fixed  and free),  one silver  medal (parallel)  and one
+bronze  medal  (open) in  2015.  Therefore,  Gecode was  the  dominant
+constraint solver until  2012, and from 2013 Opturion  CPX becomes and
+remains the current leading solver.
+
+However, these  two solvers implements  a complete algorithm,  \ie, an
+algorithm exploring  the whole  search space to  find (and  prove) the
+optimal  solution.   \ghost inner  solver  implements  a local  search
+meta-heuristics, \ie, an  incomplete algorithm. It is  unable to proof
+the optimality  of a  solution, but in  practice these  algorithms are
+very efficient to quickly find an optimal or near-optimal solution. To
+match \ghost inner solver to an other local search meta-heuristics, we
+run experiments  with {\it  Oscar/CBLS} MinZinc interface.   We chose
+this solver  again for two  reasons: 1. It is  one of the  rare solver
+program  implementing   a  meta-heuristics  able  to   parse  MiniZinc
+code. Other frameworks such as  ORtools or EasySolver++ can also parse
+MiniZinc code,  but are frameworks like  \ghost, that is, they  do not
+provide  any   executables,  but  libraries  to   implement  your  own
+executable upon their solver.  Learning how to use these libraries and
+implementing  a complete  program  to match  performances with  \ghost
+would have been  too time consuming.  2.  Oscar/CBLS is  a very recent
+solver (last release from late  2015), and the only local search-based
+algorithm     listed     on      the     MiniZinc     software     web
+page\footnote{\href{http://www.minizinc.org/software.html}{www.minizinc.org/software.html}}.
+
+Rather than  matching \ghost results with  state-of-the-art solvers on
+the  three  problems  presented  above, we  chose  to  compare  these
+algorithms on  a resources allocation  problem. The reason  is simple:
+the target selection  and build order problems require  a simulator to
+recreate  the game  environment, which  is both  complicated and  time
+consuming  for solvers  we  don't  know so  well,  even  for a  simple
+simulator like the one used  for target selection. The wall-in problem
+is actually quite tricky to model through MiniZinc, with a lot of data
+related to the  model variables (size of buildings, pixel  gap size on
+each side,  etc).  Performances  depend a  lot on  the quality  of the
+MiniZinc model, where a good use of global constraints is critical. We
+are  not expert  enough both  in  MiniZinc and  global constraints  to
+assure to provide  an efficient model for the wall-in  problem.  A not
+well optimized  model would have  been a great disadvantage  for other
+solvers.   The MiniZinc  model  we use  for  the resources  allocation
+problem  is a  slight  modification  of the  one  provide by  MiniZinc
+authors\footnote{\href{http://www.minizinc.org/downloads/tutorial-examples-latest/all-MiniZinc-tutorial-examples.tar.gz}{www.minizinc.org/downloads/tutorial-examples-latest/all-MiniZinc-tutorial-examples.tar.gz}},
+therefore we are sure to have a well optimized model for this problem.
+
+\subsection{Benchmark and experiments}
+
+Our   resources   allocation   problem   is  the   same   as   studied
+in~\cite{aiide15_rts}: given  an amount  of minerals, gas  and supply,
+what units  should we train to  maximize the global damage  per second
+(DPS) on  ground units,  without taking  into account  splash damages.
+This is actually an instance of the multi-dimensional knapsack problem
+with three  dimensions (one per  resource type). The  regular knapsack
+problem  is well-known  to be  NP-complete, and  its multi-dimensional
+version is even harder: unlike the original knapsack problem, there is
+no efficient  polynomial-time approximation  scheme starting  from two
+dimensions (unless P=NP)~\cite{KulikS10}.
+
+To  compare solvers  on  significant problem  instances,  we chose  to
+optimize ground DPS for Zerg,  Protoss and Terran factions with 20,000
+mineral units, 14,000  gas units and 380 supply  units. Although these
+values are unrealistic within a  StarCraft game, they are large enough
+to challenge constraint solvers. Indeed, it is harder to match solvers
+if all of them return a solution within a couple of milliseconds.
+
+Results matching \ghost inner solver  with Opturion CPX and Gecode are
+compiled  in  Table~\ref{tab:SOTA}\footnote{All  experiment results can     be     found     at
+  \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/other\_solvers/resource}{github.com/richoux/GHOST\_paper/tree/master/xp/other\_solvers/resource}
+  and \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/resource}{github.com/richoux/GHOST\_paper/tree/master/xp/resource}}.
+Since Opturion CPX and Gecode
+implement complete,  deterministic algorithms,  running them  once one
+each  problem instance  is  sufficient:  runs on  the  same input  are
+identical regarding solution quality and  runtimes. For \ghost, we set
+the runtime  to the  lowest time (empirically  found) where  more than
+50\% of solutions  are the optimal solution.  We let  Opturion CPX and
+Gecode solvers 6 hours for each problem instance to output a solution.
+
+% --------------
+\begin{table*}[ht]
+  \caption{Matching 100  runs of \ghost  with Opturion CPX  and Gecode
+    solvers on the resources allocation problem} 
+    \label{tab:SOTA}
+    \centering
+    \begin{tabular}{|l|c|c|c|c|c|c|}
+      \cline{2-7}
+      \multicolumn{1}{c|}{} &  {\em Optimal  DPS}& {\em \%  of optimal
+        solution found} 
+      & {\em Mean DPS found by \ghost}& {\em \ghost runtime}
+      & {\em Opturion CPX runtime}& {\em Gecode runtime} \\
+      \hline
+      {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80ms & 200ms & 99.58s\\
+      {\em Protoss} & 4,916.38 & 54\% & 4,907.70 & 1.30s & 1.62s & - \\ 
+      {\em Terran} & 6,632.73 & 53\% & 6,619.30 & 130ms & 3h19min & - \\ 
+      \hline
+    \end{tabular}  
+\end{table*}
+%--------------
+
+Results matching \ghost  inner solver with Oscar/CBLS can  be found in
+Table~\ref{tab:oscar}. Notice that  Oscar/CBLS implements a stochastic
+algorithm,  so  like  for  \ghost   we  need  to  run  multiple  times
+experiments on the same problem instance to compute a fair mean of the
+runtime and  the solution quality.  The  Oscar/CBLS MiniZinc interface
+did not let us to set any  timeout, and then prevent us from writing a
+script to  automatically run  and collect  results. We  ran Oscar/CBLS
+manually  on each  problem  instance, killed  each  process after  one
+minute then collected for each run the runtime when it hit its highest
+DPS. This is the reason why we only collect 10 Oscar/CBLS runs on each
+problem instance, against 100 runs for \ghost.
+
+% --------------
+\begin{table*}[ht]
+  \caption{Matching 100 runs of \ghost with 10 runs of Oscar/CBLS on the resources allocation problem} 
+    \label{tab:oscar}
+    \centering
+    \begin{tabular}{|l|c|c|c|c|c|c|c|}
+      \cline{2-8}
+      \multicolumn{1}{c|}{} & {\em Optimal DPS}& {\em \% opt. found} 
+      & {\em Mean DPS}& {\em Runtime}
+      & {\em Best Oscar/CBLS DPS}& {\em Mean Oscar/CBLS DPS}
+      & {\em Mean Oscar/CBLS runtimes} \\
+      \hline
+      {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80ms & 11,400 & 11,400 &
+      562.90ms\\
+      {\em Protoss}  & 4,916.38  & 54\%  & 4,907.70 &  1.30s &  4,480 &
+      3,445.21 & 1.20s\\ 
+      {\em Terran}  & 6,632.73 & 53\%  & 6,619.30 & 130ms  & 5767.55 &
+      3,035.73 & 1.39s \\ 
+      \hline
+    \end{tabular}  
+\end{table*}
+%--------------
+
+\subsection{Results analysis}
+
+Table~\ref{tab:SOTA} clearly shows that \ghost inner solver outperform
+the state-of-the-art constraint solvers Opturion CPX and Gecode on our
+resources allocation problem instances. Gecode was only able to output
+a  solution  for  the  Zerg  instance. For  both  Protoss  and  Terran
+instances, no  solutions were found  after 6 hours of  computation. On
+the Zerg instance, Gecode found the optimal solution in 99.58 seconds,
+where  \ghost found  59\%  of  the time  the  optimal  solution in  80
+milliseconds.  In  average, \ghost  find a DPS  of 11,387.7  where the
+optimal is 11,400. Thus, the average output quality from \ghost within
+80ms corresponds to 99.89\% the optimal solution quality. Opturion CPX
+find  the optimal  solution  in  200ms, \ie,  2.5  longer than  \ghost
+need to reach the optimal solution at least 50\% of the time.
+
+On the  Protoss instance, \ghost  found 54\%  of the time  the optimal
+solution  in 1.3  second, with  an average  DPS of  4,907.7 where  the
+optimal   is    4,916.38,   \ie,   99.82\%   the    optimal   solution
+quality.  Opturion  CPX  found  the optimal  solution  in  1.62s,  thus
+slightly more time  than \ghost need to reach the  optimal solution at
+least 50\% of the time.
+
+The  real difference  between \ghost  and Opturion  CPX occurs  on the
+Terran  instance. There,  \ghost found  53\% of  the time  the optimal
+solution in 130 milliseconds, with an average DPS of 6,619.3 where the
+optimal  is  6,632.73,  \ie,  99.80\% the  optimal  solution  quality.
+Opturion CPX found the optimal solution in 3 hours and 19 minutes!
+
+Runtimes obtained on these three instances can be explained as follow:
+in StarCraft, 6 different Zerg and Protoss units can hit ground units,
+where 9 Terran units can do  it (without taking into account buildings
+such  as  Sunken  Colony  or   Photon  Cannon).   This  difference  is
+sufficient to make the Terran instance search space considerably wider
+than the  two others: about  $1.57 \times 10^{20}$  configurations for
+the Terran  instance against  $1.55 \times  10^{13}$ and  $1.33 \times
+10^{12}$ respectively for the Zerg and Protoss instance.
+
+Although the Protoss instance has a smaller search space than the Zerg
+instance, all algorithms  need more time to find a  solution.  This is
+because Zerg  units' characteristics make  the Zergling unit  far more
+interesting to maximize  the ground DPS, having by far  the best DPS /
+cost ratio among  Zerg units.  Therefore the strategy  to maximize the
+Zerg ground DPS is trivial: just  train Zerglings as much as resources
+allow you to. This  is not the case with the  Protoss instance where a
+composition of different units (for our instance, a mix of Zealots and
+Dark Templars) is required to  reach the optimal solution. Notice that
+if \ghost  inner solver is  faster to find  a solution for  the Terran
+instance rather  than the  Protoss instance,  this is  because Terrans
+have also a trivial optimal strategy: just produce Firebats as much as
+you can. However  for complete solvers, the search  space remains huge
+to explore for proving the solution optimality.
+
+Table~\ref{tab:oscar} shows that \ghost  inner solver also outperforms
+the local search meta-heuristics implemented in Oscar/CBLS. Except for
+the Zerg instance, the best solution  found by Oscar/CBLS was very far
+from the optimal solution, and  find in average poor-quality solutions
+usually within  much longer  time than \ghost  to find  a near-optimal
+solution. It  requires about 562ms  to Oscar/CBLS to find  the optimal
+solution of  the Zerg  instance, while  \ghost find  the optimal  or a
+near-optimal solution within 80ms.  
+
+For the Protoss instance, \ghost needs 1.3s to find the optimal (DPS =
+4,916.38) or a near-optimal  solution; in average, Oscar/CBLS requires
+1.2s to find a solution with a  mean DPS of 3,445.21, that is, 70.08\%
+of the optimal solution quality (against 99.82\% for \ghost). The best
+solution found by Oscar/CBLS has a  DPS of 4,480 (91.12\% the optimal)
+while \ghost reaches 54\% of the time the optimal solution.
+
+Finally for  the Terran instance,  \ghost computes the optimal  (DPS =
+6,632.73) or  a near-optimal  solution within 130ms,  while Oscar/CBLS
+takes 1.39s in average to find a solution with a mean DPS of 3,035.73.
+This  represents  45.77\% of  the  optimal  solution quality,  against
+99.80\% for \ghost. The best solution found by Oscar/CBLS has a DPS of
+5,767.55 (86.96\%  the optimal) when  \ghost outputs 53\% of  the time
+the optimal solution.
+
+
 
 \section{Discussion and conclusion}\label{sec:conclusion}
 
