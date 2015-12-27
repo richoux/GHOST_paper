@@ -891,6 +891,19 @@ always  in \csp,  in~\cite{RichouxUO14}.   The work  published in  the
 latter has  been \ghost  foundation.  One  can see  \ghost has  a deep
 extension and generalization of the solver used in~\cite{RichouxUO14}.
 
+%--------------
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/all_constraints.png}
+  \caption{Constraint    are:    Overlap    (upper-left),    Buildable
+    (upper-right),   NoHoles   (bottom-left)  and   StartingTargetTile
+    (bottom-right).    Dark  grey   tiles  represent   unwalkable  and
+    unbuildable tiles.  Light grey  tiles are walkable but unbuildable
+    tiles}
+  \label{fig:wall_constraint}
+\end{figure}
+%--------------
+
 For \ghost, the  model of the wall-in problem is  identical to the one
 in~\cite{RichouxUO14}:
 %--------------
@@ -911,18 +924,7 @@ Figure~\ref{fig:wall_constraint}. They are defined as follows:
   constructed on a  given starting tile $s$, and one  building (it can
   be the same one) on a given target tile $t$.
 \end{itemize}
-%--------------
-\begin{figure}[htb]
-  \centering
-  \includegraphics[width=\columnwidth]{figs/all_constraints.png}
-  \caption{Constraint    are:    Overlap    (upper-left),    Buildable
-    (upper-right),   NoHoles   (bottom-left)  and   StartingTargetTile
-    (bottom-right).    Dark  grey   tiles  represent   unwalkable  and
-    unbuildable tiles.  Light grey  tiles are walkable but unbuildable
-    tiles}
-  \label{fig:wall_constraint}
-\end{figure}
-%--------------
+
 Actually,  Overlap, Buildable  and NoHoles  are sufficient  to make  a
 wall. We added the constraint StartingTargetTile to help the solver to
 find how to surround the chokepoint.
@@ -1011,15 +1013,6 @@ percentage  of problems  solved goes  from 95-96\%  to 97-98\%,  walls
 decided with  the Building objective  were composed of  2.65 buildings
 against 2.56  now, the number  of significant  gaps goes from  0.05 to
 0.03 and the technology level from 1.56 to 1.35 currently.
-
-Table~\ref{tab:map} shows the percentage of walls found in each of the
-seven  maps  from where  chokepoints  were  extracted.  These  numbers
-correspond  to  pure  satisfaction  runs,  since  they  do  not  defer
-significantly for optimization  runs. We can see that  \ghost has more
-difficulties to find a wall  for Fortress chokepoints. Actually, it is
-failing  from time  to  time on  the same  chokepoint,  where a  valid
-solution  can  only  be  achieved  by using  two  $3  \times  2$-sized
-buildings.
 % --------------
 \begin{table}[ht]
   \caption{Percentage of solutions found for each map} 
@@ -1040,6 +1033,33 @@ buildings.
     \end{tabular}  
 \end{table}
 % --------------
+Table~\ref{tab:map} shows the percentage of walls found in each of the
+seven  maps  from where  chokepoints  were  extracted.  These  numbers
+correspond  to  pure  satisfaction  runs,  since  they  do  not  defer
+significantly for optimization  runs. We can see that  \ghost has more
+difficulties to find a wall  for Fortress chokepoints. Actually, it is
+failing  from time  to  time on  the same  chokepoint,  where a  valid
+solution  can  only  be  achieved  by using  two  $3  \times  2$-sized
+buildings.
+
+
+{\color{blue}
+We also performed a comparison between \ghost and the state-of-the-art for the walling problem, in this case the work presented by Certicky~\cite{Certicky13}. First we limited the number of possible buildings to be considered in the wall as the same as Certicky (2 Barracks and 4 Supply Depots) and recorded the time to find a solution in two different cases: a small chokepoint (with of 65.29) and a big chokepoint (with of ). In Table~\ref{tab:wallComparison}\footnote{Comparison experiments can be found at \url{https://bitbucket.org/auriarte/bwta2/src}} we can see the average results of both solvers. The times include the computation needed for setting the solvers parameters, the time to solve the problem, and the time to parse the solution (remember that in the case of Certicky's solution we need to make an external call to Clingo solver). As we can see \ghost is at least 7.8 times faster than Clingo in our experiments.
+
+\begin{table}[ht]
+\centering
+\caption{Average time over 20 runs to find a solution}
+\label{tab:wallComparison}
+\begin{tabular}{|r|r|r|}
+\hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Chokepoint\\ with pixels\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}GHOST\\ Avg. time ms\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Clingo\\ Avg. time ms\end{tabular}} \\ \hline
+65.29                                                                                  & 46.8                                                                              & 362.8                                                                              \\ \hline
+285                                                                                    &                                                                                   &                                                                                    \\ \hline
+\end{tabular}
+\end{table}
+}
+
+
 \subsection{Future works}
 
 For the wall-in problem, we could add new objective functions to widen
@@ -1312,6 +1332,7 @@ army.
 % done  through a  general way  by coupling  \ghost with  BWAPI 4,  like
 % discussed in the next section.
 
+{\color{blue}
 \section{Matching state-of-the-art constraint solvers}\label{sec:SOTA}
 
 One  of \ghost  main goals  is  to provide  a user-friendly,  flexible
@@ -1549,7 +1570,7 @@ This  represents  45.77\% of  the  optimal  solution quality,  against
 99.80\% for \ghost. The best solution found by Oscar/CBLS has a DPS of
 5,767.55 (86.96\%  the optimal) when  \ghost outputs 53\% of  the time
 the optimal solution.
-
+}
 
 
 \section{Discussion and conclusion}\label{sec:conclusion}
