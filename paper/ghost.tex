@@ -162,15 +162,14 @@
 \maketitle
 
 \begin{abstract}
-  This paper  presents \ghost, a combinatorial  optimization framework
-  an RTS AI developer can use  to model and solve any problems encoded
-  by a constraint satisfaction/optimization problem.  We show a way to
-  model   three  very   different   RTS  problems   by  a   constraint
-  satisfaction/optimization  problem,  each  problem  belonging  to  a
-  specific level  of abstraction, and  test our solver on  them, using
-  StarCraft  as  a  testbed.   For  the  three  problems  (the  target
-  selection problem, the wall-ion problem and the build order planning
-  problem), \ghost shows  very good results computed  within some tens
+  This paper  presents \ghost, a combinatorial  optimization framework that
+  a Real-Time Strategy (RTS) AI developer can use  to model and solve any problem encoded
+  as a constraint satisfaction/optimization problem.  We show a way to
+  model   three  different  StarCraft (the RTS game used as a testbed)  problems  as a   constraint
+  satisfaction/optimization  problem, and  test our solver on  them.  Each  problem  belongs  to  a
+  specific level  of abstraction (the  target
+  selection as \emph{reactive control} problem, the wall-in as a \emph{tactics} problem and the build order planning
+  as a \emph{strategy} problem). In our experiments, \ghost shows  very good results computed  within some tens
   of milliseconds.
 \end{abstract}
 
@@ -194,22 +193,22 @@ Optimization, Combinatorics.
 \IEEEPARstart {O}{ne} can see games  as a simplification of the world:
 The playground  is smaller, rules  are easier and less  numerous, thus
 possibilities  are more  limited. However,  games are  rich enough  to
-propose complex, dynamic environments where it remains difficult for a
+propose complex and dynamic environments where it remains difficult for a
 computer  to make  predictions,  have a  global  understanding of  the
-current situation  and then take  a decision. This is  especially true
+current situation  and then make  a decision. This is  specially true
 when  information is  incomplete, forcing  the computer  to infer  the
 global state of the game from  pieces of information. This is the case
 with Real-Time Strategy  games (RTS), where a Clausewitz's  fog of war
 hides  the opponent's  moves.  Thus,  RTS games  are very  suitable to
-design  Artificial  Intelligence  techniques  that  could  be  applied
+design  Artificial  Intelligence (AI) techniques  that  could  be  applied
 afterward in other domains.
 
 Many AI techniques are used in RTS games. Without making an exhaustive
 list,  we  can  cite   reinforcement  learning,  case-base  reasoning,
-Bayesian programming, goal-driven autonomy,  potential fields, etc. We
+Bayesian programming, goal-driven autonomy,  potential fields, or influence maps. We
 recommend  the  reader to  look  at  surveys from  Onta{\~n}{\'o}n  et
 al.~\cite{OntanonSURCM13} and Robertson and Watson~\cite{RobertsonW14}
-to have a very complete overview of AI techniques in RTS games.
+to have a complete overview of AI techniques in RTS games.
 
 However,  there  are  few  works  in  RTS  game  AI  using  constraint
 programming    techniques,    in   particular    through    constraint
@@ -217,7 +216,7 @@ satisfaction/optimization problem  (\csp/\cop) models.   Among others,
 branch and bound algorithms have been  used to optimize build order in
 Churchill and Buro~\cite{ChurchillB11}.   Genetic algorithms have been
 used off-line to  optimize build order, with  multiple objectives, and
-have  been   analyzed  in   Kuchem  et  al.~\cite{KuchemPR13}   and  a
+have  been   analyzed  in   Kuchem  et  al.~\cite{KuchemPR13}.   And  a
 population-based   algorithm  has   been   used  for   multi-objective
 procedural    aesthetic   map    generation    in   Lara-Cabrera    et
 al.~\cite{LaraCF14}.    Still,   \csp/\cop    offers   a   convenient,
@@ -225,14 +224,14 @@ homogeneous framework able to model a huge number of combinatorial and
 optimization problems,  and proposes  a various  set of  algorithms to
 solve them.
 
-\csp/\cop is widely used in  Artificial Intelligence to solve problems
+\csp/\cop is widely used in  AI to solve problems
 like  path-finding, scheduling,  and  logistics.  Unlike  mathematical
 programming, \csp/\cop  algorithms are  usually not designed  to solve
-one  specific problem  but are  general, able  to manage  any problems
+one  specific problem  but are  general, able  to manage  any problem
 modeled in that framework. Besides the generality, it is also easy and
 intuitive  to model  a problem  with a  \csp/\cop.  Altogether,  these
 bring  ideal  conditions  to   design  and  develop  a  user-friendly,
-easy-to-extend, general solver.
+easy-to-extend, general solvers.
 
 
 \subsection{RTS problem families}
@@ -259,62 +258,59 @@ abstraction. From  the higher to  the lower level, these  families are
 %--------------
 Problems from different families  usually involve different algorithms
 to solve them.  In  this paper, we will model one  problem for each of
-these three family,  and use our solver \ghost to  solve them, without
+these three families,  and use our solver \ghost to  solve them, without
 any modifications  of the  solver core. Only  problem models  will, of
 course, differ.
 
 \subsection{StarCraft: Brood War}
 
-StarCraft:  Brood War  is the  extension of  the game  StarCraft, both
+StarCraft:  Brood War  is the  expansion of  the game  StarCraft, both
 released in 1998  by Blizzard Entertainment.  It is an  RTS game where
-three very different  races (Terran, Protoss and Zerg)  can be played,
+three  different  races (Terran, Protoss and Zerg)  can be played,
 giving an  asymmetric but perfectly  well balanced strategy  game.  In
 this paper,  the term  ``StarCraft'' will actually  refer to  the game
-plus its extension StarCraft: Brood War.
+plus its expansion StarCraft: Brood War.
 
-A player  has to  gather two  kind of resources,  mineral and  gas, in
-order   to  construct   buildings  for   producing  units,   upgrading
-characteristics such as damage points or armor, unlocking technologies
-and special abilities. Producing units has also a cost, each unit type
-having their own characteristic (hit points, damage points, size, etc)
-and a price in consequence.
+A player  has to  gather two  types of resources (minerals and  gas) in
+order   to  construct   buildings. Those buildings are necessary to produce  units, to  upgrade
+properties such as damage points or armor, and to unlock technologies
+and special abilities. Producing units cost resources depend on their properties (hit points, damage points, or size).
 
-The game  is run on  a rectangular map,  discretized into two  kind of
-tiles: Walk  tiles, composed of  $8 \times  8$ pixels and  build tiles
-composed of $4  \times 4$ walk tiles, \ie, $32  \times 32$ pixels. The
-difference  between these  two kinds  of tiles  would be  explained in
+The game  is played on  a rectangular map,  discretized into two  types of
+tiles: \emph{walkable}  tiles, composed of  $8 \times  8$ pixels and  \emph{buildable} tiles
+composed of $4  \times 4$ walkable tiles, \ie, $32  \times 32$ pixels. The
+difference  between these  two types  of tiles  would be  explained in
 Section~\ref{sec:wall},  while introducing  the wall-in  problem. Like
-every RTS games, the map is recovered by a fog of war, only dissipated
+every RTS game, the map is covered by a fog of war, only dissipated
 around our own units/buildings. This means that one cannot know at any
 time the full state of the game.   Also, the player has to deal with a
 supply capacity, limiting the number of  units he can have. The player
 can increase  it by constructing  the right building or  producing the
 right unit, according to the race.
 
-StarCraft has  been a world wide  success, and is still  the most sold
-RTS game of the history with 11 millions of copies distributed. It has
+StarCraft has  been a world wide  success, and it is still  the most sold
+RTS game of the history with nearly 10 millions of copies distributed\footnote{\url{http://www.msnbc.msn.com/id/18925251/}}. It has
 been  and  still is  particularly  popular  in  South Korea,  where  a
 StarCraft league has  been specially created for  the game, organizing
 televised  tournaments between  sponsored players  and teams.   Korean
 professional players, or pro-gamers, are  reputed to be among the best
 StarCraft pro-gamers in the world.
 
-Time's flow  in StarCraft is tricky:  The game has 7  speed modes from
+The flow of time in StarCraft is complex:  The game has 7  speed modes from
 ``slowest'' to ``fastest'' where ``normal'' corresponds to the regular
-time's flow  (one second is  one second)  and the 6  others disturbing
-it. This is why when we will  write about in-game time, all along this
-paper we will refer to the terms {\it StarCraft unit time} rather than
-second, to not make any confusions with proper seconds. In the fastest
-mode, one game  frame takes 42ms. In StarCraft AI  competitions, it is
-necessary  for bots  to not  make  computations longer  than 55ms  per
+ frame rate  (15 logic frames per  second). This is why when we will  write about in-game time, all along this
+paper, we will refer to the term \emph{StarCraft unit time} rather than
+seconds, to not make any confusions with proper seconds. In the fastest
+mode, one logical game  frame takes 42~ms. In StarCraft AI  competitions, it is
+necessary  for bots  to not  make  computations longer  than 55~ms  per
 frame, in which  case the bot automatically looses the  game after 200
-frames exceeding 55ms.
+frames exceeding 55~ms.
 
 \subsection{Goals and summary}
 
 The research  presented in this  paper is  an extension of  Richoux et
 al.~\cite{RichouxUO14}, where  the problem to  make a wall at  a given
-chokepoint  in StarCraft  has been  modeled  and solved  thanks to  an
+chokepoint (a narrow passage) in StarCraft  has been  modeled  and solved  thanks to  an
 ad-hoc algorithm.
 
 The goal of this paper is double:
@@ -333,12 +329,12 @@ kind  of algorithms  exists to  solve them.   Then, we  present \ghost
 architecture, what  user is aimed, how  to use it to  solve an already
 encoded  problem  and how  to  write  your  own problems  via  \ghost.
 Sections~\ref{sec:target},~\ref{sec:wall}     and~\ref{sec:bo}    give
-details about three  different problem, each from a  specific level of
-abstraction (from  the lower to  the higher: Reactive  Control, Tactic
-and Strategy), how  we modeled them into a \csp/\cop  and what results
-we obtained by applying  \ghost. Section~\ref{sec:SOTA} matches \ghost
+details about three  different problem, each one from a  specific level of
+abstraction (from  the lower to  the higher: Reactive  Control, Tactics
+and Strategy), how  we model them into a \csp/\cop  and what results
+we obtain by applying  \ghost. Section~\ref{sec:SOTA} matches \ghost
 with  state-of-the-art   constraint  solvers.   Finally,   this  paper
-concludes with future works.
+concludes with future work.
 
 \section{\ghost:   A  General   meta-Heuristic  Optimization   Solving
   Tool}\label{sec:ghost}
@@ -348,7 +344,7 @@ Constraint  Satisfaction Problems  (\csp) and  Constraint Optimization
 Problems  (\cop)   are  two  close  formalisms   intensively  used  in
 Artificial  Intelligence  to   solve  combinatorial  and  optimization
 problems. Constraint  Programming allows an intuitive  and uniform way
-to model  problems, as  well as different  general algorithms  able to
+to model  problems, as  well as different  general algorithms  are able to
 solve any problems modeled by a \csp or a \cop.
 
 The difference between a \csp and a \cop is simple:
@@ -390,7 +386,7 @@ Upon a \csp or a \cop, one can build a \csp formula or a \cop formula,
 respectively.   A \csp/\cop  formula is  a conjunction  of constraints
 from $C$,  each constraint taking their  variables from $V$. We  say a
 \csp/\cop formula  is satisfied  if there exists  an assignment  $q: V
-\rightarrow  D$   such  that  each   constraint  of  the   formula  is
+\rightarrow  D$   such  each   constraint  of  the   formula  is
 satisfied. Considering the  vector $v \in V^n$ of variables  used in a
 \csp/\cop formula, a vector $z \in D^n$ such that
 $\forall i \in \{1,n\}, z[i] = q(v[i])$ 
@@ -416,15 +412,15 @@ solve \csp/\cop problems:
 \end{itemize}
 %--------------
 
-For \ghost, we have chosen a  meta-heuristic algorithm to be the heart
-of   the   solver,   {\it   Adaptive   Search}   from   Codognet   and
-Diaz~\cite{Codognet01}. The reason we have chosen a meta-heuristics is
+\ghost uses a  meta-heuristic algorithm,   \emph{Adaptive   Search}   from   Codognet   and
+Diaz~\cite{Codognet01}, as the heart of   the   solver. 
+The reason we have chosen a meta-heuristics is
 simple: To solve combinatorial and optimization problems while playing
 a RTS  game, the  solver needs  to be  very fast  to find  a solution,
 within some tens  of milliseconds, which is  virtually impossible with
 tree-based search algorithms. The reason  we have chosen {\it Adaptive
-  Search} is  that, although it is  not a well-known algorithm,  it is
-one of the fastest meta-heuristics at  the moment, up to our knowledge
+  Search}, although it is  not a well-known algorithm, its because it is
+one of the fastest meta-heuristic algorithm at  the moment, up to our knowledge
 (see Caniou et al.~\cite{Caniou14}).
 
 In  the next  sections,  we  will see  that  looking  for the  optimal
@@ -432,7 +428,7 @@ solution is not always an  interesting strategy for RTS games. Indeed,
 it is sufficient to have a solution ``optimal enough'' in some tens of
 milliseconds   rather  than   spending  seconds   to  find   a  global
 optimum. Also, the reader has to keep in mind that meta-heuristics are
-stochastic methods, then  two runs on the same  problem instance leads
+stochastic methods, then  two runs on the same  problem instance can lead
 to  two different  solutions within  the  same runtime.   This is  why
 results  in  this  paper  are  the  average  of  10  to  100  repeated
 experiments,  regarding the  problem.  These  results with  \ghost are
@@ -443,13 +439,13 @@ the reader can find in the current literature.
 
 \ghost  is a  template  C++ solver\footnote{Source  code available  at
   \href{https://github.com/richoux/GHOST}{github.com/richoux/GHOST}},
-under  the  GNU  GPL  v3  licence,  designed  to  solve  any  kind  of
+under  the  GNU  GPL  v3  license,  designed  to  solve  any  kind  of
 RTS-related problems,  as soon as  they are modeled  into a \csp  or a
 \cop. Two different users are targeted:
 %--------------
 \begin{itemize}
 \item  The casual  user, who  only  wants to  use \ghost  to solve  an
-  already encoded problem,  like the three problems  presented in next
+  already encoded problem,  like the three problems  presented in the next
   sections.   This  user  only  needs to  instantiate  variables,  the
   domain,  constraints and  eventually  an objective  to describe  the
   instance of his problem, and  to call the function \texttt{solve} of
@@ -521,8 +517,8 @@ two temporal  parameters in \ghost. The  function \texttt{solve} takes
 two parameters: The first one,  mandatory, is the satisfaction timeout
 $x$ in  milliseconds.  It means  that, if after  $x$ ms, we  leave the
 satisfaction loop, certainly  without a valid solution  since the loop
-stops as soon  as it finds a solution. The  second parameter, optional
-this time, is the optimization timeout $y$, always in milliseconds. It
+stops as soon  as it finds a solution. The  second parameter, this time optional
+, is the optimization timeout $y$, always in milliseconds. It
 corresponds  also  to   the  total  runtime  of   \ghost,  modulo  the
 post-process  after  the optimization  loop  (which  is negligible  in
 practice and should  be about 100 times smaller than  $y$). If the $y$
@@ -546,14 +542,14 @@ this  way, since  it should  be more  efficient to  develop a  proper,
 ad-hoc MCTS program.
 
 There exists a third and last  parameters in the solver: The length of
-the tabu list.  Indeed, {\it Adaptive  Search} contains a tabu list of
+the taboo list.  Indeed, {\it Adaptive  Search} contains a taboo list of
 explored variables in order to not  revisit the same variable too soon
-during the search. The tabu parameter  is then a number expressing how
+during the search. The taboo parameter  is then a number expressing how
 long  the solver  has  to  wait before  being  allowed  to revisit  an
 explored variable. Actually, we  also have implement escape mechanisms
-to not make  this tabu list strict,  by allowing the solver  to draw a
-tabu   variable   if   there   are   really   no   other   interesting
-variables. \ghost's tabu list is thus more like a priority list.
+to not make  this taboo list strict,  by allowing the solver  to draw a
+taboo   variable   if   there   are   really   no   other   interesting
+variables. \ghost's taboo list is thus more like a priority list.
 
 During  our experiments,  we realized  that  the same  value for  this
 parameter was  leading to optimal  performances, when set  to $|V|-1$.
@@ -587,8 +583,8 @@ both easy to use and easy to extend by implementing new problems.
 In  the next  three sections,  we explain  how we  modeled a  reactive
 control  problem, a  tactic  problem  and a  strategy  problem with  a
 respective \csp/\cop, and what results we obtained by applying \ghost.
-We would like to stress that no modifications, no optimizations of the
-solver has been  done to manage these different problems:  The core of
+We would like to emphasize that no modifications, no optimizations of the
+solver has been  done to manage these different problems.  The core of
 the  solver, \ie,  everything  in the  \texttt{Solver} class,  remains
 unchanged.  Even  if post-processes  are defined differently  in their
 respective \texttt{Objective}  classes, the way they  are included and
@@ -617,22 +613,22 @@ called into the solver is rigorously the same.
 \section{Reactive control problem: The target selection}\label{sec:target}
 
 Reactive control problems have been fairly well studied for StarCraft,
-with  many different  techniques  applied: We  can  cite Synnaeve  and
+with  many different  techniques  applied. We  can  cite Synnaeve  and
 Bessi{\`e}re  proposing   in~\cite{SynnaeveB11-b}  a   Bayesian  model
-allowing units  to move in  group without  being in each  other's way,
-finding the right distance to attack, etc; Uriarte and Onta{\~n}{\'o}n
+allowing units  to move in  group without  being in each  other's way or
+finding the right distance to attack. Uriarte and Onta{\~n}{\'o}n
 in~\cite{UriarteO12}  using influence  maps  for  kiting, \ie,  moving
 backward while recharging then attacking  forward when one is ready to
-shoot,  and Churchill  et  al.  in~\cite{ChurchillSB12,  ChurchillB12}
+shoot.  And Churchill  et  al.  in~\cite{ChurchillSB12,  ChurchillB12}
 showing a heuristic search  method making combats outcome predictions.
 These two  last papers are also  among the rare ones  dealing with the
 target selection problem in StarCraft.
 
 \subsection{Problem statement and model}
 
-The target selection problem is  a classical reactive control problem:
-A  player has  to  cope with  it  several times  in  each fight.   Its
-satisfaction version  is very easy:  It consists of assigning  to each
+The target selection problem is  a classical reactive control problem that
+a  player has  to  cope with  it  several times  in  each fight.   Its
+satisfaction version  is very easy,  consists in assign  to each
 unit of a fighting group a reachable target, \ie, an enemy unit within
 our unit range.
 
@@ -701,12 +697,12 @@ different objective functions:
 %--------------
 Notice that these two objective are  more complex that looking for the
 maximal  damage  or  the  maximal   dead  enemies  each  unit  can  do
-independently: Imagine  a scenario where we  have two units U1  and U2
-and two enemies E1  and E2, such that U1 can  afflict 10 damage points
-to E1 and 9 to E2, U2 can afflict 8 damage points to E1, but E2 is out
-of  range,  and E1  has  5  hit points  (HP)  left.   The best  global
-assignment is U1 to  E2 and U2 to E1, even if U1  deals more damage to
-E1.
+independently. Imagine  a scenario where we  have two units $U_1$  and $U_2$
+and two enemies $E_1$  and $E_2$, such that $U_1$ can  afflict 10 damage points
+to $E_1$ and 9 to $E_2$, $U_2$ can afflict 8 damage points to $E_1$, but $E_2$ is out
+of  range,  and $E_1$  has  5  hit points  (HP)  left.   The best  global
+assignment is $U_1$ to  $E_2$ and $U_2$ to $E_1$, even if $U_1$  deals more damage to
+$E_1$.
 
 \subsection{\ghost implementation and results}
 
@@ -739,28 +735,28 @@ and combined  it with \ghost. It  was then faster to  develop an quick
 ad-hoc simulator (about 200 lines of C++ code).
 
 The simulator is here to emulate a  combat of two unit groups and thus
-needs  to  trigger cooldowns,  manage  each  unit HP,  apply  damages,
-compute Euclidian  distances between units. Ranges,  damage efficiency
+needs  to  trigger cooldowns,  manage  each  unit HP,  apply  damages and
+compute Euclidean  distances between units. Ranges,  damage efficiency
 and splash damages are directly managed by \ghost.  It is important to
-stress that, in this simulator, enemy units are randomly shooting at a
+emphasize that, in this simulator, enemy units are randomly shooting at a
 reachable target.
 
 Our simulator does not implement:
 %--------------
 \begin{itemize}
-\item Healing, repair, HP or shield regeneration,
-\item Terrain level (high/low ground),
+\item Healing, repair, HP or shield regeneration.
+\item Terrain level (high/low ground).
 \item Air shots (in StarCraft, there is always a small chance to miss
-  the target),
-\item Friendly fire,
+  the target).
+\item Friendly fire.
 \item Firebat's unique splash damage.
 \end{itemize}
 %--------------
 \begin{table*}[ht]
   \caption{Average  results over  100 simulations  for both  objective
     functions.%, with  the setup  shown in  Figure~\ref{fig:target}. The
-    The first table shows experiments where calls to \ghost lasts for 3ms,
-    and the second table calls lasting for 5ms}
+    The first table shows experiments where calls to \ghost lasts for 3~ms,
+    and the second table calls lasting for 5~ms}
   \label{tab:target}
   \centering
   \begin{tabular}{|c|l|c|c|c|c|c|c|} 
@@ -771,12 +767,12 @@ Our simulator does not implement:
     \multicolumn{1}{c|}{}& {\em Objective} &  Win \% & \# Draws & \#  \ghost living units &
     \ghost HP & \# Opponent living units & Opponent HP\\
     \hline
-    \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{3ms}}}&
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{3~ms}}}&
     {\em Max Damage} & 86.0 & 3 & 2.8 & 153.4 & 1.0 & 37.1\\
     & {\em Max Kill} & 80.0 & 2 & 3.0 & 163.2 & 1.1 & 62.8\\
     \hline
     \hline
-    \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{5ms}}}&
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{5~ms}}}&
     {\em Max Damage} & 91.0 & 1 & 2.8 & 149.6 & 1.1 & 58.7\\
     & {\em Max Kill} & 82.0 & 3 & 3.0 & 169.5 & 1.0 & 37.2\\
     \hline
@@ -791,11 +787,11 @@ number of \ghost's  living units at the end of  the simulation and the
 average of remaining HP for \ghost  living units when \ghost wins, and
 the same  averages when the  opponent wins. For these  experiments, we
 first fixed the $x$ satisfaction  timeout and $y$ optimization timeout
-parameters respectively  to 1ms and  3ms, and we  ran a new  series of
+parameters respectively  to 1~ms and  3~ms, and we  ran a new  series of
 experiments with parameters  $x=2$ and $y=5$.  In~\cite{ChurchillSB12,
   ChurchillB12}, Churchill et al. propose an Alpha-Beta search and run
-it  for 5ms.   This is  why  we have  chosen to  set the  optimization
-timeout to  3ms and 5ms to  compare our results with  the same timeout
+it  for 5~ms.   This is  why  we have  chosen to  set the  optimization
+timeout to  3~ms and 5~ms to  compare our results with  the same timeout
 and   with  a   shorter  one.    For  this   problem,  no   particular
 post-processing optimizations have been necessary.
 
@@ -815,9 +811,9 @@ Table~\ref{tab:target}\footnote{All target experiment  results and the
   simulator            can            be           found            at
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/target}{github.com/richoux/GHOST\_paper/tree/master/xp/target}}
 shows that the Max Damage objective  wins 91\% of the time against the
-mirror unit  group shooting  randomly if  we let 5ms  to \ghost  to do
-computations (and 86\% within 3ms).  The Max Kill objective seems less
-efficient with a  win rate of 82\% within 5ms,  (80\% within 3ms). One
+mirror unit  group shooting  randomly if  we let 5~ms  to \ghost  to do
+computations (and 86\% within 3~ms).  The Max Kill objective seems less
+efficient with a  win rate of 82\% within 5ms,  (80\% within 3~ms). One
 explanation is  that Max Kill  may not be a  heuristic as good  as Max
 Damage when enemy  units have their full HP.  It  would be interesting
 to cross these two objectives to see if it leads to better results.
@@ -828,7 +824,7 @@ are  tight,  with  just one  living  enemy  unit  at  the end  of  the
 combat. The average of total remaining  HP is also clearly in favor of
 \ghost.
 
-\subsection{Future works}
+\subsection{Future work}
 
 To go further,  we could implement additional  objective functions for
 the target  selection problem, like  minimizing damage waste,  \ie, to
@@ -839,7 +835,7 @@ mixing already encoded ones, by simply applying a priority heuristics,
 like ``maximize  killings first, and  consider maximizing damage  as a
 tiebreaker''.
 
-The current implementation only deal  with Terran ground units for the
+The current implementation only deals  with Terran ground units for the
 target selection problem.   Extending it to all  StarCraft units would
 be easy. Finally,  improving the current simulator  or using SparCraft
 would make our experiments sharper.
@@ -971,7 +967,7 @@ technology level required.
 \begin{table}[ht]
   \caption{Results  over 48  chokepoints  extracted  from 7  StarCraft
     maps. Results  are the  average of 100  runs for  each chokepoint.
-    Each calls of \ghost lasts for 150ms} 
+    Each calls of \ghost lasts for 150~ms} 
     \label{tab:wall}
     \centering
     \begin{tabular}{|l|c|c|c|}
@@ -987,15 +983,15 @@ technology level required.
 \end{table}
 %--------------
 Satisfaction runs in Table~\ref{tab:wall}  are \ghost runs without any
-objective functions  and with  a satisfaction  timeout of  160ms, like
+objective functions  and with  a satisfaction  timeout of  160~ms, like
 in~\cite{RichouxUO14}  with the  difference that  in Richoux  et al.'s
-paper, they  compiled 8 satisfaction runs  of 20ms each to  have great
+paper, they  compiled 8 satisfaction runs  of 20~ms each to  have great
 chances to find  a valid solution. We measure their  average number of
 buildings, significant  gaps and  technology level  in order  to match
 them  with   optimization  runs.   Always  following   the  experiment
 methodology  of~\cite{RichouxUO14},  optimization  runs  are  slightly
 defavored since there global timeout is 10ms shorter than satisfaction
-runs, with 150ms. For optimization  runs, $x$ and $y$ parameters where
+runs, with 150~ms. For optimization  runs, $x$ and $y$ parameters where
 fixed   to    20   and   150,    respectively.    We   can    see   in
 Table~\ref{tab:wall}\footnote{All wall-in data  and experiment results
   can                   be                  found                   at
@@ -1044,23 +1040,23 @@ buildings.
 
 
 {\color{blue}
-We also performed a comparison between \ghost and the state-of-the-art for the walling problem, in this case the work presented by Certicky~\cite{Certicky13}. First we limited the number of possible buildings to be considered in the wall as the same as Certicky (2 Barracks and 4 Supply Depots) and recorded the time to find a solution in two different cases: a small chokepoint (with of 65.29) and a big chokepoint (with of ). In Table~\ref{tab:wallComparison}\footnote{Comparison experiments can be found at \url{https://bitbucket.org/auriarte/bwta2/src}} we can see the average results of both solvers. The times include the computation needed for setting the solvers parameters, the time to solve the problem, and the time to parse the solution (remember that in the case of Certicky's solution we need to make an external call to Clingo solver). As we can see \ghost is at least 7.8 times faster than Clingo in our experiments.
+We also performed a comparison between \ghost and the state-of-the-art for the walling problem, in this case the work presented by Certicky~\cite{Certicky13}. First we limited the number of possible buildings to be considered in the wall as the same as Certicky's work (2 Barracks and 4 Supply Depots) and recorded the time to find a solution in two different cases: a small chokepoint (width of 65 pixels) and a big chokepoint (width of ). In Table~\ref{tab:wallComparison}\footnote{Comparison experiments can be found at \url{https://bitbucket.org/auriarte/bwta2/src}} we can see the average results of both solvers. The times include the computation needed for setting the solvers parameters, the time to solve the problem, and the time to parse the solution (remember that in the case of Certicky's solution we need to make an external call to Clingo solver). As we can see \ghost is at least 7.8 times faster than Clingo in our experiments.
 
 \begin{table}[ht]
 \centering
 \caption{Average time over 20 runs to find a solution}
 \label{tab:wallComparison}
-\begin{tabular}{|r|r|r|}
+\begin{tabular}{|r|r|r|r|}
 \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Chokepoint\\ with pixels\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}GHOST\\ Avg. time ms\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Clingo\\ Avg. time ms\end{tabular}} \\ \hline
-65.29                                                                                  & 46.8                                                                              & 362.8                                                                              \\ \hline
-285                                                                                    &                                                                                   &                                                                                    \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Chokepoint\\ width (pixels)\end{tabular}} & \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Buildings\\ needed\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}GHOST\\ Avg. time (ms)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Clingo\\ Avg. time (ms)\end{tabular}} \\ \hline
+65     & 2                                                                             & 46.8                                                                              & 362.8                                                                              \\ \hline
+285    & 3                                                                                &                                                                                   &                                                                                    \\ \hline
 \end{tabular}
 \end{table}
 }
 
 
-\subsection{Future works}
+\subsection{Future work}
 
 For the wall-in problem, we could add new objective functions to widen
 possibilities. For  example, trying to  make a wall by  minimizing the
@@ -1072,7 +1068,7 @@ Most importantly, since  the required runtime to  correctly optimize a
 wall is  longer than  a StarCraft frame  duration, we  could implement
 \ghost in order  to support computation pauses  and resumes. Actually,
 \ghost architecture has been designed by keeping in mind this feature:
-The satisfaction  part is executed  in 20ms,  \ie, it can  be executed
+The satisfaction  part is executed  in 20~ms,  \ie, it can  be executed
 within one StarCraft frame in the fastest mode.  Marking a pause after
 each satisfaction loop  and resume \ghost at the next  frame until the
 computation ends would not be difficult  to do. This is more discussed
@@ -1087,7 +1083,7 @@ solutions.
 \section{Strategy problem: The build order}\label{sec:bo}
 
 The reader can find an  extensive literature about build order planner
-and/or   prediction  for   StarCraft:  Churchill   and  Buro   propose
+and/or   prediction  for   StarCraft.  Churchill   and  Buro   propose
 in~\cite{ChurchillB11} a build order planner  using a branch and bound
 technique, Kuchem  et al. analyze  build order tools for  StarCraft II
 in~\cite{KuchemPR13},  Cho  et  al.    present  in  ~\cite{ChoKC13}  a
@@ -1101,7 +1097,7 @@ timing, in order to  achieve a goal.  Such a goal  is a combination of
 buildings,  units, upgrades  and  researches  produced.  Usually,  the
 objective for a  player is to reach a fixed  goal the fastest possible
 way. However, alternatives  can also be considered,  like reaching the
-goal without sacrificing  the economy, or focussing first  on units in
+goal without sacrificing  the economy, or focusing first  on units in
 order to have an army quickly available.
 
 A  BO  planning can  be intuitively  modeled by  a \csp  as a
@@ -1293,11 +1289,11 @@ than  Protoss Korean  pro-gamers listed  above, with  a gain  of 45.38
 StarCraft unit  time for  10,000 frames BOs  and 24.88  StarCraft unit
 time  for 7,800  frames BOs.  We  have to  lower the  first result  by
 stressing that pro-gamers are often  already engaged in a fight before
-10,000 frames and/or are applying ouside-the-book strategies, and thus
+10,000 frames and/or are applying outside-the-book strategies, and thus
 minimizing the BO makespan may not be their first priority anymore. To
 a lesser extent, this is also true with 7,800 frames BOs.
 
-Computation time is  only 20ms for satisfaction runs and  30ms for the
+Computation time is  only 20~ms for satisfaction runs and  30~ms for the
 (global) optimization run. This means that \ghost can compute a highly
 optimized BO  within only one StarCraft frame  at the fastest
 speed. In~\cite{ChurchillB11},  Churchill and Buro's branch  and bound
@@ -1305,8 +1301,8 @@ method  is computing  90\%  of the  time BOs  with the  same
 makespan as pro-gamers in about 3.735 seconds (for build orders with a
 makespan  up to  249s), giving  thus a  CPU time  / makespan  ratio of
 1.5\%. Considering \ghost is computing  in average BOs with a
-makespan of  619.62 StarCraft  unit time within  30ms. In  the fastest
-mode, 619.62 StarCraft unit time corresponds to about 423s; leading to
+makespan of  619.62 StarCraft  unit time within  30~ms. In  the fastest
+mode, 619.62 StarCraft unit time corresponds to about 423~s; leading to
 a CPU time / makespan ratio of 0.007\%.
 
 Why planning a build order is easier  than wall-in? A huge part of the
@@ -1318,7 +1314,7 @@ since constraints  modeling these problems  are trivial.  This  is not
 the case for  the wall-in problem, where even  getting a non-optimized
 valid solution is hard.
 
-\subsection{Future works}
+\subsection{Future work}
 
 As  for  all other  problems,  we  could implement  another  objective
 function  for the  build  order  problem. For  instance,  it would  be
@@ -1452,9 +1448,9 @@ Gecode solvers 6 hours for each problem instance to output a solution.
       & {\em Mean DPS found by \ghost}& {\em \ghost runtime}
       & {\em Opturion CPX runtime}& {\em Gecode runtime} \\
       \hline
-      {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80ms & 200ms & 99.58s\\
-      {\em Protoss} & 4,916.38 & 54\% & 4,907.70 & 1.30s & 1.62s & - \\ 
-      {\em Terran} & 6,632.73 & 53\% & 6,619.30 & 130ms & 3h19min & - \\ 
+      {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80~ms & 200~ms & 99.58~s\\
+      {\em Protoss} & 4,916.38 & 54\% & 4,907.70 & 1.30~s & 1.62~s & - \\ 
+      {\em Terran} & 6,632.73 & 53\% & 6,619.30 & 130~ms & 3~h~19~min & - \\ 
       \hline
     \end{tabular}  
 \end{table*}
@@ -1484,12 +1480,12 @@ problem instance, against 100 runs for \ghost.
       & {\em Best Oscar/CBLS DPS}& {\em Mean Oscar/CBLS DPS}
       & {\em Mean Oscar/CBLS runtimes} \\
       \hline
-      {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80ms & 11,400 & 11,400 &
-      562.90ms\\
-      {\em Protoss}  & 4,916.38  & 54\%  & 4,907.70 &  1.30s &  4,480 &
-      3,445.21 & 1.20s\\ 
-      {\em Terran}  & 6,632.73 & 53\%  & 6,619.30 & 130ms  & 5767.55 &
-      3,035.73 & 1.39s \\ 
+      {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80~ms & 11,400 & 11,400 &
+      562.90~ms\\
+      {\em Protoss}  & 4,916.38  & 54\%  & 4,907.70 &  1.30~s &  4,480 &
+      3,445.21 & 1.20~s\\ 
+      {\em Terran}  & 6,632.73 & 53\%  & 6,619.30 & 130~ms  & 5767.55 &
+      3,035.73 & 1.39~s \\ 
       \hline
     \end{tabular}  
 \end{table*}
@@ -1506,20 +1502,20 @@ the Zerg instance, Gecode found the optimal solution in 99.58 seconds,
 where  \ghost found  59\%  of  the time  the  optimal  solution in  80
 milliseconds.  In  average, \ghost  find a DPS  of 11,387.7  where the
 optimal is 11,400. Thus, the average output quality from \ghost within
-80ms corresponds to 99.89\% the optimal solution quality. Opturion CPX
-find  the optimal  solution  in  200ms, \ie,  2.5  longer than  \ghost
+80~ms corresponds to 99.89\% the optimal solution quality. Opturion CPX
+find  the optimal  solution  in  200~ms, \ie,  2.5  longer than  \ghost
 need to reach the optimal solution at least 50\% of the time.
 
 On the  Protoss instance, \ghost  found 54\%  of the time  the optimal
-solution  in 1.3  second, with  an average  DPS of  4,907.7 where  the
+solution  in 1.3~s with  an average  DPS of  4,907.7 where  the
 optimal   is    4,916.38,   \ie,   99.82\%   the    optimal   solution
-quality.  Opturion  CPX  found  the optimal  solution  in  1.62s,  thus
+quality.  Opturion  CPX  found  the optimal  solution  in  1.62~s,  thus
 slightly more time  than \ghost need to reach the  optimal solution at
 least 50\% of the time.
 
 The  real difference  between \ghost  and Opturion  CPX occurs  on the
 Terran  instance. There,  \ghost found  53\% of  the time  the optimal
-solution in 130 milliseconds, with an average DPS of 6,619.3 where the
+solution in 130~ms, with an average DPS of 6,619.3 where the
 optimal  is  6,632.73,  \ie,  99.80\% the  optimal  solution  quality.
 Opturion CPX found the optimal solution in 3 hours and 19 minutes!
 
@@ -1552,20 +1548,20 @@ the local search meta-heuristics implemented in Oscar/CBLS. Except for
 the Zerg instance, the best solution  found by Oscar/CBLS was very far
 from the optimal solution, and  find in average poor-quality solutions
 usually within  much longer  time than \ghost  to find  a near-optimal
-solution. It  requires about 562ms  to Oscar/CBLS to find  the optimal
+solution. It  requires about 562~ms  to Oscar/CBLS to find  the optimal
 solution of  the Zerg  instance, while  \ghost find  the optimal  or a
-near-optimal solution within 80ms.  
+near-optimal solution within 80~ms.  
 
-For the Protoss instance, \ghost needs 1.3s to find the optimal (DPS =
+For the Protoss instance, \ghost needs 1.3~s to find the optimal (DPS =
 4,916.38) or a near-optimal  solution; in average, Oscar/CBLS requires
-1.2s to find a solution with a  mean DPS of 3,445.21, that is, 70.08\%
+1.2~s to find a solution with a  mean DPS of 3,445.21, that is, 70.08\%
 of the optimal solution quality (against 99.82\% for \ghost). The best
 solution found by Oscar/CBLS has a  DPS of 4,480 (91.12\% the optimal)
 while \ghost reaches 54\% of the time the optimal solution.
 
 Finally for  the Terran instance,  \ghost computes the optimal  (DPS =
-6,632.73) or  a near-optimal  solution within 130ms,  while Oscar/CBLS
-takes 1.39s in average to find a solution with a mean DPS of 3,035.73.
+6,632.73) or  a near-optimal  solution within 130~ms,  while Oscar/CBLS
+takes 1.39~s in average to find a solution with a mean DPS of 3,035.73.
 This  represents  45.77\% of  the  optimal  solution quality,  against
 99.80\% for \ghost. The best solution found by Oscar/CBLS has a DPS of
 5,767.55 (86.96\%  the optimal) when  \ghost outputs 53\% of  the time
@@ -1608,7 +1604,7 @@ other RTS games to make \ghost broadly available.
 Some  improvements we  have in  mind concern  the implementation  of a
 pause/resume system, allowing  \ghost to start a  long computation and
 hash it into small pieces fitting  within one frame (say, less than or
-equals  to 30ms  to let  some  time for  other computations).   \ghost
+equals  to 30~ms  to let  some  time for  other computations).   \ghost
 architecture has been designed to  make such an implementation easy to
 do,  in  particular  thanks  to the  decoupling  satisfaction  loop  -
 optimization  loop. Another  improvement would  be to  let the  solver
