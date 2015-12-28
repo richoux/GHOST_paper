@@ -1040,7 +1040,7 @@ buildings.
 
 
 {\color{blue}
-We also performed a comparison between \ghost and the state-of-the-art for the walling problem, in this case the work presented by Certicky~\cite{Certicky13}. First we limited the number of possible buildings to be considered in the wall as the same as Certicky's work (2 Barracks and 4 Supply Depots) and recorded the time to find a solution in two different cases: a small chokepoint (width of 65 pixels) and a big chokepoint (width of ). In Table~\ref{tab:wallComparison}\footnote{Comparison experiments can be found at \url{https://bitbucket.org/auriarte/bwta2/src}} we can see the average results of both solvers. The times include the computation needed for setting the solvers parameters, the time to solve the problem, and the time to parse the solution (remember that in the case of Certicky's solution we need to make an external call to Clingo solver). As we can see \ghost is at least 7.8 times faster than Clingo in our experiments.
+We also performed a comparison between \ghost and the state-of-the-art for the walling problem, in this case the work presented by Certicky~\cite{Certicky13}. First we limited the number of possible buildings to be considered in the wall as the same as Certicky's work (2 Barracks and 4 Supply Depots) and recorded the time to find a solution in two different cases: a small chokepoint (width of 65 pixels) and a big chokepoint (width of {\color{red} 285}). In Table~\ref{tab:wallComparison}\footnote{Comparison experiments can be found at \url{https://bitbucket.org/auriarte/bwta2/src}} we can see the average results of both solvers. The times include the computation needed for setting the solvers parameters, the time to solve the problem, and the time to parse the solution (remember that in the case of Certicky's solution we need to make an external call to Clingo solver). As we can see \ghost is at least 7.8 times faster than Clingo in our experiments.
 
 \begin{table}[ht]
 \centering
@@ -1048,7 +1048,7 @@ We also performed a comparison between \ghost and the state-of-the-art for the w
 \label{tab:wallComparison}
 \begin{tabular}{|r|r|r|r|}
 \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Chokepoint\\ width (pixels)\end{tabular}} & \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Buildings\\ needed\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}GHOST\\ Avg. time (ms)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Clingo\\ Avg. time (ms)\end{tabular}} \\ \hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Chokepoint\\ width (pixels)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Buildings\\ needed\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}GHOST\\ Avg. time (ms)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Clingo\\ Avg. time (ms)\end{tabular}} \\ \hline
 65     & 2                                                                             & 46.8                                                                              & 362.8                                                                              \\ \hline
 285    & 3                                                                                &                                                                                   &                                                                                    \\ \hline
 \end{tabular}
