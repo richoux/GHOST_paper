@@ -4,7 +4,7 @@ x RTS AIIDE workshop paper
 - Target selection not the same pb as Dave
 x solver -> framework
 x EasySolver++ -> EasyLocal++
-- Review 2 55ms
+x Review 2 55ms
 - "It would be interesting to see how the  CSP approach on  build order  execution can be  combined with opponent modelling  or other  key strategic elements  of RTS,  such as scouting"
 x minizinc model from minizinc authors
 x Oscar multicore

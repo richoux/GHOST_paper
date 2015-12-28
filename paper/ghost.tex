@@ -342,7 +342,9 @@ concludes with future work.
 \section{\ghost:   A  General   meta-Heuristic  Optimization   Solving
   Tool}\label{sec:ghost}
 
-\ghost is a combinatorial  optimization framework designed to tackle real-time problems, helping a programmer to model his/her problem and to solve it using the inner solver, without parameter tuning needed or advanced knowledge on constraint programming. RTS games contain many real-time combinatorial optimization problems that can be modeled and solved via a constraint programming framework. Before introducing models and results for several problems related to RTS games, we give in the next section the basis of combinatorial  optimization problems.
+\ghost is a combinatorial  optimization framework designed to tackle real-time problems, helping a programmer to model his/her problem and to solve it using the inner solver, without parameter tuning needed or advanced knowledge on constraint programming. RTS games contain many real-time combinatorial optimization problems that can be modeled and solved via a constraint programming framework. Moreover, a solver dealing with such problems much be very fast: in the game industry, only a few percent of CPU time is allocated for AI (usually no more than 10\%). This is true in particular for RTS games where AI is a capital part of the game but its real-time aspect and numerous agent interactions  leave some tenths of milliseconds only to solve a problem. Although some problems can be solved within a couple of frames, taking then hundreds of milliseconds of CPU time without any issue, this is not the case in general: problems like target selection or path-finding need a solution within one frame.  
+
+% Before introducing models and results for several problems related to RTS games, we give in the next section the basis of combinatorial  optimization problems.
 
 \subsection{A brief introduction to \csp / \cop}
 
@@ -1451,7 +1453,7 @@ Gecode solvers 6 hours for each problem instance to output a solution.
       \cline{2-7}
       \multicolumn{1}{c|}{} &  {\em Optimal  DPS}& {\em \%  of optimal
         solution found} 
-      & {\em Mean DPS found by \ghost}& {\em \ghost runtime}
+      & {\em Mean DPS via \ghost}& {\em \ghost runtime}
       & {\em Opturion CPX runtime}& {\em Gecode runtime} \\
       \hline
       {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80~ms & 200~ms & 99.58~s\\
