@@ -1,0 +1,52 @@
+20000 min, 14000 gas, 380 supply
+
+Zerg
+Optimal = 11400
+zergling = 760;
+hydralisk = 0;
+lurker = 0;
+ultralisk = 0;
+mutalisk = 0;
+guardian = 0;
+remaining mineral = 1000;
+remaining gas = 14000;
+remaining supply = 0;
+
+CPX: 11400 in 0.2s
+Gecode: 11400 in 99.58s
+
+=================
+Protoss
+Optimal = 4916.375
+zealot = 25;
+dragoon = 0;
+dark templar = 140;
+reaver = 0;
+scout = 0;
+archon = 0;
+remaining mineral = 0;
+remaining gas = 0;
+remaining supply = 50;
+
+CPX: 4916.375 in 1.62s
+Gecode: no result after more than 6h of computing
+
+=================
+Terran
+Optimal = 6632.73
+marine = 0;
+firebat = 380;
+ghost = 0;
+vulture = 0;
+tankmode = 0;
+siegemode = 0;
+goliath = 0;
+wraith = 0;
+battlecruiser = 0;
+remaining mineral = 1000;
+remaining gas = 4500;
+remaining supply = 0;
+
+CPX: 6632.73 in 3h19min
+Gecode: no result after more than 6h of computing
+
