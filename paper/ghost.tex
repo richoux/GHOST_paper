@@ -1566,6 +1566,8 @@ This  represents  45.77\% of  the  optimal  solution quality,  against
 99.80\% for \ghost. The best solution found by Oscar/CBLS has a DPS of
 5,767.55 (86.96\%  the optimal) when  \ghost outputs 53\% of  the time
 the optimal solution.
+
+We should also stress that Oscar/CBLS used many cores to compute a solution\footnote{Experiments have been conducted on an Intel i7 quad-core CPU, with 4GB of memory, under Ubuntu 14.04 64-bit.}, whereas \ghost inner solver remains sequential. Although this difference, results compiled in Table~\ref{tab:oscar} show \ghost outperform Oscar/CBLS both in term a quality outputs and runtimes.
 }
 
 
