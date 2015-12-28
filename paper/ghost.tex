@@ -162,15 +162,19 @@
 \maketitle
 
 \begin{abstract}
-  This paper  presents \ghost, a combinatorial  optimization framework that
-  a Real-Time Strategy (RTS) AI developer can use  to model and solve any problem encoded
-  as a constraint satisfaction/optimization problem.  We show a way to
-  model   three  different  StarCraft (the RTS game used as a testbed)  problems  as a   constraint
-  satisfaction/optimization  problem, and  test our framework on  them.  Each  problem  belongs  to  a
-  specific level  of abstraction (the  target
-  selection as \emph{reactive control} problem, the wall-in as a \emph{tactics} problem and the build order planning
-  as a \emph{strategy} problem). In our experiments, \ghost shows  very good results computed  within some tens
-  of milliseconds.
+  This paper presents \ghost, a combinatorial optimization framework
+  that a Real-Time Strategy (RTS) AI developer can use to model and
+  solve any problem encoded as a constraint satisfaction/optimization
+  problem.  We show a way to model three different StarCraft (the RTS
+  game used as a testbed) problems as a constraint
+  satisfaction/optimization problem, and test our framework on them.
+  Each problem belongs to a specific level of abstraction (the target
+  selection as \emph{reactive control} problem, the wall-in as a
+  \emph{tactics} problem and the build order planning as a
+  \emph{strategy} problem). In our experiments, \ghost shows very good
+  results computed within some tens of milliseconds. We also show
+  \ghost outperforms by far state-of-the-art constraint solvers,
+  matching them on the resources allocation problem, a very common combinatorial optimization problem.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -220,8 +224,7 @@ have  been   analyzed  in   Kuchem  et  al.~\cite{KuchemPR13}.   And  a
 population-based   algorithm  has   been   used  for   multi-objective
 procedural    aesthetic   map    generation    in   Lara-Cabrera    et
 al.~\cite{LaraCF14}.    Still,   \csp/\cop    offers   a   convenient,
-homogeneous framework able to model a huge number of combinatorial and
-optimization problems,  and proposes  a various  set of  algorithms to
+homogeneous framework able to model a huge number of combinatorial optimization problems,  and proposes  a various  set of  algorithms to
 solve them.
 
 \csp/\cop is widely used in  AI to solve problems
@@ -315,7 +318,7 @@ ad-hoc algorithm.
 
 The goal of this paper is double:
 \begin{itemize}
-\item  To present  to  the RTS  AI community  our  frameworl \ghost,  its
+\item  To present  to  the RTS  AI community  our  framework \ghost,  its
   architecture,  how  to model  different  problems  with it  and  the
   results we obtained.
 \item To show that constraint  programming can be successfully used in
@@ -338,11 +341,14 @@ concludes with future work.
 
 \section{\ghost:   A  General   meta-Heuristic  Optimization   Solving
   Tool}\label{sec:ghost}
+
+\ghost is a combinatorial  optimization framework designed to tackle real-time problems, helping a programmer to model his/her problem and to solve it using the inner solver, without parameter tuning needed or advanced knowledge on constraint programming. RTS games contain many real-time combinatorial optimization problems that can be modeled and solved via a constraint programming framework. Before introducing models and results for several problems related to RTS games, we give in the next section the basis of combinatorial  optimization problems.
+
 \subsection{A brief introduction to \csp / \cop}
 
 Constraint  Satisfaction Problems  (\csp) and  Constraint Optimization
 Problems  (\cop)   are  two  close  formalisms   intensively  used  in
-Artificial  Intelligence  to   solve  combinatorial  and  optimization
+Artificial  Intelligence  to   solve  combinatorial    optimization
 problems. Constraint  Programming allows an intuitive  and uniform way
 to model  problems, as  well as different  general algorithms  are able to
 solve any problems modeled by a \csp or a \cop.
@@ -415,7 +421,7 @@ solve \csp/\cop problems:
 \ghost uses a  meta-heuristic algorithm,   \emph{Adaptive   Search}   from   Codognet   and
 Diaz~\cite{Codognet01}, as the heart of   its   solver. 
 The reason we have chosen a meta-heuristics is
-simple: To solve combinatorial and optimization problems while playing
+simple: To solve combinatorial optimization problems while playing
 a RTS  game, the  solver needs  to be  very fast  to find  a solution,
 within some tens  of milliseconds, which is  virtually impossible with
 tree-based search algorithms. The reason  we have chosen {\it Adaptive
@@ -477,7 +483,7 @@ RTS-related problems,  as soon as  they are modeled  into a \csp  or a
 %--------------
 \begin{figure}[th]
   \centering
-  \includegraphics[width=\columnwidth]{figs/archi2.png}
+  \includegraphics[width=\columnwidth]{figs/archi3.png}
   \caption{\ghost architecture:  In red, the satisfaction  inner loop,
     running  for   $x$  milliseconds   top.   In   blue,  optimization
     mechanisms.    The    whole   process,    excluding   optimization
@@ -1593,15 +1599,15 @@ next frame.   One has to seriously  consider such a way  to manage and
 solve optimization problems in RTS  games; results shown in this paper
 proves it is absolutely viable.
 
-The  discerning reader  had noted  that \ghost  is actually  a general
-\csp/\cop  solver, and  can not  only solve  any RTS-related  problems
-modeled with this  formalisms but also any kind of  such problems from
-other  fields. One  of our  starting  point is  to make  \ghost a  C++
-library to be very easily included into StarCraft bots. This should be
-done in the  next few months by  using the BWAPI 4  library, giving us
-(almost) all informations we need on units, buildings, events, etc, in
-StarCraft for each race.  We could also use other libraries related to
-other RTS games to make \ghost broadly available.
+% The  discerning reader  had noted  that \ghost  is actually  a general
+% \csp/\cop  solver, and  can not  only solve  any RTS-related  problems
+% modeled with this  formalisms but also any kind of  such problems from
+% other  fields. One  of our  starting  point is  to make  \ghost a  C++
+% library to be very easily included into StarCraft bots. This should be
+% done in the  next few months by  using the BWAPI 4  library, giving us
+% (almost) all informations we need on units, buildings, events, etc, in
+% StarCraft for each race.  We could also use other libraries related to
+% other RTS games to make \ghost broadly available.
 
 Some  improvements we  have in  mind concern  the implementation  of a
 pause/resume system, allowing  \ghost to start a  long computation and
@@ -1627,8 +1633,7 @@ authors highly  encourage contributors  to propose  implementations of
 new problems to integrate into the library.
 
 Finally, this work leads us to take a global view on \csp/\cop, and to
-consider the  following: Even  if a huge  number of  combinatorial and
-optimization problems can be modeled with \csp/\cop, this framework is
+consider the  following: Even  if a huge  number of  combinatorial optimization problems can be modeled with \csp/\cop, this framework is
 not   well   adapted   to   deal  with   uncertainty   or   incomplete
 information. This  is penalizing for many  RTS-related problems, where
 most of interesting challenges come  from the fact that information is
