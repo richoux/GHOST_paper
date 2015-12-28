@@ -166,7 +166,7 @@
   a Real-Time Strategy (RTS) AI developer can use  to model and solve any problem encoded
   as a constraint satisfaction/optimization problem.  We show a way to
   model   three  different  StarCraft (the RTS game used as a testbed)  problems  as a   constraint
-  satisfaction/optimization  problem, and  test our solver on  them.  Each  problem  belongs  to  a
+  satisfaction/optimization  problem, and  test our framework on  them.  Each  problem  belongs  to  a
   specific level  of abstraction (the  target
   selection as \emph{reactive control} problem, the wall-in as a \emph{tactics} problem and the build order planning
   as a \emph{strategy} problem). In our experiments, \ghost shows  very good results computed  within some tens
@@ -258,8 +258,8 @@ abstraction. From  the higher to  the lower level, these  families are
 %--------------
 Problems from different families  usually involve different algorithms
 to solve them.  In  this paper, we will model one  problem for each of
-these three families,  and use our solver \ghost to  solve them, without
-any modifications  of the  solver core. Only  problem models  will, of
+these three families,  and use our framework \ghost to  solve them, without
+any modifications  of its inner  solver. Only  problem models  will, of
 course, differ.
 
 \subsection{StarCraft: Brood War}
@@ -315,7 +315,7 @@ ad-hoc algorithm.
 
 The goal of this paper is double:
 \begin{itemize}
-\item  To present  to  the RTS  AI community  our  solver \ghost,  its
+\item  To present  to  the RTS  AI community  our  frameworl \ghost,  its
   architecture,  how  to model  different  problems  with it  and  the
   results we obtained.
 \item To show that constraint  programming can be successfully used in
@@ -413,7 +413,7 @@ solve \csp/\cop problems:
 %--------------
 
 \ghost uses a  meta-heuristic algorithm,   \emph{Adaptive   Search}   from   Codognet   and
-Diaz~\cite{Codognet01}, as the heart of   the   solver. 
+Diaz~\cite{Codognet01}, as the heart of   its   solver. 
 The reason we have chosen a meta-heuristics is
 simple: To solve combinatorial and optimization problems while playing
 a RTS  game, the  solver needs  to be  very fast  to find  a solution,
@@ -437,7 +437,7 @@ the reader can find in the current literature.
 
 \subsection{\ghost architecture}
 
-\ghost  is a  template  C++ solver\footnote{Source  code available  at
+\ghost  is a  C++11 framework\footnote{Source  code available  at
   \href{https://github.com/richoux/GHOST}{github.com/richoux/GHOST}},
 under  the  GNU  GPL  v3  license,  designed  to  solve  any  kind  of
 RTS-related problems,  as soon as  they are modeled  into a \csp  or a
@@ -449,12 +449,12 @@ RTS-related problems,  as soon as  they are modeled  into a \csp  or a
   sections.   This  user  only  needs to  instantiate  variables,  the
   domain,  constraints and  eventually  an objective  to describe  the
   instance of his problem, and  to call the function \texttt{solve} of
-  the solver to run the search. This is done in 5 short C++ lines.
+  the inner solver to run the search. This is done in 5 short C++ lines.
 \item The developer user, who has  a specific problem not written with
   \ghost yet.  \ghost  has been designed to let  the implementation of
   new problems easy  without changing a single line in  the solver and
   the  existing  code,  and  without expertise  needed  in  Constraint
-  Programming.   Also, our  solver has  been designed  to have  as few
+  Programming.   Also, \ghost inner  solver has  been designed  to have  as few
   parameters  as   possible,  to  avoid  tedious   and  time-consuming
   parameters tuning before obtaining interesting results.
 \end{itemize}
@@ -569,15 +569,15 @@ the   domain   for  the   target   selection   problem  is   done   by
 Concerning objective  functions, \ghost has been  designed to minimize
 their  value.  If  a developer  user  needs to  maximize an  objective
 function $f$,  this can be  simply adapted  to \ghost by  defining the
-objective  function  $1/f$.   Our  solver is  designed  to  deal  with
+objective  function  $1/f$.   Our  framework is  designed  to  deal  with
 mono-objective optimization problem only, thus, one can only choose at
 most  one   objective  function  at   the  time  before   running  the
 \texttt{solve}  function,  however  the   objective  function  can  be
 dynamically changed between two calls of \texttt{solve}. The choice of
-designing  a  mono-objective   solver  is  pragmatic:  Multi-objective
+designing  a  mono-objective   framework  is  pragmatic:  Multi-objective
 solvers are in  general significantly slower, since  dealing with more
 complex problems.  Multi-objective solvers  are also more difficult to
-implement, which makes harder one goal  of \ghost: To propose a solver
+implement, which makes harder one goal  of \ghost: To propose a framework
 both easy to use and easy to extend by implementing new problems.
 
 In  the next  three sections,  we explain  how we  modeled a  reactive
@@ -830,7 +830,7 @@ To go further,  we could implement additional  objective functions for
 the target  selection problem, like  minimizing damage waste,  \ie, to
 try to  be as close  as 0  HP while killing  an enemy unit  instead of
 shooting a  5-HP target with 20  damage points for instance.   Even if
-\ghost is  a mono-objective solver,  we could craft new  objectives by
+\ghost is  a mono-objective framework,  we could craft new  objectives by
 mixing already encoded ones, by simply applying a priority heuristics,
 like ``maximize  killings first, and  consider maximizing damage  as a
 tiebreaker''.
@@ -1572,7 +1572,7 @@ the optimal solution.
 \section{Discussion and conclusion}\label{sec:conclusion}
 
 In  this paper,  we  introduced \ghost,  a combinatorial  optimization
-solver   to    solve   any   problems   encoded    by   a   constraint
+framework   to    solve   any   problems   encoded    by   a   constraint
 satisfaction/optimization problem.   We presented three  different RTS
 problems belonging to a specific  level of abstraction, and proposed a
 \csp/\cop model for each. Experiments  applying \ghost on these models
