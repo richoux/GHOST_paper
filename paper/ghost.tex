@@ -509,7 +509,7 @@ If a ``real'' objective function  is set, then the optimization part,
 in blue  in Figure~\ref{fig:archi}, is  triggered. Even more:  it will
 influence  the satisfaction  part (finding  a valid  solution) if  the
 objective  implements optional  heuristics to  select the  variable to
-change and the value to assign,  if the current configuration is not a
+change and the value to assign,  in case the current configuration is not a
 solution.
 
 The  optimization   part  also   applies  two   optional  post-process
@@ -839,7 +839,7 @@ tiebreaker''.
 
 The current implementation only deals  with Terran ground units for the
 target selection problem.   Extending it to all  StarCraft units would
-be easy. Finally,  improving the current simulator  or using SparCraft
+be easy. Finally,  improving the current simulator  or using SparCraft~\cite{churchill2013sparcraft}
 would make our experiments sharper.
 
 \section{Tactics problem: Wall-in}\label{sec:wall}
