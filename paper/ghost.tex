@@ -454,7 +454,7 @@ RTS-related problems,  as soon as  they are modeled  into a \csp  or a
 \item  The casual  user, who  only  wants to  use \ghost  to solve  an
   already encoded problem,  like the three problems  presented in the next
   sections.   This  user  only  needs to  instantiate  variables,  the
-  domain,  constraints and  eventually  an objective  to describe  the
+  domain,  constraints and possibly  an objective  to describe  the
   instance of his problem, and  to call the function \texttt{solve} of
   the inner solver to run the search. This is done in 5 short C++ lines.
 \item The developer user, who has  a specific problem not written with
@@ -505,7 +505,7 @@ In that case,  a default objective is applied,  doing nothing special,
 and the solver will output  a solution that satisfied all constraints,
 if it finds one.
 
-If an ``real'' objective function  is set, then the optimization part,
+If a ``real'' objective function  is set, then the optimization part,
 in blue  in Figure~\ref{fig:archi}, is  triggered. Even more:  it will
 influence  the satisfaction  part (finding  a valid  solution) if  the
 objective  implements optional  heuristics to  select the  variable to
@@ -697,7 +697,7 @@ different objective functions:
   units as possible within the current frame.
 \end{itemize}
 %--------------
-Notice that these two objective are  more complex than looking for the
+Notice that these two objectives are  more complex than looking for the
 maximal  damage  or  the  maximal   dead  enemies  each  unit  can  do
 independently. For example, imagine  a scenario where we  have two units $U_1$  and $U_2$
 and two enemies $E_1$  and $E_2$, such that $U_1$ can  afflict 10 damage points
@@ -783,7 +783,7 @@ Our simulator does not implement:
 %--------------
 We ran 100 simulations for both objective functions until one group is
 completely  annihilated,   calling  \ghost  at  each   StarCraft  unit
-time. Eventually,  the two groups can  kill each other, leading  to a
+time. Potentially,  the two groups can  kill each other, leading  to a
 draw. At the end of  the simulation we compute \ghost's  win rate, the average
 number of living units  and the
 average HP of those units. For these  experiments, we
@@ -1570,7 +1570,7 @@ This  represents  45.77\% of  the  optimal  solution quality,  against
 5,767.55 (86.96\%  the optimal) when  \ghost outputs 53\% of  the time
 the optimal solution.
 
-We should also emphasize that Oscar/CBLS uses many cores to compute a solution\footnote{Experiments have been conducted on an Intel i7 quad-core CPU, with 4GB of memory, under Ubuntu 14.04 64-bit.}, whereas \ghost inner solver remains sequential. Besides this difference, results compiled in Table~\ref{tab:oscar} show that \ghost outperforms Oscar/CBLS both in term a quality outputs and runtimes.
+We should also emphasize that Oscar/CBLS uses many cores to compute a solution\footnote{Experiments have been conducted on an Intel i7 quad-core CPU, with 4GB of memory, under Ubuntu 14.04 64-bit.}, whereas \ghost inner solver remains sequential. Besides this difference, results compiled in Table~\ref{tab:oscar} show that \ghost outperforms Oscar/CBLS both in term of quality outputs and runtimes.
 
 
 
@@ -1605,7 +1605,7 @@ next frame.   % One has to seriously  consider such a way  to manage and
 % StarCraft for each race.  We could also use other libraries related to
 % other RTS games to make \ghost broadly available.
 
-Some  improvements we  have in  mind concern to the implementation  of a
+Some  improvements we  have in  mind concern the implementation  of a
 pause/resume system, that will allow  \ghost to start a  long computation and
 to hash it into small pieces fitting  within one frame. % (say, less than or
 % equals  to 30~ms  to let  some  time for  other computations)
