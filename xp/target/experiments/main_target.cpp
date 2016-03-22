@@ -6,7 +6,6 @@
 #include <type_traits>
 #include <string>
 #include <limits>
-#include <cassert>
 
 #include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/variables/unit.hpp"
 #include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/domains/targetSelectionDomain.hpp"
@@ -137,7 +136,7 @@ int main(int argc, char **argv)
   int numUnits = vec.size();
   int numEnemy = enemies.size();
 
-  array<int, numUnits> aimedUnits;
+  vector<int> aimedUnits( numUnits, -1 );
 
   int deadUnits;
   int deadEnemy;
@@ -216,7 +215,7 @@ int main(int argc, char **argv)
 #ifndef NDEBUG
     cout << "@@@@ Enemy's turn @@@@" << endl;
 #endif
-    aimedUnits.fill(-1);
+    std::fill( aimedUnits.begin(), aimedUnits.end(), -1 );
 
     // choosing a target for each enemy unit
     for( int i = 0 ; i < enemies.size() ; ++i )
@@ -238,14 +237,12 @@ int main(int argc, char **argv)
       if( !enemies[i].isDead() )
       {
 	if( enemies[i].canShoot() )
-	{
-	  assert( aimedUnits[ i ] != -1 );
-	  totalDamagesEnemy += enemies[i].doDamageAgainst( aimedUnits[ i ], vec, i );
+	  if( aimedUnits[ i ] != -1 )
+	    totalDamagesEnemy += enemies[i].doDamageAgainst( aimedUnits[ i ], vec, i );
 #ifndef NDEBUG
 	  else
 	    cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;	    
 #endif
-	}
 	else
 	{
 #ifndef NDEBUG
@@ -257,7 +254,6 @@ int main(int argc, char **argv)
 	}
       }
     }
-    
 
     for( int i = 0 ; i < enemies.size() ; ++i )
       enemies[i].data.hp = copyEnemies[i].data.hp;
