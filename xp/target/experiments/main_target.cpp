@@ -29,19 +29,22 @@ vector<int> getLivingEnemiesInRange( const UnitEnemy &u, const vector<Unit> &vec
   return inRange;
 }
 
-int getLowestHPUnit( const vector<int> &inRange, const vector<Unit> &vec )
+int getLowestHPUnit( const vector<int> &inRange, const vector<Unit> &vec, Random &random )
 {
   double minHP = std::numeric_limits<double>::max();
-  int indexMinHP = -1;
+  vector<int> ties;
   
   for( int i = 0 ; i < inRange.size() ; ++i )
-    if( vec[i].getHP() < minHP )
+    if( vec[i].getHP() == minHP )
+      ties.push_back( i );
+    else if( vec[i].getHP() < minHP )
     {
-      indexMinHP = i;
+      ties.clear();
+      ties.push_back( i );
       minHP = vec[i].getHP();
     }
-  
-  return indexMinHP;
+
+  return random.getRandNum( ties.size() );
 }
 
 
@@ -125,7 +128,7 @@ int main(int argc, char **argv)
   vector< shared_ptr<TargetSelectionConstraint> > vecConstraints { make_shared<TargetSelectionConstraint>( &vec, &domain ) };
 
   // Define objective
-  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxDamage>();
+  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxKill>();
   
   Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints, objective );
   // Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints );
@@ -181,7 +184,7 @@ int main(int argc, char **argv)
 	else
 	{
 #ifndef NDEBUG
-	  cout << v.getFullName() << ":" << v.getId() << " HP=" << v.getHP() << ", wait=" << v.canShootIn() << endl;
+	  cout << v.getFullName() << ":" << v.getId() << " HP=" << v.getHP() << ", wait=" << v.canShootIn() << " (value="<< v.getValue() <<")" << endl;
 #endif
 	  if( !v.canShoot() )
 	    v.oneStep();
@@ -228,7 +231,7 @@ int main(int argc, char **argv)
 	  // aimedUnits[ i ] = inRange[ random.getRandNum( inRange.size() ) ];
 	  
 	  // LOW-HP SHOT
-	  aimedUnits[ i ] = inRange[ getLowestHPUnit( inRange, vec ) ];
+	  aimedUnits[ i ] = inRange[ getLowestHPUnit( inRange, vec, random ) ];
       }
 
     // print stuff AND decrement cooldown (yes, it's bad to do it within the same loop, but whatever) 

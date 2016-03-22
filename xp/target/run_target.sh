@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=max_damage
+FILE=max_kill
 MINUTE=$(date +%H_%M)
 
 for i in {1..100}
