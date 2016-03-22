@@ -1,0 +1,237 @@
+Associate Editor
+Comments to the Author:
+
+The  revised version  of the  paper resolves  most of  the issues  the
+reviewers  have raised,  and generally,  everybody is  happy with  the
+paper. There are some hints to modifications that would require new or
+revised experimentation, and a lot of comments that target at removing
+mistakes or rephrasing  text that is unclear (as e.g.  "A comment that
+remains to be addressed from the previous version" from reviewer 3). I
+recommend accepting the paper, even if some improvement would still be
+possible, without  large modifications. As  we have 12  pages already,
+there  is  no space  for  large  additions  anyway. However,  I  would
+strongly urge the  authors to apply all the  suggested textual changes
+when preparing the final version.
+
+Reviewer(s)' Comments to Author:
+
+Reviewer: 1
+
+Comments to the Author
+
+The paper presents a generic  CSP/COP solver framework for application
+in RTS  games, such as  researcher's favorite: StarCraft. The  link to
+existing work is  now well established and the  detailed comparison of
+the wall-in problem helped the paper  a lot. The evaluation shows good
+results  and  makes  the  paper an  interesting  contribution  to  the
+research community. I'm looking forward  to integrate GHOST into a bot
+myself :)
+
+Reviewer: 2
+
+Comments to the Author
+
+"Thus, RTS games  are very suitable to  design Artificial Intelligence
+(AI) techniques that  could be applied afterward in  other domains." -
+This  sentence  is  strangely  worded,  RTS games  do  not  design  AI
+techniques, rather they are a good domain for testing AI techniques. I
+would re-word this to make it more clear.
+
+3rd paragraph - I would argue that  'build orders' with an s should be
+used, but it's not of any consequence as the point is still clear.
+
+3rd paragraph - Sentence should not start with "And"
+
+"CSP/COP is  widely used  in AI to  solve problems  like path-finding,
+scheduling, and logistics" - citation?
+
+"a user-friendly, easy-to-extend, general  solvers." solver should not
+be pluralized, remove 's'
+
+"abstraction for the game comprehension" - remove 'the'
+
+"giving an asymmetric but perfectly  well balanced strategy game." - I
+wouldn't make  the claim that the  game is perfectly balanced  as it's
+not provable. please rephrase to be less concrete.
+
+"This means  that one cannot  know at any time  the full state  of the
+game." - one CAN know the full state  of the game, it just needs to be
+within their vision.
+
+"StarCraft has been"... I would move  this paragraph to the end of the
+first paragraph in the  section, as it is a bit  awkward to first talk
+about starcraft, then switch to the  rules of the game, then come back
+to starcraft's popularity again. Would make it flow better.
+
+"what user  is aimed"  - I  don't understand  what this  means, target
+audience maybe?
+
+"or advanced knowledge on" - on -> in
+
+"leave some tenths of milliseconds" - do you mean tens of milliseconds?
+
+"problems like target selection or path-finding need a solution within
+one frame." - one could argue that these problems don't NEED solutions
+in one frame  (since their actions have durations) but  that acting as
+soon as possible means the opponent does not get any advantage.
+
+"intensively used" - do you mean extensively used? I don't know how to
+measure intensity of algorithm usage ;)
+
+Fig 1:  Please add  to the  caption that  x and  y will  be parameters
+passed  into  the  solver,  as  the figure  appears  before  the  text
+explanation on the next page it is slightly confusing to the reader at
+this point
+
+"It would certainly possible" -> be possible
+
+Title of Section III: Remove the word "The" from "The Target Selection"
+
+"Although a  direct comparison is  impossible since the goal  of their
+work is to predict the winner of  the combat and our goal is to decide
+target selection" the  goal of Churchill et al was  not to predict the
+winner of  a combat situation  - it was the  same goal of  guiding the
+action selection. This included both movement AND target selection.
+
+Table II results: It seems like you're only comparing your method with
+Random target selection which in practice  is very very poor. In order
+to  test your  method you  should at  least try  some simple  scripted
+opponent targeting  selections such as  "Attack Lowest HP"  or "Attack
+Higherst   Threat'   which  can   be   easily   computed  in   a   few
+microseconds. "Better than random" is  not sufficient to call it state
+of the art with no other comparisons.  In fact, it seems a weak result
+that it is not 100% victorious over a random opponent.
+
+"A build order (BO) planning" - strange way to phrase it. Maybe say "A
+build order plan"?
+
+Section V results: It appears  that your results average approximately
+a 5% savings in make span over that of human players, while the method
+you compare against (churchill & buro) has approximately a 10% savings
+in makespan  time. However the  advantage of  your system is  that the
+running  time   is  far  quicker   (as  shown  by   your  CPU/makespan
+statistics). I  would make this  point a  little more clear  since the
+direct %  time savings comparison is  not made in your  results. Also,
+these results are quite impressive given the generality of the system.
+
+Also of note is that the usage of both 'Starcraft unit time' AND 'game
+frames'  is  a little  confusing.  Would  it  be possible  to  convert
+everything into Starcraft  Game Frames? This seems to  be the standard
+time unit for most papers using Starcraft as a metric. This would make
+comparisons easier and results a little more clear to the reader.
+
+Section VI: the problem statement  is to "optimize ground dps..." what
+does this exactly mean? Are you trying  to find the set of units which
+maximizes  the sum  of  their  total ground  dps  given the  resources
+listed? How  did you  come up  with the  listed amounts  of resources?
+These details need  to be listed as  it is not clear  exactly what the
+function it is you're trying to optimize.
+
+I  feel that  the  methods put  forth  in the  paper  overall makes  a
+significant contribution to the  field, however revisions are required
+to the paper from a technical / experimental viewpoint. The experiment
+in section III is  quite weak as it only compares  to a random player,
+and   the  experimental   details  in   section  VI   need  additional
+information. Also,  there are  a number  of grammatical  mistakes that
+should  be  fixed   before  accepting.  Overall  though   it  is  very
+interesting work and impressive results in sections IV and V given the
+generality of the system.
+
+Reviewer: 3
+
+Comments to the Author
+
+The authors consider CSP  formulations of three different sub-problems
+that  an  AI might  need  to  solve  while playing  StarCraft:  Target
+Selection, Wall-in,  and Build-Order  optimization. In order  to solve
+these  constraint problems,  they introduce  a new  constraint solver,
+GHOST,  and  show  that  it  can solve  such  constraints  within  the
+timeframe required for real-time usage.
+
+I am glad  to to see constraint solvers being  applied to real-time AI
+and planning problems. Existing work in  related areas that I am aware
+of is  largely limited to  offline planning  (eg, [1]), as  opposed to
+real-time planning. I  think this is a great  direction for constraint
+solvers;  and I  think that  RTS AI  is a  neat application  domain in
+general. I  find the application  of CSP to StarCraft  AI particularly
+compelling, for many of the reasons that the authors cite.
+
+When reviewing a previous version  of this paper, I expressed concerns
+about some  of the claims  made about the authors'  constraint solver,
+GHOST. The introduction  of this constraint solver is  a central claim
+of this  paper. Specifically, I  wanted to  know: How do  the problems
+that GHOST can solve efficiently  differ from the problems that other,
+existing  CSP  solvers can  handle,  and  how  does GHOST  compare  to
+existing state-of-the-art solvers when solving such instances?
+
+I feel  that the authors  have made substantial improvements  in these
+directions,  as  compared to  the  previous  version that  I  reviewed
+earlier,  in particular  by  including an  empirical  comparison to  a
+method for wall-in placement by Certicky[2] on page 7, as well as some
+compelling performance comparisons to existing solvers in Table 8, and
+a literature  review on page 9.  Taken together, these results  make a
+strong case for  the utility of the authors approach  in RTS games. In
+addition to providing evidence  of improved empirical performance over
+existing, comparable  solvers, I also  think this paper does  a strong
+job of presenting the case for using constraint solvers for RTS AI, in
+particular by showing  how the same solver can be  usefully applied to
+solve a diverse set of different AI tasks.
+
+A comment that remains to be addressed from the previous version:
+
+On  page  3, the  authors  write  that meta-heuristic  algorithms  (as
+opposed to complete,  tree-based methods) are the  only viable methods
+to manage industrial size problems  (in a reasonable time frame). This
+isn't the case. SAT and SMT solvers, such as Z3[3] and STP[4], as well
+as  the ASP  solver  Clasp/Clingo  discussed in  this  paper, are  all
+examples of  complete, tree-search constraint  solvers/optimizers that
+are regularly  applied in industry,  including to large  formulas with
+millions of constraints,  for example to formally  verify circuits and
+firmware (eg, at IBM, Intel),  and to statically verify device drivers
+at  Microsoft[5].   In  some  cases,  this   includes  time  sensitive
+application domains  (eg, test case generation  for software[6]). That
+said, these  applications aren't really  germane to the topic  of this
+paper.  Maybe what  the  authors meant  was  that complete  constraint
+solvers have not gained traction in the gaming industry? (I don't know
+if this is true, but it could be).
+
+Editorial Issues:
+
+In the  abstract, the authors  write "... use  to model and  solve any
+problem encoded as a constraint satisfaction/optimization problem."
+
+This is confusingly  phrased; eg, the halting problem  can be modelled
+as  a constraint  satisfaction  problem, but  cannot  be (in  general)
+solved  with GHOST.  I  would suggest  alternative  phrasing, such  as
+"...use  to  model   and  solve  constraint  satisfaction/optimization
+problems."
+
+Similarly, on page 3:
+
+"... designed  to solve any kind  of RTS-related problems, as  soon as
+they are  modelled into  a CSP  or a COP."  This is,  again, awkwardly
+phrased. Some  `RTS-related problems'  probably can  be modelled  as a
+CSP, and  yet would be impractical  to solve using GHOST  (but this is
+clearly  not  what  the  authors  intended  to  claim  here).  Perhaps
+"designed to  solve CSP/COP  instances arising from  realtime strategy
+games, fast enough to be applied to real games."
+
+The paper  could in general  benefit from  an editing pass;  there are
+lots of little grammatical/idiomatic issues, eg, on page 2,
+
+"StarCraft has  been a world  wide success, and  it is still  the most
+sold  RTS game  of  the  history with  nearly  10  millions of  copies
+distributed." -> "StarCraft  has been a world-wide success,  and it is
+still the most sold RTS game in history, with nearly 10 million copies
+distributed."
+
+(But  those are  all minor  issues, and  don't detract  from the  main
+strengths of the paper.)
+
+
+[1]: Havur, Giray, et al. "A case study on the Tower of Hanoi challenge: Representation, reasoning and execution." Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.
+[2]: Certicky, Michal. "Implementing a wall-in building placement in starcraft with declarative programming." arXiv preprint arXiv:1306.4460 (2013).
+[3]: De Moura, Leonardo, and Nikolaj Bjørner. "Z3: An efficient SMT solver." Tools and Algorithms for the Construction and Analysis of Systems. Springer Berlin Heidelberg, 2008. 337-340.
+[4]: Ganesh, Vijay, and David L. Dill. "A decision procedure for bit-vectors and arrays." Computer Aided Verification. Springer Berlin Heidelberg, 2007.
+[5]: Ball, Thomas, et al. "SLAM and Static Driver Verifier: Technology transfer of formal methods inside Microsoft." Integrated formal methods. Springer Berlin Heidelberg, 2004.
+[6]: Cadar, Cristian, Daniel Dunbar, and Dawson R. Engler. "KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs." OSDI. Vol. 8. 2008.
