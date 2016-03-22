@@ -57,7 +57,8 @@
   citecolor   = red %Colour of citations
 }
 
-\usepackage{amssymb}\newcommand{\todonote}[1]{\footnote{\color{red}TODO: #1}\marginpar[\color{red}\hfill$\blacktriangleright$]{\color{red}$\blacktriangleleft$\hfill}}
+\newcommand{\todonote}[1]{\footnote{\color{red}TODO: #1}\marginpar[\color{red}\hfill$\blacktriangleright$]{\color{red}$\blacktriangleleft$\hfill}}
+\newcommand{\minormod}[1]{\color{red} #1\color{black} \xspace}
 
 \newcommand{\csp}{\textsc{CSP}\xspace}
 \newcommand{\cop}{\textsc{COP}\xspace}
@@ -740,8 +741,7 @@ We use a custom simulator to emulate  combats of two group of units. The simulat
 cooldowns,  each  unit HP,  damages and
  Euclidean  distances between units. Ranges,  damage efficiency
 and splash damage are directly managed by \ghost.  It is important to
-emphasize that, in this simulator, enemy units are randomly shooting at a
-reachable target.
+emphasize that, in this simulator, \minormod{enemy units are applying a very simple target selection heuristics: they aim the unit with the lowest current HP / initial HP ratio, or in other words, the unit which is the most likely to die soon. If several units share the same lowest ratio, then enemy units select randomly one among them.}  
 
 Our simulator does not implement:
 %--------------
@@ -761,22 +761,22 @@ Our simulator does not implement:
     and the second table calls lasting for 5~ms}
   \label{tab:target}
   \centering
-  \begin{tabular}{|c|l|c|c|c|c|c|c|} 
-    \cline{5-8}
-    \multicolumn{4}{c|}{}  &   \multicolumn{2}{c|}{\ghost  victory}  &
+  \begin{tabular}{|c|l|c|c|c|c|c|c|c|} 
+    \cline{6-9}
+    \multicolumn{5}{c|}{}  &   \multicolumn{2}{c|}{\ghost  victory}  &
     \multicolumn{2}{c|}{Opponent victory}\\ 
-    \cline{2-8}
-    \multicolumn{1}{c|}{}& {\em Objective} &  Win \% & \# Draws & \#  Avg. living units &
+    \cline{2-9}
+    \multicolumn{1}{c|}{}& {\em Objective} & Wins & Draws & Looses & \# Avg. living units &
     Avg. HP & \# Avg. living units & Avg. HP\\
     \hline
     \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{3~ms}}}&
-    {\em Max Damage} & 86.0 & 3 & 2.8 & 153.4 & 1.0 & 37.1\\
-    & {\em Max Kill} & 80.0 & 2 & 3.0 & 163.2 & 1.1 & 62.8\\
+    {\em Max Damage} & 98 & 1 & 1 & 2.8 & 237.9 & 1.0 & 12.0\\
+    & {\em Max Kill} & 94 & 5 & 1 & 3.0 & 250.8 & 1.0 & 3.0\\
     \hline
     \hline
     \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{5~ms}}}&
-    {\em Max Damage} & 91.0 & 1 & 2.8 & 149.6 & 1.1 & 58.7\\
-    & {\em Max Kill} & 82.0 & 3 & 3.0 & 169.5 & 1.0 & 37.2\\
+    {\em Max Damage} & 99 & 1 & 0 & 2.6 & 231.9 & 0.0 & 0.0\\
+    & {\em Max Kill} & 96 & 4 & 0 & 2.6 & 233.6 & 0.0 & 0.0\\
     \hline
   \end{tabular}
 \end{table*}
@@ -809,22 +809,23 @@ post-processing optimization.
 % enemy shooting  randomly, and  the built-in AI  is applying  a smarter
 % heuristic.
 
-Table~\ref{tab:target}\footnote{All target experiment  results and the
-  simulator            can            be           found            at
+Table~\ref{tab:target}\footnote{All target experiment results and the
+  simulator can be found at
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/target}{github.com/richoux/GHOST\_paper/tree/master/xp/target}}
-shows that the Max Damage objective  wins 91\% of the time against the
-mirror unit  group shooting  randomly if  we let 5~ms  to \ghost  to do
-computations (and 86\% within 3~ms).  The Max Kill objective seems less
-efficient with a  win rate of 82\% within 5~ms,  (80\% within 3~ms). One
-explanation is  that Max Kill  may not be a  heuristic as good  as Max
-Damage when enemy  units have their full HP.  It  would be interesting
-to cross these two objectives to see if it leads to better results.
+shows that the Max Damage objective wins \minormod{99\%} of the time against the
+mirror unit group, \minormod{shooting with the simple lowest HP ratio strategy
+exposed above}, if we let 5~ms to \ghost to do computations (and \minormod{98\%}
+within 3~ms).  The Max Kill objective seems a bit less efficient with a win
+rate of \minormod{96\%} within 5~ms, (\minormod{94\%} within 3~ms). One explanation is that
+Max Kill may not be a heuristic as good as Max Damage when enemy units
+have their full HP.  It would be interesting to cross these two
+objectives to see if it leads to better results.
 
 For both objectives, we see that \ghost victories are undeniable, with
-in average  2.9 remaining units  after the simulation,  whereas losses
-are  tight,  with  just one  living  enemy  unit  at  the end  of  the
-combat. The average of total remaining  HP is also clearly in favor of
-\ghost.
+in average \minormod{2.75} remaining units after the simulation, whereas the rare
+losses are tight, with just one living enemy unit at the end of the
+combat. The average of total remaining HP is also very clearly in
+favor of \ghost.
 
 \subsection{Future work}
 
