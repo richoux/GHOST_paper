@@ -7,13 +7,13 @@
 #include <string>
 #include <limits>
 
-#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/variables/unit.hpp"
-#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/domains/targetSelectionDomain.hpp"
-#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/constraints/targetSelectionConstraint.hpp"
-#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/objectives/targetSelectionObjective.hpp"
-#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/misc/unitMap.hpp"
-#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/solver.hpp"
-#include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/misc/random.hpp"
+#include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/variables/unit.hpp"
+#include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/domains/targetSelectionDomain.hpp"
+#include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/constraints/targetSelectionConstraint.hpp"
+#include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/objectives/targetSelectionObjective.hpp"
+#include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/misc/unitMap.hpp"
+#include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/solver.hpp"
+#include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/misc/random.hpp"
 
 using namespace ghost;
 using namespace std;
