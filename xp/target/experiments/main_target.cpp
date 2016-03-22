@@ -47,6 +47,25 @@ int getLowestHPUnit( const vector<int> &inRange, const vector<Unit> &vec, Random
   return random.getRandNum( ties.size() );
 }
 
+int getLowestHPRatioUnit( const vector<int> &inRange, const vector<Unit> &vec, Random &random )
+{
+  double minHP = std::numeric_limits<double>::max();
+  double ratio;
+  vector<int> ties;
+  
+  for( int i = 0 ; i < inRange.size() ; ++i )
+    if( ( ratio = vec[i].getHP() / vec[i].getInitialHP() ) == minHP )
+      ties.push_back( i );
+    else if( ratio < minHP )
+    {
+      ties.clear();
+      ties.push_back( i );
+      minHP = ratio;
+    }
+
+  return random.getRandNum( ties.size() );
+}
+
 
 int main(int argc, char **argv)
 {
@@ -128,7 +147,7 @@ int main(int argc, char **argv)
   vector< shared_ptr<TargetSelectionConstraint> > vecConstraints { make_shared<TargetSelectionConstraint>( &vec, &domain ) };
 
   // Define objective
-  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxKill>();
+  shared_ptr<TargetSelectionObjective> objective = make_shared<MaxDamage>();
   
   Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints, objective );
   // Solver<Unit, TargetSelectionDomain, TargetSelectionConstraint> solver( &vec, &domain, vecConstraints );
@@ -231,8 +250,11 @@ int main(int argc, char **argv)
 	  // aimedUnits[ i ] = inRange[ random.getRandNum( inRange.size() ) ];
 	  
 	  // LOW-HP SHOT
-	  aimedUnits[ i ] = inRange[ getLowestHPUnit( inRange, vec, random ) ];
-      }
+	  // aimedUnits[ i ] = inRange[ getLowestHPUnit( inRange, vec, random ) ];
+
+      	  // LOW-HP RATIO SHOT
+	  aimedUnits[ i ] = inRange[ getLowestHPRatioUnit( inRange, vec, random ) ];
+}
 
     // print stuff AND decrement cooldown (yes, it's bad to do it within the same loop, but whatever) 
     for( int i = 0 ; i < enemies.size() ; ++i )
