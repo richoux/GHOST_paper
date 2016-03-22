@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <type_traits>
 #include <string>
+#include <limits>
 
 #include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/variables/unit.hpp"
 #include "/home/flo/Dropbox/Recherche/Programmes/GHOST/include/domains/targetSelectionDomain.hpp"
@@ -26,6 +27,21 @@ vector<int> getLivingEnemiesInRange( const UnitEnemy &u, const vector<Unit> &vec
       inRange.push_back( j );
       
   return inRange;
+}
+
+int getLowestHPUnit( const vector<int> &inRange, const vector<Unit> &vec )
+{
+  double minHP = std::numeric_limits<double>::max();
+  int indexMinHP = -1;
+  
+  for( int i = 0 ; i < inRange.size() ; ++i )
+    if( vec[i].getHP() < minHP )
+    {
+      indexMinHP = i;
+      minHP = vec[i].getHP();
+    }
+  
+  return indexMinHP;
 }
 
 
@@ -207,7 +223,11 @@ int main(int argc, char **argv)
 	  inRange = getLivingEnemiesInRange( enemies[i], vec );
 
 	  if( !inRange.empty() )
-	    totalDamagesEnemy += enemies[i].doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );
+	    // RANDOM SHOT
+	    // totalDamagesEnemy += enemies[i].doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );
+
+	    // LOW-HP SHOT
+	    totalDamagesEnemy += enemies[i].doDamageAgainst( inRange[ getLowestHPUnit( inRange, vec ) ], vec, i );
 #ifndef NDEBUG
 	  else
 	    cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;	    
