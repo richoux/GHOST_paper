@@ -6,6 +6,7 @@
 #include <type_traits>
 #include <string>
 #include <limits>
+#include <cassert>
 
 #include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/variables/unit.hpp"
 #include "/home/flo/Seafile/Recherche/Programmes/GHOST/include/domains/targetSelectionDomain.hpp"
@@ -135,7 +136,9 @@ int main(int argc, char **argv)
 
   int numUnits = vec.size();
   int numEnemy = enemies.size();
-  
+
+  array<int, numUnits> aimedUnits;
+
   int deadUnits;
   int deadEnemy;
 
@@ -213,21 +216,31 @@ int main(int argc, char **argv)
 #ifndef NDEBUG
     cout << "@@@@ Enemy's turn @@@@" << endl;
 #endif
+    aimedUnits.fill(-1);
 
+    // choosing a target for each enemy unit
+    for( int i = 0 ; i < enemies.size() ; ++i )
+      if( !enemies[i].isDead() && enemies[i].canShoot() )
+      {
+	inRange = getLivingEnemiesInRange( enemies[i], vec );
+	
+	if( !inRange.empty() )
+	  // RANDOM SHOT
+	  // aimedUnits[ i ] = inRange[ random.getRandNum( inRange.size() ) ];
+	  
+	  // LOW-HP SHOT
+	  aimedUnits[ i ] = inRange[ getLowestHPUnit( inRange, vec ) ];
+      }
+
+    // print stuff AND decrement cooldown (yes, it's bad to do it within the same loop, but whatever) 
     for( int i = 0 ; i < enemies.size() ; ++i )
     {
       if( !enemies[i].isDead() )
       {
 	if( enemies[i].canShoot() )
 	{
-	  inRange = getLivingEnemiesInRange( enemies[i], vec );
-
-	  if( !inRange.empty() )
-	    // RANDOM SHOT
-	    // totalDamagesEnemy += enemies[i].doDamageAgainst( inRange[ random.getRandNum( inRange.size() ) ], vec, i );
-
-	    // LOW-HP SHOT
-	    totalDamagesEnemy += enemies[i].doDamageAgainst( inRange[ getLowestHPUnit( inRange, vec ) ], vec, i );
+	  assert( aimedUnits[ i ] != -1 );
+	  totalDamagesEnemy += enemies[i].doDamageAgainst( aimedUnits[ i ], vec, i );
 #ifndef NDEBUG
 	  else
 	    cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;	    
@@ -238,11 +251,13 @@ int main(int argc, char **argv)
 #ifndef NDEBUG
 	  cout << enemies[i].data.name << "@" << i << " HP=" << enemies[i].data.hp << ", wait=" << enemies[i].data.canShootIn << endl;
 #endif
+	  // decrement cooldown
 	  if( !enemies[i].canShoot() )
 	    enemies[i].oneStep();
 	}
       }
     }
+    
 
     for( int i = 0 ; i < enemies.size() ; ++i )
       enemies[i].data.hp = copyEnemies[i].data.hp;
