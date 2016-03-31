@@ -352,7 +352,7 @@ Problems  (\cop)   are  two  close  formalisms   extensively  used  in
 Artificial  Intelligence  to   solve  combinatorial    optimization
 problems. Constraint  Programming allows an intuitive  and uniform way
 to model  problems, as  well as different  general algorithms able to
-solve any problems modeled by a \csp or a \cop.
+solve any \minormod{(decidable)} problems modeled by a \csp or a \cop.
 
 The difference between a \csp and a \cop is simple:
 %--------------
@@ -446,9 +446,7 @@ the reader can find in the current literature.
 
 \ghost  is a  C++11 framework\footnote{Source  code available  at
   \href{https://github.com/richoux/GHOST}{github.com/richoux/GHOST}},
-under  the  GNU  GPL  v3  license,  designed  to  solve  any  kind  of
-RTS-related problems,  as soon as  they are modeled  into a \csp  or a
-\cop. Two different users are targeted:
+under  the  GNU  GPL  v3  license,  designed  to  solve  \minormod{\csp/\cop problems a game developer could implement, in particular concerning AI and real-time strategy games}. Two different users are targeted:
 %--------------
 \begin{itemize}
 \item  The casual  user, who  only  wants to  use \ghost  to solve  an
@@ -488,7 +486,7 @@ RTS-related problems,  as soon as  they are modeled  into a \csp  or a
   \caption{\ghost architecture:  In red, the satisfaction  inner loop,
     running  for   $x$  microseconds   top.   In   blue,  optimization
     mechanisms.    The    whole   process,    excluding   optimization
-    post-process, runs under $y$ microseconds. Both $x$ and $y$ are user inputs}
+    post-process, runs under $y$ microseconds. \minormod{Both $x$ and $y$ are user inputs}}
   \label{fig:archi}
 \end{figure}
 %--------------
@@ -642,7 +640,7 @@ In addition, one has also to take  into account the waiting time between shots, 
 Each unit type has different cooldowns.  We  can now  describe the  target selection
 problem with the following \csp:
 %--------------
-\modelcsp{the Target Selection problem}%
+\modelcsp{the target selection problem}%
 {A group of our units.}%
 {A group of enemy units.}%
 {Each living, ready-to-shoot  unit must aim a living  enemy within its
@@ -825,6 +823,8 @@ in average \minormod{2.75} remaining units after the simulation, whereas the rar
 losses are tight, with just one living enemy unit at the end of the
 combat. The average of total remaining HP is also very clearly in
 favor of \ghost.
+
+\minormod{The enemy target selection heuristics actually leads to a list of local optimums for each enemy unit independently, without considering the global situation, \ie, choices taken for partners. At the opposite, \ghost allow to look at the big picture and search for a global optimum instead of a compilation of local ones. Results show this clearly make the difference.}
 
 \subsection{Future work}
 
@@ -1343,8 +1343,8 @@ requires shallow modifications.
 \subsection{State-of-the-art constraint solvers}
 
 In this section, we compare  \ghost inner solver performances with the
-state-of-the-art  constraint solvers,  namely {\it  Opturion CPX}  and
-{\it Gecode}.  We chose these  two solvers  for two reasons:  first, both
+state-of-the-art  constraint solvers,  namely {\it  Opturion CPX}\footnote{\href{http://www.opturion.com}{www.opturion.com}}  and
+{\it Gecode}~\cite{gecode}.  We chose these  two solvers  for two reasons:  first, both
 are able to parse MiniZinc code, a common language to model constraint
 optimization problems. Therefore, we only need to model a problem once
 and  give   this  model   to  different   solvers  to   measure  their
@@ -1371,7 +1371,7 @@ meta-heuristics, \ie, an  incomplete algorithm. It is  unable to proof
 the optimality  of a  solution, but in  practice these  algorithms are
 very efficient to quickly find an optimal or near-optimal solution. To
 match \ghost inner solver to other local search meta-heuristics, we
-also run experiments  with {\it  Oscar/CBLS} MinZinc interface.   We chose
+also run experiments  with {\it  Oscar/CBLS} MinZinc interface~\cite{oscar}.   We chose
 this solver  again for two  reasons: first, it is  one of the  rare solver
 programs that implements   a  meta-heuristics  able  to   parse  MiniZinc
 code. Other frameworks such as  ORtools or EasyLocal++ can also parse
@@ -1406,16 +1406,18 @@ authors, therefore we are sure to have a well optimized model for this problem.
 
 \subsection{Benchmark and experiments}
 
-Our   resources   allocation   problem   is  the   same   as   studied
-in~\cite{aiide15_rts}: given  an amount  of minerals, gas  and supply,
-what units  should we train to  maximize the global damage  per second
-(DPS) on  ground units.
-This is actually an instance of the multi-dimensional knapsack problem
-with three  dimensions (one per  resource type). The  regular knapsack
-problem  is well-known  to be  NP-complete, and  its multi-dimensional
-version is even harder: unlike the original knapsack problem, there is
-no efficient  polynomial-time approximation  scheme starting  from two
-dimensions (unless P=NP)~\cite{KulikS10}.
+Our resources allocation problem is the same as studied
+in~\cite{aiide15_rts}: given an amount of minerals, gas and supply,
+what units should we train to maximize the global damage per second
+(DPS) on ground units. \minormod{In other words, what is the list of
+  units you should train to maximize the sum of their ground DPS if we
+  give you fixed stocks of resources.}  This is actually an instance
+of the multi-dimensional knapsack problem with three dimensions (one
+per resource type). The regular knapsack problem is well-known to be
+NP-complete, and its multi-dimensional version is even harder: unlike
+the original knapsack problem, there is no efficient polynomial-time
+approximation scheme starting from two dimensions (unless
+P=NP)~\cite{KulikS10}.
 
 To  compare solvers  on  significant problem  instances,  we chose  to
 optimize ground DPS for Zerg,  Protoss and Terran factions with 20,000
@@ -1576,14 +1578,14 @@ We should also emphasize that Oscar/CBLS uses many cores to compute a solution\f
 
 \section{Discussion and conclusion}\label{sec:conclusion}
 
-In  this paper,  we  introduced \ghost,  a combinatorial  optimization
-framework   to    solve   any   problems   encoded    by   a   constraint
-satisfaction/optimization problem.   We presented three  different RTS
-problems belonging to a specific  level of abstraction, and proposed a
-\csp/\cop model for each. Experiments  applying \ghost on these models
-shown very  good results  computed within  some tens  of milliseconds,
-without  any  modification  or   optimization  of  the  solver  source
-code. Results obtained  are often better than the ones  we can find in
+In this paper, we introduced \ghost, a combinatorial optimization
+framework to solve any \minormod{(decidable)} problems encoded by a constraint
+satisfaction/optimization problem.  We presented three different RTS
+problems belonging to a specific level of abstraction, and proposed a
+\csp/\cop model for each. Experiments applying \ghost on these models
+shown very good results computed within some tens of milliseconds,
+without any modification or optimization of the solver source
+code. Results obtained are often better than the ones we can find in
 the current literature.
 
 One claim written in Section~\ref{sec:ghost} is now clear: looking for
