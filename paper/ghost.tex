@@ -174,7 +174,7 @@
   \emph{strategy} problem). In our experiments, \ghost shows very good
   results computed within some tens of milliseconds. We also show
   \ghost outperforms by far state-of-the-art constraint solvers,
-  matching them on the resources allocation problem, a very common combinatorial optimization problem.
+  matching them on the resources allocation problem, a common combinatorial optimization problem.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -202,10 +202,10 @@ computer  to make  predictions,  to have a  global  understanding of  the
 current situation  and then to make  a decision. This is  specially true
 when  information is  incomplete, forcing  the computer  to infer  the
 global state of the game from  pieces of information. This is the case
-with Real-Time Strategy  games (RTS), where a Clausewitz's  fog of war
-hides  the opponent's  moves.  Thus,  RTS games  are very  suitable to
-design  Artificial  Intelligence (AI) techniques  that  could  be  applied
-afterward in other domains.
+with Real-Time Strategy (RTS) games, where a Clausewitz's  fog of war
+hides  the opponent's  moves.  \minormod{Hence,  RTS games are a good domain for testing
+ Artificial  Intelligence (AI) techniques  that  could  be  applied
+afterward in other domains.}
 
 Many AI techniques are used in RTS games. Without making an exhaustive
 list,  we  can  cite   reinforcement  learning,  case-base  reasoning,
@@ -341,7 +341,9 @@ concludes with future work.
 \section{\ghost:   A  General   meta-Heuristic  Optimization   Solving
   Tool}\label{sec:ghost}
 
-\ghost is a combinatorial  optimization framework designed to tackle real-time problems, helping a programmer to model his/her problem and to solve it using the inner solver, without parameter tuning needed or advanced knowledge in Constraint Programming. RTS games contain many real-time combinatorial optimization problems that can be modeled and solved via a Constraint Programming framework. Moreover, a solver dealing with such problems must be very fast: in the game industry, only a few percent of CPU time is allocated for AI (usually no more than 10\%). This is true in particular for RTS games where AI is a capital part of the game but its real-time aspect and numerous agent interactions  leave some tens of milliseconds only to solve a problem. Although some problems can be solved within a couple of frames, taking then hundreds of milliseconds of CPU time without any issue, this is not the case in general: problems like target selection or path-finding need a solution within one frame.
+\ghost is a combinatorial  optimization framework designed to tackle real-time problems, helping a programmer to model his/her problem and to solve it using the inner solver, without parameter tuning needed or advanced knowledge in Constraint Programming. RTS games exhibit many real-time combinatorial optimization problems that can be modeled and solved via a Constraint Programming framework. Moreover, a solver dealing with such problems must be fast: in the game industry, only a few percent of CPU time is allocated for AI (usually no more than 10\%). This is true in particular for RTS games where AI is a capital part of the game but its real-time aspect and numerous agent interactions  leave some tens of milliseconds only to solve a problem. 
+%Although some problems can be solved within a couple of frames, taking then hundreds of milliseconds of CPU time without any issue, this is not the case in general: problems like target selection or path-finding need a solution within one frame.
+\minormod{While some problems can be solved within several frames, other problems like target selection or path-finding need a solution as soon as possible (optimally within one frame).}
 
 % Before introducing models and results for several problems related to RTS games, we give in the next section the basis of combinatorial  optimization problems.
 
@@ -790,9 +792,9 @@ experiments with parameters  $x=2,000$ and $y=5,000$.  In~\cite{ChurchillSB12,
   ChurchillB12}, Churchill et al. propose an Alpha-Beta search with a timeout
 of 5~ms (5,000~$\mu s$).   This is  why  we have  chosen to  set the  optimization
 timeout to  3,000~$\mu s$ and 5,000~$\mu s$ to be able to compare our results with  the same timeout
-and   with  a   shorter  one.  Although a direct comparison is impossible since the goal of their work is to predict the winner of the combat and our goal is to decide the target selection.
-  For  this   problem, we do not need any   particular
-post-processing optimization.
+and   with  a   shorter  one.  
+\minormod{Although a direct comparison is not possible since their goal is to guide the action selection and not only to decide the target selection.} 
+For  this   problem, we do not need any   particular post-processing optimization.
 
 % Although Churchill et al. method predicts a 100\% victory in average in
 % the different  scenarios they have  tested, the real win  rate in-game
@@ -1085,7 +1087,7 @@ solutions.
 \section{Strategy problem: The build order}\label{sec:bo}
 
 The reader can find an  extensive literature about build order planner
-and/or   prediction  for   StarCraft.  Churchill   and  Buro   propose
+and   prediction  for   StarCraft.  Churchill   and  Buro   propose
 in~\cite{ChurchillB11} a build order planner  using a branch and bound
 technique, Kuchem  et al. analyze  build order tools for  StarCraft II
 in~\cite{KuchemPR13},  Cho  et  al.    present  in~\cite{ChoKC13}  a
@@ -1094,7 +1096,7 @@ replays, and  in~\cite{SynnaeveB11-a} Synnaeve and Bessi{\`e}re  show a
 Bayesian model to predict the opponent build order.
 
 \subsection{Problem statement and model}
-A build order (BO) planning is a series of actions following a specific
+A build order (BO) plan is a series of actions following a specific
 timing, in order to  achieve a goal.  Such a goal  is a combination of
 buildings,  units, upgrades  and  researches  produced.  Usually,  the
 objective for a  player is to reach a fixed  goal the fastest possible
@@ -1102,7 +1104,7 @@ way. However, alternatives  can also be considered,  like reaching the
 goal without sacrificing  the economy, or focusing first  on units in
 order to have an army as soon as possible.
 
-A  BO  planning can  be intuitively  modeled by  a \csp  as a
+A  BO  plan can  be intuitively  modeled by  a \csp  as a
 permutation problem,  where a bijection  maps the set of  variables to
 the  domain. Changing  the  value  of one  variable  is then  actually
 swapping its value with another variable.
@@ -1117,10 +1119,10 @@ dependency  lists.  Thus,  if someone  aims to  do \textit{Air  Weapons
   Upgrade level 1}, which requires itself a \textit{Cybernetics Core},
 which requires a \textit{Gateway}.
 
-The \csp model we propose for  the BO planning problem is the
+The \csp model we propose for the BO plan problem is the
 following one:
 %--------------
-\modelcsp{the Build Order Planning problem}%
+\modelcsp{the Build Order Plan problem}%
 {All actions we need to reach our goal.}%
 {Order of actions.}%
 {Each dependency of an action $\alpha$ must occurs before $\alpha$.}
@@ -1139,19 +1141,19 @@ asked, among  others, to produce $n$  units of type $U$.  Thus, \ghost
 will automatically add, recursively, all  dependencies of $U$ into the
 variable set.  Suppose  the unit type $U$ is produced  by the building
 of type $B$,  and the user eventually  asked for $m <  n$ buildings of
-type $B$.   After having  computed an  optimized BO,  the optimization
+type $B$.   After having  computed an  optimized a BO,  the optimization
 post-processing will  retake this solution  and try  to see if  it can
 shorten the makespan even more  by constructing more buildings of type
 $B$,  to  speed  up  the  production  of  units  of  type  $U$.   This
-post-processing optimization  is significantly efficient in  cases the
-user ask for a high number $n$ of the same unit $U$, and none or a low
+post-processing optimization  is significantly efficient in  cases where the
+user asks for a high number $n$ of the same unit $U$, and none or a low
 number $m$ of $B$.
 
-Unlike the target selection problem,  we needed this time to integrate
+Unlike the target selection problem, this time  we need to integrate
 a simulator inside  \ghost to emulate a game (without  combats) and be
 able to  compute the  makespan of BOs. Thus,  this simulator
 must emulate resources gathering, units producing (including workers),
-supply capacity or constructions.  Our simulator always try to
+supply capacity and constructions.  Our simulator always tries to
 produce workers  until reaching saturation  (24 workers per  base), as
 well as  maintaining supply in  order to never be  ``supply blocked'' (unable  to  produce a  unit because  we  reached the  supply
 capacity limit).
@@ -1160,7 +1162,7 @@ In~\cite{ChurchillB11},  Churchill and  Buro  give  details about  the
 simulator they developed for their BO planner.  We first used
 the same  settings, but  after matching  \ghost results  against build
 order from Korean pro-gamers, we realized that these settings were too
-advantageous for the simulator.  We then closely analyzed some replays
+advantageous for the simulator.  Then we closely analyzed some replays
 from Korean pro-gamers to refine  our simulator settings, listed below
 (in StarCraft unit time $t$):
 %--------------
@@ -1177,18 +1179,6 @@ from Korean pro-gamers to refine  our simulator settings, listed below
 \item  Gas  gathering  rate:  1.15  gas per  worker  per  t  (1.66  in
   \cite{ChurchillB11})
 \end{itemize}
-%--------------
-To be sure these parameters make our simulator realistic, we matched its
-execution  against the  first  2  minutes of  games  played by  Korean
-pro-gamers. Table~\ref{tab:korean}  gives an  example of  our simulator
-matched against the Protoss Korean pro-gamer Kim "Bisu" Taek Yong. Gas
-is not revealed since it remained 0 for both Bisu and the simulator
-during the first 2 minutes. Each time the simulator started to produce
-a probe, \ie,  a worker, we write down the  simulator and Bisu mineral
-stock and supply situation (used supply over supply capacity). One can
-see  that  these two  early  games  are  very  similar, with  a  slight
-advantage  to  the simulator  since  its  probe production  is  nearly
-perfect.
 %--------------
 \begin{table*}[ht]
   \caption{Our simulator execution matched  against the pro-gamer Bisu
@@ -1214,6 +1204,18 @@ perfect.
     \hline
   \end{tabular}
 \end{table*}
+%--------------
+To be sure these parameters make our simulator realistic, we matched its
+execution  against the  first  2  minutes of  games  played by  Korean
+pro-gamers. Table~\ref{tab:korean}  gives an  example of  our simulator
+matched against the Protoss Korean pro-gamer ``Bisu''. Gas
+is not revealed since it remained 0 for both ``Bisu'' and the simulator
+during the first 2 minutes. Each time the simulator started to produce
+a probe, \ie,  a worker, we write down the  simulator and ``Bisu'' mineral
+stock and supply situation (used supply over supply capacity). One can
+see  that  these two  early  games  are  very  similar, with  a  slight
+advantage  to  the simulator  since  its  probe production  is  nearly
+perfect.
 % --------------
 \begin{table*}[ht]
   \caption{Average  makespan  of Humans  and  \ghost  BOs  in
@@ -1268,23 +1270,19 @@ and those extracted from top Korean pro-gamers.
 
 In total, the first set is  composed of 3,647 build orders: 768 Protoss
 versus  Protoss, 2,043  Protoss versus  Terran and  836 Protoss  versus
-Zerg.   Replays are  coming from  TeamLiquid,
-GosuGamers and  ICCup web sites.  Table~\ref{tab:bo}  shows that \ghost
+Zerg.   
+%Replays are  coming from  TeamLiquid, GosuGamers and  ICCup web sites.  
+Table~\ref{tab:bo}  shows that \ghost
 outperforms by far human BOs, with  a mean of 36.4 StarCraft unit time
 of gain considering 10,000 frames BOs (a bit less than 7 ``real'' minutes) and 31.39 StarCraft unit time of
 gain considering 7,800 frames BOs (a bit more than 5 ``real'' minutes), all match-ups taken together.
 
-We have also  analyzed some few replays of games  played by top Korean
-pro-gamers,  \ie, Kim  "Bisu"  Taek  Yong, Doh  "BeSt"  Jae Wook,  Woo
-"Violet" Jung Ho, Yang "Cure"  Jung Hyun, all Protoss players, against
-Lee  "Flash" Young  Ho (Terran),  Lee  "Jaedong" Jae  Dong (Zerg),  Ma
-"sAviOr" Jae Yoon (Zerg) and we  match their build orders with \ghost.
-Since we had to manually select those replays, we have only downloaded
-6 of them (2 for each  match-up including a Protoss player), giving us
-a set of 8 BOs to give to \ghost.
+We have also analyzed some replays played by top Korean
+pro-gamers: Protoss players ``Bisu'', ``BeSt'', ``Violet'' and ``Cure''; Zerg players ``Jaedong'' and ``sAviOr''; and Terran player
+``Flash''. We have only downloaded 8 of them, giving us a set of 8 BOs to give to \ghost.
 
 Results against  these pro-gamers are shown  at the very last  line of
-Table~\ref{tab:bo}.  One can see that \ghost clearly obtains better BO
+Table~\ref{tab:bo}.  We can see that \ghost obtains better BOs
 than  Protoss Korean  pro-gamers listed  above, with  a gain  of 45.38
 StarCraft unit  time for  10,000 frames BOs  and 24.88  StarCraft unit
 time  for 7,800  frames BOs.  We  have to  lower the  first result  by
@@ -1305,10 +1303,12 @@ makespan of  619.62 StarCraft  unit time within  30~ms. In  the fastest
 mode, 619.62 StarCraft unit time corresponds to about 423s; leading to
 a CPU time / makespan ratio of 0.007\%.
 
-Why planning a BO is easier  than a wall-in? A huge part of the
-answer is  that planning  a BO can be modeled  in \csp  by a
+% Why planning a BO is easier  than a wall-in? A huge part of the
+% answer is  that planning  a BO can be modeled  in \csp  by a
+Planning a BO is easier than a wall-in for \ghost because a BO plan can be modeled in \csp by a
 permutation  problem,  which  drastically decrease  the  combinatorial
-complexity of the problem. Also,  the satisfaction part for the target
+complexity of the problem.
+Also,  the satisfaction part for the target
 selection and the  build order problems are not  difficult to compute,
 since constraints  modeling these problems  are trivial.  This  is not
 the case for  the wall-in problem, where even  getting a non-optimized
