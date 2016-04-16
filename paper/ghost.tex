@@ -308,10 +308,11 @@ right unit, according to the race.
 
 The flow of time in StarCraft is complex:  the game has 7  speed modes from
 ``slowest'' to ``fastest'' where ``normal'' corresponds to the regular
- frame rate  (15 logic frames per second). This is why when we will  write about in-game time, all along this
-paper, we will refer to the term \emph{StarCraft unit time} rather than
-seconds, to not make any confusions with proper seconds. In the fastest
-mode, one logical game  frame takes 42~ms. In StarCraft AI  competitions, 
+ frame rate  (14.96 logical frames per second, against 23.81 for the fastest mode). This is why when we will  write about in-game time, all along this
+paper \minormod{and in particular in Section~\ref{sec:bo}, we will refer to logical frames (simply denoted as frames) rather than
+seconds to avoid confusions}. 
+% 1 regular second = 1.59477562 SC second
+In the fastest mode, one logical game  frame takes 42~ms. In StarCraft AI  competitions, 
 it is necessary for bots to perform calculations in under 55~ms per frame;
 a bot that takes more than 55~ms per frame in 200 frames or more automatically loses
 the game.
@@ -1174,56 +1175,54 @@ capacity limit).
 In~\cite{ChurchillB11},  Churchill and  Buro  give  details about  the
 simulator they developed for their BO planner.  We first used
 the same  settings, but  after matching  \ghost results  against build
-order from Korean pro-gamers, we realized that these settings were too
+order from Korean pro-gamers, we realized that these settings were a bit too
 advantageous for the simulator.  Then we closely analyzed some replays
-from Korean pro-gamers to refine  our simulator settings, listed below
-(in StarCraft unit time $t$):
+from Korean pro-gamers to refine  our simulator settings, listed below in frames:
 %--------------
 \begin{itemize}
-\item Time to go build something: 5t (4t in \cite{ChurchillB11})
-\item Time to go back  gathering minerals after building something: 4t
+\item Time to go build something: 74 frames (96 in \cite{ChurchillB11})
+\item Time to go back  gathering minerals after building something: 60
   (0 in \cite{ChurchillB11})
-\item Time to go from the base  to mineral patches to start mining: 5t
+\item Time to go from the base  to mineral patches to start mining: 74
   (0 in \cite{ChurchillB11})
-\item  Time for  a worker  to  switch from  mineral  to gas:  5t (0  in
+\item  Time for  a worker  to  switch from  mineral  to gas:  74 (0  in
   \cite{ChurchillB11})
-\item Mineral gathering  rate: 0.68 mineral per worker per  t (1.07 in
+\item Mineral gathering  rate: 0.045 mineral per worker per frame (like in
   \cite{ChurchillB11})
-\item  Gas  gathering  rate:  1.15  gas per  worker  per  t  (1.66  in
-  \cite{ChurchillB11})
+\item  Gas  gathering  rate:  0.077  gas per  worker  per  frame  (0.07 in \cite{ChurchillB11})
 \end{itemize}
 %--------------
 \begin{table*}[ht]
   \caption{Our simulator execution matched  against the pro-gamer Bisu
-    during the first two minutes}
+    during the first 1900 frames (\ie, 80 seconds)}
   \label{tab:korean}
   \centering
   \begin{tabular}{|c|c|c|c|c|c|}
     \cline{3-6}
     \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{Simulator in \ghost} & \multicolumn{2}{c|}{Bisu}\\
     \hline
-    Action (by S(im) or B(isu)) & Time t & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)} & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)}\\
+    Action (by S(im) or B(isu)) & Frames & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)} & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)}\\
     \hline
-    S starts a probe & 20 & 40.8 & 5/9 & 40 & 5/9\\
-    S starts a probe & 44 & 19.7 & 7/9 & 20 & 7/9\\
-    S starts a probe & 64 & 46.5 & 8/9 & 50 & 8/9\\
-    S starts a pylon & 75 & - & - & - & -\\
-    B starts a pylon & 78 & - & - & - & -\\
-    S starts a probe & 89 & 1.2 & 9/9 & 12 & 9/9\\
-    S starts a probe & 109 & 60.0 & 10/17 & 132 & 9/17\\
-    B starts a gateway & 116 & - & - & - & -\\
-    S starts a gateway & 125 & - & - & - & -\\
-    S starts a probe & 125 & 1.8 & 11/17 & 78 & 9/17\\
+    S starts a probe & 298 & 40.8 & 5/9 & 40 & 5/9\\
+    S starts a probe & 656 & 19.7 & 7/9 & 20 & 7/9\\
+    S starts a probe & 955 & 46.5 & 8/9 & 50 & 8/9\\
+    S starts a pylon & 1119 & - & - & - & -\\
+    B starts a pylon & 1164 & - & - & - & -\\
+    S starts a probe & 1328 & 1.2 & 9/9 & 12 & 9/9\\
+    S starts a probe & 1627 & 60.0 & 10/17 & 132 & 9/17\\
+    B starts a gateway & 1731 & - & - & - & -\\
+    S starts a gateway & 1866 & - & - & - & -\\
+    S starts a probe & 1866 & 1.8 & 11/17 & 78 & 9/17\\
     \hline
   \end{tabular}
 \end{table*}
 %--------------
 To be sure these parameters make our simulator realistic, we matched its
-execution  against the  first  2  minutes of  games  played by  Korean
+execution  against the  first  1900 frames of  games (\ie, 80 seconds) played by  Korean
 pro-gamers. Table~\ref{tab:korean}  gives an  example of  our simulator
 matched against the Protoss Korean pro-gamer ``Bisu''. Gas
 is not revealed since it remained 0 for both ``Bisu'' and the simulator
-during the first 2 minutes. Each time the simulator started to produce
+during the first 1900 frames. Each time the simulator started to produce
 a probe, \ie,  a worker, we write down the  simulator and ``Bisu'' mineral
 stock and supply situation (used supply over supply capacity). One can
 see  that  these two  early  games  are  very  similar, with  a  slight
@@ -1232,7 +1231,7 @@ perfect.
 % --------------
 \begin{table*}[ht]
   \caption{Average  makespan  of Humans  and  \ghost  BOs  in
-    StarCraft unit time over 3647 games. Each calls  of \ghost
+    frames over 3647 games. Each calls  of \ghost
     lasts for 30ms}
   \label{tab:bo}
   \centering
@@ -1243,13 +1242,13 @@ perfect.
     {\em Match-up} & Humans & \ghost & \% solved &
     Gain \\
     \hline
-    {\em All} & 656.02 & 619.62 & 94.4 & 36.40\\
-    {\em PvP} & 651.51 & 608.06 & 95.0 & 43.45\\
-    {\em PvT} & 660.50 & 628.17 & 93.9 & 32.33\\
-    {\em PvZ} & 649.20 & 609.34 & 95.0 & 39.86\\
+    {\em All} & 9794 & 9250 & 94.4 & 544\\
+    {\em PvP} & 9727 & 9078 & 95.0 & 649\\
+    {\em PvT} & 9861 & 9378 & 93.9 & 483\\
+    {\em PvZ} & 9692 & 9097 & 95.0 & 595\\
     \hline
     \hline
-    {\em All pro} & 643.38 & 597.25 & 96.3 & 46.13\\
+    {\em All pro} & 9605 & 8916 & 96.3 & 689\\
     \hline
   \end{tabular}
   %\hfill
@@ -1260,13 +1259,13 @@ perfect.
     {\em Match-up} & Humans & \ghost & \% solved &
     Gain \\
     \hline
-    {\em All} & 522.50 & 491.11 & 98.8 & 31.39\\
-    {\em PvP} & 516.08 & 485.56 & 99.3 & 30.52\\
-    {\em PvT} & 527.66 & 506.65 & 98.3 & 21.01\\
-    {\em PvZ} & 515.81 & 458.23 & 99.7 & 57.58\\
+    {\em All} & 7726 & 7332 & 98.8 & 394\\
+    {\em PvP} & 7630 & 7249 & 99.3 & 381\\
+    {\em PvT} & 7800 & 7564 & 98.3 & 236\\
+    {\em PvZ} & 7626 & 6841 & 99.7 & 785\\
     \hline
     \hline
-    {\em All pro} & 506.38 & 480.88 & 100 & 25.50\\
+    {\em All pro} & 7485 & 7179 & 100 & 306\\
     \hline
   \end{tabular}
 \end{table*}
@@ -1286,9 +1285,8 @@ versus  Protoss, 2,043  Protoss versus  Terran and  836 Protoss  versus
 Zerg.   
 %Replays are  coming from  TeamLiquid, GosuGamers and  ICCup web sites.  
 Table~\ref{tab:bo}  shows that \ghost
-outperforms human BOs by far, with  a mean of 36.4 StarCraft unit time
-of gain considering 10,000 frames BOs (a bit less than 7 ``real'' minutes) and 31.39 StarCraft unit time of
-gain considering 7,800 frames BOs (a bit more than 5 ``real'' minutes), all match-ups taken together.
+outperforms human BOs by far, with  a mean of 544 frames of gain considering 10,000 frames BOs (about 7 minutes) and 394 frames of
+gain considering 7,800 frames BOs (about 5 minutes), all match-ups taken together.
 
 We have also analyzed some replays played by top Korean
 pro-gamers: Protoss players ``Bisu'', ``BeSt'', ``Violet'' and ``Cure''; Zerg players ``Jaedong'' and ``sAviOr''; and Terran player
@@ -1296,9 +1294,7 @@ pro-gamers: Protoss players ``Bisu'', ``BeSt'', ``Violet'' and ``Cure''; Zerg pl
 
 Results against  these pro-gamers are shown  at the very last  line of
 Table~\ref{tab:bo}.  We can see that \ghost obtains better BOs
-than  Protoss Korean  pro-gamers listed  above, with  a gain  of 45.38
-StarCraft unit  time for  10,000 frames BOs  and 24.88  StarCraft unit
-time  for 7,800  frames BOs.  We  have to  lower the  first result  by
+than  Protoss Korean  pro-gamers listed  above, with  a gain  of 689 frames for  10,000 frames BOs  and 306 frames for 7,800  frames BOs.  We  have to  lower the  first result  by
 emphasizing that pro-gamers are often  already engaged in a fight before
 10,000 frames and/or they are applying outside-the-book strategies, and thus
 minimizing the BO makespan may not be their first priority anymore. To
@@ -1310,10 +1306,10 @@ optimized BO  within only one StarCraft frame  at the fastest
 speed. In~\cite{ChurchillB11},  Churchill and Buro's branch  and bound
 method  is computing  90\%  of the  time BOs  with the  same
 makespan as pro-gamers in about 3.735 seconds (for build orders with a
-makespan  up to  249s), giving  thus a  CPU time  / makespan  ratio of
+makespan  up to  249s, \ie, 5928 frames), giving  thus a  CPU time  / makespan  ratio of
 1.5\%. Considering \ghost is computing  in average BOs with a
-makespan of  619.62 StarCraft  unit time within  30~ms. In  the fastest
-mode, 619.62 StarCraft unit time corresponds to about 423s; leading to
+makespan of  9250 frames within  30~ms. In  the fastest
+mode, 9250 frames corresponds to about 388s; leading to
 a CPU time / makespan ratio of 0.007\%.
 
 % Why planning a BO is easier  than a wall-in? A huge part of the
