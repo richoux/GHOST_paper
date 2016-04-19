@@ -44,8 +44,9 @@
 %\usepackage[font=footnotesize]{subfig}
 %\usepackage[caption=false,font=footnotesize]{subfig}
 
-%\usepackage{fixltx2e}
-
+\usepackage{booktabs}
+\usepackage[detect-all]{siunitx} % Aligning numbers by decimal points in table columns
+\sisetup{group-separator = {,},group-four-digits}
 \usepackage{stfloats}
 %\usepackage{url}\newcommand{\urlb}[1]{{\color{blue}\url{#1}}}
 \usepackage{color}
@@ -678,22 +679,39 @@ concussive-damage unit, like a Terran Vulture, will only inflict 5 damage
 points against  a large unit
 like a Terran Tank, instead of 20 damage points as usual.
 %--------------
-\begin{table}[!h]
-  \caption{Damage efficiency matrix in StarCraft}
-  \label{tab:damage}
-  \centering
-  \begin{tabular}{|c|l|c|c|c|}
-    \cline{3-5}
-    \multicolumn{2}{c|}{} & \multicolumn{3}{c|}{Damage type} \\
-    \multicolumn{2}{c|}{} & \multicolumn{1}{c}{Concussive} & \multicolumn{1}{c}{Normal} & \multicolumn{1}{c|}{Explosive}\\
-    \hline
-    \multicolumn{1}{|c}{\multirow{3}{*}{\rotatebox[origin=c]{90}{size}}}& {\em Small} & 100\% & 100\% & 50\%\\
-    \multicolumn{1}{|c}{} & {\em Medium} & 50\% & 100\% & 75\%\\
-    \multicolumn{1}{|c}{} & {\em Large} & 25\% & 100\% & 100\%\\
-    \hline
-  \end{tabular}
-\end{table}
+% \begin{table}[!h]
+%   \caption{Damage efficiency matrix in StarCraft}
+%   \label{tab:damage}
+%   \centering
+%   \begin{tabular}{|c|l|c|c|c|}
+%     \cline{3-5}
+%     \multicolumn{2}{c|}{} & \multicolumn{3}{c|}{Damage type} \\
+%     \multicolumn{2}{c|}{} & \multicolumn{1}{c}{Concussive} & \multicolumn{1}{c}{Normal} & \multicolumn{1}{c|}{Explosive}\\
+%     \hline
+%     \multicolumn{1}{|c}{\multirow{3}{*}{\rotatebox[origin=c]{90}{size}}}& {\em Small} & 100\% & 100\% & 50\%\\
+%     \multicolumn{1}{|c}{} & {\em Medium} & 50\% & 100\% & 75\%\\
+%     \multicolumn{1}{|c}{} & {\em Large} & 25\% & 100\% & 100\%\\
+%     \hline
+%   \end{tabular}
+% \end{table}
 %--------------
+\begin{table}[!h]
+\centering
+\caption{Damage efficiency matrix in StarCraft}
+\label{tab:damage}
+\begin{tabular}{@{}l*{3}{S[table-format=3]}@{}} 
+ \toprule 
+ & \multicolumn{3}{c}{\textbf{Damage Type}} \\
+\cmidrule(l){2-4}
+\textbf{Size} & \textbf{Concussive} & \textbf{Normal} & \textbf{Explosive} \\
+\midrule
+{\em Small}  & 100\% & 100\% & 50\%\\
+{\em Medium} & 50\%  & 100\% & 75\%\\
+{\em Large}  & 25\%  & 100\% & 100\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+% 
 Moreover, some  units have a  splash damage, afflicting damage  to any unit inside an area.
 In  StarCraft, there are two types of splash damage: the
 linear splash, where the damage area is a line to the target; and the radial splash, where the damage area is a circled
@@ -767,33 +785,58 @@ Our simulator does not implement:
 \item Firebat's unique splash damage, both linear and radial.
 \end{itemize}
 %--------------
-\begin{table*}[ht]
-  \caption{Average  results over  100 simulations  for both  objective
-    functions.%, with  the setup  shown in  Figure~\ref{fig:target}. The
-    The first table shows experiments where calls to \ghost lasts for 3~ms,
-    and the second table calls lasting for 5~ms}
-  \label{tab:target}
-  \centering
-  \begin{tabular}{|c|l|c|c|c|c|c|c|c|}
-    \cline{6-9}
-    \multicolumn{5}{c|}{}  &   \multicolumn{2}{c|}{\ghost  victory}  &
-    \multicolumn{2}{c|}{Opponent victory}\\
-    \cline{2-9}
-    \multicolumn{1}{c|}{}& {\em Objective} & Wins & Draws & Loses & \# Avg. living units &
-    Avg. HP & \# Avg. living units & Avg. HP\\
-    \hline
-    \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{3~ms}}}&
-    {\em Max Damage} & 98 & 1 & 1 & 2.8 & 237.9 & 1.0 & 12.0\\
-    & {\em Max Kill} & 94 & 5 & 1 & 3.0 & 250.8 & 1.0 & 3.0\\
-    \hline
-    \hline
-    \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{5~ms}}}&
-    {\em Max Damage} & 99 & 1 & 0 & 2.6 & 231.9 & 0.0 & 0.0\\
-    & {\em Max Kill} & 96 & 4 & 0 & 2.6 & 233.6 & 0.0 & 0.0\\
-    \hline
-  \end{tabular}
-\end{table*}
+% \begin{table*}[ht]
+%   \caption{Average  results over  100 simulations  for both  objective
+%     functions.%, with  the setup  shown in  Figure~\ref{fig:target}. The
+%     The first table shows experiments where calls to \ghost lasts for 3~ms,
+%     and the second table calls lasting for 5~ms}
+%   \label{tab:target}
+%   \centering
+%   \begin{tabular}{|c|l|c|c|c|c|c|c|c|}
+%     \cline{6-9}
+%     \multicolumn{5}{c|}{}  &   \multicolumn{2}{c|}{\ghost  victory}  &
+%     \multicolumn{2}{c|}{Opponent victory}\\
+%     \cline{2-9}
+%     \multicolumn{1}{c|}{}& {\em Objective} & Wins & Draws & Loses & \# Avg. living units &
+%     Avg. HP & \# Avg. living units & Avg. HP\\
+%     \hline
+%     \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{3~ms}}}&
+%     {\em Max Damage} & 98 & 1 & 1 & 2.8 & 237.9 & 1.0 & 12.0\\
+%     & {\em Max Kill} & 94 & 5 & 1 & 3.0 & 250.8 & 1.0 & 3.0\\
+%     \hline
+%     \hline
+%     \multicolumn{1}{|c|}{\multirow{2}{*}{\rotatebox[origin=c]{90}{5~ms}}}&
+%     {\em Max Damage} & 99 & 1 & 0 & 2.6 & 231.9 & 0.0 & 0.0\\
+%     & {\em Max Kill} & 96 & 4 & 0 & 2.6 & 233.6 & 0.0 & 0.0\\
+%     \hline
+%   \end{tabular}
+% \end{table*}
 %--------------
+\begin{table*}[ht]
+\centering
+\caption{Average  results over  100 simulations  for both  objective
+    functions. The first table shows experiments where calls to \ghost lasts for 3~ms,
+    and the second table calls lasting for 5~ms}
+\label{tab:target}
+\begin{tabular}{@{}clSSSSSSS[table-format=2.1]@{}} 
+ \toprule 
+\multicolumn{5}{c}{} & \multicolumn{2}{c}{\textbf{\ghost Victory}} & \multicolumn{2}{c}{\textbf{Opponent Victory}}\\
+\cmidrule(lr){6-7} \cmidrule(l){8-9}
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{\textbf{Objective}} & \multicolumn{1}{c}{\textbf{Wins}} & \multicolumn{1}{c}{\textbf{Draws}} & 
+\multicolumn{1}{c}{\textbf{Loses}} & \multicolumn{1}{c}{\textbf{\# Avg. living units}} & \multicolumn{1}{c}{\textbf{Avg. HP}} & 
+\multicolumn{1}{c}{\textbf{\# Avg. living units}} & \multicolumn{1}{c}{\textbf{Avg. HP}}\\
+\midrule
+\multicolumn{1}{c}{\multirow{2}{*}{\rotatebox[origin=c]{90}{\textbf{3~ms}}}} 
+& {\em Max Damage} & 98 & 1 & 1 & 2.8 & 237.9 & 1.0 & 12.0\\
+& {\em Max Kill}   & 94 & 5 & 1 & 3.0 & 250.8 & 1.0 & 3.0\\
+\midrule
+\multicolumn{1}{c}{\multirow{2}{*}{\rotatebox[origin=c]{90}{\textbf{5~ms}}}} 
+& {\em Max Damage} & 99 & 1 & 0 & 2.6 & 231.9 & 0.0 & 0.0\\
+& {\em Max Kill}   & 96 & 4 & 0 & 2.6 & 233.6 & 0.0 & 0.0\\
+\bottomrule
+\end{tabular}
+\end{table*}
+% 
 We ran 100 simulations for both objective functions until one group is
 completely  annihilated,   calling  \ghost  at  each   StarCraft  unit
 time. Potentially,  the two groups can  kill each other, leading  to a
@@ -980,26 +1023,43 @@ another building from  the set of variables $V$, of  the same size and
 not already used in the  wall. This simple permutation can drastically
 decrease  the number  of significant  gaps between  buildings and  the
 technology level required.
-
+% 
 % --------------
+% \begin{table}[ht]
+%   \caption{Results  over 48  chokepoints  extracted  from 7  StarCraft
+%     maps. Results  are the  average of 100  runs for  each chokepoint.
+%     Each calls of \ghost lasts for 150~ms}
+%     \label{tab:wall}
+%     \centering
+%     \begin{tabular}{|l|c|c|c|}
+%       \cline{2-4}
+%       \multicolumn{1}{c|}{}   &    {\em   Satisfaction    run}&   {\em
+%         Optimization run}& {\em \% solved (opti)} \\
+%       \hline
+%       {\em Building} & 4.05 & 2.56 & 98.04\% \\
+%       {\em Gap} & 1.32 & 0.03 & 97.50\% \\
+%       {\em TechTree} & 1.99 & 1.35 & 97.54\% \\
+%       \hline
+%     \end{tabular}
+% \end{table}
+%--------------
 \begin{table}[ht]
-  \caption{Results  over 48  chokepoints  extracted  from 7  StarCraft
+\centering
+\caption{Results  over 48  chokepoints  extracted  from 7  StarCraft
     maps. Results  are the  average of 100  runs for  each chokepoint.
     Each calls of \ghost lasts for 150~ms}
-    \label{tab:wall}
-    \centering
-    \begin{tabular}{|l|c|c|c|}
-      \cline{2-4}
-      \multicolumn{1}{c|}{}   &    {\em   Satisfaction    run}&   {\em
-        Optimization run}& {\em \% solved (opti)} \\
-      \hline
-      {\em Building} & 4.05 & 2.56 & 98.04\% \\
-      {\em Gap} & 1.32 & 0.03 & 97.50\% \\
-      {\em TechTree} & 1.99 & 1.35 & 97.54\% \\
-      \hline
-    \end{tabular}
+\label{tab:wall}
+\begin{tabular}{@{}lSSS@{}} 
+ \toprule 
+\textbf{Objective} & \textbf{Satisfaction Run} & \textbf{Optimization Run} & \textbf{\% Solved (Opti)} \\
+\midrule
+{\em Building} & 4.05 & 2.56 & 98.04\% \\
+{\em Gap}      & 1.32 & 0.03 & 97.50\% \\
+{\em TechTree} & 1.99 & 1.35 & 97.54\% \\
+\bottomrule
+\end{tabular}
 \end{table}
-%--------------
+% 
 Satisfaction runs in Table~\ref{tab:wall}  are \ghost runs without any
 objective functions  and with  a satisfaction  timeout of  160,000~$\mu s$, like
 in~\cite{RichouxUO14}  with the  difference that  in Richoux  et al.'s
@@ -1028,25 +1088,44 @@ decided with  the Building objective  were composed of  2.65 buildings
 against 2.56  now; the number  of significant  gaps goes from  0.05 to
 0.03; and the technology level from 1.56 to 1.35.
 % --------------
-\begin{table}[ht]
-  \caption{Percentage of solutions found for each map}
-    \label{tab:map}
-    \centering
-    \begin{tabular}{|c|c|}
-      \hline
-      Map name & \% solved\\
-      \hline
-      Python & 100\\
-      Heartbreak Ridge & 100\\
-      Circuit Breaker & 99\\
-      Benzene & 99\\
-      Aztec & 97\\
-      Andromeda & 96\\
-      Fortress & 90\\
-      \hline
-    \end{tabular}
-\end{table}
+% \begin{table}[ht]
+%   \caption{Percentage of solutions found for each map}
+%     \label{tab:map}
+%     \centering
+%     \begin{tabular}{|c|c|}
+%       \hline
+%       Map name & \% solved\\
+%       \hline
+%       Python & 100\\
+%       Heartbreak Ridge & 100\\
+%       Circuit Breaker & 99\\
+%       Benzene & 99\\
+%       Aztec & 97\\
+%       Andromeda & 96\\
+%       Fortress & 90\\
+%       \hline
+%     \end{tabular}
+% \end{table}
 % --------------
+\begin{table}[h]
+\centering
+\caption{Percentage of solutions found for each map}
+\label{tab:map}
+\begin{tabular}{@{}lS[table-format=3]@{}} 
+ \toprule 
+\textbf{Map Name} & \textbf{Solved} \\
+\midrule
+Python           & 100\\
+Heartbreak Ridge & 100\\
+Circuit Breaker  & 99\\
+Benzene          & 99\\
+Aztec            & 97\\
+Andromeda        & 96\\
+Fortress         & 90\\
+\bottomrule
+\end{tabular}
+\end{table}
+% 
 Table~\ref{tab:map} shows the percentage of walls found in each of the
 seven  maps  from where  chokepoints  were  extracted.  These  numbers
 correspond  to  pure  satisfaction  runs,  since  they  do  not  differ
@@ -1056,22 +1135,23 @@ failing  from time  to  time on  the same  chokepoint,  where a  valid
 solution  can  only  be  achieved  by using  two  $3  \times  2$-sized
 buildings.
 
-
-%{\color{blue}
-We also performed a comparison between \ghost and the state-of-the-art for the walling problem, in this case the work presented by Certicky~\cite{Certicky13}. First, we limited the number of possible buildings to be considered to the number of buildings in Certicky's work (2 Barracks and 4 Supply Depots) and recorded the time to find a solution in two different cases: a small chokepoint (width of 65 pixels) and a big chokepoint (width of 250). In Table~\ref{tab:wallComparison}\footnote{Comparison experiments can be found at \url{https://bitbucket.org/auriarte/bwta2/src}}, we can see the average results of both solvers. The times include the computation needed for setting the solvers parameters, the time to solve the problem, and the time to parse the solution (in the case of Certicky's solution, we need to make an external call to Clingo solver). As we can see, \ghost is at least 7.8 times faster than Clingo in our experiments. \ghost is faster in the wider chokepoint because the smaller one is a ramp and there is an overhead of computing the extremes of the ramp.
-
-\begin{table}[ht]
+\begin{table}[hb]
 \centering
 \caption{Average time over 20 runs to find a solution}
 \label{tab:wallComparison}
-\begin{tabular}{|r|r|r|r|}
-\hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Chokepoint\\ width (pixels)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Buildings\\ needed\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}GHOST\\ Avg. time (ms)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Clingo\\ Avg. time (ms)\end{tabular}} \\ \hline
-65  & 2 & 46.8 & 362.8 \\ \hline
-250 & 2 & 33.5 & 408.8 \\ \hline
+\begin{tabular}{@{}SSSS@{}} 
+ \toprule 
+\multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Chokepoint}\\ \textbf{width (pixels)}\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Buildings}\\ \textbf{needed}\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}} \textbf{\ghost} \\ \textbf{Avg. time (ms)}\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Clingo}\\ \textbf{Avg. time (ms)}\end{tabular}} \\
+\midrule
+65  & 2 & 46.8 & 362.8 \\
+250 & 2 & 33.5 & 408.8 \\
+\bottomrule
 \end{tabular}
 \end{table}
-%}
+
+We also performed a comparison between \ghost and the state-of-the-art for the walling problem, in this case the work presented by Certicky~\cite{Certicky13}. First, we limited the number of possible buildings to be considered to the number of buildings in Certicky's work (2 Barracks and 4 Supply Depots) and recorded the time to find a solution in two different cases: a small chokepoint (width of 65 pixels) and a big chokepoint (width of 250). In Table~\ref{tab:wallComparison}\footnote{Comparison experiments can be found at \url{https://bitbucket.org/auriarte/bwta2/src}}, we can see the average results of both solvers. The times include the computation needed for setting the solvers parameters, the time to solve the problem, and the time to parse the solution (in the case of Certicky's solution, we need to make an external call to Clingo solver). As we can see, \ghost is at least 7.8 times faster than Clingo in our experiments. \ghost is faster in the wider chokepoint because the smaller one is a ramp and there is an overhead of computing the extremes of the ramp.
+
+
 
 
 \subsection{Future work}
@@ -1192,31 +1272,56 @@ from Korean pro-gamers to refine  our simulator settings, listed below in frames
 \item  Gas  gathering  rate:  0.077  gas per  worker  per  frame  (0.07 in \cite{ChurchillB11})
 \end{itemize}
 %--------------
-\begin{table*}[ht]
-  \caption{Our simulator execution matched  against the pro-gamer Bisu
-    during the first 1900 frames (\ie, 80 seconds)}
-  \label{tab:korean}
-  \centering
-  \begin{tabular}{|c|c|c|c|c|c|}
-    \cline{3-6}
-    \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{Simulator in \ghost} & \multicolumn{2}{c|}{Bisu}\\
-    \hline
-    Action (by S(im) or B(isu)) & Frames & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)} & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)}\\
-    \hline
-    S starts a probe & 298 & 40.8 & 5/9 & 40 & 5/9\\
-    S starts a probe & 656 & 19.7 & 7/9 & 20 & 7/9\\
-    S starts a probe & 955 & 46.5 & 8/9 & 50 & 8/9\\
-    S starts a pylon & 1119 & - & - & - & -\\
-    B starts a pylon & 1164 & - & - & - & -\\
-    S starts a probe & 1328 & 1.2 & 9/9 & 12 & 9/9\\
-    S starts a probe & 1627 & 60.0 & 10/17 & 132 & 9/17\\
-    B starts a gateway & 1731 & - & - & - & -\\
-    S starts a gateway & 1866 & - & - & - & -\\
-    S starts a probe & 1866 & 1.8 & 11/17 & 78 & 9/17\\
-    \hline
-  \end{tabular}
-\end{table*}
+% \begin{table*}[ht]
+%   \caption{Our simulator execution matched  against the pro-gamer Bisu
+%     during the first 1900 frames (\ie, 80 seconds)}
+%   \label{tab:korean}
+%   \centering
+%   \begin{tabular}{|c|c|c|c|c|c|}
+%     \cline{3-6}
+%     \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{Simulator in \ghost} & \multicolumn{2}{c|}{Bisu}\\
+%     \hline
+%     Action (by S(im) or B(isu)) & Frames & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)} & \multicolumn{1}{c|}{Mineral} & \multicolumn{1}{c|}{supply (used / capacity)}\\
+%     \hline
+%     S starts a probe & 298 & 40.8 & 5/9 & 40 & 5/9\\
+%     S starts a probe & 656 & 19.7 & 7/9 & 20 & 7/9\\
+%     S starts a probe & 955 & 46.5 & 8/9 & 50 & 8/9\\
+%     S starts a pylon & 1119 & - & - & - & -\\
+%     B starts a pylon & 1164 & - & - & - & -\\
+%     S starts a probe & 1328 & 1.2 & 9/9 & 12 & 9/9\\
+%     S starts a probe & 1627 & 60.0 & 10/17 & 132 & 9/17\\
+%     B starts a gateway & 1731 & - & - & - & -\\
+%     S starts a gateway & 1866 & - & - & - & -\\
+%     S starts a probe & 1866 & 1.8 & 11/17 & 78 & 9/17\\
+%     \hline
+%   \end{tabular}
+% \end{table*}
 %--------------
+\begin{table*}[ht]
+\centering
+\caption{Our simulator execution matched  against the pro-gamer Bisu
+    during the first 1900 frames (\ie, 80 seconds)}
+\label{tab:korean}
+\begin{tabular}{@{}lS[table-format=4]S[table-format=2.1]cS[table-format=3]c@{}} 
+ \toprule 
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{\textbf{Simulator in \ghost}} & \multicolumn{2}{c}{\textbf{Bisu}}\\
+\cmidrule(lr){3-4} \cmidrule(l){5-6}
+\multicolumn{1}{l}{\textbf{Action}} & \multicolumn{1}{c}{\textbf{Frames}} & \multicolumn{1}{c}{\textbf{Mineral}} & \multicolumn{1}{c}{\textbf{Supply (Used/Capacity)}} & \multicolumn{1}{c}{\textbf{Mineral}} & \multicolumn{1}{c}{\textbf{Supply (Used/Capacity)}}\\
+\midrule
+Simulator starts a probe   & 298  & 40.8                  & 5/9                   & 40                    & 5/9\\
+Simulator starts a probe   & 656  & 19.7                  & 7/9                   & 20                    & 7/9\\
+Simulator starts a probe   & 955  & 46.5                  & 8/9                   & 50                    & 8/9\\
+Simulator starts a pylon   & 1119 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+Bisu starts a pylon        & 1164 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+Simulator starts a probe   & 1328 & 1.2                   & 9/9                   & 12                    & 9/9\\
+Simulator starts a probe   & 1627 & 60.0                  & 10/17                 & 132                   & 9/17\\
+Bisu starts a gateway      & 1731 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+Simulator starts a gateway & 1866 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+Simulator starts a probe   & 1866 & 1.8                   & 11/17                 & 78                    & 9/17\\
+\bottomrule
+\end{tabular}
+\end{table*}
+% 
 To be sure these parameters make our simulator realistic, we matched its
 execution  against the  first  1900 frames of  games (\ie, 80 seconds) played by  Korean
 pro-gamers. Table~\ref{tab:korean}  gives an  example of  our simulator
@@ -1229,48 +1334,110 @@ see  that  these two  early  games  are  very  similar, with  a  slight
 advantage  to  the simulator  since  its  probe production  is  nearly
 perfect.
 % --------------
+% \begin{table*}[ht]
+%   \caption{Average  makespan  of Humans  and  \ghost  BOs  in
+%     frames over 3647 games. Each calls  of \ghost
+%     lasts for 30ms}
+%   \label{tab:bo}
+%   \centering
+%   \begin{tabular}{|l|c|c|c|c|}
+%     \hline
+%     \multicolumn{5}{|c|}{Games till 10.000 frames} \\
+%     \hline
+%     {\em Match-up} & Humans & \ghost & \% solved &
+%     Gain \\
+%     \hline
+%     {\em All} & 9794 & 9250 & 94.4 & 544\\
+%     {\em PvP} & 9727 & 9078 & 95.0 & 649\\
+%     {\em PvT} & 9861 & 9378 & 93.9 & 483\\
+%     {\em PvZ} & 9692 & 9097 & 95.0 & 595\\
+%     \hline
+%     \hline
+%     {\em All pro} & 9605 & 8916 & 96.3 & 689\\
+%     \hline
+%   \end{tabular}
+%   %\hfill
+%   \begin{tabular}{|l|c|c|c|c|}
+%     \hline
+%     \multicolumn{5}{|c|}{Games till 7.800 frames} \\
+%     \hline
+%     {\em Match-up} & Humans & \ghost & \% solved &
+%     Gain \\
+%     \hline
+%     {\em All} & 7726 & 7332 & 98.8 & 394\\
+%     {\em PvP} & 7630 & 7249 & 99.3 & 381\\
+%     {\em PvT} & 7800 & 7564 & 98.3 & 236\\
+%     {\em PvZ} & 7626 & 6841 & 99.7 & 785\\
+%     \hline
+%     \hline
+%     {\em All pro} & 7485 & 7179 & 100 & 306\\
+%     \hline
+%   \end{tabular}
+% \end{table*}
+%--------------
 \begin{table*}[ht]
   \caption{Average  makespan  of Humans  and  \ghost  BOs  in
     frames over 3647 games. Each calls  of \ghost
     lasts for 30ms}
   \label{tab:bo}
   \centering
-  \begin{tabular}{|l|c|c|c|c|}
-    \hline
-    \multicolumn{5}{|c|}{Games till 10.000 frames} \\
-    \hline
-    {\em Match-up} & Humans & \ghost & \% solved &
-    Gain \\
-    \hline
+  \begin{tabular}{lS[table-format=4]S[table-format=4]S[table-format=2.1]S[table-format=3]}
+    \toprule
+    \multicolumn{5}{c}{\textbf{Games till 10,000 frames}} \\
+    \cmidrule{1-5}
+    \multicolumn{1}{l}{\textbf{Match-up}} & \multicolumn{1}{l}{\textbf{Humans}} & \multicolumn{1}{l}{\textbf{\ghost}} & 
+    \multicolumn{1}{l}{\textbf{\% Solved}} & \multicolumn{1}{l}{\textbf{Gain}} \\
+    \midrule
     {\em All} & 9794 & 9250 & 94.4 & 544\\
     {\em PvP} & 9727 & 9078 & 95.0 & 649\\
     {\em PvT} & 9861 & 9378 & 93.9 & 483\\
     {\em PvZ} & 9692 & 9097 & 95.0 & 595\\
-    \hline
-    \hline
+    \midrule
     {\em All pro} & 9605 & 8916 & 96.3 & 689\\
-    \hline
+    \bottomrule
   \end{tabular}
   %\hfill
-  \begin{tabular}{|l|c|c|c|c|}
-    \hline
-    \multicolumn{5}{|c|}{Games till 7.800 frames} \\
-    \hline
-    {\em Match-up} & Humans & \ghost & \% solved &
-    Gain \\
-    \hline
+  \begin{tabular}{lS[table-format=4]S[table-format=4]S[table-format=2.1]S[table-format=3]}
+    \toprule
+    \multicolumn{5}{c}{\textbf{Games till 7,800 frames}} \\
+    \cmidrule{1-5}
+    \multicolumn{1}{l}{\textbf{Match-up}} & \multicolumn{1}{l}{\textbf{Humans}} & \multicolumn{1}{l}{\textbf{\ghost}} & 
+    \multicolumn{1}{l}{\textbf{\% Solved}} & \multicolumn{1}{l}{\textbf{Gain}} \\
+    \midrule
     {\em All} & 7726 & 7332 & 98.8 & 394\\
     {\em PvP} & 7630 & 7249 & 99.3 & 381\\
     {\em PvT} & 7800 & 7564 & 98.3 & 236\\
     {\em PvZ} & 7626 & 6841 & 99.7 & 785\\
-    \hline
-    \hline
+    \midrule
     {\em All pro} & 7485 & 7179 & 100 & 306\\
-    \hline
+    \bottomrule
   \end{tabular}
 \end{table*}
-%--------------
-
+% \begin{table*}[ht]
+% \centering
+% \caption{Our simulator execution matched  against the pro-gamer Bisu
+%     during the first 1900 frames (\ie, 80 seconds)}
+% \label{tab:korean}
+% \begin{tabular}{@{}lS[table-format=4]S[table-format=2.1]cS[table-format=3]c@{}} 
+%  \toprule 
+% \multicolumn{2}{c}{} & \multicolumn{2}{c}{\textbf{Simulator in \ghost}} & \multicolumn{2}{c}{\textbf{Bisu}}\\
+% \cmidrule(lr){3-4} \cmidrule(l){5-6}
+% \multicolumn{1}{l}{\textbf{Action}} & \multicolumn{1}{c}{\textbf{Frames}} & \multicolumn{1}{c}{\textbf{Mineral}} & \multicolumn{1}{c}{\textbf{Supply (Used/Capacity)}} & \multicolumn{1}{c}{\textbf{Mineral}} & \multicolumn{1}{c}{\textbf{Supply (Used/Capacity)}}\\
+% \midrule
+% Simulator starts a probe   & 298  & 40.8                  & 5/9                   & 40                    & 5/9\\
+% Simulator starts a probe   & 656  & 19.7                  & 7/9                   & 20                    & 7/9\\
+% Simulator starts a probe   & 955  & 46.5                  & 8/9                   & 50                    & 8/9\\
+% Simulator starts a pylon   & 1119 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+% Bisu starts a pylon        & 1164 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+% Simulator starts a probe   & 1328 & 1.2                   & 9/9                   & 12                    & 9/9\\
+% Simulator starts a probe   & 1627 & 60.0                  & 10/17                 & 132                   & 9/17\\
+% Bisu starts a gateway      & 1731 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+% Simulator starts a gateway & 1866 & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} \\
+% Simulator starts a probe   & 1866 & 1.8                   & 11/17                 & 78                    & 9/17\\
+% \bottomrule
+% \end{tabular}
+% \end{table*}
+% 
 For  Table~\ref{tab:bo}\footnote{All  build   order  data,  experiment
   results     and     the     simulator    can     be     found     at
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/build\_order}{github.com/richoux/GHOST\_paper/tree/master/xp/build\_order}},
@@ -1435,6 +1602,34 @@ values are unrealistic within a  StarCraft game, they are large enough
 to challenge constraint solvers. Indeed, it is harder to match solvers
 if all of them return a solution within a couple of milliseconds.
 
+\begin{table*}[t]
+\centering
+\caption{Solvers' comparison on the resources allocation problem}
+\label{tab:SOTA}
+\begin{tabular}{@{} 
+    l 
+    S[table-format=5.2]
+    S[table-format=4]<{\xspace \si{\ms}} 
+    S[table-format=4]<{\xspace \si{\ms}} 
+    c
+    S[table-format=5.2]
+    S[table-format=4]<{\xspace \si{\ms}}
+    S[table-format=5.2]
+    S[table-format=5.2]
+    S[table-format=4]
+    @{}} 
+ \toprule 
+ & & \multicolumn{1}{c}{\textbf{Opturion CPX}} & \multicolumn{1}{c}{\textbf{Gecode}} & \multicolumn{3}{c}{\textbf{\ghost} (100 runs)} & \multicolumn{3}{c}{\textbf{Oscar/CBLS} (10 runs)} \\
+ \cmidrule(lr){3-3} \cmidrule(lr){4-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+ & \multicolumn{1}{c}{\textbf{Optimal DPS}} & \multicolumn{1}{c}{\textbf{Runtime}} & \multicolumn{1}{c}{\textbf{Runtime}} & \multicolumn{1}{c}{\textbf{\% Opt. Found}} & \multicolumn{1}{c}{\textbf{Mean DPS}} & \multicolumn{1}{c}{\textbf{Runtime}} & \multicolumn{1}{c}{\textbf{Mean DPS}} & \multicolumn{1}{c}{\textbf{Best DPS}} & \multicolumn{1}{c}{\textbf{Mean Runtime}} \\
+\midrule
+{\em Zerg}    & 11400.00   & 200                            & 99580                 & 59 & 11387.70 & 80   & 11400.00   & 11400.00   & 562\xspace \si{\ms}\\
+{\em Protoss} & 4916.38 & 1620                           & \multicolumn{1}{c}{-} & 54 & 4907.70  & 1300 & 3445.21 & 4480.00    & 1200\xspace \si{\ms} \\
+{\em Terran}  & 6632.73 & \multicolumn{1}{c}{3 h 19 min} & \multicolumn{1}{c}{-} & 53 & 6619.30  & 130  & 3035.73 & 5767.55 & 1390\xspace \si{\ms} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
 Results matching \ghost inner solver  with Opturion CPX and Gecode are
 compiled  in  Table~\ref{tab:SOTA}\footnote{All  experiment results can     be     found     at
   \href{https://github.com/richoux/GHOST\_paper/tree/master/xp/other\_solvers/resource}{github.com/richoux/GHOST\_paper/tree/master/xp/other\_solvers/resource}
@@ -1448,28 +1643,29 @@ the runtime  to the  lowest time (empirically  found) where  more than
 Gecode solvers 6 hours for each problem instance to output a solution.
 
 % --------------
-\begin{table*}[ht]
-  \caption{Matching 100  runs of \ghost  with Opturion CPX  and Gecode
-    solvers on the resources allocation problem}
-    \label{tab:SOTA}
-    \centering
-    \begin{tabular}{|l|c|c|c|c|c|c|}
-      \cline{2-7}
-      \multicolumn{1}{c|}{} &  {\em Optimal  DPS}& {\em \%  of optimal
-        solution found}
-      & {\em Mean DPS via \ghost}& {\em \ghost runtime}
-      & {\em Opturion CPX runtime}& {\em Gecode runtime} \\
-      \hline
-      {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80~ms & 200~ms & 99.58~s\\
-      {\em Protoss} & 4,916.38 & 54\% & 4,907.70 & 1.30~s & 1.62~s & - \\
-      {\em Terran} & 6,632.73 & 53\% & 6,619.30 & 130~ms & 3~h~19~min & - \\
-      \hline
-    \end{tabular}
-\end{table*}
+% \begin{table*}[ht]
+%   \caption{Matching 100  runs of \ghost  with Opturion CPX  and Gecode
+%     solvers on the resources allocation problem}
+%     \label{tab:SOTA}
+%     \centering
+%     \begin{tabular}{|l|c|c|c|c|c|c|}
+%       \cline{2-7}
+%       \multicolumn{1}{c|}{} &  {\em Optimal  DPS}& {\em \%  of optimal
+%         solution found}
+%       & {\em Mean DPS via \ghost}& {\em \ghost runtime}
+%       & {\em Opturion CPX runtime}& {\em Gecode runtime} \\
+%       \hline
+%       {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80~ms & 200~ms & 99.58~s\\
+%       {\em Protoss} & 4,916.38 & 54\% & 4,907.70 & 1.30~s & 1.62~s & - \\
+%       {\em Terran} & 6,632.73 & 53\% & 6,619.30 & 130~ms & 3~h~19~min & - \\
+%       \hline
+%     \end{tabular}
+% \end{table*}
 %--------------
 
+
 Results matching \ghost  inner solver with Oscar/CBLS can  be found in
-Table~\ref{tab:oscar}. Notice that, like \ghost, Oscar/CBLS implements a stochastic
+Table~\ref{tab:SOTA}. Notice that, like \ghost, Oscar/CBLS implements a stochastic
 algorithm.  As such, we  must run the same problem multiple times to compute a 
 fair mean of the runtime and solution quality.
 Since Oscar/CBLS does not let us define a runtime timeout, we manually stopped
@@ -1485,26 +1681,26 @@ This is the reason why we only have 10 Oscar/CBLS runs on each
 problem instance, against 100 runs for \ghost.
 
 % --------------
-\begin{table*}[ht]
-  \caption{Matching 100 runs of \ghost with 10 runs of Oscar/CBLS on the resources allocation problem}
-    \label{tab:oscar}
-    \centering
-    \begin{tabular}{|l|c|c|c|c|c|c|c|}
-      \cline{2-8}
-      \multicolumn{1}{c|}{} & {\em Optimal DPS}& {\em \% opt. found}
-      & {\em Mean DPS}& {\em Runtime}
-      & {\em Best Oscar/CBLS DPS}& {\em Mean Oscar/CBLS DPS}
-      & {\em Mean Oscar/CBLS runtimes} \\
-      \hline
-      {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80~ms & 11,400 & 11,400 &
-      562.90~ms\\
-      {\em Protoss}  & 4,916.38  & 54\%  & 4,907.70 &  1.30~s &  4,480 &
-      3,445.21 & 1.20~s\\
-      {\em Terran}  & 6,632.73 & 53\%  & 6,619.30 & 130~ms  & 5767.55 &
-      3,035.73 & 1.39~s \\
-      \hline
-    \end{tabular}
-\end{table*}
+% \begin{table*}[ht]
+%   \caption{Matching 100 runs of \ghost with 10 runs of Oscar/CBLS on the resources allocation problem}
+%     \label{tab:oscar}
+%     \centering
+%     \begin{tabular}{|l|c|c|c|c|c|c|c|}
+%       \cline{2-8}
+%       \multicolumn{1}{c|}{} & {\em Optimal DPS}& {\em \% opt. found}
+%       & {\em Mean DPS}& {\em Runtime}
+%       & {\em Best Oscar/CBLS DPS}& {\em Mean Oscar/CBLS DPS}
+%       & {\em Mean Oscar/CBLS runtimes} \\
+%       \hline
+%       {\em Zerg} & 11,400 & 59\% & 11,387.70 & 80~ms & 11,400 & 11,400 &
+%       562.90~ms\\
+%       {\em Protoss}  & 4,916.38  & 54\%  & 4,907.70 &  1.30~s &  4,480 &
+%       3,445.21 & 1.20~s\\
+%       {\em Terran}  & 6,632.73 & 53\%  & 6,619.30 & 130~ms  & 5767.55 &
+%       3,035.73 & 1.39~s \\
+%       \hline
+%     \end{tabular}
+% \end{table*}
 %--------------
 
 \subsection{Results analysis}
@@ -1559,7 +1755,7 @@ have also a trivial optimal strategy: just produce as many Firebats as
 resources allow. However,  for complete solvers, the search  space remains
 too large to explore in order to prove the solution's optimality.
 
-Table~\ref{tab:oscar} shows that \ghost  inner solver also outperforms
+Table~\ref{tab:SOTA} shows that \ghost  inner solver also outperforms
 the local search meta-heuristics implemented in Oscar/CBLS. Except for
 the Zerg instance, the best solution  found by Oscar/CBLS was very far
 from the optimal solution, and  finds in average poor-quality solutions
@@ -1583,7 +1779,7 @@ This  represents  45.77\% of  the  optimal  solution quality,  against
 5,767.55 (86.96\%  the optimal) when  \ghost outputs 53\% of  the time
 the optimal solution.
 
-We should also emphasize that Oscar/CBLS uses many cores to compute a solution\footnote{Experiments have been conducted on an Intel i7 quad-core CPU, with 4GB of memory, under Ubuntu 14.04 64-bit.}, whereas \ghost inner solver remains sequential. Besides this difference, results compiled in Table~\ref{tab:oscar} show that \ghost outperforms Oscar/CBLS both in terms of quality outputs and runtimes.
+We should also emphasize that Oscar/CBLS uses many cores to compute a solution\footnote{Experiments have been conducted on an Intel i7 quad-core CPU, with 4GB of memory, under Ubuntu 14.04 64-bit.}, whereas \ghost inner solver remains sequential. Besides this difference, results compiled in Table~\ref{tab:SOTA} show that \ghost outperforms Oscar/CBLS both in terms of quality outputs and runtimes.
 
 
 
