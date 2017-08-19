@@ -1,18 +1,13 @@
 # PDF and latex generated files
-paper/ghost.pdf
-paper/ghost.aux
-paper/ghost.bbl
-paper/ghost.blg
-paper/ghost.log
-paper/ghost.out
+ghost.pdf
+ghost.aux
+ghost.bbl
+ghost.blg
+ghost.log
+ghost.out
 
 # Emacs copies
 *~
 
-# Dave BOSS code sample
-docs/Dave_BOSS
-
-# execs
-xp/build_order/bin/experiments_bo
-xp/wallin/bin/experiments_ghost
-xp/target/bin/experiments_target
+# hide reviews
+reviews*
